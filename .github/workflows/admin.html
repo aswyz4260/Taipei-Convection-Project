@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>北台灣午後對流監測系統 - 研究員操作後台</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 0 20px 40px 20px;
+            background-color: #f8fafc;
+        }
+
+        /* 🌐 現代化極簡導覽列 */
+        .navbar {
+            background-color: #ffffff;
+            display: flex;
+            align-items: center;
+            padding: 0 24px;
+            height: 64px;
+            border-radius: 0 0 12px 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            margin-bottom: 35px;
+            border: 1px solid #e2e8f0;
+            border-top: none;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            color: #1e293b;
+            margin-right: 32px;
+            font-size: 16px;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
+
+        .nav-link {
+            color: #64748b;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            padding: 0 16px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            transition: all 0.25s ease;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .nav-link:hover {
+            color: #0f172a;
+        }
+
+        /* 當前頁面下底線提示 */
+        .nav-link.active {
+            color: #2563eb;
+            font-weight: 600;
+        }
+
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 16px;
+            right: 16px;
+            height: 3px;
+            background-color: #2563eb;
+            border-radius: 3px 3px 0 0;
+        }
+
+        /* ▾ 下拉式選單核心重構 */
+        .dropdown {
+            position: relative;
+            height: 100%;
+        }
+
+        .dropdown-content {
+            display: block;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(10px);
+            background-color: #ffffff;
+            min-width: 180px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            padding: 6px 0;
+            z-index: 100;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.2s ease;
+        }
+
+        .dropdown-content a {
+            color: #475569;
+            padding: 10px 18px;
+            text-decoration: none;
+            display: block;
+            font-size: 13.5px;
+            font-weight: 500;
+            transition: background-color 0.15s ease, color 0.15s ease;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f5f9;
+            color: #0f172a;
+        }
+
+        /* 觸發非延遲顯示效果 */
+        .dropdown:hover .dropdown-content {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        /* 📋 控制面板與卡片外觀優化 */
+        .card {
+            background: #ffffff;
+            padding: 32px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+            margin-bottom: 24px;
+        }
+
+        h2 {
+            margin-top: 0;
+            border-bottom: 1px solid #f1f5f9;
+            padding-bottom: 14px;
+            color: #1e293b;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #334155;
+            font-size: 14.5px;
+        }
+
+        input[type="text"], input[type="password"], select {
+            width: 100%;
+            padding: 11px 14px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 14px;
+            color: #1e293b;
+            background-color: #fff;
+            transition: border-color 0.15s ease;
+        }
+
+        input[type="text"]:focus, input[type="password"]:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .radio-group {
+            margin-top: 8px;
+        }
+
+        .radio-item {
+            background-color: #f8fafc;
+            padding: 16px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            margin-bottom: 12px;
+            transition: border-color 0.15s ease;
+        }
+
+        .radio-item:hover {
+            border-color: #cbd5e1;
+        }
+
+        .help-block {
+            font-size: 12.5px;
+            color: #64748b;
+            margin-top: 6px;
+            line-height: 1.5;
+        }
+
+        button {
+            background-color: #2563eb;
+            color: white;
+            padding: 14px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: 600;
+            width: 100%;
+            transition: background-color 0.15s ease;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        }
+
+        button:hover {
+            background-color: #1d4ed8;
+        }
+
+        button:disabled {
+            background-color: #93c5fd;
+            cursor: not-allowed;
+        }
+
+        #statusMessage {
+            margin-top: 18px;
+            padding: 16px;
+            border-radius: 6px;
+            display: none;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .success { background-color: #fef2f2; color: #991b1b; border: 1px solid #fca5a5; }
+        .info { background-color: #eff6ff; color: #1e40af; border: 1px solid #bfdbfe; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="./index.html" class="navbar-brand">⛈️ 午後對流監測系統</a>
+        <div class="nav-links">
+            <a href="./cases.html" class="nav-link">📅 個案日誌</a>
+            <a href="./admin.html" class="nav-link active">🔬 研究操作</a>
+            <div class="dropdown">
+                <span class="nav-link">🌐 外部資源 ▾</span>
+                <div class="dropdown-content">
+                    <a href="https://codis.cwa.gov.tw/StationData" target="_blank">🏛️ 氣象署 CODIS</a>
+                    <a href="http://140.137.32.27/www/catalog/" target="_blank">🎓 大氣水文資料庫</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="card">
+        <h2>午後對流個案處理控制台</h2>
+        
+        <div class="form-group">
+            <label for="targetDate">1. 輸入目標個案日期</label>
+            <input type="text" id="targetDate" placeholder="例如: 20260614" maxlength="8">
+            <div class="help-block">請輸入 8 碼數字（YYYYMMDD），系統將針對該日期進行處理。</div>
+        </div>
+
+        <div class="form-group">
+            <label>2. 選擇執行模式</label>
+            <div class="radio-group">
+                <div class="radio-item">
+                    <input type="radio" id="modeA" name="runMode" value="run_triggered" checked>
+                    <label style="display:inline; font-weight:600; cursor:pointer;" for="modeA">
+                        模式 A：執行雷達指標判定 (run_triggered)
+                    </label>
+                    <div class="help-block" style="margin-top: 6px;">檢驗北台灣雷達回波是否達標（40 dBZ + 10 km² + 30分鐘），通過才進行下載封存。</div>
+                </div>
+                <div class="radio-item">
+                    <input type="radio" id="modeB" name="runMode" value="force_download">
+                    <label style="display:inline; font-weight:600; cursor:pointer;" for="modeB">
+                        模式 B：強制下載圖資資料 (force_download)
+                    </label>
+                    <div class="help-block" style="margin-top: 6px;">繞過雷達指標檢查，直接下載當日所有天氣圖、觀測站排行並發布上架。</div>
+                </div>
+            </div>
+        </div>
+
+        <button id="submitBtn" onclick="triggerWorkflow()">發送指令至雲端產線</button>
+        <div id="statusMessage"></div>
+    </div>
+
+    <div class="card" style="border-style: dashed; background-color: #fafafa;">
+        <h2>GitHub API 認證設定</h2>
+        <div class="form-group">
+            <label for="githubToken">GitHub 個人存取權杖 (Personal Access Token)</label>
+            <input type="password" id="githubToken" placeholder="請貼入您的 github_pat_..." onchange="saveToken()">
+            <div class="help-block">此操作需要專案寫入權限。密鑰將安全儲存於您本地瀏覽器（localStorage），不會外洩。</div>
+        </div>
+    </div>
+
+    <script>
+        const REPO_OWNER = "aswyz4260"; 
+        const REPO_NAME = "Taipei-Convection-Project";
+        const WORKFLOW_ID = "daily_data_factory.yml"; 
+
+        window.onload = function() {
+            const savedToken = localStorage.getItem("gh_token");
+            if (savedToken) {
+                document.getElementById("githubToken").value = savedToken;
+            }
+            const today = new Date();
+            const yyyy = today.getFullYear();
+            const mm = String(today.getMonth() + 1).padStart(2, '0');
+            const dd = String(today.getDate()).padStart(2, '0');
+            document.getElementById("targetDate").placeholder = `${yyyy}${mm}${dd}`;
+        }
+
+        function saveToken() {
+            const token = document.getElementById("githubToken").value.trim();
+            localStorage.setItem("gh_token", token);
+        }
+
+        async function triggerWorkflow() {
+            const token = document.getElementById("githubToken").value.trim();
+            const date = document.getElementById("targetDate").value.trim();
+            const mode = document.querySelector('input[name="runMode"]:checked').value;
+            const msgDiv = document.getElementById("statusMessage");
+            const btn = document.getElementById("submitBtn");
+
+            if (!token) {
+                alert("請先在下方填入 GitHub 個人存取權杖 (Token) 才能進行操作！");
+                return;
+            }
+            if (!date || date.length !== 8 || isNaN(date)) {
+                alert("請輸入正確的 8 碼日期格式（例如：20260614）");
+                return;
+            }
+
+            btn.disabled = true;
+            msgDiv.style.display = "block";
+            msgDiv.className = "info";
+            msgDiv.innerText = "正在連線至 GitHub 雲端伺服器並發送指令...";
+
+            const url = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/actions/workflows/${WORKFLOW_ID}/dispatches`;
+            
+            try {
+                const response = await fetch(url, {
+                    method: "POST",
+                    headers: {
+                        "Accept": "application/vnd.github+json",
+                        "Authorization": `Bearer ${token}`,
+                        "X-GitHub-Api-Version": "2022-11-28"
+                    },
+                    body: JSON.stringify({
+                        ref: "main", 
+                        inputs: {
+                            target_date: date,
+                            run_mode: mode
+                        }
+                    })
+                });
+
+                if (response.status === 204) {
+                    msgDiv.className = "info";
+                    msgDiv.style.backgroundColor = "#f0fdf4";
+                    msgDiv.style.color = "#166534";
+                    msgDiv.style.border = "1px solid #bbf7d0";
+                    msgDiv.innerHTML = `<strong>傳送成功！</strong><br>雲端產線已成功被喚醒並開始處理個案 [${date}]。<br>系統處理約需 2~3 分鐘，稍後請直接切換回「個案日誌」重整網頁查看成果。`;
+                } else {
+                    const errData = await response.json().catch(() => ({}));
+                    msgDiv.className = "success"; 
+                    msgDiv.innerText = `發送失敗 (代碼: ${response.status})：${errData.message || '請檢查您的 Token 是否具備專案 Actions 權限或專案路徑是否正確。'}`;
+                }
+            } catch (error) {
+                msgDiv.className = "success";
+                msgDiv.innerText = `網路連線異常：${error.message}`;
+            } finally {
+                btn.disabled = false;
+            }
+        }
+    </script>
+</body>
+</html>

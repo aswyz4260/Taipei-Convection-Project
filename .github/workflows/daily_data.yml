@@ -65,19 +65,19 @@ jobs:
       # ------------------------------------------------------
       # 🎯 訴求 3：手動輸入日期強行打包圖片 (繞過 triggered.py 的卡關限制)
       # ------------------------------------------------------
-      - name: 🏭 [模式 B-1] 強行啟動圖片工廠 (雷達/閃電/地面中尺度)
-        if: env.RUN_MODE == 'force_download'
+      - name: 🏭 [模式 B-1] 雷達/閃電/地面中尺度)
+        if: success() 
         run: |
           python fetch_pillow_fig.py ${{ env.RUN_DATE }}
 
-      - name: 📊 [模式 B-2] 強行啟動數據清洗工廠 (觀測站排行 JSON)
-        if: env.RUN_MODE == 'force_download'
+      - name: 📊 [模式 B-2] 觀測站排行 JSON)
+        if: success()
         continue-on-error: true
         run: |
           python fetch_stn_rank.py ${{ env.RUN_DATE }}
 
-      - name: ☁️ [模式 B-3] 強行啟動環境牆工廠 (綜觀天氣圖/熱力探空)
-        if: env.RUN_MODE == 'force_download'
+      - name: ☁️ [模式 B-3] 綜觀天氣圖/熱力探空)
+        if: success()
         run: |
           python fetch_cwa_fig.py ${{ env.RUN_DATE }}
 
