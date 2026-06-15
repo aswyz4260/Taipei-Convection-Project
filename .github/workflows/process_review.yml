@@ -1,4 +1,4 @@
-name: 🔄 自動化個案科學審查倒灌流水線
+name: 自動整理個案報告表單回應
 
 on:
   issues:
@@ -6,26 +6,25 @@ on:
 
 jobs:
   process-review:
-    # 只有當 Issue 的標籤帶有 case-review 時才啟動，防止一般回報被誤觸
     if: contains(github.event.issue.title, '[個案審查]')
     runs-on: ubuntu-latest
     steps:
-      - name: 📥 複製雲端專案程式碼
+      - name: 複製雲端專案程式碼
         uses: actions/checkout@v4
 
-      - name: 🐍 安裝 Python 環境
+      - name: 安裝 Python 環境
         uses: actions/setup-python@v5
         with:
           python-version: '3.10'
 
-      - name: ⚙️ 執行大氣表單解析引擎
+      - name: 執行大氣表單解析
         env:
           ISSUE_TITLE: ${{ github.event.issue.title }}
           ISSUE_BODY: ${{ github.event.issue.body }}
         run: |
           python parse_review.py
 
-      - name: 🚀 自動將解析好的 JSON 報告推回倉庫
+      - name: 自動將解析好的 JSON 報告推回倉庫
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action Bot"
