@@ -1,0 +1,35 @@
+name: 🔄 自動化個案科學審查倒灌流水線
+
+on:
+  issues:
+    types: [opened, edited]
+
+jobs:
+  process-review:
+    # 只有當 Issue 的標籤帶有 case-review 時才啟動，防止一般回報被誤觸
+    if: contains(github.event.issue.labels.*.name, 'case-review')
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 複製雲端專案程式碼
+        uses: actions/checkout@v4
+
+      - name: 🐍 安裝 Python 環境
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: ⚙️ 執行大氣表單解析引擎
+        env:
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          ISSUE_BODY: ${{ github.event.issue.body }}
+        run: |
+          python parse_review.py
+
+      - name: 🚀 自動將解析好的 JSON 報告推回倉庫
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action Bot"
+          git add sfc_archives/
+          # 防止研究員只是微調內容導致 commit 失敗
+          git commit -m "Auto-update case review summary from Issue #${{ github.event.issue.number }}" || exit 0
+          git push
