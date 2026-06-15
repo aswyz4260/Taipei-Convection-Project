@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>北台灣午後對流監測系統 - 觀測站首頁</title>
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: "PingFang TC", "Microsoft JhengHei", sans-serif;
+            display: flex;
+            flex-direction: column;
+            background-color: #121212;
+            color: #e0e0e0;
+            overflow: hidden;
+        }
+
+        /* 頂部導覽列樣式 */
+        .navbar {
+            background-color: #1a1a1a;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            height: 48px;
+            box-sizing: border-box;
+            z-index: 1000;
+        }
+        .navbar-brand {
+            font-size: 18px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        .navbar-nav {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        .nav-link {
+            color: #bbb;
+            text-decoration: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .nav-link.active, .nav-link:hover {
+            color: white;
+            background-color: #007bff;
+        }
+
+        /* 網站資源下拉選單 */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: #2a2a2a;
+            min-width: 180px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+            border-radius: 4px;
+            z-index: 1001;
+            overflow: hidden;
+        }
+        .dropdown-content a {
+            color: #ddd;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-size: 14px;
+            transition: background 0.2s ease;
+        }
+        .dropdown-content a:hover {
+            background-color: #007bff;
+            color: white;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* 核心版面配置：左 2/3 地圖，右 1/3 圖表 */
+        .workspace-container {
+            display: flex;
+            flex-grow: 1;
+            height: calc(100vh - 48px);
+            width: 100%;
+            overflow: hidden;
+        }
+
+        /* 地圖佔據左側 2/3 */
+        #map {
+            width: 66.66%;
+            height: 100%;
+            flex-shrink: 0;
+            z-index: 1;
+        }
+
+        /* 圖表看板佔據右側 1/3 */
+        .side-chart-panel {
+            width: 33.34%;
+            height: 100%;
+            background-color: #1a1a1a;
+            border-left: 1px solid #333;
+            box-sizing: border-box;
+            padding: 15px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .chart-box {
+            background-color: #222;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 12px;
+            flex-grow: 1;
+            min-height: 260px;
+            display: flex;
+            flex-direction: column;
+        }
+        .chart-title {
+            font-size: 14px;
+            font-weight: bold;
+            color: #888; 
+            margin-bottom: 8px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 4px;
+            transition: color 0.3s ease;
+        }
+        .chart-canvas-wrapper {
+            flex-grow: 1;
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Leaflet 右上角客製化日期選單樣式 */
+        .map-date-selector {
+            background: #222;
+            color: white;
+            padding: 6px 12px;
+            border: 2px solid #007bff; /* 讓框線變藍色，強烈提醒使用者這裡要點擊 */
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 14px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            cursor: pointer;
+            outline: none;
+        }
+        .map-date-selector option {
+            background: #222;
+            color: white;
+        }
+
+        /* 客製化測站 Popup 樣式 */
+        .custom-popup .leaflet-popup-content-wrapper {
+            background: #222;
+            color: #fff;
+            font-size: 14px;
+            border-radius: 8px;
+            padding: 5px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+        .custom-popup .leaflet-popup-tip {
+            background: #222;
+        }
+        .popup-title {
+            font-size: 15px;
+            margin: 0 0 6px 0;
+            border-bottom: 1px solid #444;
+            padding-bottom: 4px;
+            font-weight: bold;
+        }
+        .popup-info {
+            margin: 3px 0;
+            text-align: left;
+            font-family: monospace;
+            font-size: 12px;
+            color: #ccc;
+        }
+        .popup-click-tip {
+            margin-top: 6px;
+            font-size: 11px;
+            color: #ffa500; /* 未選日期前用橘色警告 */
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="navbar-brand">⛈️ 北台灣午後對流監測系統</div>
+        <div class="navbar-nav">
+            <a href="index.html" class="nav-link active">📍 觀測站地圖</a>
+            <a href="cases.html" class="nav-link">📂 歷史個案庫</a>
+            <div class="dropdown">
+                <span class="nav-link">🌐 網站資源 ▾</span>
+                <div class="dropdown-content">
+                    <a href="https://codis.cwa.gov.tw/StationData" target="_blank">🏛️ 氣象署 CODIS</a>
+                    <a href="http://140.137.32.27/www/catalog/" target="_blank">🎓 大氣水文資料庫</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="workspace-container">
+        <div id="map"></div>
+
+        <div class="side-chart-panel">
+            <div class="chart-box">
+                <div class="chart-title" id="title-chart-rain">🌡️ ⛈️ 溫雨時序對照圖 (請先在右上角選擇日期)</div>
+                <div class="chart-canvas-wrapper">
+                    <canvas id="canvas-rain-temp"></canvas>
+                </div>
+            </div>
+            
+            <div class="chart-box">
+                <div class="chart-title" id="title-chart-wind">🍃 🧭 風場時序對照圖 (請先在右上角選擇日期)</div>
+                <div class="chart-canvas-wrapper">
+                    <canvas id="canvas-wind"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <script>
+        // ========================================================
+        // 1. 全域變數與 Chart.js 核心「NO DATA」浮水印插件
+        // ========================================================
+        let rawHourlyData = [];  
+        let chartRainTempInstance = null;
+        let chartWindInstance = null;
+        let selectedStationId = "";
+        let selectedStationName = "";
+        let currentSelectedDate = ""; // 紀錄當前使用者到底選了哪一天
+
+        const noDataPlugin = {
+            id: 'noDataPlugin',
+            afterDraw: function(chart) {
+                const hasData = chart.data.datasets.some(dataset => dataset.data && dataset.data.length > 0);
+                if (!hasData) {
+                    const ctx = chart.ctx;
+                    const width = chart.width;
+                    const height = chart.height;
+                    chart.clear(); 
+                    ctx.save();
+                    ctx.textAlign = 'center';
+                    ctx.textBaseline = 'middle';
+                    ctx.font = 'bold 28px "Helvetica Neue", Arial, sans-serif';
+                    ctx.fillStyle = 'rgba(255, 255, 255, 0.18)'; 
+                    ctx.fillText('NO DATA', width / 2, height / 2);
+                    ctx.restore();
+                }
+            }
+        };
+
+        Chart.register(noDataPlugin);
+
+        // 2. 初始化 Leaflet 地圖
+        const map = L.map('map').setView([25.03, 121.35], 10);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+
+        // ========================================================
+        // 3. 建立地圖右上角動態日期選單 (預設請選擇個案日期)
+        // ========================================================
+        const dateControl = L.control({ position: 'topright' });
+        dateControl.onAdd = function() {
+            const select = L.DomUtil.create('select', 'map-date-selector');
+            select.id = 'global-date-picker';
+            
+            // 🌟 【重大修改】：第一行強行插入「請選擇個案日期」預設提示標籤
+            const defaultOpt = document.createElement('option');
+            defaultOpt.value = "";
+            defaultOpt.text = "請選擇個案日期 ▾";
+            defaultOpt.selected = true;
+            defaultOpt.disabled = true;
+            defaultOpt.hidden = true;
+            select.appendChild(defaultOpt);
+            
+            const availableDates = [
+                { value: "20260615", text: "📅 2026-06-15" },
+                { value: "20260614", text: "📅 2026-06-14" },
+                { value: "20260612", text: "📅 2026-06-12" }
+            ];
+            
+            availableDates.forEach(d => {
+                const opt = document.createElement('option');
+                opt.value = d.value;
+                opt.text = d.text;
+                select.appendChild(opt);
+            });
+            
+            select.onchange = (e) => loadTargetDateData(e.target.value);
+            return select;
+        };
+        dateControl.addTo(map);
+
+        // 建立初始空圖表骨架（這時候會呈現 NO DATA 的黃藍色、紅藍色空框架）
+        initEmptyCharts();
+
+        // 🌟 【安全移除】：刪除原本最底部的 loadTargetDateData("20260615") 自動加載行，網頁徹底靜態化等待使用者點擊！
+
+        // ========================================================
+        // 4. 核心驅動：讀取指定日期的 stations_summary.json
+        // ========================================================
+        function loadTargetDateData(dateStr) {
+            currentSelectedDate = dateStr;
+            console.log(`📡 使用者手動點選，開始連線倉庫: stn_archives/${dateStr}/`);
+            
+            fetch(`./stn_archives/${dateStr}/stations_summary.json`)
+                .then(res => {
+                    if(!res.ok) throw new Error("找不到該日期的清洗 JSON 數據");
+                    return res.json();
+                })
+                .then(payload => {
+                    rawHourlyData = payload.hourly_wind_data || [];
+                    console.log(`✅ ${dateStr} 資料夾對接成功。`);
+                    
+                    // 刷新標題提示使用者此時「可以點測站了」
+                    if (!selectedStationId) {
+                        document.getElementById('title-chart-rain').innerText = `🌡️ ⛈️ 溫雨時序對照圖 (請點擊地圖測站)`;
+                        document.getElementById('title-chart-wind').innerText = `🍃 🧭 風場時序對照圖 (請點擊地圖測站)`;
+                    } else {
+                        // 如果之前有點過測站，切換日期時瞬間更新曲線
+                        updateCharts(selectedStationId, selectedStationName);
+                    }
+                })
+                .catch(err => {
+                    console.warn(`⚠️ 讀取數據失敗: ${err.message}`);
+                    rawHourlyData = [];
+                    if (selectedStationId) updateCharts(selectedStationId, selectedStationName);
+                });
+        }
+
+        // ========================================================
+        // 5. 讀取基礎 stations.json 並渲染 Leaflet 圓點
+        // ========================================================
+        fetch('stations.json')
+            .then(response => response.json())
+            .then(stations => {
+                stations.forEach(station => {
+                    const id = station.id;
+                    let stationNameExtended = station.name;
+                    let markerColor = "#6b86ff"; 
+                    let markerRadius = 5;       
+                    let markerOpacity = 0.6;     
+                    
+                    if (id.startsWith('46')) {
+                        markerColor = "#ff2a2a"; 
+                        stationNameExtended += " 有人站";
+                        markerRadius = 7.5;      
+                        markerOpacity = 0.9;
+                    } 
+                    else if (id.charAt(1) === '2') {
+                        markerColor = "#2aff2a"; 
+                        stationNameExtended += " 農業站";
+                        markerRadius = 6.5;
+                        markerOpacity = 0.85;
+                    }
+                    else if (id.startsWith('C0')) {
+                        markerColor = "#a0522d"; 
+                        stationNameExtended += " 自動站";
+                        markerRadius = 6.5;
+                        markerOpacity = 0.85;
+                    } 
+                    else if (id.startsWith('C1')) {
+                        markerColor = "#ff8c00"; 
+                        stationNameExtended += " 雨量站";
+                        markerRadius = 6.5;
+                        markerOpacity = 0.85;
+                    }
+
+                    // 動態更新 Popup 提示文字
+                    const getPopupContent = () => `
+                        <div class="custom-popup-body" style="min-width: 170px; text-align: center;">
+                            <div class="popup-title" style="color: ${markerColor};">${stationNameExtended}</div>
+                            <div class="popup-info"><b>編號：</b>${station.id}</div>
+                            <div class="popup-info"><b>緯度：</b>${station.lat.toFixed(4)}°N</div>
+                            <div class="popup-info"><b>經度：</b>${station.lon.toFixed(4)}°E</div>
+                            <div class="popup-click-tip">${currentSelectedDate ? '📊 點擊圓點即時加載時序圖表' : '⚠️ 請先在右上方選擇日期！'}</div>
+                        </div>
+                    `;
+
+                    const marker = L.circleMarker([station.lat, station.lon], {
+                        radius: markerRadius, 
+                        fillColor: markerColor,
+                        color: "#ffffff", 
+                        weight: markerRadius <= 5 ? 0.8 : 1.5, 
+                        opacity: markerOpacity,
+                        fillOpacity: markerOpacity
+                    })
+                    .addTo(map);
+
+                    // 點選地圖圓點時觸發 Popup
+                    marker.bindPopup(() => getPopupContent(), { className: 'custom-popup' });
+
+                    // 點擊事件：只有在日期被選定的情況下才執行圖表點火，否則彈出阻斷警告
+                    marker.on('click', () => {
+                        if (!currentSelectedDate) {
+                            alert("請先在右上角藍色選單中『選擇個案日期』，才能加載觀測數據！");
+                            return;
+                        }
+                        updateCharts(station.id, station.name);
+                    });
+                });
+            })
+            .catch(error => console.error('讀取 stations.json 失敗:', error));
+
+        // ========================================================
+        // 6. 建立完全空白的圖表初始骨架
+        // ========================================================
+        function initEmptyCharts() {
+            const ctxRainTemp = document.getElementById('canvas-rain-temp').getContext('2d');
+            const ctxWind = document.getElementById('canvas-wind').getContext('2d');
+            const defaultLabels = ["10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00"];
+
+            chartRainTempInstance = new Chart(ctxRainTemp, {
+                type: 'bar',
+                data: { 
+                    labels: defaultLabels, 
+                    datasets: [ 
+                        { label: '降雨量 (mm)', data: [], backgroundColor: 'rgba(0, 123, 255, 0.4)', borderColor: '#007bff' }, 
+                        { label: '氣溫 (°C)', data: [], type: 'line', borderColor: '#ff4d4d', backgroundColor: '#ff4d4d' } 
+                    ] 
+                },
+                options: { 
+                    responsive: true, 
+                    maintainAspectRatio: false, 
+                    plugins: { legend: { labels: { color: '#ccc', font: { size: 11 } } } },
+                    scales: { y_temp: { type: 'linear', position: 'left', min: 20, max: 38 }, y_rain: { type: 'linear', position: 'right', min: 0, max: 20 } } 
+                }
+            });
+
+            chartWindInstance = new Chart(ctxWind, {
+                type: 'line',
+                data: { 
+                    labels: defaultLabels, 
+                    datasets: [ 
+                        { label: '風速 (m/s)', data: [], borderColor: '#ffeb3b', backgroundColor: '#ffeb3b' }, 
+                        { label: '風向 (°)', data: [], showLine: false, borderColor: '#29b6f6', backgroundColor: '#0d47a1' } 
+                    ] 
+                },
+                options: { 
+                    responsive: true, 
+                    maintainAspectRatio: false, 
+                    plugins: { legend: { labels: { color: '#ccc', font: { size: 11 } } } },
+                    scales: { y_speed: { type: 'linear', position: 'left', min: 0, max: 8 }, y_dir: { type: 'linear', position: 'right', min: 0, max: 360 } } 
+                }
+            });
+        }
+
+        // ========================================================
+        // 7. 🧠 數據刷新驅動器
+        // ========================================================
+        function updateCharts(stationId, stationName) {
+            selectedStationId = stationId;
+            selectedStationName = stationName;
+
+            const stationRecords = rawHourlyData.filter(r => r.StationId === stationId);
+            stationRecords.sort((a, b) => a.Hour.localeCompare(b.Hour));
+
+            const labels_X = stationRecords.map(r => r.Hour);
+            const data_Temp = stationRecords.map(r => r.Temp);
+            const data_Rain = stationRecords.map(r => r.Rain);
+            const data_WindSpeed = stationRecords.map(r => r.WindSpeed);
+            const data_WindDir = stationRecords.map(r => r.WindDir);
+
+            const titleRain = document.getElementById('title-chart-rain');
+            const titleWind = document.getElementById('title-chart-wind');
+            titleRain.innerText = `🌡️ ⛈️ 溫雨對照曲線 - ${stationName} (${stationId})`;
+            titleRain.style.color = "#0084ff";
+            titleWind.innerText = `🍃 🧭 風場時序對照 - ${stationName} (${stationId})`;
+            titleWind.style.color = "#0084ff";
+
+            if (chartRainTempInstance) chartRainTempInstance.destroy();
+            chartRainTempInstance = new Chart(document.getElementById('canvas-rain-temp').getContext('2d'), {
+                type: 'bar',
+                data: {
+                    labels: labels_X.length > 0 ? labels_X : ["10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00"],
+                    datasets: [
+                        { label: '降雨量 (mm)', data: data_Rain, backgroundColor: 'rgba(0, 123, 255, 0.65)', borderColor: '#007bff', borderWidth: 1, yAxisID: 'y_rain', barPercentage: 0.5 },
+                        { label: '氣溫 (°C)', data: data_Temp, type: 'line', borderColor: '#ff4d4d', backgroundColor: '#ff4d4d', borderWidth: 2.5, pointRadius: 3, tension: 0.2, yAxisID: 'y_temp' }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { labels: { color: '#ccc', font: { size: 11 } } } },
+                    scales: {
+                        x: { grid: { color: '#2a2a2a' }, ticks: { color: '#aaa' } },
+                        y_temp: { type: 'linear', position: 'left', title: { display: true, text: '氣溫 (°C)', color: '#ff4d4d' }, grid: { color: '#2a2a2a' }, ticks: { color: '#aaa' }, suggestedMin: 20, suggestedMax: 38 },
+                        y_rain: { type: 'linear', position: 'right', title: { display: true, text: '時雨量 (mm)', color: '#007bff' }, grid: { drawOnChartArea: false }, ticks: { color: '#aaa' }, min: 0, suggestedMax: 20 }
+                    }
+                }
+            });
+
+            if (chartWindInstance) chartWindInstance.destroy();
+            chartWindInstance = new Chart(document.getElementById('canvas-wind').getContext('2d'), {
+                type: 'line',
+                data: {
+                    labels: labels_X.length > 0 ? labels_X : ["10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00"],
+                    datasets: [
+                        { label: '風速 (m/s)', data: data_WindSpeed, borderColor: '#ffeb3b', backgroundColor: '#ffeb3b', borderWidth: 2.5, pointRadius: 3, tension: 0.1, yAxisID: 'y_speed' },
+                        { label: '風向 (°)', data: data_WindDir, showLine: false, borderColor: '#29b6f6', backgroundColor: '#0d47a1', pointRadius: 5, yAxisID: 'y_dir' }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { labels: { color: '#ccc', font: { size: 11 } } } },
+                    scales: {
+                        x: { grid: { color: '#2a2a2a' }, ticks: { color: '#aaa' } },
+                        y_speed: { type: 'linear', position: 'left', title: { display: true, text: '風速 (m/s)', color: '#ffeb3b' }, grid: { color: '#2a2a2a' }, ticks: { color: '#aaa' }, min: 0, suggestedMax: 8 },
+                        y_dir: { type: 'linear', position: 'right', title: { display: true, text: '風向角度 (°)', color: '#29b6f6' }, grid: { drawOnChartArea: false }, ticks: { color: '#aaa', stepSize: 90 }, min: 0, max: 360 }
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>

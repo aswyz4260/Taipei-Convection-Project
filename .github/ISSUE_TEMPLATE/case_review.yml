@@ -1,0 +1,170 @@
+name: 📝 歷史個案科學審查表單
+description: 供研究員填寫午後對流個案的綜觀環境描述與關鍵影格勾選
+title: "[個案審查]-YYYY-MM-DD"
+labels: ["case-review"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### ⛈️ 北台灣午後對流個案科學審查系統
+        請研究員根據當日圖資，詳實填寫物理機制描述。未勾選的項目在最終成果中將會自動隱藏。
+
+  - type: dropdown
+    id: case-date
+    attributes:
+      label: 📅 選擇審查個案日期
+      description: 請選擇您正在審查的個案日期（若從系統點擊過來，請確認與標題日期一致）
+      options:
+        - "2026-06-15"
+        - "2026-06-14"
+        - "2026-06-12"
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: "### 1. 當天綜觀天氣場配置（有勾選才顯示描述）"
+
+  - type: checkboxes
+    id: synoptic-check
+    attributes:
+      label: 綜觀圖資確認
+      description: 請勾選欲納入報告的綜觀天氣圖
+      options:
+        - label: 地面天氣圖
+        - label: 850hPa分析圖
+        - label: 500hPa分析圖
+
+  - type: textarea
+    id: sfc-chart-desc
+    attributes:
+      label: 📝 地面天氣圖描述
+      placeholder: 如果有勾選地面圖，請在此輸入當天地面低壓、鋒面或海風前線的位置與影響...
+
+  - type: textarea
+    id: h850-chart-desc
+    attributes:
+      label: 📝 850hPa圖描述
+      placeholder: 如果有勾選850hPa，請在此輸入低空水氣輸送、西南氣流或輻合線特徵...
+
+  - type: textarea
+    id: h500-chart-desc
+    attributes:
+      label: 📝 500hPa圖描述
+      placeholder: 如果有勾選500hPa，請在此輸入高空槽線位置、太平洋高壓邊緣脊線特徵...
+
+  - type: markdown
+    attributes:
+      value: "### 2. 當天熱動力環境（有勾選才顯示描述）"
+
+  - type: checkboxes
+    id: thermodynamic-check
+    attributes:
+      label: 探空圖資確認
+      description: 請勾選欲納入報告的探空測站
+      options:
+        - label: 台北探空 (46692)
+        - label: 彭佳嶼探空 (46695)
+
+  - type: textarea
+    id: skewt-taipei-desc
+    attributes:
+      label: 📝 台北探空描述
+      placeholder: 請描述台北站 CAPE、CIN、K Index、Pwat 或逆溫層等熱力參數演變...
+
+  - type: textarea
+    id: skewt-pengjia-desc
+    attributes:
+      label: 📝 彭佳嶼探空描述
+      placeholder: 請描述彭佳嶼站（海上對流上游環境）的邊界層結構或風向垂直切變...
+
+  - type: markdown
+    attributes:
+      value: "### 3. 當天的降雨與風場逐時分布變化（09-15 每半小時，僅得一串文字）"
+
+  - type: checkboxes
+    id: rain-wind-times
+    attributes:
+      label: 🌧️ 勾選欲記錄/留存的雨量風向圖時間點
+      options:
+        - label: "09:00"
+        - label: "09:30"
+        - label: "10:00"
+        - label: "10:30"
+        - label: "11:00"
+        - label: "11:30"
+        - label: "12:00"
+        - label: "12:30"
+        - label: "13:00"
+        - label: "13:30"
+        - label: "14:00"
+        - label: "14:30"
+        - label: "15:00"
+
+  - type: textarea
+    id: rain-wind-summary
+    attributes:
+      label: 📝 降雨與風場逐時變化總結描述
+      placeholder: 請整體描述 09-15 時段降雨核心如何擴展、海風如何與局地環流輻合...
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: "### 4. 當天的溫度逐時分布變化（09-15 每小時，僅得一串文字）"
+
+  - type: checkboxes
+    id: temp-wind-times
+    attributes:
+      label: 🌡️ 勾選欲記錄/留存的溫度風向圖時間點
+      options:
+        - label: "09:00"
+        - label: "10:00"
+        - label: "11:00"
+        - label: "12:00"
+        - label: "13:00"
+        - label: "14:00"
+        - label: "15:00"
+
+  - type: textarea
+    id: temp-wind-summary
+    attributes:
+      label: 📝 溫度逐時變化總結描述
+      placeholder: 請描述雙北都市熱島、盆地高溫累積，以及降雨發生後的局地冷池（Cold Pool）降溫...
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: "### 5. 對流發展過程與降雨時空分布影響（10-18 每10分鐘，僅得一串文字）"
+
+  - type: checkboxes
+    id: radar-lgt-times
+    attributes:
+      label: 📡 勾選欲記錄/留存的雷達與落雷關鍵時間點 (可複選)
+      options:
+        - label: "10:00"
+        - label: "10:30"
+        - label: "11:00"
+        - label: "11:30"
+        - label: "12:00"
+        - label: "12:30"
+        - label: "13:00"
+        - label: "13:30"
+        - label: "14:00"
+        - label: "14:30"
+        - label: "15:00"
+        - label: "15:30"
+        - label: "16:00"
+        - label: "16:30"
+        - label: "17:00"
+        - label: "17:30"
+        - label: "18:00"
+
+  - type: textarea
+    id: radar-lgt-summary
+    attributes:
+      label: 📝 雷達回波與閃電落雷演變總結描述
+      placeholder: 請描述對流單體最初在哪個山區觸發、閃電頻率爆發階段、以及隨後向平原傳播的生命史...
+    validations:
+      required: true
