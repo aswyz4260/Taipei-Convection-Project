@@ -78,7 +78,7 @@ def parse_github_issue():
             result["radar_lgt_evolution"]["times"] = times
 
     # 🌟 寫入對應日期的 sfc_archives 資料夾中 (例如: ./sfc_archives/20260615/review_summary.json)
-    target_dir = f"./sfc_archives/{date_str}"
+    target_dir = f"./stn_archives/{date_str}"
     os.makedirs(target_dir, exist_ok=True)
     
     with open(f"{target_dir}/review_summary.json", "w", encoding="utf-8") as f:

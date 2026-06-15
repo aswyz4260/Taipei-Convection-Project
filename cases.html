@@ -784,7 +784,7 @@
         function fetchReviewSummary(dateStr, cObj) {
             const formBody = document.getElementById('form-content-body');
             
-            fetch(`./sfc_archives/${dateStr}/review_summary.json`)
+            fetch(`./stn_archives/${dateStr}/review_summary.json`)
                 .then(res => {
                     if (!res.ok) throw new Error("無真報告 JSON");
                     return res.json();
