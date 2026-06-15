@@ -1,5 +1,5 @@
-name: 📝 歷史個案科學審查表單
-description: 供研究員填寫午後對流個案的綜觀環境描述與關鍵影格勾選
+name: 📝 個案報告人工紀錄表單
+description: 供研究員填寫午後對流個案的綜觀環境描述與關鍵圖資勾選
 title: "[個案審查]-YYYY-MM-DD"
 labels: ["case-review"]
 body:
@@ -7,19 +7,16 @@ body:
     attributes:
       value: |
         ### ⛈️ 北台灣午後對流個案科學審查系統
-        請研究員根據當日圖資，詳實填寫物理機制描述。未勾選的項目在最終成果中將會自動隱藏。
+        請研究員根據當日圖資，詳細填寫物理機制描述。未勾選的項目在最終成果中將會自動隱藏。
 
-  - type: dropdown
-    id: case-date
-    attributes:
-      label: 📅 選擇審查個案日期
-      description: 請選擇您正在審查的個案日期（若從系統點擊過來，請確認與標題日期一致）
-      options:
-        - "2026-06-15"
-        - "2026-06-14"
-        - "2026-06-12"
-    validations:
-      required: true
+  - type: input
+      id: case-date
+      attributes:
+        label: 📅 輸入審查個案日期 (格式：YYYY-MM-DD)
+        description: 請輸入您正在審查的個案日期（例如：2026-06-15）。請務必與 Issue 標題中的日期完全一致，否則雲端解析器會找不到對應資料夾！
+        placeholder: "yyyy-mm-dd"
+      validations:
+        required: true
 
   - type: markdown
     attributes:
@@ -76,11 +73,11 @@ body:
     id: skewt-pengjia-desc
     attributes:
       label: 📝 彭佳嶼探空描述
-      placeholder: 請描述彭佳嶼站（海上對流上游環境）的邊界層結構或風向垂直切變...
+      placeholder: 請描述彭佳嶼站（海上對流上游環境）或藉以補充說明大環境的熱力結構...
 
   - type: markdown
     attributes:
-      value: "### 3. 當天的降雨與風場逐時分布變化（09-15 每半小時，僅得一串文字）"
+      value: "### 3. 當天的降雨與風場逐時分布變化（09-15 每半小時一張圖）"
 
   - type: dropdown
     id: rain-wind-times
@@ -106,13 +103,13 @@ body:
     id: rain-wind-summary
     attributes:
       label: 📝 降雨與風場逐時變化總結描述
-      placeholder: 請整體描述 09-15 時段降雨核心如何擴展、海風如何與局地環流輻合...
+      placeholder: 請描述 09-15 時段降雨核心如何擴展、海風如何與局地環流輻合...
     validations:
       required: true
 
   - type: markdown
     attributes:
-      value: "### 4. 當天的溫度逐時分布變化（09-15 每小時，僅得一串文字）"
+      value: "### 4. 當天的溫度逐時分布變化（09-15 每小時一張圖）"
 
   - type: dropdown
     id: temp-wind-times
@@ -132,13 +129,13 @@ body:
     id: temp-wind-summary
     attributes:
       label: 📝 溫度逐時變化總結描述
-      placeholder: 請描述雙北都市熱島、盆地高溫累積，以及降雨發生後的局地冷池（Cold Pool）降溫...
+      placeholder: 請盡量描述都市熱島、盆地高溫累積，以及降雨發生後的局地冷池（Cold Pool）降溫...
     validations:
       required: true
 
   - type: markdown
     attributes:
-      value: "### 5. 對流發展過程與降雨時空分布影響（10-18 🌟 精準每 10 分鐘，僅得一串文字）"
+      value: "### 5. 對流發展過程與降雨時空分布影響（10-18 每 10 分鐘一張圖）"
 
   - type: dropdown
     id: radar-lgt-times
@@ -200,6 +197,6 @@ body:
     id: radar-lgt-summary
     attributes:
       label: 📝 雷達回波與閃電落雷演變總結描述
-      placeholder: 請描述對流單體最初在哪個山區觸發、閃電頻率爆發階段、以及隨後向平原傳播的生命史...
+      placeholder: 請描述對流胞最初在哪裡觸發、閃電頻率爆發階段，以及隨後的發展、移動...
     validations:
       required: true

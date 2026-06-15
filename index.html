@@ -285,7 +285,6 @@
             const select = L.DomUtil.create('select', 'map-date-selector');
             select.id = 'global-date-picker';
             
-            // 🌟 【重大修改】：第一行強行插入「請選擇個案日期」預設提示標籤
             const defaultOpt = document.createElement('option');
             defaultOpt.value = "";
             defaultOpt.text = "請選擇個案日期 ▾";
@@ -312,10 +311,8 @@
         };
         dateControl.addTo(map);
 
-        // 建立初始空圖表骨架（這時候會呈現 NO DATA 的黃藍色、紅藍色空框架）
+        // 建立初始空圖表骨架
         initEmptyCharts();
-
-        // 🌟 【安全移除】：刪除原本最底部的 loadTargetDateData("20260615") 自動加載行，網頁徹底靜態化等待使用者點擊！
 
         // ========================================================
         // 4. 核心驅動：讀取指定日期的 stations_summary.json
