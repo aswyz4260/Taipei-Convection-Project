@@ -768,8 +768,8 @@
                 timeValSfcHour.innerText = `${finalTempTimeStr.substring(0,2)}:00`;
             }
             
-            sfcRainViewer.src = `./${sfcFolder}/rain_wind_north_${dateStr}_${finalRainTimeStr}.png`;
-            sfcTempViewer.src = `./${sfcFolder}/temp_wind_north_${dateStr}_${finalTempTimeStr}.png`;
+            sfcRainViewer.src = `./${sfcFolder}/rain_wind_north_${dateStr}_${finalRainTimeStr}.jpg`;
+            sfcTempViewer.src = `./${sfcFolder}/temp_wind_north_${dateStr}_${finalTempTimeStr}.jpg`;
         }
 
         timeRangeSfcHour.oninput = () => driveSfcEngine(true);

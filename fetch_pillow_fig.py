@@ -106,15 +106,19 @@ while dt_09_15 <= end_09_15:
     
     if download_and_crop(url_c1, box_c1, path_c1, "時雨量+風", "PNG"):
         print(f"  [✓] 雨量風場 {hh_mm_log} ➔ {os.path.basename(path_c1)}")
-        
-    # ➔ c-2. 溫度分布+風
-    url_c2 = f"http://140.137.32.27/www/cwbgtp/{Y}/{M}/{D}/{DATE_STR}_{hhmm}.cwbtemp.GTPw.jpg"
-    path_c2 = os.path.join(SFC_DIR, f"temp_wind_north_{DATE_STR}_{hhmm}.jpg")
-    box_c2 = (420, 0, 1500, 600)
     
-    if download_and_crop(url_c2, box_c2, path_c2, "溫度+風", "PNG"):
-        print(f"  [✓] 溫度風場 {hh_mm_log} ➔ {os.path.basename(path_c2)}")
+    # 溫度只有整點
+    if hhmm.endswith("00"):
+        # ➔ c-2. 溫度分布+風
+        url_c2 = f"http://140.137.32.27/www/cwbgtp/{Y}/{M}/{D}/{DATE_STR}_{hhmm}.cwbtemp.GTPw.jpg"
+        path_c2 = os.path.join(SFC_DIR, f"temp_wind_north_{DATE_STR}_{hhmm}.jpg")
+        box_c2 = (420, 0, 1500, 600)
         
+        if download_and_crop(url_c2, box_c2, path_c2, "溫度+風", "PNG"):
+            print(f"  [✓] 溫度風場 {hh_mm_log} ➔ {os.path.basename(path_c2)}")
+    else: 
+        print(f"  [⏭️] 溫度風場 {hh_mm_log} ➔ 非整點跳過")
+            
     dt_09_15 += timedelta(minutes=30)
 
 print("=" * 80)
