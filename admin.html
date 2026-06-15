@@ -35,6 +35,12 @@
             margin-right: 32px;
             font-size: 16px;
             letter-spacing: 0.5px;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .navbar-brand:hover {
+            color: #2563eb;
         }
 
         .nav-links {
@@ -61,7 +67,6 @@
             color: #0f172a;
         }
 
-        /* 當前頁面下底線提示 */
         .nav-link.active {
             color: #2563eb;
             font-weight: 600;
@@ -78,7 +83,6 @@
             border-radius: 3px 3px 0 0;
         }
 
-        /* ▾ 下拉式選單核心重構 */
         .dropdown {
             position: relative;
             height: 100%;
@@ -117,14 +121,12 @@
             color: #0f172a;
         }
 
-        /* 觸發非延遲顯示效果 */
         .dropdown:hover .dropdown-content {
             opacity: 1;
             visibility: visible;
             transform: translateX(-50%) translateY(0);
         }
 
-        /* 📋 控制面板與卡片外觀優化 */
         .card {
             background: #ffffff;
             padding: 32px;
@@ -183,11 +185,6 @@
             border-radius: 8px;
             border: 1px solid #e2e8f0;
             margin-bottom: 12px;
-            transition: border-color 0.15s ease;
-        }
-
-        .radio-item:hover {
-            border-color: #cbd5e1;
         }
 
         .help-block {
@@ -227,6 +224,39 @@
             display: none;
             font-size: 14px;
             line-height: 1.6;
+        }
+
+        /* 📡 雲端監測面板樣式調整 */
+        .monitor-panel {
+            margin-top: 20px;
+            padding: 24px;
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            display: none;
+            text-align: center; /* 讓燈號置中顯眼 */
+        }
+        
+        .status-badge {
+            display: inline-block;
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        
+        /* 🚨 紅綠燈號誌燈樣式 */
+        .badge-queued { background-color: #f1f5f9; color: #64748b; border: 1px solid #cbd5e1; }
+        .badge-in-progress { background-color: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; animation: pulse 1.5s infinite; }
+        .badge-success { background-color: #dcfce7; color: #16a34a; border: 1px solid #bbf7d0; } /* 🟢 成功綠燈 */
+        .badge-trigger-failed { background-color: #fef3c7; color: #d97706; border: 1px solid #fde68a; } /* 🟡 未達標黃燈 */
+        .badge-failure { background-color: #fee2e2; color: #dc2626; border: 1px solid #fca5a5; } /* 🔴 錯誤紅燈 */
+
+        @keyframes pulse {
+            0% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(0.98); }
+            100% { opacity: 1; transform: scale(1); }
         }
 
         .success { background-color: #fef2f2; color: #991b1b; border: 1px solid #fca5a5; }
@@ -281,6 +311,11 @@
 
         <button id="submitBtn" onclick="triggerWorkflow()">發送指令至雲端產線</button>
         <div id="statusMessage"></div>
+
+        <div id="monitorPanel" class="monitor-panel">
+            <div style="margin-bottom: 12px; font-size: 14px; font-weight: 600; color: #475569;">🛰️ 雲端產線執行狀態</div>
+            <span id="runStatusBadge" class="status-badge">排隊中...</span>
+        </div>
     </div>
 
     <div class="card" style="border-style: dashed; background-color: #fafafa;">
@@ -295,7 +330,9 @@
     <script>
         const REPO_OWNER = "aswyz4260"; 
         const REPO_NAME = "Taipei-Convection-Project";
-        const WORKFLOW_ID = "daily_data_factory.yml"; 
+        const WORKFLOW_ID = "daily_data.yml"; 
+
+        let pollingInterval = null; 
 
         window.onload = function() {
             const savedToken = localStorage.getItem("gh_token");
@@ -320,6 +357,7 @@
             const mode = document.querySelector('input[name="runMode"]:checked').value;
             const msgDiv = document.getElementById("statusMessage");
             const btn = document.getElementById("submitBtn");
+            const monitor = document.getElementById("monitorPanel");
 
             if (!token) {
                 alert("請先在下方填入 GitHub 個人存取權杖 (Token) 才能進行操作！");
@@ -330,10 +368,13 @@
                 return;
             }
 
+            if (pollingInterval) clearInterval(pollingInterval);
+
             btn.disabled = true;
             msgDiv.style.display = "block";
             msgDiv.className = "info";
             msgDiv.innerText = "正在連線至 GitHub 雲端伺服器並發送指令...";
+            monitor.style.display = "none"; 
 
             const url = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/actions/workflows/${WORKFLOW_ID}/dispatches`;
             
@@ -359,18 +400,86 @@
                     msgDiv.style.backgroundColor = "#f0fdf4";
                     msgDiv.style.color = "#166534";
                     msgDiv.style.border = "1px solid #bbf7d0";
-                    msgDiv.innerHTML = `<strong>傳送成功！</strong><br>雲端產線已成功被喚醒並開始處理個案 [${date}]。<br>系統處理約需 2~3 分鐘，稍後請直接切換回「個案日誌」重整網頁查看成果。`;
+                    msgDiv.innerHTML = `<strong>發送成功！</strong> 雲端已接受指令，開始追蹤進度。`;
+                    
+                    monitor.style.display = "block";
+                    startStatusPolling(token, mode); // 🌟 將當前選擇的模式傳入追蹤核心
                 } else {
                     const errData = await response.json().catch(() => ({}));
                     msgDiv.className = "success"; 
-                    msgDiv.innerText = `發送失敗 (代碼: ${response.status})：${errData.message || '請檢查您的 Token 是否具備專案 Actions 權限或專案路徑是否正確。'}`;
+                    msgDiv.innerText = `發送失敗 (代碼: ${response.status})：${errData.message || '請檢查您的 Token 權限或專案路徑設定。'}`;
+                    btn.disabled = false;
                 }
             } catch (error) {
                 msgDiv.className = "success";
                 msgDiv.innerText = `網路連線異常：${error.message}`;
-            } finally {
                 btn.disabled = false;
             }
+        }
+
+        // 🌟 智慧紅綠燈追蹤核心
+        function startStatusPolling(token, currentMode) {
+            const badge = document.getElementById("runStatusBadge");
+            const btn = document.getElementById("submitBtn");
+
+            const url = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/actions/runs?workflow_id=${WORKFLOW_ID}&per_page=1`;
+
+            async function checkStatus() {
+                try {
+                    const res = await fetch(url, {
+                        headers: {
+                            "Authorization": `Bearer ${token}`,
+                            "Accept": "application/vnd.github+json"
+                        }
+                    });
+                    if (!res.ok) return;
+                    
+                    const data = await res.json();
+                    if (!data.workflow_runs || data.workflow_runs.length === 0) return;
+
+                    const latestRun = data.workflow_runs[0];
+                    const status = latestRun.status;       
+                    const conclusion = latestRun.conclusion; 
+
+                    // 1. 執行中狀態：只顯示乾淨的呼吸動畫
+                    if (status === "queued") {
+                        badge.innerText = "⏳ 雲端排隊中...";
+                        badge.className = "status-badge badge-queued";
+                    } else if (status === "in_progress") {
+                        badge.innerText = "⚙️ 工作執行中...";
+                        badge.className = "status-badge badge-in-progress";
+                    } 
+                    // 2. 執行完畢狀態：依據模式與 Conclusion 進行智慧分流判定
+                    else if (status === "completed") {
+                        clearInterval(pollingInterval); 
+                        btn.disabled = false; 
+
+                        if (conclusion === "success") {
+                            // 🟢 成功綠燈：不論模式 A 或 B，只要完全成功就亮綠燈
+                            badge.innerText = "🟢 處理成功 / 圖資已發布";
+                            badge.className = "status-badge badge-success";
+                        } else if (conclusion === "failure") {
+                            if (currentMode === "run_triggered") {
+                                // 🟡 未達標黃燈：模式 A 失敗代表 triggered.py 科學指標未過
+                                badge.innerText = "🟡 未達標準 / 取消下載封存";
+                                badge.className = "status-badge badge-trigger-failed";
+                            } else {
+                                // 🔴 錯誤紅燈：模式 B 失敗代表下載程式或網路出錯
+                                badge.innerText = "🔴 程式執行錯誤 / 請檢查 Log";
+                                badge.className = "status-badge badge-failure";
+                            }
+                        } else {
+                            badge.innerText = `⏹️ 任務終止 (${conclusion})`;
+                            badge.className = "status-badge";
+                        }
+                    }
+                } catch (e) {
+                    console.error("狀態發生異常:", e);
+                }
+            }
+
+            checkStatus();
+            pollingInterval = setInterval(checkStatus, 5000);
         }
     </script>
 </body>
