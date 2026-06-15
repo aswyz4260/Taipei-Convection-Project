@@ -1,0 +1,72 @@
+name: 🏭 雙軌午後對流個案圖資自動生產工廠
+
+on:
+  # ------------------------------------------------------
+  # ⚙️ 任務 1：定時 Trigger (每天台灣時間 18:30 自動執行)
+  # ------------------------------------------------------
+  schedule:
+    # GitHub Actions 使用 UTC 時間，台灣時間 18:30 等於 UTC 10:30
+    - cron: '30 10 * * *'
+
+  # ------------------------------------------------------
+  # 🕹️ 任務 3：手動 Trigger (點擊網頁按鈕強補任意日期)
+  # ------------------------------------------------------
+  workflow_dispatch:
+    inputs:
+      target_date:
+        description: '請輸入要強補抓取的個案日期 (格式必須為 8 碼，例如: 20260614)'
+        required: true
+        default: '20260615'
+
+jobs:
+  build-and-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 1. 複製雲端專案程式碼
+        uses: actions/checkout@v4
+
+      - name: 🐍 2. 安裝 Python 環境
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+          cache: 'pip' # 啟用快取，讓下次跑起來更快
+
+      - name: 📦 3. 安裝大氣數據與圖片處理必要套件
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests pandas numpy Pillow
+
+      - name: 📅 4. 智慧計算/接收目標日期參數
+        id: date-env
+        run: |
+          # 判斷如果是手動按鈕觸發，就吃輸入的參數；如果是定時跑，就自動計算昨天的日期
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "RUN_DATE=${{ github.event.inputs.target_date }}" >> $GITHUB_ENV
+          else
+            # 自動計算昨天 (因午後對流通常要傍晚或隔天抓取最完整，定時預設抓昨天)
+            echo "RUN_DATE=$(date -d 'yesterday' +'%Y%m%d')" >> $GITHUB_ENV
+          fi
+
+      - name: 📡 5. 啟動圖片工廠 (雷達/閃電/地面中尺度)
+        run: |
+          python fetch_pillow_fig.py ${{ env.RUN_DATE }}
+
+      - name: 📊 6. 啟動數據清洗工廠 (觀測站排行 JSON)
+        run: |
+          python fetch_and_rank.py ${{ env.RUN_DATE }}
+
+      - name: ☁️ 7. 啟動環境牆工廠 (綜觀天氣圖/熱力探空)
+        run: |
+          python fetch_cwa_fig.py ${{ env.RUN_DATE }}
+
+      - name: 🚀 8. 將今日所有收割圖資與數據自動 Commit 封存回倉庫
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "CWA-Data-Bot"
+          
+          # 檢查有沒有新圖資產生，有的話就全部 add 進來
+          git add radar_archives/ sfc_archives/ stn_archives/ cwaFig_archives/
+          
+          # 防止完全沒有新資料時 commit 報錯導致流程失敗
+          git commit -m "🏭 Factory: 自動化封存個案圖資成果 [Date: ${{ env.RUN_DATE }}]" || exit 0
+          git push
