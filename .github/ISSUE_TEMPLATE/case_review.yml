@@ -80,27 +80,12 @@ body:
 
   - type: markdown
     attributes:
-      value: "### 3. 當天的降雨與風場逐時分布變化（09-15 每半小時，僅得一串文字）"
-
-  - type: dropdown
-    id: rain-wind-times
-    attributes:
-      label: 🌧️ 選擇欲記錄/留存的雨量風向圖時間點 (可多選)
-      multiple: true
-      options:
-        - "09:00"
-        - "09:30"
-        - "10:00"
-        - "10:30"
-        - "11:00"
-        - "11:30"
-        - "12:00"
-        - "12:30"
-        - "13:00"
-        - "13:30"
-        - "14:00"
-        - "14:30"
-        - "15:00"
+      value: |
+        ### 3. 當天的降雨與風場逐時分布變化（09-15 每半小時）
+        **🌧️ 請在下方欲記錄/留存的時間點前，將 `[ ]` 手動修改為 `[X]` 進行打勾 (支援橫向並排)**
+        - [ ] 09:00  &nbsp;&nbsp;&nbsp;&nbsp;  - [ ] 09:30  &nbsp;&nbsp;&nbsp;&nbsp;  - [ ] 10:00  &nbsp;&nbsp;&nbsp;&nbsp;  - [ ] 10:30  &nbsp;&nbsp;&nbsp;&nbsp;  - [ ] 11:00  &nbsp;&nbsp;&nbsp;&nbsp;  - [ ] 11:30
+        - [ ] 12:00  &nbsp;&nbsp;&nbsp;&nbsp;  - [ ] 12:30  &nbsp;&nbsp;&nbsp;&nbsp;  - [ ] 13:00  &nbsp;&nbsp;&nbsp;&nbsp;  - [ ] 13:30  &nbsp;&nbsp;&nbsp;&nbsp;  - [ ] 14:00  &nbsp;&nbsp;&nbsp;&nbsp;  - [ ] 14:30
+        - [ ] 15:00
 
   - type: textarea
     id: rain-wind-summary
@@ -112,21 +97,11 @@ body:
 
   - type: markdown
     attributes:
-      value: "### 4. 當天的溫度逐時分布變化（09-15 每小時，僅得一串文字）"
-
-  - type: dropdown
-    id: temp-wind-times
-    attributes:
-      label: 🌡️ 選擇欲記錄/留存的溫度風向圖時間點 (可多選)
-      multiple: true
-      options:
-        - "09:00"
-        - "10:00"
-        - "11:00"
-        - "12:00"
-        - "13:00"
-        - "14:00"
-        - "15:00"
+      value: |
+        ### 4. 當天的溫度逐時分布變化（09-15 每小時）
+        **🌡️ 請在下方欲記錄/留存的時間點前，將 `[ ]` 手動修改為 `[X]` 進行打勾 (支援橫向並排)**
+        - [ ] 09:00  &nbsp;&nbsp;&nbsp;&nbsp;  - [ ] 10:00  &nbsp;&nbsp;&nbsp;&nbsp;  - [ ] 11:00  &nbsp;&nbsp;&nbsp;&nbsp;  - [ ] 12:00  &nbsp;&nbsp;&nbsp;&nbsp;  - [ ] 13:00  &nbsp;&nbsp;&nbsp;&nbsp;  - [ ] 14:00
+        - [ ] 15:00
 
   - type: textarea
     id: temp-wind-summary
@@ -138,63 +113,18 @@ body:
 
   - type: markdown
     attributes:
-      value: "### 5. 對流發展過程與降雨時空分布影響（10-18 🌟 精準每 10 分鐘，僅得一串文字）"
-
-  - type: dropdown
-    id: radar-lgt-times
-    attributes:
-      label: 📡 選擇欲記錄/留存的雷達與落雷關鍵時間點 (可多選)
-      multiple: true
-      options:
-        - "10:00"
-        - "10:10"
-        - "10:20"
-        - "10:30"
-        - "10:40"
-        - "10:50"
-        - "11:00"
-        - "11:10"
-        - "11:20"
-        - "11:30"
-        - "11:40"
-        - "11:50"
-        - "12:00"
-        - "12:10"
-        - "12:20"
-        - "12:30"
-        - "12:40"
-        - "12:50"
-        - "13:00"
-        - "13:10"
-        - "13:20"
-        - "13:30"
-        - "13:40"
-        - "13:50"
-        - "14:00"
-        - "14:10"
-        - "14:20"
-        - "14:30"
-        - "14:40"
-        - "14:50"
-        - "15:00"
-        - "15:10"
-        - "15:20"
-        - "15:30"
-        - "15:40"
-        - "15:50"
-        - "16:00"
-        - "16:10"
-        - "16:20"
-        - "16:30"
-        - "16:40"
-        - "16:50"
-        - "17:00"
-        - "17:10"
-        - "17:20"
-        - "17:30"
-        - "17:40"
-        - "17:50"
-        - "18:00"
+      value: |
+        ### 5. 對流發展過程與降雨時空分布影響（10-18 🌟 精準每 10 分鐘）
+        **📡 請在下方欲記錄/留存的時間點前，將 `[ ]` 手動修改為 `[X]` 進行打勾 (👑 每 6 個一行完美並排)**
+        - [ ] 10:00  &nbsp;&nbsp;&nbsp;&nbsp;  - [ ] 10:10  &nbsp;&nbsp;&nbsp;&nbsp;  - [ ] 10:20  &nbsp;&nbsp;&nbsp;&nbsp;  - [ ] 10:30  &nbsp;&nbsp;&nbsp;&nbsp;  - [ ] 10:40  &nbsp;&nbsp;&nbsp;&nbsp;  - [ ] 10:50
+        - [ ] 11:00  &nbsp;&nbsp;&nbsp;&nbsp;  - [ ] 11:10  &nbsp;&nbsp;&nbsp;&nbsp;  - [ ] 11:20  &nbsp;&nbsp;&nbsp;&nbsp;  - [ ] 11:30  &nbsp;&nbsp;&nbsp;&nbsp;  - [ ] 11:40  &nbsp;&nbsp;&nbsp;&nbsp;  - [ ] 11:50
+        - [ ] 12:00  &nbsp;&nbsp;&nbsp;&nbsp;  - [ ] 12:10  &nbsp;&nbsp;&nbsp;&nbsp;  - [ ] 12:20  &nbsp;&nbsp;&nbsp;&nbsp;  - [ ] 12:30  &nbsp;&nbsp;&nbsp;&nbsp;  - [ ] 12:40  &nbsp;&nbsp;&nbsp;&nbsp;  - [ ] 12:50
+        - [ ] 13:00  &nbsp;&nbsp;&nbsp;&nbsp;  - [ ] 13:10  &nbsp;&nbsp;&nbsp;&nbsp;  - [ ] 13:20  &nbsp;&nbsp;&nbsp;&nbsp;  - [ ] 13:30  &nbsp;&nbsp;&nbsp;&nbsp;  - [ ] 13:40  &nbsp;&nbsp;&nbsp;&nbsp;  - [ ] 13:50
+        - [ ] 14:00  &nbsp;&nbsp;&nbsp;&nbsp;  - [ ] 14:10  &nbsp;&nbsp;&nbsp;&nbsp;  - [ ] 14:20  &nbsp;&nbsp;&nbsp;&nbsp;  - [ ] 14:30  &nbsp;&nbsp;&nbsp;&nbsp;  - [ ] 14:40  &nbsp;&nbsp;&nbsp;&nbsp;  - [ ] 14:50
+        - [ ] 15:00  &nbsp;&nbsp;&nbsp;&nbsp;  - [ ] 15:10  &nbsp;&nbsp;&nbsp;&nbsp;  - [ ] 15:20  &nbsp;&nbsp;&nbsp;&nbsp;  - [ ] 15:30  &nbsp;&nbsp;&nbsp;&nbsp;  - [ ] 15:40  &nbsp;&nbsp;&nbsp;&nbsp;  - [ ] 15:50
+        - [ ] 16:00  &nbsp;&nbsp;&nbsp;&nbsp;  - [ ] 16:10  &nbsp;&nbsp;&nbsp;&nbsp;  - [ ] 16:20  &nbsp;&nbsp;&nbsp;&nbsp;  - [ ] 16:30  &nbsp;&nbsp;&nbsp;&nbsp;  - [ ] 16:40  &nbsp;&nbsp;&nbsp;&nbsp;  - [ ] 16:50
+        - [ ] 17:00  &nbsp;&nbsp;&nbsp;&nbsp;  - [ ] 17:10  &nbsp;&nbsp;&nbsp;&nbsp;  - [ ] 17:20  &nbsp;&nbsp;&nbsp;&nbsp;  - [ ] 17:30  &nbsp;&nbsp;&nbsp;&nbsp;  - [ ] 17:40  &nbsp;&nbsp;&nbsp;&nbsp;  - [ ] 17:50
+        - [ ] 18:00
 
   - type: textarea
     id: radar-lgt-summary
