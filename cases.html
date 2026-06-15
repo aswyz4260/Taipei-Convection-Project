@@ -395,6 +395,10 @@
         .lightbox-close:hover {
             color: #ff4d4d;
         }
+        .review-desc-box { background: #222; border-radius: 6px; padding: 15px; margin-bottom: 15px; border: 1px solid #333; }
+        .review-section-title { font-size: 16px; font-weight: bold; color: #fff; border-left: 4px solid #007bff; padding-left: 10px; margin-bottom: 10px; }
+        .review-text-field { color: #ccc; font-size: 14px; line-height: 1.6; white-space: pre-wrap; margin-bottom: 15px; }
+        .grid-6-col { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; margin-top: 10px; } /* 讓勾選的圖片每 6 個並排一行 */
     </style>
 </head>
 <body>
@@ -479,7 +483,7 @@
                 </div>
 
                 <div class="panel-box">
-                    <h3>c. 雙北氣象觀測數據排行 (Pandas 精準洗淨)</h3>
+                    <h3>c. 雙北氣象觀測數據排行</h3>
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
                         <div>
                             <h4 style="color:#ff4d4d;">🌧️ 當日總累積雨量 Top 5</h4>
@@ -499,7 +503,7 @@
                 </div>
 
                 <div class="panel-box">
-                    <h3>d. 大局觀綜觀環境牆 (00UTC / 08:00 LST)</h3>
+                    <h3>d. 綜觀環境 (00UTC / 08:00 LST)</h3>
                     <div class="grid-2-col">
                         <div class="synoptic-card">
                             <div class="synoptic-card-title">台北探空圖 (46692)</div>
@@ -529,10 +533,8 @@
             </div>
 
             <div id="view-form" class="view-section">
-                <div class="panel-box">
-                    <h3>📂 📂 實驗室人工審查物理分類標籤</h3>
-                    <p><b>對流觸發機制：</b> <span style="color:#0084ff; font-weight:bold;" id="form-label-display">未設定</span></p>
-                    <div id="review-notice"></div>
+                <div class="panel-box" id="form-content-body">
+                    <p style="color:#888; text-align:center;">🔄 數據載入中，或人工科學審查報告尚未產生...</p>
                 </div>
             </div>
         </div>
@@ -652,19 +654,22 @@
             timeRangeSfcRain.value = 10;
             driveSfcEngine(true); 
             
+            // 🌟 找到 selectCase 最底部的 if / else 換成這段
+            const formBody = document.getElementById('form-content-body');
+            formBody.innerHTML = `<p style="color:#888; text-align:center;">🔄 正嘗試倒灌該個案的科學審查報告...</p>`;
+
             if (c.reviewed) {
-                switchView('form');
-                document.getElementById('review-notice').innerHTML = `<p style="color:#2ecc71;">✓ 本個案經人工審查完畢，物理分類標籤已安全封存。</p>`;
+                switchView('form'); // 已登記個案預設亮「紀錄整理」頁籤
+                fetchReviewSummary(dateStr, c); // 👈 呼叫新引擎去抓真報告！
             } else {
-                switchView('auto');
-                // 智慧型動態表單網址：點擊後自動鎖定該個案日期
-                let repoUrl = "https://github.com/aswyz4260/Taipei-Convection-Project"; // ⚠️ 請更換成你實際的 GitHub 網址
+                switchView('auto'); // 未登記個案預設亮「自動圖資」頁籤
+                let repoUrl = "https://github.com/aswyz4260/Taipei-Convection-Project"; // ⚠️ 改成你實際的網址
                 let encodedTitle = encodeURIComponent(`[個案審查]-${c.date}`);
                 let githubIssueUrl = `${repoUrl}/issues/new?template=case_review.yml&title=${encodedTitle}`;
-
-                document.getElementById('review-notice').innerHTML = `
-                    <p style="color:#ff4d4d;">⚠️ 系統自動判定為顯著個案，但研究員尚未建立物理機制分類！</p>
-                    <a href="${githubIssueUrl}" target="_blank" style="display:inline-block; text-decoration:none; padding:8px 14px; background:#ff4d4d; color:white; border-radius:4px; font-weight:bold; font-size:14px;">前往 GitHub 建立標籤表單</a>
+                formBody.innerHTML = `
+                    <p style="color:#ff4d4d; font-weight:bold; font-size:16px;">⚠️ ⚠️ ⚠️ 系統提示：此個案尚未進行人工科學審查與分類！</p>
+                    <p style="color:#ccc;">「📝 紀錄後表單整理」區塊目前為空，需請研究員依序以下按鈕前往 GitHub 填寫 Issues 表單，機器人會在一分鐘內將報告倒灌回本頁面。</p>
+                    <a href="${githubIssueUrl}" target="_blank" style="display:inline-block; text-decoration:none; padding:10px 18px; background:#ff4d4d; color:white; border-radius:4px; font-weight:bold; font-size:14px; margin-top:15px;">前往 GitHub 建立標籤審查表單</a>
                 `;
             }
         }
@@ -761,6 +766,79 @@
                 })
                 .catch(err => { rainBody.innerHTML = `<tr><td colspan='3'>無此 JSON 資料</td></tr>`; tempBody.innerHTML = `<tr><td colspan='3'>無此 JSON 資料</td></tr>`; });
         }
+        // ========================================================
+        // 🌟 這是全新長出來的：科學審查報告自動倒灌與圖片矩陣拼裝引擎
+        // ========================================================
+        function fetchReviewSummary(dateStr, cObj) {
+            const formBody = document.getElementById('form-content-body');
+            
+            fetch(`./sfc_archives/${dateStr}/review_summary.json`)
+                .then(res => {
+                    if (!res.ok) throw new Error("無真報告 JSON");
+                    return res.json();
+                })
+                .then(r => {
+                    // 開始華麗的 HTML 動態拼裝，未填寫或未勾選的自動跳過（隱藏）
+                    let html = `
+                        <p style="color:#2ecc71; font-weight:bold; font-size:18px; margin-bottom:20px;">✓ 物理機制標籤已封存：<span style="color:#0084ff;">${cObj.label}</span></p>
+                        <h3>📂 科學審查報告倒灌成果</h3>
+                    `;
+
+                    // 1. 綜觀環流特徵
+                    if(r.synoptic_fields.sfc_chart || r.thermodynamics.taipei) {
+                        html += `<div class="review-desc-box"><div class="review-section-title">☁️ 08:00 LST 綜觀環流與熱動力環境</div>`;
+                        if(r.synoptic_fields.sfc_chart) html += `<p style="color:#aaa; font-weight:bold;">地面天氣場物理機制：</p><div class="review-text-field">${r.synoptic_fields.sfc_chart}</div>`;
+                        if(r.synoptic_fields.h850_chart) html += `<p style="color:#aaa; font-weight:bold;">850hPa流場特徵：</p><div class="review-text-field">${r.synoptic_fields.h850_chart}</div>`;
+                        if(r.thermodynamics.taipei) html += `<p style="color:#ff4d4d; font-weight:bold;">台北探空特徵描述：</p><div class="review-text-field">${r.thermodynamics.taipei}</div>`;
+                        html += `</div>`;
+                    }
+
+                    // 2. 降雨與流場 (半小時補幀影格庫)
+                    if(r.rain_wind_evolution.times.length > 0) {
+                        html += `<div class="review-desc-box"><div class="review-section-title">🌧️ 當日降雨與風場逐時分佈變遷</div>`;
+                        html += `<p style="color:#aaa; font-weight:bold;">物理過程總結：</p><div class="review-text-field">${r.rain_wind_evolution.summary}</div>`;
+                        html += `<p style="color:#00e5ff; font-size:13px; font-weight:bold;">關鍵時間點影格庫：</p><div class="grid-6-col">`;
+                        r.rain_wind_evolution.times.forEach(t => {
+                            let timeStr = t.replace(":", "");
+                            html += `<div class="synoptic-card" style="padding:6px;"><p style="margin:0 0 3px 0; font-size:12px; color:#fff;">${t}</p><img src="./sfc_archives/${dateStr}/rain_wind_${dateStr}_${timeStr}.png" class="synoptic-img" onclick="openLightbox(this.src)" style="border:1px solid #00e5ff;"></div>`;
+                        });
+                        html += `</div></div>`;
+                    }
+
+                    // 3. 局地溫度 (整點影格庫)
+                    if(r.temp_wind_evolution.times.length > 0) {
+                        html += `<div class="review-desc-box"><div class="review-section-title">🌡️ 當日溫度逐時分布變化</div>`;
+                        html += `<p style="color:#aaa; font-weight:bold;">熱島與冷池描述：</p><div class="review-text-field">${r.temp_wind_evolution.summary}</div>`;
+                        html += `<p style="color:#ffa500; font-size:13px; font-weight:bold;">關鍵整點影格庫：</p><div class="grid-6-col">`;
+                        r.temp_wind_evolution.times.forEach(t => {
+                            let timeStr = t.replace(":", "");
+                            html += `<div class="synoptic-card" style="padding:6px;"><p style="margin:0 0 3px 0; font-size:12px; color:#fff;">${t}</p><img src="./sfc_archives/${dateStr}/temp_wind_${dateStr}_${timeStr}.png" class="synoptic-img" onclick="openLightbox(this.src)" style="border:1px solid #ffa500;"></div>`;
+                        });
+                        html += `</div></div>`;
+                    }
+
+                    // 4. 雷達生命史 (10分鐘高頻率影格庫)
+                    if(r.radar_lgt_evolution.times.length > 0) {
+                        html += `<div class="review-desc-box"><div class="review-section-title">📡 對流發展生命史與回波演變</div>`;
+                        html += `<p style="color:#aaa; font-weight:bold;">對流細胞發展描述：</p><div class="review-text-field">${r.radar_lgt_evolution.summary}</div>`;
+                        html += `<p style="color:#0084ff; font-size:13px; font-weight:bold;">關鍵雷達影格庫：</p><div class="grid-6-col">`;
+                        r.radar_lgt_evolution.times.forEach(t => {
+                            let timeStr = t.replace(":", "");
+                            html += `<div class="synoptic-card" style="padding:6px;"><p style="margin:0 0 3px 0; font-size:12px; color:#fff;">${t}</p><img src="./radar_archives/${dateStr}/radar_north_${dateStr}_${timeStr}.jpg" class="synoptic-img" onclick="openLightbox(this.src)" style="border:1px solid #0084ff;"></div>`;
+                        });
+                        html += `</div></div>`;
+                    }
+
+                    formBody.innerHTML = html;
+                })
+                .catch(err => {
+                    formBody.innerHTML = `
+                        <p style="color:#ffa500; font-weight:bold; font-size:16px;">⚠️ 系統提示：人工審查報告 (review_summary.json) 尚未生成！</p>
+                        <p style="color:#ccc;">請確認您是否已前往 GitHub 送出表單。若剛送出，請靜候一分鐘 Actions 機器人處理完畢後重新整理。</p>
+                    `;
+                });
+        }
+
 
         // 頁籤切換
         function switchView(viewType) {
