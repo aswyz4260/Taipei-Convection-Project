@@ -57,24 +57,24 @@ def parse_github_issue():
         elif "彭佳嶼探空描述" in header and content:
             result["thermodynamics"]["pengjia"] = content
             
-        # 3. 降雨與風場逐時分布變化 (橫向並排解碼)
-        elif "當天的降雨與風場逐時分布變化" in header:
-            # 💡 絕招：用正則表達式直接去抓 - [X] 後面的 5 位數時間字串！不論怎麼並排都抓得到！
-            times = re.findall(r"-\s*\[X\]\s*(\d{2}:\d{2})", section, re.IGNORECASE)
+        # 3. 降雨與風場逐時分布變化
+        elif "選擇欲記錄/留存的雨量風向圖時間點" in header:
+            # Dropdown 多選會輸出成像 "09:00, 09:30, 10:00" 這樣的字串
+            times = [t.strip() for l in content_lines for t in l.split(",") if t.strip()]
             result["rain_wind_evolution"]["times"] = times
         elif "降雨與風場逐時變化總結描述" in header and content:
             result["rain_wind_evolution"]["summary"] = content
             
-        # 4. 溫度逐時分布變化 (橫向並排解碼)
-        elif "當天的溫度逐時分布變化" in header:
-            times = re.findall(r"-\s*\[X\]\s*(\d{2}:\d{2})", section, re.IGNORECASE)
+        # 4. 溫度逐時分布變化
+        elif "選擇欲記錄/留存的溫度風向圖時間點" in header:
+            times = [t.strip() for l in content_lines for t in l.split(",") if t.strip()]
             result["temp_wind_evolution"]["times"] = times
         elif "溫度逐時變化總結描述" in header and content:
             result["temp_wind_evolution"]["summary"] = content
             
-        # 5. 雷達與降雨發展史 (49格橫向大網格解碼)
-        elif "對流發展過程與降雨時空分布影響" in header:
-            times = re.findall(r"-\s*\[X\]\s*(\d{2}:\d{2})", section, re.IGNORECASE)
+        # 5. 雷達與降雨發展史
+        elif "選擇欲記錄/留存的雷達與落雷關鍵時間點" in header:
+            times = [t.strip() for l in content_lines for t in l.split(",") if t.strip()]
             result["radar_lgt_evolution"]["times"] = times
 
     # 🌟 寫入對應日期的 sfc_archives 資料夾中 (例如: ./sfc_archives/20260615/review_summary.json)
