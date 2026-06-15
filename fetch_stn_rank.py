@@ -105,7 +105,7 @@ while dt_10_18 <= end_10_18:
 # Pandas 高度洗淨與 Top 排行榜統計
 # ==========================================
 if not raw_data_records:
-    print("❌ 終止：當天完全沒有擷取到任何雙北觀測站數據，工廠停止。")
+    print("❌ 未儲存任何資料，待人工補齊。")
     sys.exit()
 
 df = pd.DataFrame(raw_data_records)
