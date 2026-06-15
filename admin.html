@@ -226,7 +226,6 @@
             line-height: 1.6;
         }
 
-        /* 📡 雲端監測面板樣式調整 */
         .monitor-panel {
             margin-top: 20px;
             padding: 24px;
@@ -234,7 +233,7 @@
             border: 1px solid #e2e8f0;
             border-radius: 8px;
             display: none;
-            text-align: center; /* 讓燈號置中顯眼 */
+            text-align: center;
         }
         
         .status-badge {
@@ -244,14 +243,22 @@
             font-size: 14px;
             font-weight: 700;
             letter-spacing: 0.5px;
+            margin-bottom: 12px;
+        }
+
+        /* ⏳ 新增：計時器文字樣式 */
+        .timer-text {
+            font-size: 13px;
+            color: #64748b;
+            font-weight: 500;
+            font-variant-numeric: tabular-nums; /* 防止等寬數字抖動 */
         }
         
-        /* 🚨 紅綠燈號誌燈樣式 */
         .badge-queued { background-color: #f1f5f9; color: #64748b; border: 1px solid #cbd5e1; }
         .badge-in-progress { background-color: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; animation: pulse 1.5s infinite; }
-        .badge-success { background-color: #dcfce7; color: #16a34a; border: 1px solid #bbf7d0; } /* 🟢 成功綠燈 */
-        .badge-trigger-failed { background-color: #fef3c7; color: #d97706; border: 1px solid #fde68a; } /* 🟡 未達標黃燈 */
-        .badge-failure { background-color: #fee2e2; color: #dc2626; border: 1px solid #fca5a5; } /* 🔴 錯誤紅燈 */
+        .badge-success { background-color: #dcfce7; color: #16a34a; border: 1px solid #bbf7d0; } 
+        .badge-trigger-failed { background-color: #fef3c7; color: #d97706; border: 1px solid #fde68a; } 
+        .badge-failure { background-color: #fee2e2; color: #dc2626; border: 1px solid #fca5a5; } 
 
         @keyframes pulse {
             0% { opacity: 1; transform: scale(1); }
@@ -314,7 +321,10 @@
 
         <div id="monitorPanel" class="monitor-panel">
             <div style="margin-bottom: 12px; font-size: 14px; font-weight: 600; color: #475569;">🛰️ 雲端產線執行狀態</div>
-            <span id="runStatusBadge" class="status-badge">排隊中...</span>
+            <div>
+                <span id="runStatusBadge" class="status-badge">排隊中...</span>
+            </div>
+            <div id="timerContainer" class="timer-text">⏱️ 已耗時：00 分 00 秒</div>
         </div>
     </div>
 
@@ -333,6 +343,8 @@
         const WORKFLOW_ID = "daily_data.yml"; 
 
         let pollingInterval = null; 
+        let timerInterval = null; // 🌟 計時器專用計時變數
+        let secondsElapsed = 0;   // 🌟 累計秒數
 
         window.onload = function() {
             const savedToken = localStorage.getItem("gh_token");
@@ -351,6 +363,13 @@
             localStorage.setItem("gh_token", token);
         }
 
+        // 🌟 格式化秒數為 分:秒
+        function formatTime(totalSeconds) {
+            const mins = String(Math.floor(totalSeconds / 60)).padStart(2, '0');
+            const secs = String(totalSeconds % 60).padStart(2, '0');
+            return `⏱️ 已耗時：${mins} 分 ${secs} 秒`;
+        }
+
         async function triggerWorkflow() {
             const token = document.getElementById("githubToken").value.trim();
             const date = document.getElementById("targetDate").value.trim();
@@ -358,6 +377,7 @@
             const msgDiv = document.getElementById("statusMessage");
             const btn = document.getElementById("submitBtn");
             const monitor = document.getElementById("monitorPanel");
+            const timerContainer = document.getElementById("timerContainer");
 
             if (!token) {
                 alert("請先在下方填入 GitHub 個人存取權杖 (Token) 才能進行操作！");
@@ -368,7 +388,9 @@
                 return;
             }
 
+            // 清除上次殘留的計時器與輪詢
             if (pollingInterval) clearInterval(pollingInterval);
+            if (timerInterval) clearInterval(timerInterval);
 
             btn.disabled = true;
             msgDiv.style.display = "block";
@@ -400,10 +422,20 @@
                     msgDiv.style.backgroundColor = "#f0fdf4";
                     msgDiv.style.color = "#166534";
                     msgDiv.style.border = "1px solid #bbf7d0";
-                    msgDiv.innerHTML = `<strong>發送成功！</strong> 雲端已接受指令，開始追蹤進度。`;
+                    msgDiv.innerHTML = `<strong>發送成功！</strong> 雲端已接受指令。`;
                     
+                    // 初始化計時面板
+                    secondsElapsed = 0;
+                    timerContainer.innerText = formatTime(0);
                     monitor.style.display = "block";
-                    startStatusPolling(token, mode); // 🌟 將當前選擇的模式傳入追蹤核心
+
+                    // 🌟 啟動計時器（每秒跑一次）
+                    timerInterval = setInterval(() => {
+                        secondsElapsed++;
+                        timerContainer.innerText = formatTime(secondsElapsed);
+                    }, 1000);
+
+                    startStatusPolling(token, mode); 
                 } else {
                     const errData = await response.json().catch(() => ({}));
                     msgDiv.className = "success"; 
@@ -417,10 +449,10 @@
             }
         }
 
-        // 🌟 智慧紅綠燈追蹤核心
         function startStatusPolling(token, currentMode) {
             const badge = document.getElementById("runStatusBadge");
             const btn = document.getElementById("submitBtn");
+            const timerContainer = document.getElementById("timerContainer");
 
             const url = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/actions/runs?workflow_id=${WORKFLOW_ID}&per_page=1`;
 
@@ -441,7 +473,6 @@
                     const status = latestRun.status;       
                     const conclusion = latestRun.conclusion; 
 
-                    // 1. 執行中狀態：只顯示乾淨的呼吸動畫
                     if (status === "queued") {
                         badge.innerText = "⏳ 雲端排隊中...";
                         badge.className = "status-badge badge-queued";
@@ -449,22 +480,23 @@
                         badge.innerText = "⚙️ 工作執行中...";
                         badge.className = "status-badge badge-in-progress";
                     } 
-                    // 2. 執行完畢狀態：依據模式與 Conclusion 進行智慧分流判定
                     else if (status === "completed") {
+                        // 🌟 任務完成，立刻按死計時器與輪詢
                         clearInterval(pollingInterval); 
+                        clearInterval(timerInterval);
                         btn.disabled = false; 
 
+                        // 更改計時器前綴文字，改為提示最終花費時間
+                        timerContainer.innerText = timerContainer.innerText.replace("已耗時", "總耗時");
+
                         if (conclusion === "success") {
-                            // 🟢 成功綠燈：不論模式 A 或 B，只要完全成功就亮綠燈
                             badge.innerText = "🟢 處理成功 / 圖資已發布";
                             badge.className = "status-badge badge-success";
                         } else if (conclusion === "failure") {
                             if (currentMode === "run_triggered") {
-                                // 🟡 未達標黃燈：模式 A 失敗代表 triggered.py 科學指標未過
                                 badge.innerText = "🟡 未達標準 / 取消下載封存";
                                 badge.className = "status-badge badge-trigger-failed";
                             } else {
-                                // 🔴 錯誤紅燈：模式 B 失敗代表下載程式或網路出錯
                                 badge.innerText = "🔴 程式執行錯誤 / 請檢查 Log";
                                 badge.className = "status-badge badge-failure";
                             }
