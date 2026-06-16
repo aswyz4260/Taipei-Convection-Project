@@ -151,7 +151,7 @@
             background: #222;
             color: white;
             padding: 6px 12px;
-            border: 2px solid #007bff; /* 讓框線變藍色，強烈提醒使用者這裡要點擊 */
+            border: 2px solid #007bff; 
             border-radius: 4px;
             font-weight: bold;
             font-size: 14px;
@@ -193,7 +193,7 @@
         .popup-click-tip {
             margin-top: 6px;
             font-size: 11px;
-            color: #ffa500; /* 未選日期前用橘色警告 */
+            color: #ffa500; 
             text-align: center;
             font-weight: bold;
         }
@@ -248,7 +248,7 @@
         let chartWindInstance = null;
         let selectedStationId = "";
         let selectedStationName = "";
-        let currentSelectedDate = ""; // 紀錄當前使用者到底選了哪一天
+        let currentSelectedDate = ""; 
 
         const noDataPlugin = {
             id: 'noDataPlugin',
@@ -279,38 +279,74 @@
         }).addTo(map);
 
         // ========================================================
-        // 3. 建立地圖右上角動態日期選單 (預設請選擇個案日期)
+        // 3. 建立地圖右上角動態日期選單核心重構（異步掃描雲端）
         // ========================================================
         const dateControl = L.control({ position: 'topright' });
         dateControl.onAdd = function() {
             const select = L.DomUtil.create('select', 'map-date-selector');
             select.id = 'global-date-picker';
             
+            // 建立預設提示 Option
             const defaultOpt = document.createElement('option');
             defaultOpt.value = "";
-            defaultOpt.text = "請選擇個案日期 ▾";
+            defaultOpt.text = "🔍 正在掃描個案庫...";
             defaultOpt.selected = true;
             defaultOpt.disabled = true;
             defaultOpt.hidden = true;
             select.appendChild(defaultOpt);
             
-            const availableDates = [
-                { value: "20260615", text: "📅 2026-06-15" },
-                { value: "20260614", text: "📅 2026-06-14" },
-                { value: "20260612", text: "📅 2026-06-12" }
-            ];
-            
-            availableDates.forEach(d => {
-                const opt = document.createElement('option');
-                opt.value = d.value;
-                opt.text = d.text;
-                select.appendChild(opt);
-            });
+            // 🌟 啟動非同步動態讀取 stn_archives 資料夾
+            fetchGitHubArchives(select, defaultOpt);
             
             select.onchange = (e) => loadTargetDateData(e.target.value);
             return select;
         };
         dateControl.addTo(map);
+
+        // 🌟 新增：透過 GitHub API 自動抓取有實體資料的日期
+        async function fetchGitHubArchives(selectElement, defaultOptionElement) {
+            const repoOwner = "aswyz4260";
+            const repoName = "Taipei-Convection-Project";
+            
+            try {
+                const response = await fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contents/stn_archives`);
+                if (!response.ok) throw new Error();
+                
+                const files = await response.json();
+                
+                // 過濾出長度為 8 碼的實體測站資料夾名稱 (YYYYMMDD)
+                let folders = files
+                    .filter(file => file.type === 'dir' && file.name.length === 8)
+                    .map(file => file.name)
+                    .sort((a, b) => b.localeCompare(a)); // 最新日期排最上面
+
+                if (folders.length === 0) {
+                    defaultOptionElement.text = "❌ 雲端無個案資料";
+                    return;
+                }
+
+                // 清空載入中提示，換成標準點選提示
+                defaultOptionElement.text = "請選擇個案日期 ▾";
+                
+                // 動態將資料夾名稱轉為精美格式並注入下拉選單
+                folders.forEach(folderName => {
+                    const y = folderName.substring(0, 4);
+                    const m = folderName.substring(4, 6);
+                    const d = folderName.substring(6, 8);
+                    
+                    const opt = document.createElement('option');
+                    opt.value = folderName; // 傳給後端的格式: 20260615
+                    opt.text = `📅 ${y}-${m}-${d}`; // 顯示給使用者看的格式: 2026-06-15
+                    selectElement.appendChild(opt);
+                });
+                
+                console.log("✅ 右上角日期選單動態同步成功！總計上架個案數：", folders.length);
+                
+            } catch (error) {
+                console.error("無法動態讀取 stn_archives 目錄:", error);
+                defaultOptionElement.text = "❌ 自動上架引擎故障";
+            }
+        }
 
         // 建立初始空圖表骨架
         initEmptyCharts();
@@ -331,12 +367,10 @@
                     rawHourlyData = payload.hourly_wind_data || [];
                     console.log(`✅ ${dateStr} 資料夾對接成功。`);
                     
-                    // 刷新標題提示使用者此時「可以點測站了」
                     if (!selectedStationId) {
                         document.getElementById('title-chart-rain').innerText = `🌡️ ⛈️ 溫雨時序對照圖 (請點擊地圖測站)`;
                         document.getElementById('title-chart-wind').innerText = `🍃 🧭 風場時序對照圖 (請點擊地圖測站)`;
                     } else {
-                        // 如果之前有點過測站，切換日期時瞬間更新曲線
                         updateCharts(selectedStationId, selectedStationName);
                     }
                 })
@@ -385,7 +419,6 @@
                         markerOpacity = 0.85;
                     }
 
-                    // 動態更新 Popup 提示文字
                     const getPopupContent = () => `
                         <div class="custom-popup-body" style="min-width: 170px; text-align: center;">
                             <div class="popup-title" style="color: ${markerColor};">${stationNameExtended}</div>
@@ -406,10 +439,8 @@
                     })
                     .addTo(map);
 
-                    // 點選地圖圓點時觸發 Popup
                     marker.bindPopup(() => getPopupContent(), { className: 'custom-popup' });
 
-                    // 點擊事件：只有在日期被選定的情況下才執行圖表點火，否則彈出阻斷警告
                     marker.on('click', () => {
                         if (!currentSelectedDate) {
                             alert("請先在右上角藍色選單中『選擇個案日期』，才能加載觀測數據！");
