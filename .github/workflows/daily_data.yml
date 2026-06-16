@@ -5,7 +5,7 @@ on:
   # ⚙️ 1. 定時執行排程 (台灣時間 = UTC + 8 小時)
   # ------------------------------------------------------
   schedule:
-    - cron: '30 10 * * *'  # 📌 常規排程：每天台灣時間 18:30
+    - cron: '00 11 * * *'  # 📌 常規排程：每天台灣時間 19:00
     - cron: '30 15 * * *'  # 📌 深夜補圖排程：每天台灣時間 23:30
 
   # ------------------------------------------------------
@@ -14,9 +14,9 @@ on:
   workflow_dispatch:
     inputs:
       target_date:
-        description: '請輸入要處理的個案日期 (格式: yyyymmdd，例如: 20260614)'
+        description: '請輸入要處理的個案日期 (格式: yyyymmdd，例如: 20260616)'
         required: true
-        default: '20260615'
+        default: 'yyyymmdd'
       run_mode:
         description: '選擇執行模式'
         required: true
@@ -29,6 +29,9 @@ on:
 jobs:
   build-and-run:
     runs-on: ubuntu-latest
+    
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
     steps:
       - name: 1. 複製雲端專案程式碼
@@ -44,7 +47,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests pandas numpy Pillow
 
-      - name: 4. 🧠 智慧解析與接收目標日期參數 (內建深夜資料夾檢查鎖)
+      - name: 4. 接收目標日期參數
         id: date-env
         run: |
           echo "SKIP_RUN=false" >> $GITHUB_ENV
@@ -54,19 +57,19 @@ jobs:
           else
             CURRENT_HOUR=$(date -d "+8 hours" +%H)
             TW_TODAY=$(date -d "+8 hours" +"%Y%m%d")
-            echo "📊 當前台灣時間整點小時為: $CURRENT_HOUR"
+            echo "當前台灣時間 HH: $CURRENT_HOUR"
             if [ "$CURRENT_HOUR" = "23" ]; then
-              echo "🌙 檢測到深夜 23:30 定時補圖任務啟動..."
+              echo "🌙 深夜 23:30 定時補圖任務啟動..."
               if [ -d "stn_archives/$TW_TODAY" ]; then
-                echo "✅ 下午判定成功！資料夾存在，啟動強行補圖。"
+                echo "✅ 下午判定成功！資料夾存在，啟動補圖任務。"
                 echo "RUN_DATE=$TW_TODAY" >> $GITHUB_ENV
                 echo "RUN_MODE=force_download" >> $GITHUB_ENV
               else
-                echo "🛑 下午判定未通過，深夜任務安全熔斷。"
+                echo "🛑 下午判定未通過，不執行補圖任務。"
                 echo "SKIP_RUN=true" >> $GITHUB_ENV
               fi
             else
-              echo "RUN_DATE=$(date -d 'yesterday' +'%Y%m%d')" >> $GITHUB_ENV
+              echo "RUN_DATE=$TW_TODAY" >> $GITHUB_ENV
               echo "RUN_MODE=run_triggered" >> $GITHUB_ENV
             fi
           fi
@@ -74,8 +77,8 @@ jobs:
       # ------------------------------------------------------
       # 🎯 模式 A：雷達指標判定
       # ------------------------------------------------------
-      - name: ⛈️ [模式 A] 啟動雷達指標判定與工廠連鎖
-        if: env.SKIP_RUN != 'true' && env.RUN_MODE == 'run_triggered'
+      - name: ⛈️ [模式 A] 啟動雷達指標判定
+        if: ${{ env.SKIP_RUN != 'true' && env.RUN_MODE == 'run_triggered' }}
         run: |
           python triggered.py ${{ env.RUN_DATE }}
 
@@ -83,18 +86,18 @@ jobs:
       # 🏭 三大工廠生產線
       # ------------------------------------------------------
       - name: 🏭 [模式 B-1] 雷達/閃電/地面中尺度
-        if: env.SKIP_RUN != 'true' && success() 
+        if: ${{ env.SKIP_RUN != 'true' && success() }}
         run: |
           python fetch_pillow_fig.py ${{ env.RUN_DATE }}
 
       - name: 📊 [模式 B-2] 觀測站排行 JSON
-        if: env.SKIP_RUN != 'true' && success()
+        if: ${{ env.SKIP_RUN != 'true' && success() }}
         continue-on-error: true
         run: |
           python fetch_stn_rank.py ${{ env.RUN_DATE }}
 
       - name: ☁️ [模式 B-3] 綜觀天氣圖/熱力探空
-        if: env.SKIP_RUN != 'true' && success()
+        if: ${{ env.SKIP_RUN != 'true' && success() }}
         run: |
           python fetch_cwa_fig.py ${{ env.RUN_DATE }}
 
@@ -102,7 +105,7 @@ jobs:
       # 💾 終點站：圖資與數據自動 Commit 封存回倉庫
       # ------------------------------------------------------
       - name: 🚀 將收割之圖資與數據自動 Commit 封存回倉庫
-        if: env.SKIP_RUN != 'true' && success()
+        if: ${{ env.SKIP_RUN != 'true' && success() }}
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "CWA-Data-Bot"
