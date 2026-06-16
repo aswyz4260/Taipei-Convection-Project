@@ -1,14 +1,15 @@
-name: 午後對流個案圖資自動抓取與儲存
+name: ⛈️ 午後對流個案圖資自動抓取與儲存
 
 on:
   # ------------------------------------------------------
-  # ⚙️ 1. 每天 18:30 定時執行 (台灣時間 18:30 = UTC 10:30)
+  # ⚙️ 1. 定時執行排程 (台灣時間 = UTC + 8 小時)
   # ------------------------------------------------------
   schedule:
-    - cron: '30 10 * * *'
+    - cron: '30 10 * * *'  # 📌 常規排程：每天台灣時間 18:30
+    - cron: '30 15 * * *'  # 📌 深夜補圖排程：每天台灣時間 23:30
 
   # ------------------------------------------------------
-  # 🕹️ 2 & 3. 手動觸發分流控制器 (支援判定模式與強行打包模式)
+  # 🕹️ 2. 手動觸發分流控制器 (支援判定模式與強行打包模式)
   # ------------------------------------------------------
   workflow_dispatch:
     inputs:
@@ -22,12 +23,16 @@ on:
         default: 'run_triggered'
         type: choice
         options:
-          - 'run_triggered'  # 🧠 模式 A：執行 triggered.py（滿足雷達指標才打包）
-          - 'force_download' # 🪓 模式 B：強行打包圖資（繞過指標，直接執行3大工廠）
+          - 'run_triggered'
+          - 'force_download'
 
 jobs:
   build-and-run:
     runs-on: ubuntu-latest
+    
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
     steps:
       - name: 1. 複製雲端專案程式碼
         uses: actions/checkout@v4
@@ -42,42 +47,57 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests pandas numpy Pillow
 
-      - name: 4. 智慧解析與接收目標日期參數
+      - name: 4. 🧠 智慧解析與接收目標日期參數 (內建深夜資料夾檢查鎖)
         id: date-env
         run: |
+          echo "SKIP_RUN=false" >> $GITHUB_ENV
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             echo "RUN_DATE=${{ github.event.inputs.target_date }}" >> $GITHUB_ENV
             echo "RUN_MODE=${{ github.event.inputs.run_mode }}" >> $GITHUB_ENV
           else
-            # 定時任務預設：抓昨天，且必須執行 triggered.py 科學指標判定
-            echo "RUN_DATE=$(date -d 'yesterday' +'%Y%m%d')" >> $GITHUB_ENV
-            echo "RUN_MODE=run_triggered" >> $GITHUB_ENV
+            CURRENT_HOUR=$(date -d "+8 hours" +%H)
+            TW_TODAY=$(date -d "+8 hours" +"%Y%m%d")
+            echo "📊 當前台灣時間整點小時為: $CURRENT_HOUR"
+            if [ "$CURRENT_HOUR" = "23" ]; then
+              echo "🌙 檢測到深夜 23:30 定時補圖任務啟動..."
+              if [ -d "stn_archives/$TW_TODAY" ]; then
+                echo "✅ 下午判定成功！資料夾存在，啟動強行補圖。"
+                echo "RUN_DATE=$TW_TODAY" >> $GITHUB_ENV
+                echo "RUN_MODE=force_download" >> $GITHUB_ENV
+              else
+                echo "🛑 下午判定未通過，深夜任務安全熔斷。"
+                echo "SKIP_RUN=true" >> $GITHUB_ENV
+              fi
+            else
+              echo "RUN_DATE=$(date -d 'yesterday' +'%Y%m%d')" >> $GITHUB_ENV
+              echo "RUN_MODE=run_triggered" >> $GITHUB_ENV
+            fi
           fi
 
       # ------------------------------------------------------
-      # 🎯 訴求 1 & 2：執行 triggered.py 進行雷達格點空間指標判定
+      # 🎯 模式 A：雷達指標判定
       # ------------------------------------------------------
-      - name: ⛈️ [模式 A] 啟動雷達指標判定與工廠連鎖 (定時或手動指定)
-        if: env.RUN_MODE == 'run_triggered'
+      - name: ⛈️ [模式 A] 啟動雷達指標判定與工廠連鎖
+        if: env.SKIP_RUN != 'true' && env.RUN_MODE == 'run_triggered'
         run: |
           python triggered.py ${{ env.RUN_DATE }}
 
       # ------------------------------------------------------
-      # 🎯 訴求 3：手動輸入日期強行打包圖片 (繞過 triggered.py 的卡關限制)
+      # 🏭 三大工廠生產線
       # ------------------------------------------------------
-      - name: 🏭 [模式 B-1] 雷達/閃電/地面中尺度)
-        if: success() 
+      - name: 🏭 [模式 B-1] 雷達/閃電/地面中尺度
+        if: env.SKIP_RUN != 'true' && success() 
         run: |
           python fetch_pillow_fig.py ${{ env.RUN_DATE }}
 
-      - name: 📊 [模式 B-2] 觀測站排行 JSON)
-        if: success()
+      - name: 📊 [模式 B-2] 觀測站排行 JSON
+        if: env.SKIP_RUN != 'true' && success()
         continue-on-error: true
         run: |
           python fetch_stn_rank.py ${{ env.RUN_DATE }}
 
-      - name: ☁️ [模式 B-3] 綜觀天氣圖/熱力探空)
-        if: success()
+      - name: ☁️ [模式 B-3] 綜觀天氣圖/熱力探空
+        if: env.SKIP_RUN != 'true' && success()
         run: |
           python fetch_cwa_fig.py ${{ env.RUN_DATE }}
 
@@ -85,12 +105,10 @@ jobs:
       # 💾 終點站：圖資與數據自動 Commit 封存回倉庫
       # ------------------------------------------------------
       - name: 🚀 將收割之圖資與數據自動 Commit 封存回倉庫
+        if: env.SKIP_RUN != 'true' && success()
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "CWA-Data-Bot"
-          
-          # 把三大工廠跟測站排行、環境牆的所有新資料庫夾 add 進來
           git add radar_archives/ sfc_archives/ stn_archives/ cwaFig_archives/
-          
           git commit -m "自動化封存個案圖資成果 [Date: ${{ env.RUN_DATE }}] [Mode: ${{ env.RUN_MODE }}]" || exit 0
           git push
