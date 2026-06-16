@@ -10,13 +10,13 @@ body:
         請研究員根據當日圖資，詳細填寫物理機制描述。未勾選的項目在最終成果中將會自動隱藏。
 
   - type: input
-      id: case-date
-      attributes:
-        label: 📅 輸入審查個案日期 (格式：YYYY-MM-DD)
-        description: 請輸入您正在審查的個案日期（例如：2026-06-15）。請務必與 Issue 標題中的日期完全一致，否則雲端解析器會找不到對應資料夾！
-        placeholder: "yyyy-mm-dd"
-      validations:
-        required: true
+    id: case-date
+    attributes:
+      label: 📅 輸入審查個案日期 (格式：YYYY-MM-DD)
+      description: 請輸入您正在審查的個案日期（例如：2026-06-15）。請務必與 Issue 標題中的日期完全一致，否則雲端解析器會找不到對應資料夾！
+      placeholder: "yyyy-mm-dd"
+    validations:
+      required: true
 
   - type: markdown
     attributes:
