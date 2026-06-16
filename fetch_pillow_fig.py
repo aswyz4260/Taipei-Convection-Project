@@ -35,6 +35,11 @@ print("=" * 80)
 # 影像下載與裁切核心引擎
 # ==========================================
 def download_and_crop(url, crop_box, output_path, label, save_format="JPEG"):
+    if os.path.exists(output_path):
+        # 確保檔案不是 0 KB 或破碎檔
+        if os.path.getsize(output_path) > 1024: 
+            print(f"[{label}] ⏭️ 圖片已存在且完整，跳過重複下載與裁切")
+            return True
     try:
         response = requests.get(url, timeout=12) # 稍微放寬連線超時，防止氣象署伺服器塞車
         if response.status_code == 200:
