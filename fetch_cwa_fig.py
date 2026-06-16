@@ -34,6 +34,12 @@ print("=" * 80)
 def download_static_map(primary_url, fallback_url, output_name, label):
     out_path = os.path.join(OUTPUT_DIR, output_name)
     content = None
+    # for 23:30 自動補圖
+    if os.path.exists(out_path):
+        # 額外檢查：確保檔案不是 0 KB 或小於 1 KB 的死檔、破碎檔
+        if os.path.getsize(out_path) > 1024: 
+            print(f"  [⏭️] {label} ➔ 圖片已存在且完整，跳過重複下載：{output_name}")
+            return 
     
     # 1. 嘗試優先方案
     try:
