@@ -490,9 +490,33 @@
                         timerContainer.innerText = timerContainer.innerText.replace("已耗時", "總耗時");
 
                         if (conclusion === "success") {
+                            try {
+                                const jobsUrl = latestRun.jobs_url;
+                                const jobsRes = await fetch(jobsUrl, {
+                                    headers: { "Authorization": `Bearer ${token}`, "Accept": "application/vnd.github+json" }
+                                });
+                                const jobsData = await jobsRes.json();
+                                
+                                // 找到 build-and-run 任務
+                                const buildJob = jobsData.jobs.find(j => j.name === "build-and-run");
+                                // 檢查 Commit（封存）步驟是不是被 Skipped 了
+                                const commitStep = buildJob?.steps?.find(s => s.name.includes("Commit"));
+                                
+                                if (commitStep && commitStep.conclusion === "skipped") {
+                                    badge.innerText = "🟡 未達標準 / 取消下載封存";
+                                    badge.className = "status-badge badge-trigger-failed";
+                                    return;
+                                }
+                            } catch (err) {
+                                console.error("解析步驟細節失敗，預設走綠燈邏輯:", err);
+                            }
+
+                            // 🟢 真正大雨達標、且圖資發布成功的情境
                             badge.innerText = "🟢 處理成功 / 圖資已發布";
                             badge.className = "status-badge badge-success";
-                        } else if (conclusion === "failure") {
+                        } 
+                        else if (conclusion === "failure") {
+                            // 舊代碼相容性，或是其他非預期的真正紅燈報錯
                             if (currentMode === "run_triggered") {
                                 badge.innerText = "🟡 未達標準 / 取消下載封存";
                                 badge.className = "status-badge badge-trigger-failed";
