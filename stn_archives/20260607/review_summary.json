@@ -1,0 +1,40 @@
+{
+    "date": "2026-06-07",
+    "synoptic_fields": {
+        "sfc_chart": "測試用",
+        "h500_chart": "選一個高空的測試用"
+    },
+    "thermodynamics": {
+        "taipei": "選台北看看"
+    },
+    "rain_wind_evolution": {
+        "times": [
+            "09:30",
+            "12:30"
+        ],
+        "summary": "選0930和1200"
+    },
+    "temp_wind_evolution": {
+        "times": [
+            "11:00",
+            "13:00",
+            "10:00",
+            "09:00",
+            "12:00"
+        ],
+        "summary": "選5個"
+    },
+    "radar_lgt_evolution": {
+        "times": [
+            "10:10",
+            "11:20",
+            "10:50",
+            "11:30",
+            "10:40",
+            "10:00",
+            "10:20",
+            "11:10"
+        ],
+        "summary": ""
+    }
+}
