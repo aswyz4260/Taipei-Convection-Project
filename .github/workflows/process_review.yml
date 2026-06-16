@@ -8,6 +8,11 @@ jobs:
   process-review:
     if: contains(github.event.issue.title, '[個案審查]')
     runs-on: ubuntu-latest
+    
+    # 明確賦予寫入權限，防止 push 被拒絕
+    permissions:
+      contents: write
+
     steps:
       - name: 複製雲端專案程式碼
         uses: actions/checkout@v4
@@ -28,7 +33,10 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action Bot"
-          git add sfc_archives/
-          # 防止研究員只是微調內容導致 commit 失敗
-          git commit -m "Auto-update case review summary from Issue #${{ github.event.issue.number }}" || exit 0
-          git push
+          
+          git add -A stn_archives/
+          
+          # 檢查是否有檔案異動，有異動才 commit，防止流程報錯中斷
+          git diff --quiet && git diff --staged --quiet || git commit -m "Auto-update case review summary from Issue #${{ github.event.issue.number }}"
+
+          git push origin main
