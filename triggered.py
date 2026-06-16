@@ -1,4 +1,5 @@
 import sys
+import os 
 import requests
 import xml.etree.ElementTree as ET
 import numpy as np
@@ -113,16 +114,21 @@ for result in time_series_results:
         consecutive_counter = 0
 
 # ==========================================
-# 用 sys.exit() 的狀態碼來指揮 GitHub Actions
+# 用環境變數指揮 GitHub Actions 進行優雅分流
 # ==========================================
 print("-" * 70)
 if is_triggered:
     print(f"\n🔥 [判定成功] {Y}-{M}-{D}")
-    print("sys.exit(0) 通知 GitHub Actions 繼續進行後續打包！")
+    print("通知 GitHub Actions 繼續進行後續打包！")
     print("=" * 80)
-    sys.exit(0) # 🟢
+    sys.exit(0) # 🟢 達標：保持 SKIP_RUN=false，產線繼續開工
 else:
-    print(f"\n🔴 [未達標準] {Y}-{M}-{D} ")
-    print("sys.exit(1)。通知 GitHub Actions 停止今日自動打包。")
+    print(f"\n🟢 [未達標準] {Y}-{M}-{D} ")
+    print("透過環境變數安全SKIP。通知 GitHub Actions 跳過今日自動打包步驟。")
     print("=" * 80)
-    sys.exit(1) # 🔴
+    
+    if "GITHUB_ENV" in os.environ:
+        with open(os.environ["GITHUB_ENV"], "a") as f:
+            f.write("SKIP_RUN=true\n")
+            
+    sys.exit(0) # 🔴 但不是ERROR
