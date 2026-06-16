@@ -76,8 +76,10 @@ def parse_github_issue():
         elif "選擇欲記錄/留存的雷達與落雷關鍵時間點" in header:
             times = [t.strip() for l in content_lines for t in l.split(",") if t.strip()]
             result["radar_lgt_evolution"]["times"] = times
+        elif "雷達回波與閃電落雷演變總結描述" in header and content:
+            result["radar_lgt_evolution"]["summary"] = content
 
-    # 🌟 寫入對應日期的 sfc_archives 資料夾中 (例如: ./sfc_archives/20260615/review_summary.json)
+
     target_dir = f"./stn_archives/{date_str}"
     os.makedirs(target_dir, exist_ok=True)
     
