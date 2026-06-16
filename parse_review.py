@@ -20,9 +20,10 @@ def parse_github_issue():
     date_str = case_date.replace("-", "")
     print(f"📅 開始解析個案日期: {case_date}")
 
-    # 初始化最終要倒灌回網頁的 JSON 結構
+    # 初始化最終要匯入網頁的 JSON 結構
     result = {
         "date": case_date,
+        "case_type": "", 
         "synoptic_fields": {},
         "thermodynamics": {},
         "rain_wind_evolution": {"times": [], "summary": ""},
@@ -30,7 +31,6 @@ def parse_github_issue():
         "radar_lgt_evolution": {"times": [], "summary": ""}
     }
 
-    # 🧠 用簡單的區塊切分法解析 YAML Form 的輸出
     # GitHub Form 會把各區塊用 ### 標題與內文隔開
     sections = issue_body.split("### ")
     
@@ -43,8 +43,11 @@ def parse_github_issue():
         content_lines = [l.strip() for l in lines[1:] if l.strip() and not l.startswith("_No response_")]
         content = "\n".join(content_lines).strip()
         
+        if "天氣型態分類" in header and content:
+            result["case_type"] = content
+
         # 1. 解析綜觀天氣場 (未填寫或勾選就不納入)
-        if "地面天氣圖描述" in header and content:
+        elif "地面天氣圖描述" in header and content:
             result["synoptic_fields"]["sfc_chart"] = content
         elif "850hPa圖描述" in header and content:
             result["synoptic_fields"]["h850_chart"] = content
@@ -79,14 +82,13 @@ def parse_github_issue():
         elif "雷達回波與閃電落雷演變總結描述" in header and content:
             result["radar_lgt_evolution"]["summary"] = content
 
-
     target_dir = f"./stn_archives/{date_str}"
     os.makedirs(target_dir, exist_ok=True)
     
     with open(f"{target_dir}/review_summary.json", "w", encoding="utf-8") as f:
         json.dump(result, f, ensure_ascii=False, indent=4)
         
-    print(f"🎉 成功！科學審查報告已安全封存至 {target_dir}/review_summary.json")
+    print(f"報告已安全封存至 {target_dir}/review_summary.json")
 
 if __name__ == "__main__":
     parse_github_issue()
