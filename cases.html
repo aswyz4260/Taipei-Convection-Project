@@ -133,12 +133,22 @@
             align-items: center;
             border-bottom: 2px solid #333;
             padding-bottom: 15px;
-            margin-bottom: 20px;
+            margin-bottom: 5px; /* 🌟 縮小底部間距，留位置給型態副標題 */
             flex-shrink: 0;
         }
         .content-title {
             font-size: 24px;
             font-weight: bold;
+        }
+
+        /* 🌟 新增：標題下方專屬的天氣型態文字區塊樣式 */
+        .case-type-subline {
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px dashed #333;
+            flex-shrink: 0;
         }
 
         /* 右上角頁籤 */
@@ -426,6 +436,10 @@
                 </div>
             </div>
 
+            <div id="case-type-subline" class="case-type-subline" style="display: none;">
+                📊 <strong>天氣型態分類：</strong> <span id="case-type-text" style="color: #0084ff;">載入中...</span>
+            </div>
+
             <div id="view-auto" class="view-section">
                 
                 <div class="panel-box">
@@ -454,7 +468,7 @@
                 </div>
 
                 <div class="panel-box">
-                    <h3>b. 09-15 LST 地面場分析演變</h3>
+                    <h3>b. 09-15 LST 地面場 analysis演變</h3>
                     
                     <div class="player-dashboard" style="background: #1e2530; padding: 12px 15px;">
                         <div class="dashboard-row-1">
@@ -547,14 +561,10 @@
     </div>
 
 <script>
-        // ========================================================
-        // 🌟 核心數據個案索引：完全清空！改由 GitHub API 動態生成
-        // ========================================================
         let caseDatabase = [];
         let activeCase = null;
         let timer = null;   
 
-        // 初始化 A 區 (雷達) DOM 節點
         const timeRange = document.getElementById('time-range');
         const timeVal = document.getElementById('time-val');
         const radarPureViewer = document.getElementById('radar-pure-viewer');
@@ -563,7 +573,6 @@
         const prevBtn = document.getElementById('prev-btn');
         const nextBtn = document.getElementById('next-btn');
 
-        // 初始化 B 區地面中尺度雙向聯鎖 DOM 節點
         const timeRangeSfcHour = document.getElementById('time-range-sfc-hour');
         const timeValSfcHour = document.getElementById('time-val-sfc-hour');
         const timeRangeSfcRain = document.getElementById('time-range-sfc-rain');
@@ -571,11 +580,9 @@
         const sfcRainViewer = document.getElementById('sfc-rain-viewer');
         const sfcTempViewer = document.getElementById('sfc-temp-viewer');
 
-        // 燈箱 DOM
         const lightboxOverlay = document.getElementById('lightbox-overlay');
         const lightboxTargetImg = document.getElementById('lightbox-target-img');
 
-        // A區雷達時間換算 (1000 - 1800, 每10分鐘)
         function getTimelineString(index) {
             let totalMinutes = 10 * 60 + (index * 10);
             let h = Math.floor(totalMinutes / 60).toString().padStart(2, '0');
@@ -589,21 +596,15 @@
             "1200", "1230", "1300", "1330", "1400", "1430", "1500"
         ];
 
-        // 燈箱控制
         function openLightbox(imgSrc) { lightboxTargetImg.src = imgSrc; lightboxOverlay.style.display = 'flex'; }
         function closeLightbox() { lightboxOverlay.style.display = 'none'; lightboxTargetImg.src = ''; }
         document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
 
-        // ========================================================
-        // 🚀 初始化引擎：動態去 GitHub 讀取 radar_archives 目錄
-        // ========================================================
         async function initApp() {
             const sidebarList = document.getElementById('sidebar-list');
             sidebarList.innerHTML = "<div style='color:#aaa; padding:15px;'>🔍 正在掃描雲端個案目錄...</div>";
 
             try {
-                // 1. 呼叫 GitHub API 讀取 radar_archives 資料夾內容
-                // 如果你是在 local 測試且沒有網路，這行會失敗，但只要推上 GitHub 或連網就能完美運作
                 const repoOwner = "aswyz4260";
                 const repoName = "Taipei-Convection-Project";
                 const response = await fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contents/radar_archives`);
@@ -611,18 +612,16 @@
                 if (!response.ok) throw new Error("無法讀取 GitHub 目錄");
                 const files = await response.json();
 
-                // 2. 過濾出資料夾，並將名稱轉回日期格式 (例如: 20260615 -> 2026-06-15)
                 let folders = files
-                    .filter(file => file.type === 'dir' && file.name.length === 8) // 確保是8碼日期資料夾
+                    .filter(file => file.type === 'dir' && file.name.length === 8) 
                     .map(file => file.name)
-                    .sort((a, b) => b.localeCompare(a)); // 日期最新排最上面
+                    .sort((a, b) => b.localeCompare(a)); 
 
                 if (folders.length === 0) {
                     sidebarList.innerHTML = "<div style='color:#ff4d4d; padding:15px;'>❌ 未偵測到個案資料夾</div>";
                     return;
                 }
 
-                // 3. 轉換成系統所需的 caseDatabase 結構 (預設全部 reviewed: false)
                 caseDatabase = folders.map(folderName => {
                     let y = folderName.substring(0, 4);
                     let m = folderName.substring(4, 6);
@@ -634,10 +633,8 @@
                     };
                 });
 
-                // 4. 清空提示，開始渲染 UI
                 sidebarList.innerHTML = "";
 
-                // 5. 依序建立 DOM 並同步進行「JSON 敲門偵測」
                 caseDatabase.forEach((c, idx) => {
                     const item = document.createElement('div');
                     item.className = 'case-item';
@@ -648,18 +645,16 @@
                     item.onclick = () => selectCase(c, item);
                     sidebarList.appendChild(item);
 
-                    // 🧠 智慧敲門：非同步檢查該日期的 json 是否存在
                     let dateStr = c.date.replace(/-/g, '');
                     fetch(`./stn_archives/${dateStr}/review_summary.json`, { method: 'HEAD' })
                         .then(res => {
                             if (res.ok) {
-                                c.reviewed = true; // 內部狀態扶正
+                                c.reviewed = true; 
                                 const badge = document.getElementById(`badge-${c.date}`);
                                 if (badge) {
                                     badge.className = "status-badge status-reviewed";
                                     badge.innerText = "已紀錄";
                                 }
-                                // 如果目前剛好點選的是這個個案，動態修正按鈕顯示
                                 if (activeCase && activeCase.date === c.date) {
                                     document.getElementById('view-tabs').style.display = 'flex';
                                 }
@@ -667,7 +662,6 @@
                         }).catch(() => {});
                 });
 
-                // 6. 首發預設加載最新的一個個案
                 selectCase(caseDatabase[0], sidebarList.querySelectorAll('.case-item')[0]);
 
             } catch (error) {
@@ -676,9 +670,6 @@
             }
         }
 
-        // ========================================================
-        // 🌟 核心個案切換驅動器
-        // ========================================================
         function selectCase(c, element) {
             activeCase = c;
             document.querySelectorAll('.case-item').forEach(i => i.classList.remove('active'));
@@ -688,25 +679,46 @@
             document.getElementById('selected-date-title').innerText = `${c.date} 局地對流個案圖資`;
             document.getElementById('view-tabs').style.display = 'flex';
 
-            // d 區大局牆 (cwaFig_archives)
+            // 🌟 核心增動：切換個案時，預先拉取 JSON 來決定大標題下的型態文字
+            const sublineDiv = document.getElementById('case-type-subline');
+            const typeTextSpan = document.getElementById('case-type-text');
+            sublineDiv.style.display = 'block';
+            typeTextSpan.innerText = "讀取中...";
+            typeTextSpan.style.color = "#888";
+
+            fetch(`./stn_archives/${dateStr}/review_summary.json`)
+                .then(res => { if (!res.ok) throw new Error(); return res.json(); })
+                .then(r => {
+                    if (r && r.case_type) {
+                        typeTextSpan.innerText = r.case_type;
+                        // 針對特定科學分類給予精緻顯眼的科研色彩提示
+                        if (r.case_type.includes("1.")) typeTextSpan.style.color = "#2ecc71"; // 弱綜觀亮綠
+                        else if (r.case_type.includes("2.")) typeTextSpan.style.color = "#0084ff"; // 複合型科技藍
+                        else if (r.case_type.includes("3.")) typeTextSpan.style.color = "#9b59b6"; // 綜觀降雨紫
+                        else typeTextSpan.style.color = "#e0e0e0";
+                    } else {
+                        typeTextSpan.innerText = "尚未在審查表單中選擇天氣型態分類";
+                        typeTextSpan.style.color = "#aaaaaa";
+                    }
+                })
+                .catch(() => {
+                    typeTextSpan.innerText = "該個案尚未建立人工報告 (review_summary.json)";
+                    typeTextSpan.style.color = "#ff4d4d"; // 沒資料時拋出暗紅提示
+                });
+
             document.getElementById('img-skewt-taipei').src = `./cwaFig_archives/${dateStr}/skewt_taipei.gif`;
             document.getElementById('img-skewt-pengjia').src = `./cwaFig_archives/${dateStr}/skewt_pengjia.gif`;
             document.getElementById('img-sfc-chart').src = `./cwaFig_archives/${dateStr}/synoptic_sfc.png`;
             document.getElementById('img-850').src = `./cwaFig_archives/${dateStr}/synoptic_850.gif`;
             document.getElementById('img-500').src = `./cwaFig_archives/${dateStr}/synoptic_500.gif`;
 
-            // 載入排行數據 JSON
             fetchJSONData(dateStr);
-
-            // 更新 A、B 區畫面
             updateRadarImage();
             
-            // 重置 B 區雙滑桿預設停在 14:00
             timeRangeSfcHour.value = 5;
             timeRangeSfcRain.value = 10;
             driveSfcEngine(true); 
             
-            // 根據偵測後的真實 reviewed 狀態決定首發預設顯示哪個頁籤
             if (c.reviewed) {
                 switchView('form'); 
             } else {
@@ -714,9 +726,6 @@
             }
         }
 
-        // ========================================================
-        // 🌟 A 區播放器邏輯：雷達與落雷雙螢幕 (10m一幀)
-        // ========================================================
         function updateRadarImage() {
             if (!activeCase) return;
             let idx = timeRange.value;
@@ -738,9 +747,6 @@
             }
         };
 
-        // ========================================================
-        // 🌟 B 區核心：雙向聯鎖動力引擎 (09-15 sfc_archives)
-        // ========================================================
         function driveSfcEngine(isMainHourTriggered) {
             if (!activeCase) return;
             let dateStr = activeCase.date.replace(/-/g, '');
@@ -775,9 +781,6 @@
         timeRangeSfcHour.oninput = () => driveSfcEngine(true);
         timeRangeSfcRain.oninput = () => driveSfcEngine(false);
 
-        // ========================================================
-        // 🌟 c 區：排行榜
-        // ========================================================
         function fetchJSONData(dateStr) {
             const rainBody = document.querySelector('#rain-table tbody');
             const tempBody = document.querySelector('#temp-table tbody');
@@ -800,9 +803,6 @@
                 .catch(err => { rainBody.innerHTML = `<tr><td colspan='3'>無此 JSON 資料</td></tr>`; tempBody.innerHTML = `<tr><td colspan='3'>無此 JSON 資料</td></tr>`; });
         }
 
-        // ========================================================
-        // 🌟 頁籤切換核心控制器
-        // ========================================================
         function switchView(viewType) {
             document.getElementById('tab-auto').classList.remove('active');
             document.getElementById('tab-form').classList.remove('active');
@@ -821,9 +821,6 @@
             }
         }
 
-        // ========================================================
-        // 🌟 報告倒灌與圖片矩陣拼裝引擎
-        // ========================================================
         function fetchReviewSummary(dateStr, cObj) {
             const formBody = document.getElementById('form-content-body');
             formBody.innerHTML = `<p style="color:#888; text-align:center;">🔄 正嘗試從 stn_archives 匯入審查報告...</p>`;
@@ -839,14 +836,10 @@
                         <h3>📂 對流個案審查報告成果</h3>
                     `;
 
-                    // 1. 綜觀環流與熱動力環境 (有勾選填寫的圖與文字同步亮出)
                     if(r.synoptic_fields.sfc_chart || r.synoptic_fields.h850_chart || r.synoptic_fields.h500_chart || r.thermodynamics.taipei || r.thermodynamics.pengjia) {
                         html += `<div class="review-desc-box"><div class="review-section-title">☁️ 08:00 LST 綜觀天氣場與熱動力環境</div>`;
-                        
-                        // 建立一個並排環境牆與探空的精美小格線區 (利用原有的 grid-3-col/grid-2-col 樣式)
                         html += `<div class="grid-3-col" style="margin-bottom: 20px;">`;
                         
-                        // 🪐 地面天氣圖
                         if(r.synoptic_fields.sfc_chart) {
                             html += `
                                 <div class="synoptic-card">
@@ -857,7 +850,6 @@
                                 </div>`;
                         }
                         
-                        // 🪐 850hPa 分析圖
                         if(r.synoptic_fields.h850_chart) {
                             html += `
                                 <div class="synoptic-card">
@@ -868,7 +860,6 @@
                                 </div>`;
                         }
                         
-                        // 🪐 500hPa 分析圖
                         if(r.synoptic_fields.h500_chart) {
                             html += `
                                 <div class="synoptic-card">
@@ -879,7 +870,6 @@
                                 </div>`;
                         }
                         
-                        // 🪐 台北探空圖
                         if(r.thermodynamics.taipei) {
                             html += `
                                 <div class="synoptic-card">
@@ -890,7 +880,6 @@
                                 </div>`;
                         }
                         
-                        // 🪐 彭佳嶼探空圖
                         if(r.thermodynamics.pengjia) {
                             html += `
                                 <div class="synoptic-card">
@@ -904,7 +893,6 @@
                         html += `</div></div>`;
                     }
 
-                    // 2. 降雨與流場 (半小時補幀影格庫)
                     if(r.rain_wind_evolution.times && r.rain_wind_evolution.times.length > 0) {
                         html += `<div class="review-desc-box"><div class="review-section-title">🌧️ 當日降雨與風場逐時分佈變化</div>`;
                         html += `<p style="color:#aaa; font-weight:bold;">物理過程總結：</p><div class="review-text-field">${r.rain_wind_evolution.summary}</div>`;
@@ -916,7 +904,6 @@
                         html += `</div></div>`;
                     }
 
-                    // 3. 局地溫度 (整點影格庫)
                     if(r.temp_wind_evolution.times && r.temp_wind_evolution.times.length > 0) {
                         html += `<div class="review-desc-box"><div class="review-section-title">🌡️ 當日溫度逐時分布變化</div>`;
                         html += `<p style="color:#aaa; font-weight:bold;">熱島與冷池描述：</p><div class="review-text-field">${r.temp_wind_evolution.summary}</div>`;
@@ -928,7 +915,6 @@
                         html += `</div></div>`;
                     }
 
-                    // 4. 雷達生命史 (10分鐘高頻率影格庫)
                     if(r.radar_lgt_evolution.times && r.radar_lgt_evolution.times.length > 0) {
                         html += `<div class="review-desc-box"><div class="review-section-title">📡 對流發展與回波演變</div>`;
                         html += `<p style="color:#aaa; font-weight:bold;">對流胞發展描述：</p><div class="review-text-field">${r.radar_lgt_evolution.summary}</div>`;
@@ -954,7 +940,6 @@
                     `;
                 });
         }
-        // 🌟 網頁載入時直接啟動動態偵測引擎
         window.onload = initApp;
     </script>
 </body>
