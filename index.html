@@ -458,7 +458,7 @@
         function initEmptyCharts() {
             const ctxRainTemp = document.getElementById('canvas-rain-temp').getContext('2d');
             const ctxWind = document.getElementById('canvas-wind').getContext('2d');
-            const defaultLabels = ["10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00"];
+            const defaultLabels = ["10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00"];
 
             chartRainTempInstance = new Chart(ctxRainTemp, {
                 type: 'bar',
@@ -522,7 +522,7 @@
             chartRainTempInstance = new Chart(document.getElementById('canvas-rain-temp').getContext('2d'), {
                 type: 'bar',
                 data: {
-                    labels: labels_X.length > 0 ? labels_X : ["10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00"],
+                    labels: labels_X.length > 0 ? labels_X : ["10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00"],
                     datasets: [
                         { label: '降雨量 (mm)', data: data_Rain, backgroundColor: 'rgba(0, 123, 255, 0.65)', borderColor: '#007bff', borderWidth: 1, yAxisID: 'y_rain', barPercentage: 0.5 },
                         { label: '氣溫 (°C)', data: data_Temp, type: 'line', borderColor: '#ff4d4d', backgroundColor: '#ff4d4d', borderWidth: 2.5, pointRadius: 3, tension: 0.2, yAxisID: 'y_temp' }
@@ -544,7 +544,7 @@
             chartWindInstance = new Chart(document.getElementById('canvas-wind').getContext('2d'), {
                 type: 'line',
                 data: {
-                    labels: labels_X.length > 0 ? labels_X : ["10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00"],
+                    labels: labels_X.length > 0 ? labels_X : ["10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00"],
                     datasets: [
                         { label: '風速 (m/s)', data: data_WindSpeed, borderColor: '#ffeb3b', backgroundColor: '#ffeb3b', borderWidth: 2.5, pointRadius: 3, tension: 0.1, yAxisID: 'y_speed' },
                         { label: '風向 (°)', data: data_WindDir, showLine: false, borderColor: '#29b6f6', backgroundColor: '#0d47a1', pointRadius: 5, yAxisID: 'y_dir' }
