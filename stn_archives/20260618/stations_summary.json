@@ -1,58 +1,58 @@
 {
   "meta": {
     "target_date": "2026-06-18",
-    "calculated_at": "2026-06-18 19:03:33"
+    "calculated_at": "2026-06-18 19:41:44"
   },
   "top10_precipitation": [
     {
       "StationName": "臺灣大學",
       "StationId": "A0A010",
-      "Rain": 673.5
+      "Rain": 147.0
     },
     {
       "StationName": "信義",
       "StationId": "C0AC70",
-      "Rain": 560.5
+      "Rain": 129.0
     },
     {
       "StationName": "松山",
       "StationId": "C0AH70",
-      "Rain": 511.0
-    },
-    {
-      "StationName": "永和",
-      "StationId": "C0AH10",
-      "Rain": 470.5
+      "Rain": 115.0
     },
     {
       "StationName": "文山",
       "StationId": "C0AC80",
-      "Rain": 462.0
+      "Rain": 107.5
+    },
+    {
+      "StationName": "永和",
+      "StationId": "C0AH10",
+      "Rain": 99.5
     },
     {
       "StationName": "臺北",
       "StationId": "466920",
-      "Rain": 430.0
-    },
-    {
-      "StationName": "國三甲005K",
-      "StationId": "CAA090",
-      "Rain": 349.5
-    },
-    {
-      "StationName": "內湖",
-      "StationId": "C0A9F0",
-      "Rain": 329.0
+      "Rain": 97.0
     },
     {
       "StationName": "屈尺",
       "StationId": "C0AI10",
-      "Rain": 312.0
+      "Rain": 83.5
+    },
+    {
+      "StationName": "國三甲005K",
+      "StationId": "CAA090",
+      "Rain": 83.5
+    },
+    {
+      "StationName": "內湖",
+      "StationId": "C0A9F0",
+      "Rain": 75.5
     },
     {
       "StationName": "國三S016K",
       "StationId": "CAA040",
-      "Rain": 290.5
+      "Rain": 71.5
     }
   ],
   "top10_max_temperature": [
@@ -121,7 +121,7 @@
       "StationName": "東眼山",
       "StationId": "C0C790",
       "Hour": "10:00",
-      "Rain": 0.5,
+      "Rain": 0.0,
       "Temp": 24.3,
       "WindSpeed": 0.5,
       "WindDir": 56.0
@@ -445,7 +445,7 @@
       "StationName": "坪林石牌",
       "StationId": "C0U980",
       "Hour": "10:00",
-      "Rain": 0.5,
+      "Rain": 0.0,
       "Temp": 28.5,
       "WindSpeed": 0.2,
       "WindDir": 0.0
@@ -472,7 +472,7 @@
       "StationName": "桃源谷",
       "StationId": "C0UA70",
       "Hour": "10:00",
-      "Rain": 0.5,
+      "Rain": 0.0,
       "Temp": 29.4,
       "WindSpeed": 2.2,
       "WindDir": 88.0
@@ -580,7 +580,7 @@
       "StationName": "坪林",
       "StationId": "C0A530",
       "Hour": "10:00",
-      "Rain": 0.5,
+      "Rain": 0.0,
       "Temp": 29.3,
       "WindSpeed": 0.1,
       "WindDir": 0.0
@@ -1084,7 +1084,7 @@
       "StationName": "福山",
       "StationId": "C2A560",
       "Hour": "10:00",
-      "Rain": 0.5,
+      "Rain": 0.0,
       "Temp": 31.6,
       "WindSpeed": 0.9,
       "WindDir": 340.0
@@ -1588,7 +1588,7 @@
       "StationName": "東眼山",
       "StationId": "C0C790",
       "Hour": "11:00",
-      "Rain": 0.5,
+      "Rain": 0.0,
       "Temp": 25.2,
       "WindSpeed": 1.0,
       "WindDir": 3.0
@@ -1912,7 +1912,7 @@
       "StationName": "坪林石牌",
       "StationId": "C0U980",
       "Hour": "11:00",
-      "Rain": 0.5,
+      "Rain": 0.0,
       "Temp": 28.8,
       "WindSpeed": 0.2,
       "WindDir": 0.0
@@ -1939,7 +1939,7 @@
       "StationName": "桃源谷",
       "StationId": "C0UA70",
       "Hour": "11:00",
-      "Rain": 0.5,
+      "Rain": 0.0,
       "Temp": 29.0,
       "WindSpeed": 0.7,
       "WindDir": 74.0
@@ -2002,7 +2002,7 @@
       "StationName": "楊梅",
       "StationId": "C0C660",
       "Hour": "11:00",
-      "Rain": 0.5,
+      "Rain": 0.0,
       "Temp": 31.1,
       "WindSpeed": 2.0,
       "WindDir": 261.0
@@ -2047,7 +2047,7 @@
       "StationName": "坪林",
       "StationId": "C0A530",
       "Hour": "11:00",
-      "Rain": 0.5,
+      "Rain": 0.0,
       "Temp": 28.1,
       "WindSpeed": 0.0,
       "WindDir": 0.0
@@ -2551,7 +2551,7 @@
       "StationName": "福山",
       "StationId": "C2A560",
       "Hour": "11:00",
-      "Rain": 0.5,
+      "Rain": 0.0,
       "Temp": 33.0,
       "WindSpeed": 1.3,
       "WindDir": 340.0
@@ -3055,7 +3055,7 @@
       "StationName": "東眼山",
       "StationId": "C0C790",
       "Hour": "12:00",
-      "Rain": 0.5,
+      "Rain": 0.0,
       "Temp": 25.5,
       "WindSpeed": 0.6,
       "WindDir": 343.0
@@ -3379,7 +3379,7 @@
       "StationName": "坪林石牌",
       "StationId": "C0U980",
       "Hour": "12:00",
-      "Rain": 0.5,
+      "Rain": 0.0,
       "Temp": 27.7,
       "WindSpeed": 0.5,
       "WindDir": 147.0
@@ -3406,7 +3406,7 @@
       "StationName": "桃源谷",
       "StationId": "C0UA70",
       "Hour": "12:00",
-      "Rain": 0.5,
+      "Rain": 0.0,
       "Temp": 26.5,
       "WindSpeed": 2.4,
       "WindDir": 94.0
@@ -3469,7 +3469,7 @@
       "StationName": "楊梅",
       "StationId": "C0C660",
       "Hour": "12:00",
-      "Rain": 0.5,
+      "Rain": 0.0,
       "Temp": 31.6,
       "WindSpeed": 1.4,
       "WindDir": 252.0
@@ -3514,7 +3514,7 @@
       "StationName": "坪林",
       "StationId": "C0A530",
       "Hour": "12:00",
-      "Rain": 0.5,
+      "Rain": 0.0,
       "Temp": 29.6,
       "WindSpeed": 0.7,
       "WindDir": 209.0
@@ -4018,7 +4018,7 @@
       "StationName": "福山",
       "StationId": "C2A560",
       "Hour": "12:00",
-      "Rain": 0.5,
+      "Rain": 0.0,
       "Temp": 31.7,
       "WindSpeed": 1.2,
       "WindDir": 300.0
@@ -4522,7 +4522,7 @@
       "StationName": "東眼山",
       "StationId": "C0C790",
       "Hour": "13:00",
-      "Rain": 0.5,
+      "Rain": 0.0,
       "Temp": 24.8,
       "WindSpeed": 0.4,
       "WindDir": 333.0
@@ -4846,7 +4846,7 @@
       "StationName": "坪林石牌",
       "StationId": "C0U980",
       "Hour": "13:00",
-      "Rain": 0.5,
+      "Rain": 0.0,
       "Temp": 27.8,
       "WindSpeed": 1.0,
       "WindDir": 137.0
@@ -4873,7 +4873,7 @@
       "StationName": "桃源谷",
       "StationId": "C0UA70",
       "Hour": "13:00",
-      "Rain": 0.5,
+      "Rain": 0.0,
       "Temp": 26.9,
       "WindSpeed": 1.6,
       "WindDir": 104.0
@@ -4882,7 +4882,7 @@
       "StationName": "福山植物園",
       "StationId": "C0AH90",
       "Hour": "13:00",
-      "Rain": 7.5,
+      "Rain": 7.0,
       "Temp": 23.8,
       "WindSpeed": 0.7,
       "WindDir": 244.0
@@ -4936,7 +4936,7 @@
       "StationName": "楊梅",
       "StationId": "C0C660",
       "Hour": "13:00",
-      "Rain": 0.5,
+      "Rain": 0.0,
       "Temp": 30.7,
       "WindSpeed": 1.9,
       "WindDir": 259.0
@@ -4981,7 +4981,7 @@
       "StationName": "坪林",
       "StationId": "C0A530",
       "Hour": "13:00",
-      "Rain": 0.5,
+      "Rain": 0.0,
       "Temp": 28.0,
       "WindSpeed": 0.1,
       "WindDir": 0.0
@@ -5485,7 +5485,7 @@
       "StationName": "福山",
       "StationId": "C2A560",
       "Hour": "13:00",
-      "Rain": 5.0,
+      "Rain": 4.5,
       "Temp": 27.0,
       "WindSpeed": 0.5,
       "WindDir": 10.0
@@ -5989,7 +5989,7 @@
       "StationName": "東眼山",
       "StationId": "C0C790",
       "Hour": "14:00",
-      "Rain": 6.0,
+      "Rain": 5.5,
       "Temp": 22.3,
       "WindSpeed": 0.6,
       "WindDir": 38.0
@@ -6313,7 +6313,7 @@
       "StationName": "坪林石牌",
       "StationId": "C0U980",
       "Hour": "14:00",
-      "Rain": 0.5,
+      "Rain": 0.0,
       "Temp": 26.9,
       "WindSpeed": 0.0,
       "WindDir": 0.0
@@ -6340,7 +6340,7 @@
       "StationName": "桃源谷",
       "StationId": "C0UA70",
       "Hour": "14:00",
-      "Rain": 0.5,
+      "Rain": 0.0,
       "Temp": 24.6,
       "WindSpeed": 2.2,
       "WindDir": 122.0
@@ -6349,7 +6349,7 @@
       "StationName": "福山植物園",
       "StationId": "C0AH90",
       "Hour": "14:00",
-      "Rain": 8.0,
+      "Rain": 0.5,
       "Temp": 25.9,
       "WindSpeed": 0.2,
       "WindDir": 0.0
@@ -6403,7 +6403,7 @@
       "StationName": "楊梅",
       "StationId": "C0C660",
       "Hour": "14:00",
-      "Rain": 0.5,
+      "Rain": 0.0,
       "Temp": 31.0,
       "WindSpeed": 1.7,
       "WindDir": 266.0
@@ -6448,7 +6448,7 @@
       "StationName": "坪林",
       "StationId": "C0A530",
       "Hour": "14:00",
-      "Rain": 0.5,
+      "Rain": 0.0,
       "Temp": 28.0,
       "WindSpeed": 0.9,
       "WindDir": 54.0
@@ -6529,7 +6529,7 @@
       "StationName": "桶後",
       "StationId": "C0A570",
       "Hour": "14:00",
-      "Rain": 2.5,
+      "Rain": 2.0,
       "Temp": 28.0,
       "WindSpeed": 0.0,
       "WindDir": 0.0
@@ -6817,7 +6817,7 @@
       "StationName": "臺北",
       "StationId": "466920",
       "Hour": "14:00",
-      "Rain": 1.0,
+      "Rain": 0.5,
       "Temp": 29.0,
       "WindSpeed": 3.2,
       "WindDir": 50.0
@@ -6952,7 +6952,7 @@
       "StationName": "福山",
       "StationId": "C2A560",
       "Hour": "14:00",
-      "Rain": 5.0,
+      "Rain": 0.0,
       "Temp": 28.6,
       "WindSpeed": 0.1,
       "WindDir": 0.0
@@ -7456,7 +7456,7 @@
       "StationName": "東眼山",
       "StationId": "C0C790",
       "Hour": "15:00",
-      "Rain": 6.5,
+      "Rain": 0.5,
       "Temp": 22.5,
       "WindSpeed": 1.3,
       "WindDir": 232.0
@@ -7672,7 +7672,7 @@
       "StationName": "松山",
       "StationId": "C0AH70",
       "Hour": "15:00",
-      "Rain": 57.0,
+      "Rain": 56.0,
       "Temp": 24.7,
       "WindSpeed": 1.4,
       "WindDir": 277.0
@@ -7762,7 +7762,7 @@
       "StationName": "鶯子嶺",
       "StationId": "C0U950",
       "Hour": "15:00",
-      "Rain": 1.5,
+      "Rain": 0.0,
       "Temp": 21.4,
       "WindSpeed": 3.0,
       "WindDir": 109.0
@@ -7780,7 +7780,7 @@
       "StationName": "坪林石牌",
       "StationId": "C0U980",
       "Hour": "15:00",
-      "Rain": 0.5,
+      "Rain": 0.0,
       "Temp": 24.8,
       "WindSpeed": 0.0,
       "WindDir": 0.0
@@ -7798,7 +7798,7 @@
       "StationName": "關西",
       "StationId": "C0D700",
       "Hour": "15:00",
-      "Rain": 6.0,
+      "Rain": 2.5,
       "Temp": 26.7,
       "WindSpeed": 0.6,
       "WindDir": 164.0
@@ -7807,7 +7807,7 @@
       "StationName": "桃源谷",
       "StationId": "C0UA70",
       "Hour": "15:00",
-      "Rain": 0.5,
+      "Rain": 0.0,
       "Temp": 26.1,
       "WindSpeed": 1.7,
       "WindDir": 132.0
@@ -7816,7 +7816,7 @@
       "StationName": "福山植物園",
       "StationId": "C0AH90",
       "Hour": "15:00",
-      "Rain": 8.0,
+      "Rain": 0.0,
       "Temp": 26.1,
       "WindSpeed": 0.6,
       "WindDir": 59.0
@@ -7870,7 +7870,7 @@
       "StationName": "楊梅",
       "StationId": "C0C660",
       "Hour": "15:00",
-      "Rain": 0.5,
+      "Rain": 0.0,
       "Temp": 30.7,
       "WindSpeed": 1.8,
       "WindDir": 228.0
@@ -7915,7 +7915,7 @@
       "StationName": "坪林",
       "StationId": "C0A530",
       "Hour": "15:00",
-      "Rain": 0.5,
+      "Rain": 0.0,
       "Temp": 25.8,
       "WindSpeed": 0.3,
       "WindDir": 359.0
@@ -7924,7 +7924,7 @@
       "StationName": "泰平",
       "StationId": "C0A550",
       "Hour": "15:00",
-      "Rain": 14.0,
+      "Rain": 11.0,
       "Temp": 24.5,
       "WindSpeed": 0.0,
       "WindDir": 0.0
@@ -7942,7 +7942,7 @@
       "StationName": "汐止",
       "StationId": "C0AH00",
       "Hour": "15:00",
-      "Rain": 8.0,
+      "Rain": 7.0,
       "Temp": 28.2,
       "WindSpeed": 2.1,
       "WindDir": 214.0
@@ -7960,7 +7960,7 @@
       "StationName": "信義",
       "StationId": "C0AC70",
       "Hour": "15:00",
-      "Rain": 51.0,
+      "Rain": 50.5,
       "Temp": 25.7,
       "WindSpeed": 0.6,
       "WindDir": 281.0
@@ -7996,7 +7996,7 @@
       "StationName": "桶後",
       "StationId": "C0A570",
       "Hour": "15:00",
-      "Rain": 2.5,
+      "Rain": 0.0,
       "Temp": 27.6,
       "WindSpeed": 0.3,
       "WindDir": 244.0
@@ -8050,7 +8050,7 @@
       "StationName": "石碇",
       "StationId": "C0A640",
       "Hour": "15:00",
-      "Rain": 2.5,
+      "Rain": 0.0,
       "Temp": 25.7,
       "WindSpeed": 0.0,
       "WindDir": 0.0
@@ -8059,7 +8059,7 @@
       "StationName": "復興",
       "StationId": "C0C460",
       "Hour": "15:00",
-      "Rain": 9.5,
+      "Rain": 4.5,
       "Temp": 24.8,
       "WindSpeed": 0.3,
       "WindDir": 273.0
@@ -8077,7 +8077,7 @@
       "StationName": "內湖",
       "StationId": "C0A9F0",
       "Hour": "15:00",
-      "Rain": 26.5,
+      "Rain": 20.0,
       "Temp": 26.9,
       "WindSpeed": 1.3,
       "WindDir": 245.0
@@ -8149,7 +8149,7 @@
       "StationName": "土城",
       "StationId": "C0AD40",
       "Hour": "15:00",
-      "Rain": 9.0,
+      "Rain": 8.5,
       "Temp": 25.6,
       "WindSpeed": 2.5,
       "WindDir": 83.0
@@ -8167,7 +8167,7 @@
       "StationName": "永和",
       "StationId": "C0AH10",
       "Hour": "15:00",
-      "Rain": 71.5,
+      "Rain": 70.5,
       "Temp": 24.4,
       "WindSpeed": 4.0,
       "WindDir": 85.0
@@ -8203,7 +8203,7 @@
       "StationName": "深坑",
       "StationId": "C0AH80",
       "Hour": "15:00",
-      "Rain": 2.5,
+      "Rain": 1.5,
       "Temp": 26.8,
       "WindSpeed": 1.5,
       "WindDir": 241.0
@@ -8239,7 +8239,7 @@
       "StationName": "三重",
       "StationId": "C0AI30",
       "Hour": "15:00",
-      "Rain": 19.5,
+      "Rain": 19.0,
       "Temp": 25.4,
       "WindSpeed": 6.0,
       "WindDir": 111.0
@@ -8257,7 +8257,7 @@
       "StationName": "新北",
       "StationId": "466881",
       "Hour": "15:00",
-      "Rain": 25.5,
+      "Rain": 15.0,
       "Temp": 25.3,
       "WindSpeed": 2.3,
       "WindDir": 60.0
@@ -8284,7 +8284,7 @@
       "StationName": "臺北",
       "StationId": "466920",
       "Hour": "15:00",
-      "Rain": 47.5,
+      "Rain": 46.5,
       "Temp": 24.9,
       "WindSpeed": 4.6,
       "WindDir": 90.0
@@ -8383,7 +8383,7 @@
       "StationName": "臺灣大學",
       "StationId": "A0A010",
       "Hour": "15:00",
-      "Rain": 85.0,
+      "Rain": 81.5,
       "Temp": 24.6,
       "WindSpeed": 1.4,
       "WindDir": 10.0
@@ -8419,7 +8419,7 @@
       "StationName": "福山",
       "StationId": "C2A560",
       "Hour": "15:00",
-      "Rain": 5.0,
+      "Rain": 0.0,
       "Temp": 28.3,
       "WindSpeed": 0.3,
       "WindDir": 290.0
@@ -8473,7 +8473,7 @@
       "StationName": "信賢",
       "StationId": "C2AK30",
       "Hour": "15:00",
-      "Rain": 0.5,
+      "Rain": 0.0,
       "Temp": 26.0,
       "WindSpeed": 2.1,
       "WindDir": 60.0
@@ -8545,7 +8545,7 @@
       "StationName": "關西工作站",
       "StationId": "C2D720",
       "Hour": "15:00",
-      "Rain": 22.0,
+      "Rain": 20.5,
       "Temp": 26.4,
       "WindSpeed": 0.6,
       "WindDir": 100.0
@@ -8563,7 +8563,7 @@
       "StationName": "國一N013K",
       "StationId": "CAA010",
       "Hour": "15:00",
-      "Rain": 12.0,
+      "Rain": 11.5,
       "Temp": 25.8,
       "WindSpeed": 2.7,
       "WindDir": 260.0
@@ -8590,7 +8590,7 @@
       "StationName": "國三S016K",
       "StationId": "CAA040",
       "Hour": "15:00",
-      "Rain": 28.5,
+      "Rain": 24.5,
       "Temp": 25.0,
       "WindSpeed": 1.2,
       "WindDir": 200.0
@@ -8599,7 +8599,7 @@
       "StationName": "國三S037K",
       "StationId": "CAA050",
       "Hour": "15:00",
-      "Rain": 15.5,
+      "Rain": 14.5,
       "Temp": 25.0,
       "WindSpeed": 3.6,
       "WindDir": 70.0
@@ -8635,7 +8635,7 @@
       "StationName": "國三甲005K",
       "StationId": "CAA090",
       "Hour": "15:00",
-      "Rain": 35.0,
+      "Rain": 22.5,
       "Temp": 25.0,
       "WindSpeed": 2.2,
       "WindDir": 220.0
@@ -8653,7 +8653,7 @@
       "StationName": "國五S005K",
       "StationId": "CAAD60",
       "Hour": "15:00",
-      "Rain": 3.0,
+      "Rain": 0.5,
       "Temp": 25.8,
       "WindSpeed": 1.3,
       "WindDir": 360.0
@@ -8662,7 +8662,7 @@
       "StationName": "國五S006K",
       "StationId": "CAAD70",
       "Hour": "15:00",
-      "Rain": 3.0,
+      "Rain": 0.5,
       "Temp": 25.8,
       "WindSpeed": 1.8,
       "WindDir": 310.0
@@ -8806,7 +8806,7 @@
       "StationName": "國三N072K",
       "StationId": "CAC770",
       "Hour": "15:00",
-      "Rain": 2.0,
+      "Rain": 1.0,
       "Temp": 26.3,
       "WindSpeed": 2.5,
       "WindDir": 180.0
@@ -8896,7 +8896,7 @@
       "StationName": "國三N077K",
       "StationId": "CAD710",
       "Hour": "15:00",
-      "Rain": 24.0,
+      "Rain": 15.0,
       "Temp": 25.1,
       "WindSpeed": 0.8,
       "WindDir": 120.0
@@ -8923,7 +8923,7 @@
       "StationName": "東眼山",
       "StationId": "C0C790",
       "Hour": "16:00",
-      "Rain": 15.5,
+      "Rain": 9.0,
       "Temp": 21.3,
       "WindSpeed": 0.7,
       "WindDir": 58.0
@@ -9139,7 +9139,7 @@
       "StationName": "松山",
       "StationId": "C0AH70",
       "Hour": "16:00",
-      "Rain": 108.0,
+      "Rain": 51.0,
       "Temp": 24.2,
       "WindSpeed": 1.1,
       "WindDir": 61.0
@@ -9157,7 +9157,7 @@
       "StationName": "基隆嶼",
       "StationId": "C0B020",
       "Hour": "16:00",
-      "Rain": 0.5,
+      "Rain": 0.0,
       "Temp": 25.8,
       "WindSpeed": 2.4,
       "WindDir": 110.0
@@ -9229,7 +9229,7 @@
       "StationName": "鶯子嶺",
       "StationId": "C0U950",
       "Hour": "16:00",
-      "Rain": 1.5,
+      "Rain": 0.0,
       "Temp": 20.9,
       "WindSpeed": 3.5,
       "WindDir": 59.0
@@ -9247,7 +9247,7 @@
       "StationName": "坪林石牌",
       "StationId": "C0U980",
       "Hour": "16:00",
-      "Rain": 0.5,
+      "Rain": 0.0,
       "Temp": 24.1,
       "WindSpeed": 0.1,
       "WindDir": 0.0
@@ -9265,7 +9265,7 @@
       "StationName": "關西",
       "StationId": "C0D700",
       "Hour": "16:00",
-      "Rain": 10.0,
+      "Rain": 4.0,
       "Temp": 27.0,
       "WindSpeed": 1.2,
       "WindDir": 77.0
@@ -9274,7 +9274,7 @@
       "StationName": "桃源谷",
       "StationId": "C0UA70",
       "Hour": "16:00",
-      "Rain": 0.5,
+      "Rain": 0.0,
       "Temp": 24.6,
       "WindSpeed": 0.8,
       "WindDir": 128.0
@@ -9283,7 +9283,7 @@
       "StationName": "福山植物園",
       "StationId": "C0AH90",
       "Hour": "16:00",
-      "Rain": 8.0,
+      "Rain": 0.0,
       "Temp": 24.1,
       "WindSpeed": 0.0,
       "WindDir": 0.0
@@ -9337,7 +9337,7 @@
       "StationName": "楊梅",
       "StationId": "C0C660",
       "Hour": "16:00",
-      "Rain": 0.5,
+      "Rain": 0.0,
       "Temp": 30.7,
       "WindSpeed": 2.9,
       "WindDir": 232.0
@@ -9382,7 +9382,7 @@
       "StationName": "坪林",
       "StationId": "C0A530",
       "Hour": "16:00",
-      "Rain": 0.5,
+      "Rain": 0.0,
       "Temp": 24.9,
       "WindSpeed": 0.0,
       "WindDir": 0.0
@@ -9391,7 +9391,7 @@
       "StationName": "泰平",
       "StationId": "C0A550",
       "Hour": "16:00",
-      "Rain": 14.0,
+      "Rain": 0.0,
       "Temp": 24.3,
       "WindSpeed": 0.0,
       "WindDir": 0.0
@@ -9409,7 +9409,7 @@
       "StationName": "汐止",
       "StationId": "C0AH00",
       "Hour": "16:00",
-      "Rain": 18.0,
+      "Rain": 10.0,
       "Temp": 25.9,
       "WindSpeed": 1.2,
       "WindDir": 194.0
@@ -9427,7 +9427,7 @@
       "StationName": "信義",
       "StationId": "C0AC70",
       "Hour": "16:00",
-      "Rain": 122.0,
+      "Rain": 71.0,
       "Temp": 25.3,
       "WindSpeed": 0.5,
       "WindDir": 71.0
@@ -9436,7 +9436,7 @@
       "StationName": "文山",
       "StationId": "C0AC80",
       "Hour": "16:00",
-      "Rain": 89.5,
+      "Rain": 36.0,
       "Temp": 24.7,
       "WindSpeed": 0.4,
       "WindDir": 82.0
@@ -9454,7 +9454,7 @@
       "StationName": "山佳",
       "StationId": "C0A520",
       "Hour": "16:00",
-      "Rain": 1.0,
+      "Rain": 0.5,
       "Temp": 26.7,
       "WindSpeed": 3.7,
       "WindDir": 32.0
@@ -9463,7 +9463,7 @@
       "StationName": "桶後",
       "StationId": "C0A570",
       "Hour": "16:00",
-      "Rain": 3.0,
+      "Rain": 0.5,
       "Temp": 24.7,
       "WindSpeed": 0.2,
       "WindDir": 0.0
@@ -9472,7 +9472,7 @@
       "StationName": "雙溪",
       "StationId": "C0A890",
       "Hour": "16:00",
-      "Rain": 1.0,
+      "Rain": 0.0,
       "Temp": 29.0,
       "WindSpeed": 0.0,
       "WindDir": 0.0
@@ -9517,7 +9517,7 @@
       "StationName": "石碇",
       "StationId": "C0A640",
       "Hour": "16:00",
-      "Rain": 4.0,
+      "Rain": 1.5,
       "Temp": 23.7,
       "WindSpeed": 0.0,
       "WindDir": 0.0
@@ -9526,7 +9526,7 @@
       "StationName": "復興",
       "StationId": "C0C460",
       "Hour": "16:00",
-      "Rain": 11.0,
+      "Rain": 1.5,
       "Temp": 24.3,
       "WindSpeed": 0.0,
       "WindDir": 0.0
@@ -9544,7 +9544,7 @@
       "StationName": "內湖",
       "StationId": "C0A9F0",
       "Hour": "16:00",
-      "Rain": 69.5,
+      "Rain": 43.0,
       "Temp": 26.2,
       "WindSpeed": 0.8,
       "WindDir": 121.0
@@ -9616,7 +9616,7 @@
       "StationName": "土城",
       "StationId": "C0AD40",
       "Hour": "16:00",
-      "Rain": 12.0,
+      "Rain": 3.0,
       "Temp": 24.1,
       "WindSpeed": 1.6,
       "WindDir": 64.0
@@ -9634,7 +9634,7 @@
       "StationName": "永和",
       "StationId": "C0AH10",
       "Hour": "16:00",
-      "Rain": 99.5,
+      "Rain": 28.0,
       "Temp": 24.7,
       "WindSpeed": 1.4,
       "WindDir": 82.0
@@ -9652,7 +9652,7 @@
       "StationName": "平等",
       "StationId": "C0AH40",
       "Hour": "16:00",
-      "Rain": 32.5,
+      "Rain": 31.5,
       "Temp": null,
       "WindSpeed": -99.0,
       "WindDir": -99.0
@@ -9670,7 +9670,7 @@
       "StationName": "深坑",
       "StationId": "C0AH80",
       "Hour": "16:00",
-      "Rain": 13.5,
+      "Rain": 11.0,
       "Temp": 25.7,
       "WindSpeed": 0.0,
       "WindDir": 0.0
@@ -9679,7 +9679,7 @@
       "StationName": "七堵",
       "StationId": "C0B010",
       "Hour": "16:00",
-      "Rain": 5.5,
+      "Rain": 5.0,
       "Temp": null,
       "WindSpeed": -99.0,
       "WindDir": -99.0
@@ -9697,7 +9697,7 @@
       "StationName": "屈尺",
       "StationId": "C0AI10",
       "Hour": "16:00",
-      "Rain": 52.0,
+      "Rain": 35.5,
       "Temp": null,
       "WindSpeed": -99.0,
       "WindDir": -99.0
@@ -9706,7 +9706,7 @@
       "StationName": "三重",
       "StationId": "C0AI30",
       "Hour": "16:00",
-      "Rain": 58.0,
+      "Rain": 38.5,
       "Temp": 25.0,
       "WindSpeed": 5.2,
       "WindDir": 175.0
@@ -9724,7 +9724,7 @@
       "StationName": "新北",
       "StationId": "466881",
       "Hour": "16:00",
-      "Rain": 39.0,
+      "Rain": 13.5,
       "Temp": 24.8,
       "WindSpeed": 1.4,
       "WindDir": 20.0
@@ -9751,7 +9751,7 @@
       "StationName": "臺北",
       "StationId": "466920",
       "Hour": "16:00",
-      "Rain": 90.0,
+      "Rain": 42.5,
       "Temp": 24.8,
       "WindSpeed": 1.9,
       "WindDir": 210.0
@@ -9850,7 +9850,7 @@
       "StationName": "臺灣大學",
       "StationId": "A0A010",
       "Hour": "16:00",
-      "Rain": 144.0,
+      "Rain": 59.0,
       "Temp": 24.2,
       "WindSpeed": 1.1,
       "WindDir": 990.0
@@ -9886,7 +9886,7 @@
       "StationName": "福山",
       "StationId": "C2A560",
       "Hour": "16:00",
-      "Rain": 5.0,
+      "Rain": 0.0,
       "Temp": 25.9,
       "WindSpeed": 0.1,
       "WindDir": 0.0
@@ -9940,7 +9940,7 @@
       "StationName": "信賢",
       "StationId": "C2AK30",
       "Hour": "16:00",
-      "Rain": 3.0,
+      "Rain": 2.5,
       "Temp": 24.2,
       "WindSpeed": 2.2,
       "WindDir": 70.0
@@ -10012,7 +10012,7 @@
       "StationName": "關西工作站",
       "StationId": "C2D720",
       "Hour": "16:00",
-      "Rain": 22.5,
+      "Rain": 0.5,
       "Temp": 27.9,
       "WindSpeed": 0.2,
       "WindDir": 0.0
@@ -10030,7 +10030,7 @@
       "StationName": "國一N013K",
       "StationId": "CAA010",
       "Hour": "16:00",
-      "Rain": 48.0,
+      "Rain": 36.0,
       "Temp": 23.5,
       "WindSpeed": 1.1,
       "WindDir": 230.0
@@ -10039,7 +10039,7 @@
       "StationName": "國一S026K",
       "StationId": "CAA020",
       "Hour": "16:00",
-      "Rain": 45.5,
+      "Rain": 41.0,
       "Temp": 24.3,
       "WindSpeed": 2.4,
       "WindDir": 100.0
@@ -10048,7 +10048,7 @@
       "StationName": "國三S010K",
       "StationId": "CAA030",
       "Hour": "16:00",
-      "Rain": 26.5,
+      "Rain": 22.0,
       "Temp": 23.8,
       "WindSpeed": 1.8,
       "WindDir": 150.0
@@ -10057,7 +10057,7 @@
       "StationName": "國三S016K",
       "StationId": "CAA040",
       "Hour": "16:00",
-      "Rain": 49.0,
+      "Rain": 20.5,
       "Temp": 23.1,
       "WindSpeed": 0.9,
       "WindDir": 60.0
@@ -10066,7 +10066,7 @@
       "StationName": "國三S037K",
       "StationId": "CAA050",
       "Hour": "16:00",
-      "Rain": 32.0,
+      "Rain": 16.5,
       "Temp": 24.0,
       "WindSpeed": 2.1,
       "WindDir": 40.0
@@ -10075,7 +10075,7 @@
       "StationName": "國三S042K",
       "StationId": "CAA060",
       "Hour": "16:00",
-      "Rain": 6.5,
+      "Rain": 4.5,
       "Temp": 25.0,
       "WindSpeed": 1.8,
       "WindDir": 60.0
@@ -10084,7 +10084,7 @@
       "StationName": "國三N046K",
       "StationId": "CAA070",
       "Hour": "16:00",
-      "Rain": 2.0,
+      "Rain": 0.0,
       "Temp": 25.3,
       "WindSpeed": 2.7,
       "WindDir": 50.0
@@ -10102,7 +10102,7 @@
       "StationName": "國三甲005K",
       "StationId": "CAA090",
       "Hour": "16:00",
-      "Rain": 60.0,
+      "Rain": 25.0,
       "Temp": 23.7,
       "WindSpeed": 1.6,
       "WindDir": 70.0
@@ -10120,7 +10120,7 @@
       "StationName": "國五S005K",
       "StationId": "CAAD60",
       "Hour": "16:00",
-      "Rain": 5.0,
+      "Rain": 2.0,
       "Temp": 24.0,
       "WindSpeed": 1.7,
       "WindDir": 360.0
@@ -10129,7 +10129,7 @@
       "StationName": "國五S006K",
       "StationId": "CAAD70",
       "Hour": "16:00",
-      "Rain": 4.0,
+      "Rain": 1.0,
       "Temp": 24.3,
       "WindSpeed": 2.9,
       "WindDir": 310.0
@@ -10183,7 +10183,7 @@
       "StationName": "國一S006K",
       "StationId": "CAB020",
       "Hour": "16:00",
-      "Rain": 8.0,
+      "Rain": 7.5,
       "Temp": 24.3,
       "WindSpeed": 3.0,
       "WindDir": 260.0
@@ -10201,7 +10201,7 @@
       "StationName": "國三S007K",
       "StationId": "CAB040",
       "Hour": "16:00",
-      "Rain": 14.5,
+      "Rain": 12.5,
       "Temp": 24.1,
       "WindSpeed": 2.0,
       "WindDir": 210.0
@@ -10273,7 +10273,7 @@
       "StationName": "國三N072K",
       "StationId": "CAC770",
       "Hour": "16:00",
-      "Rain": 3.5,
+      "Rain": 1.5,
       "Temp": 26.8,
       "WindSpeed": 1.2,
       "WindDir": 170.0
@@ -10327,7 +10327,7 @@
       "StationName": "國三N085K",
       "StationId": "CAD080",
       "Hour": "16:00",
-      "Rain": 0.5,
+      "Rain": 0.0,
       "Temp": 28.8,
       "WindSpeed": 1.6,
       "WindDir": 200.0
@@ -10363,7 +10363,7 @@
       "StationName": "國三N077K",
       "StationId": "CAD710",
       "Hour": "16:00",
-      "Rain": 25.5,
+      "Rain": 1.5,
       "Temp": 26.0,
       "WindSpeed": 0.6,
       "WindDir": 150.0
@@ -10390,7 +10390,7 @@
       "StationName": "東眼山",
       "StationId": "C0C790",
       "Hour": "17:00",
-      "Rain": 29.0,
+      "Rain": 13.5,
       "Temp": 21.6,
       "WindSpeed": 0.9,
       "WindDir": 203.0
@@ -10417,7 +10417,7 @@
       "StationName": "科教館",
       "StationId": "C0A770",
       "Hour": "17:00",
-      "Rain": 49.0,
+      "Rain": 0.5,
       "Temp": 26.0,
       "WindSpeed": 0.3,
       "WindDir": 88.0
@@ -10444,7 +10444,7 @@
       "StationName": "大武崙",
       "StationId": "C0B040",
       "Hour": "17:00",
-      "Rain": 5.5,
+      "Rain": 2.5,
       "Temp": 26.0,
       "WindSpeed": 3.6,
       "WindDir": 184.0
@@ -10534,7 +10534,7 @@
       "StationName": "八斗子",
       "StationId": "C0B050",
       "Hour": "17:00",
-      "Rain": 1.0,
+      "Rain": 0.5,
       "Temp": 25.9,
       "WindSpeed": 3.1,
       "WindDir": 220.0
@@ -10597,7 +10597,7 @@
       "StationName": "板橋",
       "StationId": "C0AJ80",
       "Hour": "17:00",
-      "Rain": 8.0,
+      "Rain": 0.0,
       "Temp": 25.9,
       "WindSpeed": 0.8,
       "WindDir": 97.0
@@ -10606,7 +10606,7 @@
       "StationName": "松山",
       "StationId": "C0AH70",
       "Hour": "17:00",
-      "Rain": 115.0,
+      "Rain": 7.0,
       "Temp": 24.8,
       "WindSpeed": 1.5,
       "WindDir": 74.0
@@ -10624,7 +10624,7 @@
       "StationName": "基隆嶼",
       "StationId": "C0B020",
       "Hour": "17:00",
-      "Rain": 0.5,
+      "Rain": 0.0,
       "Temp": 24.1,
       "WindSpeed": 3.9,
       "WindDir": 198.0
@@ -10642,7 +10642,7 @@
       "StationName": "大溪永福",
       "StationId": "C0C710",
       "Hour": "17:00",
-      "Rain": 1.0,
+      "Rain": 0.0,
       "Temp": 26.4,
       "WindSpeed": 1.7,
       "WindDir": 326.0
@@ -10696,7 +10696,7 @@
       "StationName": "鶯子嶺",
       "StationId": "C0U950",
       "Hour": "17:00",
-      "Rain": 1.5,
+      "Rain": 0.0,
       "Temp": 20.9,
       "WindSpeed": 2.8,
       "WindDir": 8.0
@@ -10714,7 +10714,7 @@
       "StationName": "坪林石牌",
       "StationId": "C0U980",
       "Hour": "17:00",
-      "Rain": 0.5,
+      "Rain": 0.0,
       "Temp": 23.6,
       "WindSpeed": 2.6,
       "WindDir": 323.0
@@ -10732,7 +10732,7 @@
       "StationName": "關西",
       "StationId": "C0D700",
       "Hour": "17:00",
-      "Rain": 10.0,
+      "Rain": 0.0,
       "Temp": 28.2,
       "WindSpeed": 1.9,
       "WindDir": 67.0
@@ -10741,7 +10741,7 @@
       "StationName": "桃源谷",
       "StationId": "C0UA70",
       "Hour": "17:00",
-      "Rain": 0.5,
+      "Rain": 0.0,
       "Temp": 24.0,
       "WindSpeed": 0.9,
       "WindDir": 247.0
@@ -10750,7 +10750,7 @@
       "StationName": "福山植物園",
       "StationId": "C0AH90",
       "Hour": "17:00",
-      "Rain": 8.0,
+      "Rain": 0.0,
       "Temp": 23.5,
       "WindSpeed": 0.0,
       "WindDir": 0.0
@@ -10795,7 +10795,7 @@
       "StationName": "大溪",
       "StationId": "C0C630",
       "Hour": "17:00",
-      "Rain": 1.0,
+      "Rain": 0.5,
       "Temp": 26.1,
       "WindSpeed": 2.0,
       "WindDir": 63.0
@@ -10804,7 +10804,7 @@
       "StationName": "楊梅",
       "StationId": "C0C660",
       "Hour": "17:00",
-      "Rain": 0.5,
+      "Rain": 0.0,
       "Temp": 30.4,
       "WindSpeed": 1.5,
       "WindDir": 246.0
@@ -10822,7 +10822,7 @@
       "StationName": "龍潭",
       "StationId": "C0C670",
       "Hour": "17:00",
-      "Rain": 0.5,
+      "Rain": 0.0,
       "Temp": 26.2,
       "WindSpeed": 2.2,
       "WindDir": 67.0
@@ -10849,7 +10849,7 @@
       "StationName": "坪林",
       "StationId": "C0A530",
       "Hour": "17:00",
-      "Rain": 2.0,
+      "Rain": 1.5,
       "Temp": 24.0,
       "WindSpeed": 0.0,
       "WindDir": 0.0
@@ -10858,7 +10858,7 @@
       "StationName": "泰平",
       "StationId": "C0A550",
       "Hour": "17:00",
-      "Rain": 14.0,
+      "Rain": 0.0,
       "Temp": 24.2,
       "WindSpeed": 0.0,
       "WindDir": 0.0
@@ -10867,7 +10867,7 @@
       "StationName": "五指山",
       "StationId": "C0A870",
       "Hour": "17:00",
-      "Rain": 14.5,
+      "Rain": 5.5,
       "Temp": 24.1,
       "WindSpeed": 1.3,
       "WindDir": 236.0
@@ -10876,7 +10876,7 @@
       "StationName": "汐止",
       "StationId": "C0AH00",
       "Hour": "17:00",
-      "Rain": 27.5,
+      "Rain": 9.5,
       "Temp": 26.1,
       "WindSpeed": 1.4,
       "WindDir": 315.0
@@ -10894,7 +10894,7 @@
       "StationName": "信義",
       "StationId": "C0AC70",
       "Hour": "17:00",
-      "Rain": 129.0,
+      "Rain": 7.0,
       "Temp": 25.3,
       "WindSpeed": 0.0,
       "WindDir": 0.0
@@ -10903,7 +10903,7 @@
       "StationName": "文山",
       "StationId": "C0AC80",
       "Hour": "17:00",
-      "Rain": 104.5,
+      "Rain": 15.0,
       "Temp": 25.0,
       "WindSpeed": 1.0,
       "WindDir": 14.0
@@ -10912,7 +10912,7 @@
       "StationName": "新莊",
       "StationId": "C0ACA0",
       "Hour": "17:00",
-      "Rain": 6.0,
+      "Rain": 0.0,
       "Temp": 26.7,
       "WindSpeed": 0.5,
       "WindDir": 79.0
@@ -10921,7 +10921,7 @@
       "StationName": "山佳",
       "StationId": "C0A520",
       "Hour": "17:00",
-      "Rain": 1.0,
+      "Rain": 0.0,
       "Temp": 26.9,
       "WindSpeed": 1.8,
       "WindDir": 17.0
@@ -10930,7 +10930,7 @@
       "StationName": "桶後",
       "StationId": "C0A570",
       "Hour": "17:00",
-      "Rain": 3.5,
+      "Rain": 0.5,
       "Temp": 24.0,
       "WindSpeed": 0.2,
       "WindDir": 0.0
@@ -10939,7 +10939,7 @@
       "StationName": "雙溪",
       "StationId": "C0A890",
       "Hour": "17:00",
-      "Rain": 1.0,
+      "Rain": 0.0,
       "Temp": 28.4,
       "WindSpeed": 0.0,
       "WindDir": 0.0
@@ -10957,7 +10957,7 @@
       "StationName": "大坪",
       "StationId": "C0A860",
       "Hour": "17:00",
-      "Rain": 7.5,
+      "Rain": 3.5,
       "Temp": 23.6,
       "WindSpeed": 2.0,
       "WindDir": 206.0
@@ -10966,7 +10966,7 @@
       "StationName": "三和",
       "StationId": "C0A931",
       "Hour": "17:00",
-      "Rain": 8.0,
+      "Rain": 0.0,
       "Temp": 27.3,
       "WindSpeed": 0.3,
       "WindDir": 157.0
@@ -10975,7 +10975,7 @@
       "StationName": "金山",
       "StationId": "C0A940",
       "Hour": "17:00",
-      "Rain": 14.5,
+      "Rain": 1.0,
       "Temp": 26.0,
       "WindSpeed": 0.3,
       "WindDir": 170.0
@@ -10984,7 +10984,7 @@
       "StationName": "石碇",
       "StationId": "C0A640",
       "Hour": "17:00",
-      "Rain": 22.5,
+      "Rain": 18.5,
       "Temp": 23.1,
       "WindSpeed": 0.7,
       "WindDir": 227.0
@@ -10993,7 +10993,7 @@
       "StationName": "復興",
       "StationId": "C0C460",
       "Hour": "17:00",
-      "Rain": 11.5,
+      "Rain": 0.5,
       "Temp": 24.4,
       "WindSpeed": 0.0,
       "WindDir": 0.0
@@ -11002,7 +11002,7 @@
       "StationName": "八德",
       "StationId": "C0C490",
       "Hour": "17:00",
-      "Rain": 0.5,
+      "Rain": 0.0,
       "Temp": 26.6,
       "WindSpeed": 2.4,
       "WindDir": 124.0
@@ -11011,7 +11011,7 @@
       "StationName": "內湖",
       "StationId": "C0A9F0",
       "Hour": "17:00",
-      "Rain": 75.5,
+      "Rain": 6.0,
       "Temp": 26.6,
       "WindSpeed": 0.1,
       "WindDir": 0.0
@@ -11029,7 +11029,7 @@
       "StationName": "暖暖",
       "StationId": "C0B060",
       "Hour": "17:00",
-      "Rain": 3.5,
+      "Rain": 2.5,
       "Temp": null,
       "WindSpeed": -99.0,
       "WindDir": -99.0
@@ -11038,7 +11038,7 @@
       "StationName": "天母",
       "StationId": "C0A9C0",
       "Hour": "17:00",
-      "Rain": 61.0,
+      "Rain": 3.5,
       "Temp": 26.7,
       "WindSpeed": 1.9,
       "WindDir": 109.0
@@ -11065,7 +11065,7 @@
       "StationName": "八里",
       "StationId": "C0AD10",
       "Hour": "17:00",
-      "Rain": 0.5,
+      "Rain": 0.0,
       "Temp": 29.4,
       "WindSpeed": 1.9,
       "WindDir": 253.0
@@ -11074,7 +11074,7 @@
       "StationName": "蘆洲",
       "StationId": "C0AD30",
       "Hour": "17:00",
-      "Rain": 1.0,
+      "Rain": 0.0,
       "Temp": 27.7,
       "WindSpeed": 1.7,
       "WindDir": 123.0
@@ -11083,7 +11083,7 @@
       "StationName": "土城",
       "StationId": "C0AD40",
       "Hour": "17:00",
-      "Rain": 12.5,
+      "Rain": 0.5,
       "Temp": 24.6,
       "WindSpeed": 1.4,
       "WindDir": 79.0
@@ -11101,7 +11101,7 @@
       "StationName": "永和",
       "StationId": "C0AH10",
       "Hour": "17:00",
-      "Rain": 99.5,
+      "Rain": 0.0,
       "Temp": null,
       "WindSpeed": -99.0,
       "WindDir": -99.0
@@ -11119,7 +11119,7 @@
       "StationName": "平等",
       "StationId": "C0AH40",
       "Hour": "17:00",
-      "Rain": 38.5,
+      "Rain": 6.0,
       "Temp": 24.3,
       "WindSpeed": 0.9,
       "WindDir": 171.0
@@ -11137,7 +11137,7 @@
       "StationName": "深坑",
       "StationId": "C0AH80",
       "Hour": "17:00",
-      "Rain": 27.5,
+      "Rain": 14.0,
       "Temp": null,
       "WindSpeed": -99.0,
       "WindDir": -99.0
@@ -11146,7 +11146,7 @@
       "StationName": "七堵",
       "StationId": "C0B010",
       "Hour": "17:00",
-      "Rain": 8.5,
+      "Rain": 3.0,
       "Temp": 27.4,
       "WindSpeed": 0.8,
       "WindDir": 217.0
@@ -11164,7 +11164,7 @@
       "StationName": "屈尺",
       "StationId": "C0AI10",
       "Hour": "17:00",
-      "Rain": 76.5,
+      "Rain": 24.5,
       "Temp": 26.7,
       "WindSpeed": 1.7,
       "WindDir": 181.0
@@ -11173,7 +11173,7 @@
       "StationName": "三重",
       "StationId": "C0AI30",
       "Hour": "17:00",
-      "Rain": 60.5,
+      "Rain": 2.5,
       "Temp": 26.3,
       "WindSpeed": 1.7,
       "WindDir": 113.0
@@ -11182,7 +11182,7 @@
       "StationName": "石牌",
       "StationId": "C0AI40",
       "Hour": "17:00",
-      "Rain": 9.5,
+      "Rain": 0.0,
       "Temp": 27.9,
       "WindSpeed": 0.3,
       "WindDir": 130.0
@@ -11191,7 +11191,7 @@
       "StationName": "新北",
       "StationId": "466881",
       "Hour": "17:00",
-      "Rain": 54.0,
+      "Rain": 15.0,
       "Temp": 25.3,
       "WindSpeed": 2.3,
       "WindDir": 150.0
@@ -11218,7 +11218,7 @@
       "StationName": "臺北",
       "StationId": "466920",
       "Hour": "17:00",
-      "Rain": 97.0,
+      "Rain": 7.0,
       "Temp": 25.7,
       "WindSpeed": 0.9,
       "WindDir": 110.0
@@ -11227,7 +11227,7 @@
       "StationName": "陽明山",
       "StationId": "466930",
       "Hour": "17:00",
-      "Rain": 7.5,
+      "Rain": 0.5,
       "Temp": 23.6,
       "WindSpeed": 0.6,
       "WindDir": 20.0
@@ -11236,7 +11236,7 @@
       "StationName": "基隆",
       "StationId": "466940",
       "Hour": "17:00",
-      "Rain": 5.0,
+      "Rain": 2.5,
       "Temp": 25.4,
       "WindSpeed": 4.1,
       "WindDir": 230.0
@@ -11299,7 +11299,7 @@
       "StationName": "茶改北部分場",
       "StationId": "82A750",
       "Hour": "17:00",
-      "Rain": 27.0,
+      "Rain": 26.5,
       "Temp": 23.5,
       "WindSpeed": 0.0,
       "WindDir": 0.0
@@ -11317,7 +11317,7 @@
       "StationName": "臺灣大學",
       "StationId": "A0A010",
       "Hour": "17:00",
-      "Rain": 147.0,
+      "Rain": 3.0,
       "Temp": 24.9,
       "WindSpeed": 0.9,
       "WindDir": 90.0
@@ -11326,7 +11326,7 @@
       "StationName": "文化大學",
       "StationId": "A0A460",
       "Hour": "17:00",
-      "Rain": 44.4,
+      "Rain": 4.0,
       "Temp": 23.7,
       "WindSpeed": 0.9,
       "WindDir": 80.0
@@ -11353,7 +11353,7 @@
       "StationName": "福山",
       "StationId": "C2A560",
       "Hour": "17:00",
-      "Rain": 12.5,
+      "Rain": 7.5,
       "Temp": 24.1,
       "WindSpeed": 1.0,
       "WindDir": 330.0
@@ -11407,7 +11407,7 @@
       "StationName": "信賢",
       "StationId": "C2AK30",
       "Hour": "17:00",
-      "Rain": 12.0,
+      "Rain": 9.0,
       "Temp": 23.7,
       "WindSpeed": 1.4,
       "WindDir": 50.0
@@ -11479,7 +11479,7 @@
       "StationName": "關西工作站",
       "StationId": "C2D720",
       "Hour": "17:00",
-      "Rain": 22.5,
+      "Rain": 0.0,
       "Temp": 29.1,
       "WindSpeed": 0.5,
       "WindDir": 50.0
@@ -11497,7 +11497,7 @@
       "StationName": "國一N013K",
       "StationId": "CAA010",
       "Hour": "17:00",
-      "Rain": 57.5,
+      "Rain": 9.5,
       "Temp": 24.6,
       "WindSpeed": 1.1,
       "WindDir": 300.0
@@ -11506,7 +11506,7 @@
       "StationName": "國一S026K",
       "StationId": "CAA020",
       "Hour": "17:00",
-      "Rain": 46.5,
+      "Rain": 1.0,
       "Temp": 25.7,
       "WindSpeed": 2.4,
       "WindDir": 80.0
@@ -11515,7 +11515,7 @@
       "StationName": "國三S010K",
       "StationId": "CAA030",
       "Hour": "17:00",
-      "Rain": 34.5,
+      "Rain": 8.0,
       "Temp": 24.3,
       "WindSpeed": 0.6,
       "WindDir": 360.0
@@ -11524,7 +11524,7 @@
       "StationName": "國三S016K",
       "StationId": "CAA040",
       "Hour": "17:00",
-      "Rain": 66.0,
+      "Rain": 17.0,
       "Temp": 24.3,
       "WindSpeed": 1.1,
       "WindDir": 270.0
@@ -11533,7 +11533,7 @@
       "StationName": "國三S037K",
       "StationId": "CAA050",
       "Hour": "17:00",
-      "Rain": 32.5,
+      "Rain": 0.5,
       "Temp": 24.6,
       "WindSpeed": 0.9,
       "WindDir": 20.0
@@ -11542,7 +11542,7 @@
       "StationName": "國三S042K",
       "StationId": "CAA060",
       "Hour": "17:00",
-      "Rain": 6.5,
+      "Rain": 0.0,
       "Temp": 25.5,
       "WindSpeed": 0.8,
       "WindDir": 150.0
@@ -11551,7 +11551,7 @@
       "StationName": "國三N046K",
       "StationId": "CAA070",
       "Hour": "17:00",
-      "Rain": 2.5,
+      "Rain": 0.5,
       "Temp": 25.5,
       "WindSpeed": 1.8,
       "WindDir": 50.0
@@ -11569,7 +11569,7 @@
       "StationName": "國三甲005K",
       "StationId": "CAA090",
       "Hour": "17:00",
-      "Rain": 75.0,
+      "Rain": 15.0,
       "Temp": 24.3,
       "WindSpeed": 1.3,
       "WindDir": 80.0
@@ -11587,7 +11587,7 @@
       "StationName": "國五S005K",
       "StationId": "CAAD60",
       "Hour": "17:00",
-      "Rain": 22.5,
+      "Rain": 17.5,
       "Temp": 23.5,
       "WindSpeed": 1.0,
       "WindDir": 190.0
@@ -11596,7 +11596,7 @@
       "StationName": "國五S006K",
       "StationId": "CAAD70",
       "Hour": "17:00",
-      "Rain": 24.5,
+      "Rain": 20.5,
       "Temp": 23.7,
       "WindSpeed": 0.9,
       "WindDir": 50.0
@@ -11605,7 +11605,7 @@
       "StationName": "國五N008K",
       "StationId": "CAAD80",
       "Hour": "17:00",
-      "Rain": 19.0,
+      "Rain": 18.0,
       "Temp": 23.5,
       "WindSpeed": 1.0,
       "WindDir": 130.0
@@ -11641,7 +11641,7 @@
       "StationName": "國一S001K",
       "StationId": "CAB010",
       "Hour": "17:00",
-      "Rain": 9.0,
+      "Rain": 3.0,
       "Temp": 24.7,
       "WindSpeed": 1.1,
       "WindDir": 190.0
@@ -11650,7 +11650,7 @@
       "StationName": "國一S006K",
       "StationId": "CAB020",
       "Hour": "17:00",
-      "Rain": 14.5,
+      "Rain": 6.5,
       "Temp": 24.5,
       "WindSpeed": 1.8,
       "WindDir": 310.0
@@ -11659,7 +11659,7 @@
       "StationName": "國三S004K",
       "StationId": "CAB030",
       "Hour": "17:00",
-      "Rain": 14.5,
+      "Rain": 6.0,
       "Temp": 24.0,
       "WindSpeed": 0.6,
       "WindDir": 200.0
@@ -11668,7 +11668,7 @@
       "StationName": "國三S007K",
       "StationId": "CAB040",
       "Hour": "17:00",
-      "Rain": 22.5,
+      "Rain": 8.0,
       "Temp": 24.0,
       "WindSpeed": 0.6,
       "WindDir": 350.0
@@ -11677,7 +11677,7 @@
       "StationName": "國三N002K",
       "StationId": "CAB050",
       "Hour": "17:00",
-      "Rain": 7.0,
+      "Rain": 3.5,
       "Temp": 25.0,
       "WindSpeed": 1.7,
       "WindDir": 240.0
@@ -11740,7 +11740,7 @@
       "StationName": "國三N072K",
       "StationId": "CAC770",
       "Hour": "17:00",
-      "Rain": 3.5,
+      "Rain": 0.0,
       "Temp": 26.6,
       "WindSpeed": 2.2,
       "WindDir": 70.0
@@ -11794,7 +11794,7 @@
       "StationName": "國三N085K",
       "StationId": "CAD080",
       "Hour": "17:00",
-      "Rain": 0.5,
+      "Rain": 0.0,
       "Temp": 30.3,
       "WindSpeed": 1.2,
       "WindDir": 340.0
@@ -11830,7 +11830,7 @@
       "StationName": "國三N077K",
       "StationId": "CAD710",
       "Hour": "17:00",
-      "Rain": 25.5,
+      "Rain": 0.0,
       "Temp": 27.7,
       "WindSpeed": 1.3,
       "WindDir": 40.0
@@ -11857,7 +11857,7 @@
       "StationName": "東眼山",
       "StationId": "C0C790",
       "Hour": "18:00",
-      "Rain": 30.0,
+      "Rain": 1.0,
       "Temp": 21.3,
       "WindSpeed": 0.7,
       "WindDir": 156.0
@@ -11884,7 +11884,7 @@
       "StationName": "科教館",
       "StationId": "C0A770",
       "Hour": "18:00",
-      "Rain": 49.0,
+      "Rain": 0.0,
       "Temp": 26.6,
       "WindSpeed": 0.0,
       "WindDir": 0.0
@@ -11911,7 +11911,7 @@
       "StationName": "大武崙",
       "StationId": "C0B040",
       "Hour": "18:00",
-      "Rain": 5.5,
+      "Rain": 0.0,
       "Temp": 26.8,
       "WindSpeed": 2.3,
       "WindDir": 211.0
@@ -11920,7 +11920,7 @@
       "StationName": "野柳",
       "StationId": "C0AJ20",
       "Hour": "18:00",
-      "Rain": 2.0,
+      "Rain": 0.0,
       "Temp": 27.4,
       "WindSpeed": 1.5,
       "WindDir": 172.0
@@ -12001,7 +12001,7 @@
       "StationName": "八斗子",
       "StationId": "C0B050",
       "Hour": "18:00",
-      "Rain": 2.0,
+      "Rain": 1.0,
       "Temp": 26.9,
       "WindSpeed": 1.7,
       "WindDir": 179.0
@@ -12064,7 +12064,7 @@
       "StationName": "板橋",
       "StationId": "C0AJ80",
       "Hour": "18:00",
-      "Rain": 8.5,
+      "Rain": 0.5,
       "Temp": 26.9,
       "WindSpeed": 0.8,
       "WindDir": 6.0
@@ -12073,7 +12073,7 @@
       "StationName": "松山",
       "StationId": "C0AH70",
       "Hour": "18:00",
-      "Rain": 115.0,
+      "Rain": 0.0,
       "Temp": 26.7,
       "WindSpeed": 0.7,
       "WindDir": 287.0
@@ -12091,7 +12091,7 @@
       "StationName": "基隆嶼",
       "StationId": "C0B020",
       "Hour": "18:00",
-      "Rain": 1.0,
+      "Rain": 0.5,
       "Temp": 25.5,
       "WindSpeed": 2.0,
       "WindDir": 97.0
@@ -12109,7 +12109,7 @@
       "StationName": "大溪永福",
       "StationId": "C0C710",
       "Hour": "18:00",
-      "Rain": 1.0,
+      "Rain": 0.0,
       "Temp": 26.6,
       "WindSpeed": 0.1,
       "WindDir": 0.0
@@ -12163,7 +12163,7 @@
       "StationName": "鶯子嶺",
       "StationId": "C0U950",
       "Hour": "18:00",
-      "Rain": 1.5,
+      "Rain": 0.0,
       "Temp": 21.2,
       "WindSpeed": 2.6,
       "WindDir": 356.0
@@ -12181,7 +12181,7 @@
       "StationName": "坪林石牌",
       "StationId": "C0U980",
       "Hour": "18:00",
-      "Rain": 0.5,
+      "Rain": 0.0,
       "Temp": 23.2,
       "WindSpeed": 2.5,
       "WindDir": 325.0
@@ -12199,7 +12199,7 @@
       "StationName": "關西",
       "StationId": "C0D700",
       "Hour": "18:00",
-      "Rain": 10.0,
+      "Rain": 0.0,
       "Temp": 27.4,
       "WindSpeed": 1.9,
       "WindDir": 30.0
@@ -12208,7 +12208,7 @@
       "StationName": "桃源谷",
       "StationId": "C0UA70",
       "Hour": "18:00",
-      "Rain": 0.5,
+      "Rain": 0.0,
       "Temp": 23.7,
       "WindSpeed": 1.2,
       "WindDir": 263.0
@@ -12217,7 +12217,7 @@
       "StationName": "福山植物園",
       "StationId": "C0AH90",
       "Hour": "18:00",
-      "Rain": 33.5,
+      "Rain": 25.5,
       "Temp": 21.9,
       "WindSpeed": 0.0,
       "WindDir": 0.0
@@ -12262,7 +12262,7 @@
       "StationName": "大溪",
       "StationId": "C0C630",
       "Hour": "18:00",
-      "Rain": 1.0,
+      "Rain": 0.0,
       "Temp": 26.4,
       "WindSpeed": 0.0,
       "WindDir": 0.0
@@ -12271,7 +12271,7 @@
       "StationName": "楊梅",
       "StationId": "C0C660",
       "Hour": "18:00",
-      "Rain": 0.5,
+      "Rain": 0.0,
       "Temp": 28.5,
       "WindSpeed": 1.1,
       "WindDir": 136.0
@@ -12289,7 +12289,7 @@
       "StationName": "龍潭",
       "StationId": "C0C670",
       "Hour": "18:00",
-      "Rain": 0.5,
+      "Rain": 0.0,
       "Temp": 26.8,
       "WindSpeed": 0.4,
       "WindDir": 53.0
@@ -12316,7 +12316,7 @@
       "StationName": "坪林",
       "StationId": "C0A530",
       "Hour": "18:00",
-      "Rain": 6.0,
+      "Rain": 4.0,
       "Temp": 23.6,
       "WindSpeed": 0.0,
       "WindDir": 0.0
@@ -12325,7 +12325,7 @@
       "StationName": "泰平",
       "StationId": "C0A550",
       "Hour": "18:00",
-      "Rain": 14.0,
+      "Rain": 0.0,
       "Temp": 24.0,
       "WindSpeed": 0.0,
       "WindDir": 0.0
@@ -12334,7 +12334,7 @@
       "StationName": "五指山",
       "StationId": "C0A870",
       "Hour": "18:00",
-      "Rain": 14.5,
+      "Rain": 0.0,
       "Temp": 23.7,
       "WindSpeed": 2.9,
       "WindDir": 189.0
@@ -12343,7 +12343,7 @@
       "StationName": "汐止",
       "StationId": "C0AH00",
       "Hour": "18:00",
-      "Rain": 31.5,
+      "Rain": 4.0,
       "Temp": 26.8,
       "WindSpeed": 1.2,
       "WindDir": 6.0
@@ -12352,7 +12352,7 @@
       "StationName": "三峽",
       "StationId": "C0AC60",
       "Hour": "18:00",
-      "Rain": 2.0,
+      "Rain": 0.0,
       "Temp": 28.7,
       "WindSpeed": 0.7,
       "WindDir": 91.0
@@ -12361,7 +12361,7 @@
       "StationName": "信義",
       "StationId": "C0AC70",
       "Hour": "18:00",
-      "Rain": 129.0,
+      "Rain": 0.0,
       "Temp": 26.2,
       "WindSpeed": 0.0,
       "WindDir": 0.0
@@ -12370,7 +12370,7 @@
       "StationName": "文山",
       "StationId": "C0AC80",
       "Hour": "18:00",
-      "Rain": 107.0,
+      "Rain": 2.5,
       "Temp": 25.5,
       "WindSpeed": 0.0,
       "WindDir": 0.0
@@ -12379,7 +12379,7 @@
       "StationName": "新莊",
       "StationId": "C0ACA0",
       "Hour": "18:00",
-      "Rain": 6.0,
+      "Rain": 0.0,
       "Temp": 26.9,
       "WindSpeed": 0.9,
       "WindDir": 54.0
@@ -12388,7 +12388,7 @@
       "StationName": "山佳",
       "StationId": "C0A520",
       "Hour": "18:00",
-      "Rain": 1.5,
+      "Rain": 0.5,
       "Temp": 27.5,
       "WindSpeed": 1.0,
       "WindDir": 24.0
@@ -12397,7 +12397,7 @@
       "StationName": "桶後",
       "StationId": "C0A570",
       "Hour": "18:00",
-      "Rain": 9.0,
+      "Rain": 5.5,
       "Temp": 23.9,
       "WindSpeed": 0.0,
       "WindDir": 0.0
@@ -12406,7 +12406,7 @@
       "StationName": "雙溪",
       "StationId": "C0A890",
       "Hour": "18:00",
-      "Rain": 1.0,
+      "Rain": 0.0,
       "Temp": 27.9,
       "WindSpeed": 0.0,
       "WindDir": 0.0
@@ -12424,7 +12424,7 @@
       "StationName": "大坪",
       "StationId": "C0A860",
       "Hour": "18:00",
-      "Rain": 7.5,
+      "Rain": 0.0,
       "Temp": 24.7,
       "WindSpeed": 0.4,
       "WindDir": 210.0
@@ -12433,7 +12433,7 @@
       "StationName": "三和",
       "StationId": "C0A931",
       "Hour": "18:00",
-      "Rain": 8.0,
+      "Rain": 0.0,
       "Temp": 27.7,
       "WindSpeed": 0.0,
       "WindDir": 0.0
@@ -12442,7 +12442,7 @@
       "StationName": "金山",
       "StationId": "C0A940",
       "Hour": "18:00",
-      "Rain": 14.5,
+      "Rain": 0.0,
       "Temp": 25.9,
       "WindSpeed": 1.1,
       "WindDir": 169.0
@@ -12451,7 +12451,7 @@
       "StationName": "石碇",
       "StationId": "C0A640",
       "Hour": "18:00",
-      "Rain": 25.5,
+      "Rain": 3.0,
       "Temp": 23.6,
       "WindSpeed": 0.3,
       "WindDir": 132.0
@@ -12460,7 +12460,7 @@
       "StationName": "復興",
       "StationId": "C0C460",
       "Hour": "18:00",
-      "Rain": 15.0,
+      "Rain": 3.5,
       "Temp": 24.5,
       "WindSpeed": 0.3,
       "WindDir": 258.0
@@ -12469,7 +12469,7 @@
       "StationName": "八德",
       "StationId": "C0C490",
       "Hour": "18:00",
-      "Rain": 1.0,
+      "Rain": 0.5,
       "Temp": 26.7,
       "WindSpeed": 1.0,
       "WindDir": 120.0
@@ -12478,7 +12478,7 @@
       "StationName": "內湖",
       "StationId": "C0A9F0",
       "Hour": "18:00",
-      "Rain": 75.5,
+      "Rain": 0.0,
       "Temp": 28.1,
       "WindSpeed": 1.0,
       "WindDir": 51.0
@@ -12496,7 +12496,7 @@
       "StationName": "暖暖",
       "StationId": "C0B060",
       "Hour": "18:00",
-      "Rain": 5.0,
+      "Rain": 1.5,
       "Temp": 26.5,
       "WindSpeed": 0.9,
       "WindDir": 266.0
@@ -12505,7 +12505,7 @@
       "StationName": "天母",
       "StationId": "C0A9C0",
       "Hour": "18:00",
-      "Rain": 61.0,
+      "Rain": 0.0,
       "Temp": 27.8,
       "WindSpeed": 0.6,
       "WindDir": 334.0
@@ -12532,7 +12532,7 @@
       "StationName": "八里",
       "StationId": "C0AD10",
       "Hour": "18:00",
-      "Rain": 0.5,
+      "Rain": 0.0,
       "Temp": 28.6,
       "WindSpeed": 1.3,
       "WindDir": 239.0
@@ -12541,7 +12541,7 @@
       "StationName": "蘆洲",
       "StationId": "C0AD30",
       "Hour": "18:00",
-      "Rain": 1.0,
+      "Rain": 0.0,
       "Temp": 27.9,
       "WindSpeed": 0.7,
       "WindDir": 123.0
@@ -12550,7 +12550,7 @@
       "StationName": "土城",
       "StationId": "C0AD40",
       "Hour": "18:00",
-      "Rain": 13.5,
+      "Rain": 1.0,
       "Temp": 25.6,
       "WindSpeed": 0.0,
       "WindDir": 0.0
@@ -12568,7 +12568,7 @@
       "StationName": "永和",
       "StationId": "C0AH10",
       "Hour": "18:00",
-      "Rain": 99.5,
+      "Rain": 0.0,
       "Temp": null,
       "WindSpeed": -99.0,
       "WindDir": -99.0
@@ -12586,7 +12586,7 @@
       "StationName": "平等",
       "StationId": "C0AH40",
       "Hour": "18:00",
-      "Rain": 38.5,
+      "Rain": 0.0,
       "Temp": 24.7,
       "WindSpeed": 0.5,
       "WindDir": 206.0
@@ -12604,7 +12604,7 @@
       "StationName": "深坑",
       "StationId": "C0AH80",
       "Hour": "18:00",
-      "Rain": 34.0,
+      "Rain": 6.5,
       "Temp": 25.6,
       "WindSpeed": 1.9,
       "WindDir": 67.0
@@ -12613,7 +12613,7 @@
       "StationName": "七堵",
       "StationId": "C0B010",
       "Hour": "18:00",
-      "Rain": 10.0,
+      "Rain": 1.5,
       "Temp": null,
       "WindSpeed": -99.0,
       "WindDir": -99.0
@@ -12631,7 +12631,7 @@
       "StationName": "屈尺",
       "StationId": "C0AI10",
       "Hour": "18:00",
-      "Rain": 83.5,
+      "Rain": 7.0,
       "Temp": 26.5,
       "WindSpeed": 2.3,
       "WindDir": 190.0
@@ -12640,7 +12640,7 @@
       "StationName": "三重",
       "StationId": "C0AI30",
       "Hour": "18:00",
-      "Rain": 60.5,
+      "Rain": 0.0,
       "Temp": 27.6,
       "WindSpeed": 0.3,
       "WindDir": 151.0
@@ -12649,7 +12649,7 @@
       "StationName": "石牌",
       "StationId": "C0AI40",
       "Hour": "18:00",
-      "Rain": 9.5,
+      "Rain": 0.0,
       "Temp": null,
       "WindSpeed": -99.0,
       "WindDir": -99.0
@@ -12658,7 +12658,7 @@
       "StationName": "新北",
       "StationId": "466881",
       "Hour": "18:00",
-      "Rain": 56.5,
+      "Rain": 2.5,
       "Temp": 25.5,
       "WindSpeed": 2.5,
       "WindDir": 150.0
@@ -12676,7 +12676,7 @@
       "StationName": "鞍部",
       "StationId": "466910",
       "Hour": "18:00",
-      "Rain": 0.5,
+      "Rain": 0.0,
       "Temp": 22.0,
       "WindSpeed": 1.2,
       "WindDir": 170.0
@@ -12685,7 +12685,7 @@
       "StationName": "臺北",
       "StationId": "466920",
       "Hour": "18:00",
-      "Rain": 97.0,
+      "Rain": 0.0,
       "Temp": 26.4,
       "WindSpeed": 1.4,
       "WindDir": 110.0
@@ -12694,7 +12694,7 @@
       "StationName": "陽明山",
       "StationId": "466930",
       "Hour": "18:00",
-      "Rain": 7.5,
+      "Rain": 0.0,
       "Temp": 23.2,
       "WindSpeed": 0.4,
       "WindDir": 250.0
@@ -12703,7 +12703,7 @@
       "StationName": "基隆",
       "StationId": "466940",
       "Hour": "18:00",
-      "Rain": 6.0,
+      "Rain": 1.0,
       "Temp": 26.1,
       "WindSpeed": 1.8,
       "WindDir": 210.0
@@ -12739,7 +12739,7 @@
       "StationName": "桃改樹林分場",
       "StationId": "72AI40",
       "Hour": "18:00",
-      "Rain": 1.0,
+      "Rain": 0.5,
       "Temp": 26.2,
       "WindSpeed": 0.8,
       "WindDir": 50.0
@@ -12766,7 +12766,7 @@
       "StationName": "茶改北部分場",
       "StationId": "82A750",
       "Hour": "18:00",
-      "Rain": 32.0,
+      "Rain": 5.0,
       "Temp": 23.2,
       "WindSpeed": 1.7,
       "WindDir": 190.0
@@ -12784,7 +12784,7 @@
       "StationName": "臺灣大學",
       "StationId": "A0A010",
       "Hour": "18:00",
-      "Rain": 147.0,
+      "Rain": 0.0,
       "Temp": 25.7,
       "WindSpeed": 0.0,
       "WindDir": 0.0
@@ -12793,7 +12793,7 @@
       "StationName": "文化大學",
       "StationId": "A0A460",
       "Hour": "18:00",
-      "Rain": 44.4,
+      "Rain": 0.0,
       "Temp": 24.1,
       "WindSpeed": 1.2,
       "WindDir": 20.0
@@ -12820,7 +12820,7 @@
       "StationName": "福山",
       "StationId": "C2A560",
       "Hour": "18:00",
-      "Rain": 34.0,
+      "Rain": 21.5,
       "Temp": 22.9,
       "WindSpeed": 0.0,
       "WindDir": 0.0
@@ -12874,7 +12874,7 @@
       "StationName": "信賢",
       "StationId": "C2AK30",
       "Hour": "18:00",
-      "Rain": 20.5,
+      "Rain": 8.5,
       "Temp": 23.2,
       "WindSpeed": 0.7,
       "WindDir": 330.0
@@ -12883,7 +12883,7 @@
       "StationName": "漁光",
       "StationId": "C2AK40",
       "Hour": "18:00",
-      "Rain": 11.0,
+      "Rain": 10.5,
       "Temp": 22.3,
       "WindSpeed": 0.8,
       "WindDir": 90.0
@@ -12946,7 +12946,7 @@
       "StationName": "關西工作站",
       "StationId": "C2D720",
       "Hour": "18:00",
-      "Rain": 22.5,
+      "Rain": 0.0,
       "Temp": 27.4,
       "WindSpeed": 0.8,
       "WindDir": 320.0
@@ -12964,7 +12964,7 @@
       "StationName": "國一N013K",
       "StationId": "CAA010",
       "Hour": "18:00",
-      "Rain": 60.0,
+      "Rain": 2.5,
       "Temp": 25.7,
       "WindSpeed": 0.6,
       "WindDir": 340.0
@@ -12973,7 +12973,7 @@
       "StationName": "國一S026K",
       "StationId": "CAA020",
       "Hour": "18:00",
-      "Rain": 46.5,
+      "Rain": 0.0,
       "Temp": 26.8,
       "WindSpeed": 1.3,
       "WindDir": 80.0
@@ -12982,7 +12982,7 @@
       "StationName": "國三S010K",
       "StationId": "CAA030",
       "Hour": "18:00",
-      "Rain": 36.0,
+      "Rain": 1.5,
       "Temp": 25.0,
       "WindSpeed": 1.3,
       "WindDir": 360.0
@@ -12991,7 +12991,7 @@
       "StationName": "國三S016K",
       "StationId": "CAA040",
       "Hour": "18:00",
-      "Rain": 71.5,
+      "Rain": 5.5,
       "Temp": 25.0,
       "WindSpeed": 1.6,
       "WindDir": 150.0
@@ -13000,7 +13000,7 @@
       "StationName": "國三S037K",
       "StationId": "CAA050",
       "Hour": "18:00",
-      "Rain": 33.0,
+      "Rain": 0.5,
       "Temp": 25.8,
       "WindSpeed": 0.6,
       "WindDir": 260.0
@@ -13009,7 +13009,7 @@
       "StationName": "國三S042K",
       "StationId": "CAA060",
       "Hour": "18:00",
-      "Rain": 7.5,
+      "Rain": 1.0,
       "Temp": 26.3,
       "WindSpeed": 0.6,
       "WindDir": 60.0
@@ -13018,7 +13018,7 @@
       "StationName": "國三N046K",
       "StationId": "CAA070",
       "Hour": "18:00",
-      "Rain": 2.5,
+      "Rain": 0.0,
       "Temp": 26.3,
       "WindSpeed": 1.2,
       "WindDir": 50.0
@@ -13036,7 +13036,7 @@
       "StationName": "國三甲005K",
       "StationId": "CAA090",
       "Hour": "18:00",
-      "Rain": 83.5,
+      "Rain": 8.5,
       "Temp": 24.5,
       "WindSpeed": 2.2,
       "WindDir": 90.0
@@ -13054,7 +13054,7 @@
       "StationName": "國五S005K",
       "StationId": "CAAD60",
       "Hour": "18:00",
-      "Rain": 26.5,
+      "Rain": 4.0,
       "Temp": 23.8,
       "WindSpeed": 0.8,
       "WindDir": 200.0
@@ -13063,7 +13063,7 @@
       "StationName": "國五S006K",
       "StationId": "CAAD70",
       "Hour": "18:00",
-      "Rain": 28.5,
+      "Rain": 4.0,
       "Temp": 24.0,
       "WindSpeed": 0.8,
       "WindDir": 80.0
@@ -13072,7 +13072,7 @@
       "StationName": "國五N008K",
       "StationId": "CAAD80",
       "Hour": "18:00",
-      "Rain": 21.5,
+      "Rain": 2.5,
       "Temp": 24.0,
       "WindSpeed": 0.8,
       "WindDir": 210.0
@@ -13081,7 +13081,7 @@
       "StationName": "國五N013K",
       "StationId": "CAAD90",
       "Hour": "18:00",
-      "Rain": 7.0,
+      "Rain": 4.5,
       "Temp": 23.8,
       "WindSpeed": 0.6,
       "WindDir": 220.0
@@ -13108,7 +13108,7 @@
       "StationName": "國一S001K",
       "StationId": "CAB010",
       "Hour": "18:00",
-      "Rain": 10.0,
+      "Rain": 1.0,
       "Temp": 25.3,
       "WindSpeed": 0.9,
       "WindDir": 250.0
@@ -13117,7 +13117,7 @@
       "StationName": "國一S006K",
       "StationId": "CAB020",
       "Hour": "18:00",
-      "Rain": 15.5,
+      "Rain": 1.0,
       "Temp": 25.0,
       "WindSpeed": 1.7,
       "WindDir": 270.0
@@ -13126,7 +13126,7 @@
       "StationName": "國三S004K",
       "StationId": "CAB030",
       "Hour": "18:00",
-      "Rain": 14.5,
+      "Rain": 0.0,
       "Temp": 24.5,
       "WindSpeed": 0.6,
       "WindDir": 190.0
@@ -13135,7 +13135,7 @@
       "StationName": "國三S007K",
       "StationId": "CAB040",
       "Hour": "18:00",
-      "Rain": 23.0,
+      "Rain": 0.5,
       "Temp": 25.0,
       "WindSpeed": 0.9,
       "WindDir": 20.0
@@ -13144,7 +13144,7 @@
       "StationName": "國三N002K",
       "StationId": "CAB050",
       "Hour": "18:00",
-      "Rain": 7.0,
+      "Rain": 0.0,
       "Temp": 25.7,
       "WindSpeed": 1.3,
       "WindDir": 230.0
@@ -13207,7 +13207,7 @@
       "StationName": "國三N072K",
       "StationId": "CAC770",
       "Hour": "18:00",
-      "Rain": 3.5,
+      "Rain": 0.0,
       "Temp": 26.0,
       "WindSpeed": 1.0,
       "WindDir": 80.0
@@ -13261,7 +13261,7 @@
       "StationName": "國三N085K",
       "StationId": "CAD080",
       "Hour": "18:00",
-      "Rain": 0.5,
+      "Rain": 0.0,
       "Temp": 28.1,
       "WindSpeed": 0.6,
       "WindDir": 150.0
@@ -13297,7 +13297,7 @@
       "StationName": "國三N077K",
       "StationId": "CAD710",
       "Hour": "18:00",
-      "Rain": 25.5,
+      "Rain": 0.0,
       "Temp": 26.6,
       "WindSpeed": 1.8,
       "WindDir": 10.0
@@ -13324,7 +13324,7 @@
       "StationName": "東眼山",
       "StationId": "C0C790",
       "Hour": "19:00",
-      "Rain": 30.0,
+      "Rain": 0.0,
       "Temp": 21.1,
       "WindSpeed": 0.6,
       "WindDir": 111.0
@@ -13351,7 +13351,7 @@
       "StationName": "科教館",
       "StationId": "C0A770",
       "Hour": "19:00",
-      "Rain": 49.0,
+      "Rain": 0.0,
       "Temp": 26.8,
       "WindSpeed": 0.0,
       "WindDir": 0.0
@@ -13378,7 +13378,7 @@
       "StationName": "大武崙",
       "StationId": "C0B040",
       "Hour": "19:00",
-      "Rain": 5.5,
+      "Rain": 0.0,
       "Temp": 26.2,
       "WindSpeed": 2.0,
       "WindDir": 241.0
@@ -13387,7 +13387,7 @@
       "StationName": "野柳",
       "StationId": "C0AJ20",
       "Hour": "19:00",
-      "Rain": 2.0,
+      "Rain": 0.0,
       "Temp": 27.4,
       "WindSpeed": 2.7,
       "WindDir": 178.0
@@ -13468,7 +13468,7 @@
       "StationName": "八斗子",
       "StationId": "C0B050",
       "Hour": "19:00",
-      "Rain": 3.0,
+      "Rain": 1.0,
       "Temp": 26.7,
       "WindSpeed": 0.6,
       "WindDir": 114.0
@@ -13531,7 +13531,7 @@
       "StationName": "板橋",
       "StationId": "C0AJ80",
       "Hour": "19:00",
-      "Rain": 8.5,
+      "Rain": 0.0,
       "Temp": 26.5,
       "WindSpeed": 1.9,
       "WindDir": 6.0
@@ -13540,7 +13540,7 @@
       "StationName": "松山",
       "StationId": "C0AH70",
       "Hour": "19:00",
-      "Rain": 115.0,
+      "Rain": 0.0,
       "Temp": 26.5,
       "WindSpeed": 1.0,
       "WindDir": 323.0
@@ -13558,7 +13558,7 @@
       "StationName": "基隆嶼",
       "StationId": "C0B020",
       "Hour": "19:00",
-      "Rain": 1.0,
+      "Rain": 0.0,
       "Temp": null,
       "WindSpeed": -99.0,
       "WindDir": -99.0
@@ -13576,7 +13576,7 @@
       "StationName": "大溪永福",
       "StationId": "C0C710",
       "Hour": "19:00",
-      "Rain": 1.0,
+      "Rain": 0.0,
       "Temp": 26.0,
       "WindSpeed": 0.0,
       "WindDir": 0.0
@@ -13585,7 +13585,7 @@
       "StationName": "雙連埤",
       "StationId": "C0U520",
       "Hour": "19:00",
-      "Rain": 2.0,
+      "Rain": 1.0,
       "Temp": 22.2,
       "WindSpeed": 0.8,
       "WindDir": 230.0
@@ -13603,7 +13603,7 @@
       "StationName": "大礁溪",
       "StationId": "C0U870",
       "Hour": "19:00",
-      "Rain": 1.5,
+      "Rain": 1.0,
       "Temp": 23.2,
       "WindSpeed": 0.0,
       "WindDir": 0.0
@@ -13630,7 +13630,7 @@
       "StationName": "鶯子嶺",
       "StationId": "C0U950",
       "Hour": "19:00",
-      "Rain": 3.0,
+      "Rain": 1.5,
       "Temp": 21.4,
       "WindSpeed": 1.5,
       "WindDir": 310.0
@@ -13648,7 +13648,7 @@
       "StationName": "坪林石牌",
       "StationId": "C0U980",
       "Hour": "19:00",
-      "Rain": 1.5,
+      "Rain": 1.0,
       "Temp": 22.8,
       "WindSpeed": 0.2,
       "WindDir": 0.0
@@ -13666,7 +13666,7 @@
       "StationName": "關西",
       "StationId": "C0D700",
       "Hour": "19:00",
-      "Rain": 10.0,
+      "Rain": 0.0,
       "Temp": 26.6,
       "WindSpeed": 0.6,
       "WindDir": 284.0
@@ -13675,7 +13675,7 @@
       "StationName": "桃源谷",
       "StationId": "C0UA70",
       "Hour": "19:00",
-      "Rain": 0.5,
+      "Rain": 0.0,
       "Temp": 23.6,
       "WindSpeed": 1.5,
       "WindDir": 347.0
@@ -13684,7 +13684,7 @@
       "StationName": "福山植物園",
       "StationId": "C0AH90",
       "Hour": "19:00",
-      "Rain": 35.5,
+      "Rain": 2.0,
       "Temp": 21.8,
       "WindSpeed": 0.0,
       "WindDir": 0.0
@@ -13729,7 +13729,7 @@
       "StationName": "大溪",
       "StationId": "C0C630",
       "Hour": "19:00",
-      "Rain": 1.0,
+      "Rain": 0.0,
       "Temp": 26.3,
       "WindSpeed": 0.4,
       "WindDir": 301.0
@@ -13738,7 +13738,7 @@
       "StationName": "楊梅",
       "StationId": "C0C660",
       "Hour": "19:00",
-      "Rain": 0.5,
+      "Rain": 0.0,
       "Temp": 28.3,
       "WindSpeed": 0.0,
       "WindDir": 0.0
@@ -13756,7 +13756,7 @@
       "StationName": "龍潭",
       "StationId": "C0C670",
       "Hour": "19:00",
-      "Rain": 0.5,
+      "Rain": 0.0,
       "Temp": 26.9,
       "WindSpeed": 0.0,
       "WindDir": 0.0
@@ -13783,7 +13783,7 @@
       "StationName": "坪林",
       "StationId": "C0A530",
       "Hour": "19:00",
-      "Rain": 7.0,
+      "Rain": 1.0,
       "Temp": 23.3,
       "WindSpeed": 0.2,
       "WindDir": 0.0
@@ -13792,7 +13792,7 @@
       "StationName": "泰平",
       "StationId": "C0A550",
       "Hour": "19:00",
-      "Rain": 15.5,
+      "Rain": 1.5,
       "Temp": 23.7,
       "WindSpeed": 0.0,
       "WindDir": 0.0
@@ -13801,7 +13801,7 @@
       "StationName": "五指山",
       "StationId": "C0A870",
       "Hour": "19:00",
-      "Rain": 14.5,
+      "Rain": 0.0,
       "Temp": 24.0,
       "WindSpeed": 2.7,
       "WindDir": 293.0
@@ -13810,7 +13810,7 @@
       "StationName": "汐止",
       "StationId": "C0AH00",
       "Hour": "19:00",
-      "Rain": 33.0,
+      "Rain": 1.5,
       "Temp": 27.1,
       "WindSpeed": 0.4,
       "WindDir": 187.0
@@ -13819,7 +13819,7 @@
       "StationName": "三峽",
       "StationId": "C0AC60",
       "Hour": "19:00",
-      "Rain": 2.0,
+      "Rain": 0.0,
       "Temp": 28.3,
       "WindSpeed": 0.0,
       "WindDir": 0.0
@@ -13828,7 +13828,7 @@
       "StationName": "信義",
       "StationId": "C0AC70",
       "Hour": "19:00",
-      "Rain": 129.0,
+      "Rain": 0.0,
       "Temp": 26.5,
       "WindSpeed": 0.0,
       "WindDir": 0.0
@@ -13837,7 +13837,7 @@
       "StationName": "文山",
       "StationId": "C0AC80",
       "Hour": "19:00",
-      "Rain": 107.5,
+      "Rain": 0.5,
       "Temp": 25.6,
       "WindSpeed": 0.0,
       "WindDir": 0.0
@@ -13846,7 +13846,7 @@
       "StationName": "新莊",
       "StationId": "C0ACA0",
       "Hour": "19:00",
-      "Rain": 6.0,
+      "Rain": 0.0,
       "Temp": 27.0,
       "WindSpeed": 0.8,
       "WindDir": 80.0
@@ -13855,7 +13855,7 @@
       "StationName": "山佳",
       "StationId": "C0A520",
       "Hour": "19:00",
-      "Rain": 1.5,
+      "Rain": 0.0,
       "Temp": 28.1,
       "WindSpeed": 0.0,
       "WindDir": 0.0
@@ -13864,7 +13864,7 @@
       "StationName": "桶後",
       "StationId": "C0A570",
       "Hour": "19:00",
-      "Rain": 10.5,
+      "Rain": 1.5,
       "Temp": 23.8,
       "WindSpeed": 0.0,
       "WindDir": 0.0
@@ -13873,7 +13873,7 @@
       "StationName": "雙溪",
       "StationId": "C0A890",
       "Hour": "19:00",
-      "Rain": 2.5,
+      "Rain": 1.5,
       "Temp": 27.5,
       "WindSpeed": 0.0,
       "WindDir": 0.0
@@ -13891,7 +13891,7 @@
       "StationName": "大坪",
       "StationId": "C0A860",
       "Hour": "19:00",
-      "Rain": 7.5,
+      "Rain": 0.0,
       "Temp": 24.4,
       "WindSpeed": 0.3,
       "WindDir": 251.0
@@ -13900,7 +13900,7 @@
       "StationName": "三和",
       "StationId": "C0A931",
       "Hour": "19:00",
-      "Rain": 8.0,
+      "Rain": 0.0,
       "Temp": 26.4,
       "WindSpeed": 1.3,
       "WindDir": 321.0
@@ -13909,7 +13909,7 @@
       "StationName": "金山",
       "StationId": "C0A940",
       "Hour": "19:00",
-      "Rain": 14.5,
+      "Rain": 0.0,
       "Temp": 26.5,
       "WindSpeed": 0.0,
       "WindDir": 0.0
@@ -13918,7 +13918,7 @@
       "StationName": "石碇",
       "StationId": "C0A640",
       "Hour": "19:00",
-      "Rain": 26.0,
+      "Rain": 0.5,
       "Temp": 23.8,
       "WindSpeed": 0.0,
       "WindDir": 0.0
@@ -13927,7 +13927,7 @@
       "StationName": "復興",
       "StationId": "C0C460",
       "Hour": "19:00",
-      "Rain": 15.0,
+      "Rain": 0.0,
       "Temp": 24.0,
       "WindSpeed": 0.2,
       "WindDir": 0.0
@@ -13936,7 +13936,7 @@
       "StationName": "八德",
       "StationId": "C0C490",
       "Hour": "19:00",
-      "Rain": 1.5,
+      "Rain": 0.5,
       "Temp": 27.0,
       "WindSpeed": 0.4,
       "WindDir": 160.0
@@ -13945,7 +13945,7 @@
       "StationName": "內湖",
       "StationId": "C0A9F0",
       "Hour": "19:00",
-      "Rain": 75.5,
+      "Rain": 0.0,
       "Temp": 28.4,
       "WindSpeed": 0.0,
       "WindDir": 0.0
@@ -13963,7 +13963,7 @@
       "StationName": "暖暖",
       "StationId": "C0B060",
       "Hour": "19:00",
-      "Rain": 6.0,
+      "Rain": 1.0,
       "Temp": 26.2,
       "WindSpeed": 0.1,
       "WindDir": 0.0
@@ -13972,7 +13972,7 @@
       "StationName": "天母",
       "StationId": "C0A9C0",
       "Hour": "19:00",
-      "Rain": 61.0,
+      "Rain": 0.0,
       "Temp": 27.4,
       "WindSpeed": 0.0,
       "WindDir": 0.0
@@ -13999,7 +13999,7 @@
       "StationName": "八里",
       "StationId": "C0AD10",
       "Hour": "19:00",
-      "Rain": 0.5,
+      "Rain": 0.0,
       "Temp": 28.0,
       "WindSpeed": 0.8,
       "WindDir": 254.0
@@ -14008,7 +14008,7 @@
       "StationName": "蘆洲",
       "StationId": "C0AD30",
       "Hour": "19:00",
-      "Rain": 1.0,
+      "Rain": 0.0,
       "Temp": 28.0,
       "WindSpeed": 0.0,
       "WindDir": 0.0
@@ -14017,7 +14017,7 @@
       "StationName": "土城",
       "StationId": "C0AD40",
       "Hour": "19:00",
-      "Rain": 13.5,
+      "Rain": 0.0,
       "Temp": 25.3,
       "WindSpeed": 0.2,
       "WindDir": 0.0
@@ -14035,7 +14035,7 @@
       "StationName": "永和",
       "StationId": "C0AH10",
       "Hour": "19:00",
-      "Rain": 99.5,
+      "Rain": 0.0,
       "Temp": null,
       "WindSpeed": -99.0,
       "WindDir": -99.0
@@ -14053,7 +14053,7 @@
       "StationName": "平等",
       "StationId": "C0AH40",
       "Hour": "19:00",
-      "Rain": 38.5,
+      "Rain": 0.0,
       "Temp": 24.5,
       "WindSpeed": 0.7,
       "WindDir": 197.0
@@ -14071,7 +14071,7 @@
       "StationName": "深坑",
       "StationId": "C0AH80",
       "Hour": "19:00",
-      "Rain": 34.5,
+      "Rain": 0.5,
       "Temp": 25.8,
       "WindSpeed": 0.0,
       "WindDir": 0.0
@@ -14080,7 +14080,7 @@
       "StationName": "七堵",
       "StationId": "C0B010",
       "Hour": "19:00",
-      "Rain": 11.5,
+      "Rain": 1.5,
       "Temp": 27.7,
       "WindSpeed": 1.7,
       "WindDir": 199.0
@@ -14098,7 +14098,7 @@
       "StationName": "屈尺",
       "StationId": "C0AI10",
       "Hour": "19:00",
-      "Rain": 83.5,
+      "Rain": 0.0,
       "Temp": 26.8,
       "WindSpeed": 1.3,
       "WindDir": 185.0
@@ -14107,7 +14107,7 @@
       "StationName": "三重",
       "StationId": "C0AI30",
       "Hour": "19:00",
-      "Rain": 60.5,
+      "Rain": 0.0,
       "Temp": 27.8,
       "WindSpeed": 0.4,
       "WindDir": 7.0
@@ -14116,7 +14116,7 @@
       "StationName": "石牌",
       "StationId": "C0AI40",
       "Hour": "19:00",
-      "Rain": 9.5,
+      "Rain": 0.0,
       "Temp": 28.8,
       "WindSpeed": 0.0,
       "WindDir": 0.0
@@ -14125,7 +14125,7 @@
       "StationName": "新北",
       "StationId": "466881",
       "Hour": "19:00",
-      "Rain": 56.5,
+      "Rain": 0.0,
       "Temp": 25.1,
       "WindSpeed": 0.9,
       "WindDir": 110.0
@@ -14143,7 +14143,7 @@
       "StationName": "鞍部",
       "StationId": "466910",
       "Hour": "19:00",
-      "Rain": 0.5,
+      "Rain": 0.0,
       "Temp": 22.2,
       "WindSpeed": 1.8,
       "WindDir": 10.0
@@ -14152,7 +14152,7 @@
       "StationName": "臺北",
       "StationId": "466920",
       "Hour": "19:00",
-      "Rain": 97.0,
+      "Rain": 0.0,
       "Temp": 26.3,
       "WindSpeed": 1.7,
       "WindDir": 10.0
@@ -14161,7 +14161,7 @@
       "StationName": "陽明山",
       "StationId": "466930",
       "Hour": "19:00",
-      "Rain": 7.5,
+      "Rain": 0.0,
       "Temp": 22.7,
       "WindSpeed": 0.8,
       "WindDir": 20.0
@@ -14170,7 +14170,7 @@
       "StationName": "基隆",
       "StationId": "466940",
       "Hour": "19:00",
-      "Rain": 7.0,
+      "Rain": 1.0,
       "Temp": 26.1,
       "WindSpeed": 2.0,
       "WindDir": 210.0
@@ -14206,7 +14206,7 @@
       "StationName": "桃改樹林分場",
       "StationId": "72AI40",
       "Hour": "19:00",
-      "Rain": 1.0,
+      "Rain": 0.0,
       "Temp": 25.9,
       "WindSpeed": 0.3,
       "WindDir": 130.0
@@ -14233,7 +14233,7 @@
       "StationName": "茶改北部分場",
       "StationId": "82A750",
       "Hour": "19:00",
-      "Rain": 32.5,
+      "Rain": 0.5,
       "Temp": 23.2,
       "WindSpeed": 2.0,
       "WindDir": 200.0
@@ -14251,7 +14251,7 @@
       "StationName": "臺灣大學",
       "StationId": "A0A010",
       "Hour": "19:00",
-      "Rain": 147.0,
+      "Rain": 0.0,
       "Temp": 25.5,
       "WindSpeed": 0.0,
       "WindDir": 0.0
@@ -14260,7 +14260,7 @@
       "StationName": "文化大學",
       "StationId": "A0A460",
       "Hour": "19:00",
-      "Rain": 44.6,
+      "Rain": 0.20000000000000284,
       "Temp": 24.0,
       "WindSpeed": 1.2,
       "WindDir": 70.0
@@ -14287,7 +14287,7 @@
       "StationName": "福山",
       "StationId": "C2A560",
       "Hour": "19:00",
-      "Rain": 34.0,
+      "Rain": 0.0,
       "Temp": 22.7,
       "WindSpeed": 0.1,
       "WindDir": 0.0
@@ -14296,7 +14296,7 @@
       "StationName": "火燒寮",
       "StationId": "C2A650",
       "Hour": "19:00",
-      "Rain": 4.0,
+      "Rain": 1.5,
       "Temp": 23.7,
       "WindSpeed": 0.1,
       "WindDir": 0.0
@@ -14305,7 +14305,7 @@
       "StationName": "瑞芳",
       "StationId": "C2A660",
       "Hour": "19:00",
-      "Rain": 2.5,
+      "Rain": 2.0,
       "Temp": 25.1,
       "WindSpeed": 0.4,
       "WindDir": 160.0
@@ -14341,7 +14341,7 @@
       "StationName": "信賢",
       "StationId": "C2AK30",
       "Hour": "19:00",
-      "Rain": 20.5,
+      "Rain": 0.0,
       "Temp": 22.8,
       "WindSpeed": 0.4,
       "WindDir": 340.0
@@ -14350,7 +14350,7 @@
       "StationName": "漁光",
       "StationId": "C2AK40",
       "Hour": "19:00",
-      "Rain": 11.5,
+      "Rain": 0.5,
       "Temp": 22.3,
       "WindSpeed": 0.4,
       "WindDir": 140.0
@@ -14413,7 +14413,7 @@
       "StationName": "關西工作站",
       "StationId": "C2D720",
       "Hour": "19:00",
-      "Rain": 22.5,
+      "Rain": 0.0,
       "Temp": 26.3,
       "WindSpeed": 0.5,
       "WindDir": 50.0
@@ -14431,7 +14431,7 @@
       "StationName": "國一N013K",
       "StationId": "CAA010",
       "Hour": "19:00",
-      "Rain": 60.0,
+      "Rain": 0.0,
       "Temp": 25.7,
       "WindSpeed": 0.5,
       "WindDir": 220.0
@@ -14440,7 +14440,7 @@
       "StationName": "國一S026K",
       "StationId": "CAA020",
       "Hour": "19:00",
-      "Rain": 46.5,
+      "Rain": 0.0,
       "Temp": 26.6,
       "WindSpeed": 0.8,
       "WindDir": 60.0
@@ -14449,7 +14449,7 @@
       "StationName": "國三S010K",
       "StationId": "CAA030",
       "Hour": "19:00",
-      "Rain": 36.5,
+      "Rain": 0.5,
       "Temp": 25.0,
       "WindSpeed": 0.6,
       "WindDir": 340.0
@@ -14458,7 +14458,7 @@
       "StationName": "國三S016K",
       "StationId": "CAA040",
       "Hour": "19:00",
-      "Rain": 71.5,
+      "Rain": 0.0,
       "Temp": 24.7,
       "WindSpeed": 0.8,
       "WindDir": 190.0
@@ -14467,7 +14467,7 @@
       "StationName": "國三S037K",
       "StationId": "CAA050",
       "Hour": "19:00",
-      "Rain": 33.0,
+      "Rain": 0.0,
       "Temp": 25.5,
       "WindSpeed": 0.4,
       "WindDir": 70.0
@@ -14476,7 +14476,7 @@
       "StationName": "國三S042K",
       "StationId": "CAA060",
       "Hour": "19:00",
-      "Rain": 7.5,
+      "Rain": 0.0,
       "Temp": 25.8,
       "WindSpeed": 0.5,
       "WindDir": 180.0
@@ -14485,7 +14485,7 @@
       "StationName": "國三N046K",
       "StationId": "CAA070",
       "Hour": "19:00",
-      "Rain": 2.5,
+      "Rain": 0.0,
       "Temp": 26.1,
       "WindSpeed": 0.9,
       "WindDir": 90.0
@@ -14503,7 +14503,7 @@
       "StationName": "國三甲005K",
       "StationId": "CAA090",
       "Hour": "19:00",
-      "Rain": 83.5,
+      "Rain": 0.0,
       "Temp": 24.5,
       "WindSpeed": 0.6,
       "WindDir": 160.0
@@ -14521,7 +14521,7 @@
       "StationName": "國五S005K",
       "StationId": "CAAD60",
       "Hour": "19:00",
-      "Rain": 27.0,
+      "Rain": 0.5,
       "Temp": 24.0,
       "WindSpeed": 0.6,
       "WindDir": 180.0
@@ -14530,7 +14530,7 @@
       "StationName": "國五S006K",
       "StationId": "CAAD70",
       "Hour": "19:00",
-      "Rain": 29.5,
+      "Rain": 1.0,
       "Temp": 24.1,
       "WindSpeed": 0.5,
       "WindDir": 130.0
@@ -14539,7 +14539,7 @@
       "StationName": "國五N008K",
       "StationId": "CAAD80",
       "Hour": "19:00",
-      "Rain": 22.0,
+      "Rain": 0.5,
       "Temp": 24.0,
       "WindSpeed": 0.8,
       "WindDir": 200.0
@@ -14548,7 +14548,7 @@
       "StationName": "國五N013K",
       "StationId": "CAAD90",
       "Hour": "19:00",
-      "Rain": 7.5,
+      "Rain": 0.5,
       "Temp": 23.6,
       "WindSpeed": 0.3,
       "WindDir": 120.0
@@ -14575,7 +14575,7 @@
       "StationName": "國一S001K",
       "StationId": "CAB010",
       "Hour": "19:00",
-      "Rain": 11.5,
+      "Rain": 1.5,
       "Temp": 25.0,
       "WindSpeed": 1.1,
       "WindDir": 200.0
@@ -14584,7 +14584,7 @@
       "StationName": "國一S006K",
       "StationId": "CAB020",
       "Hour": "19:00",
-      "Rain": 19.0,
+      "Rain": 3.5,
       "Temp": 24.8,
       "WindSpeed": 0.4,
       "WindDir": 160.0
@@ -14593,7 +14593,7 @@
       "StationName": "國三S004K",
       "StationId": "CAB030",
       "Hour": "19:00",
-      "Rain": 16.0,
+      "Rain": 1.5,
       "Temp": 24.3,
       "WindSpeed": 0.3,
       "WindDir": 240.0
@@ -14602,7 +14602,7 @@
       "StationName": "國三S007K",
       "StationId": "CAB040",
       "Hour": "19:00",
-      "Rain": 24.0,
+      "Rain": 1.0,
       "Temp": 24.5,
       "WindSpeed": 0.5,
       "WindDir": 300.0
@@ -14611,7 +14611,7 @@
       "StationName": "國三N002K",
       "StationId": "CAB050",
       "Hour": "19:00",
-      "Rain": 7.5,
+      "Rain": 0.5,
       "Temp": 25.3,
       "WindSpeed": 0.6,
       "WindDir": 210.0
@@ -14674,7 +14674,7 @@
       "StationName": "國三N072K",
       "StationId": "CAC770",
       "Hour": "19:00",
-      "Rain": 3.5,
+      "Rain": 0.0,
       "Temp": 26.3,
       "WindSpeed": 0.6,
       "WindDir": 330.0
@@ -14728,7 +14728,7 @@
       "StationName": "國三N085K",
       "StationId": "CAD080",
       "Hour": "19:00",
-      "Rain": 0.5,
+      "Rain": 0.0,
       "Temp": 26.3,
       "WindSpeed": 0.6,
       "WindDir": 140.0
@@ -14764,7 +14764,7 @@
       "StationName": "國三N077K",
       "StationId": "CAD710",
       "Hour": "19:00",
-      "Rain": 25.5,
+      "Rain": 0.0,
       "Temp": 26.3,
       "WindSpeed": 0.6,
       "WindDir": 10.0
