@@ -5,8 +5,8 @@ on:
   # ⚙️ 1. 定時執行排程 (台灣時間 = UTC + 8 小時)
   # ------------------------------------------------------
   schedule:
-    - cron: '37 11 * * *'  # 📌 常規排程：每天台灣時間 19:37
-    - cron: '21 15 * * *'  # 📌 深夜補圖排程：每天台灣時間 23:21
+    - cron: '37 11 * * *'  # 📌 常規排程：每天台灣時間 19:37 (UTC 11:37) -> 處理「當日」個案
+    - cron: '21 16 * * *'  # 📌 修正：每天台灣時間 00:21 (UTC 16:21) -> 處理「昨日」補圖
 
   # ------------------------------------------------------
   # 🕹️ 2. 手動觸發分流控制器 (支援判定模式與強行打包模式)
@@ -25,6 +25,11 @@ on:
         options:
           - 'run_triggered'
           - 'force_download'
+
+# 🔒 需求 3：並發限制鎖（同時間只能跑一個任務，後來的會自動排隊，避免並行衝突）
+concurrency:
+  group: cwa-data-pipeline
+  cancel-in-progress: false  # 設定為 false，代表後來的任務會「排隊」，不會把前面的任務踢掉
 
 jobs:
   build-and-run:
@@ -51,28 +56,49 @@ jobs:
         id: date-env
         run: |
           echo "SKIP_RUN=false" >> $GITHUB_ENV
+          
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            # 🕹️ A. 手動模式：直接吃輸入的日期
             echo "RUN_DATE=${{ github.event.inputs.target_date }}" >> $GITHUB_ENV
             echo "RUN_MODE=${{ github.event.inputs.run_mode }}" >> $GITHUB_ENV
+          
           else
-            CURRENT_HOUR=$(date -d "+8 hours" +%H)
-            TW_TODAY=$(date -d "+8 hours" +"%Y%m%d")
-            echo "當前台灣時間 HH: $CURRENT_HOUR"
-            if [ "$CURRENT_HOUR" = "23" ]; then
-              echo "🌙 深夜 23:30 定時補圖任務啟動..."
-              if [ -d "stn_archives/$TW_TODAY" ]; then
-                echo "✅ 下午判定成功！資料夾存在，啟動補圖任務。"
-                echo "RUN_DATE=$TW_TODAY" >> $GITHUB_ENV
+            # ⏰ B. 定時器模式：改用精準的觸發事件時間判斷 (世界時間，所以看 UTC 時)
+            # 19:37 觸發時，github.event.schedule 裡的 cron 會是 '37 11 * * *'
+            # 00:21 觸發時，cron 會是 '21 16 * * *'
+            TRIGGER_CRON="${{ github.event.schedule }}"
+            echo "目前定時器觸發源：$TRIGGER_CRON"
+            
+            if [ "$TRIGGER_CRON" = "21 16 * * *" ]; then
+              # 🌙 凌晨 00:21 補圖任務 (精準抓取「昨天」的日期)
+              TW_YESTERDAY=$(date -d "+8 hours -1 day" +"%Y%m%d")
+              echo "跨日定時器啟動，目標為昨日個案：$TW_YESTERDAY"
+              
+              if [ -d "stn_archives/$TW_YESTERDAY" ]; then
+                echo "✅ 昨日下午判定成功！資料夾存在，啟動深夜強制補圖。"
+                echo "RUN_DATE=$TW_YESTERDAY" >> $GITHUB_ENV
                 echo "RUN_MODE=force_download" >> $GITHUB_ENV
               else
-                echo "🛑 下午判定未通過，不執行補圖任務。"
+                echo "🛑 昨日下午未達指標，不執行補圖。"
                 echo "SKIP_RUN=true" >> $GITHUB_ENV
               fi
+            
             else
+              # ☀️ 19:37 常規檢測：
+              # 如果當下台灣小時小於 19 點，代表絕對是跨日延遲了，自動退回前一天！
+              CURRENT_HOUR=$((10#$(date -d "+8 hours" +%H)))
+              
+              if [ $CURRENT_HOUR -lt 19 ]; then
+                TW_TODAY=$(date -d "+8 hours -1 day" +"%Y%m%d")
+                echo "⚠️ 警告：偵測到當前小時為 $CURRENT_HOUR，小於 19 點！19:37 檢測發生跨日延遲，自動回退日期至：$TW_TODAY"
+              else
+                TW_TODAY=$(date -d "+8 hours" +"%Y%m%d")
+                echo "常規檢測順利在當日執行（當前小時：$CURRENT_HOUR），鎖定今日日期：$TW_TODAY"
+              fi
+              
               echo "RUN_DATE=$TW_TODAY" >> $GITHUB_ENV
               echo "RUN_MODE=run_triggered" >> $GITHUB_ENV
             fi
-          fi
 
       # ------------------------------------------------------
       # 🎯 模式 A：雷達指標判定
@@ -107,6 +133,9 @@ jobs:
       - name: 🚀 將收割之圖資與數據自動 Commit 封存回倉庫
         if: ${{ env.SKIP_RUN != 'true' && success() }}
         run: |
+          # 先行拉取防衝突（以 GitHub 雲端為主）
+          git pull origin main -X theirs || true
+          
           git config --local user.email "action@github.com"
           git config --local user.name "CWA-Data-Bot"
           git add radar_archives/ sfc_archives/ stn_archives/ cwaFig_archives/
