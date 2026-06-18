@@ -1,7 +1,7 @@
 {
   "meta": {
     "target_date": "2026-06-18",
-    "calculated_at": "2026-06-18 18:40:08"
+    "calculated_at": "2026-06-18 19:03:33"
   },
   "top10_precipitation": [
     {
@@ -67,6 +67,11 @@
       "Temp": 34.7
     },
     {
+      "StationName": "竹東",
+      "StationId": "C0D560",
+      "Temp": 34.4
+    },
+    {
       "StationName": "內湖",
       "StationId": "C0A9F0",
       "Temp": 33.9
@@ -100,11 +105,6 @@
       "StationName": "永和",
       "StationId": "C0AH10",
       "Temp": 33.2
-    },
-    {
-      "StationName": "臺灣大學",
-      "StationId": "A0A010",
-      "Temp": 33.2
     }
   ],
   "hourly_wind_data": [
@@ -125,15 +125,6 @@
       "Temp": 24.3,
       "WindSpeed": 0.5,
       "WindDir": 56.0
-    },
-    {
-      "StationName": "四稜",
-      "StationId": "C0C800",
-      "Hour": "10:00",
-      "Rain": 0.0,
-      "Temp": 25.5,
-      "WindSpeed": 0.3,
-      "WindDir": 255.0
     },
     {
       "StationName": "太平里",
@@ -161,6 +152,24 @@
       "Temp": 33.0,
       "WindSpeed": 0.0,
       "WindDir": 0.0
+    },
+    {
+      "StationName": "大溪漁港",
+      "StationId": "C0UA80",
+      "Hour": "10:00",
+      "Rain": 0.0,
+      "Temp": 26.7,
+      "WindSpeed": 2.7,
+      "WindDir": 45.0
+    },
+    {
+      "StationName": "石城",
+      "StationId": "C0UA90",
+      "Hour": "10:00",
+      "Rain": 0.0,
+      "Temp": 28.5,
+      "WindSpeed": 1.3,
+      "WindDir": 83.0
     },
     {
       "StationName": "大武崙",
@@ -226,6 +235,24 @@
       "WindDir": 266.0
     },
     {
+      "StationName": "海天一線",
+      "StationId": "C0D670",
+      "Hour": "10:00",
+      "Rain": 0.0,
+      "Temp": 31.6,
+      "WindSpeed": 3.7,
+      "WindDir": 272.0
+    },
+    {
+      "StationName": "香山濕地",
+      "StationId": "C0D680",
+      "Hour": "10:00",
+      "Rain": 0.0,
+      "Temp": 30.4,
+      "WindSpeed": 3.5,
+      "WindDir": 256.0
+    },
+    {
       "StationName": "水湳洞",
       "StationId": "C0AJ50",
       "Hour": "10:00",
@@ -242,6 +269,24 @@
       "Temp": 29.0,
       "WindSpeed": 0.9,
       "WindDir": 332.0
+    },
+    {
+      "StationName": "外湖",
+      "StationId": "C0D690",
+      "Hour": "10:00",
+      "Rain": 0.0,
+      "Temp": 29.0,
+      "WindSpeed": 4.4,
+      "WindDir": 267.0
+    },
+    {
+      "StationName": "淡江大學蘭陽校園",
+      "StationId": "C0UB00",
+      "Hour": "10:00",
+      "Rain": 0.0,
+      "Temp": 28.8,
+      "WindSpeed": 1.4,
+      "WindDir": 105.0
     },
     {
       "StationName": "六塊厝",
@@ -269,6 +314,15 @@
       "Temp": 30.2,
       "WindSpeed": 5.8,
       "WindDir": 261.0
+    },
+    {
+      "StationName": "北關",
+      "StationId": "C0U880",
+      "Hour": "10:00",
+      "Rain": 0.0,
+      "Temp": 28.8,
+      "WindSpeed": 3.2,
+      "WindDir": 65.0
     },
     {
       "StationName": "板橋",
@@ -325,13 +379,76 @@
       "WindDir": 341.0
     },
     {
-      "StationName": "三貂角",
-      "StationId": "C0A970",
+      "StationName": "雙連埤",
+      "StationId": "C0U520",
       "Hour": "10:00",
       "Rain": 0.0,
-      "Temp": 30.8,
-      "WindSpeed": 1.3,
-      "WindDir": 60.0
+      "Temp": 29.2,
+      "WindSpeed": 0.1,
+      "WindDir": 0.0
+    },
+    {
+      "StationName": "頭城",
+      "StationId": "C0U860",
+      "Hour": "10:00",
+      "Rain": 0.0,
+      "Temp": 29.1,
+      "WindSpeed": 3.0,
+      "WindDir": 58.0
+    },
+    {
+      "StationName": "大礁溪",
+      "StationId": "C0U870",
+      "Hour": "10:00",
+      "Rain": 0.0,
+      "Temp": 29.4,
+      "WindSpeed": 0.4,
+      "WindDir": 95.0
+    },
+    {
+      "StationName": "礁溪",
+      "StationId": "C0U600",
+      "Hour": "10:00",
+      "Rain": 0.0,
+      "Temp": 30.6,
+      "WindSpeed": 1.0,
+      "WindDir": 75.0
+    },
+    {
+      "StationName": "龜山島",
+      "StationId": "C0U750",
+      "Hour": "10:00",
+      "Rain": 0.0,
+      "Temp": 26.9,
+      "WindSpeed": 1.1,
+      "WindDir": 10.0
+    },
+    {
+      "StationName": "鶯子嶺",
+      "StationId": "C0U950",
+      "Hour": "10:00",
+      "Rain": 0.0,
+      "Temp": 29.1,
+      "WindSpeed": 0.1,
+      "WindDir": 0.0
+    },
+    {
+      "StationName": "大福",
+      "StationId": "C0U970",
+      "Hour": "10:00",
+      "Rain": 0.0,
+      "Temp": 30.0,
+      "WindSpeed": 1.9,
+      "WindDir": 92.0
+    },
+    {
+      "StationName": "坪林石牌",
+      "StationId": "C0U980",
+      "Hour": "10:00",
+      "Rain": 0.5,
+      "Temp": 28.5,
+      "WindSpeed": 0.2,
+      "WindDir": 0.0
     },
     {
       "StationName": "中壢",
@@ -341,6 +458,24 @@
       "Temp": null,
       "WindSpeed": -99.0,
       "WindDir": -99.0
+    },
+    {
+      "StationName": "關西",
+      "StationId": "C0D700",
+      "Hour": "10:00",
+      "Rain": 0.0,
+      "Temp": 31.8,
+      "WindSpeed": 1.3,
+      "WindDir": 285.0
+    },
+    {
+      "StationName": "桃源谷",
+      "StationId": "C0UA70",
+      "Hour": "10:00",
+      "Rain": 0.5,
+      "Temp": 29.4,
+      "WindSpeed": 2.2,
+      "WindDir": 88.0
     },
     {
       "StationName": "福山植物園",
@@ -359,6 +494,24 @@
       "Temp": 32.0,
       "WindSpeed": 2.0,
       "WindDir": 38.0
+    },
+    {
+      "StationName": "新豐",
+      "StationId": "C0D590",
+      "Hour": "10:00",
+      "Rain": 0.0,
+      "Temp": 31.0,
+      "WindSpeed": 0.3,
+      "WindDir": 271.0
+    },
+    {
+      "StationName": "竹東",
+      "StationId": "C0D560",
+      "Hour": "10:00",
+      "Rain": 0.0,
+      "Temp": 34.4,
+      "WindSpeed": 0.7,
+      "WindDir": 205.0
     },
     {
       "StationName": "平鎮",
@@ -388,6 +541,15 @@
       "WindDir": 270.0
     },
     {
+      "StationName": "湖口",
+      "StationId": "C0D650",
+      "Hour": "10:00",
+      "Rain": 0.0,
+      "Temp": 30.7,
+      "WindSpeed": 1.8,
+      "WindDir": 229.0
+    },
+    {
       "StationName": "龍潭",
       "StationId": "C0C670",
       "Hour": "10:00",
@@ -395,6 +557,15 @@
       "Temp": 30.4,
       "WindSpeed": 1.4,
       "WindDir": 355.0
+    },
+    {
+      "StationName": "新竹市東區",
+      "StationId": "C0D660",
+      "Hour": "10:00",
+      "Rain": 0.0,
+      "Temp": 30.7,
+      "WindSpeed": 1.3,
+      "WindDir": 251.0
     },
     {
       "StationName": "龜山",
@@ -802,15 +973,6 @@
       "WindDir": 50.0
     },
     {
-      "StationName": "彭佳嶼",
-      "StationId": "466950",
-      "Hour": "10:00",
-      "Rain": 0.0,
-      "Temp": 28.8,
-      "WindSpeed": 3.5,
-      "WindDir": 140.0
-    },
-    {
       "StationName": "新屋",
       "StationId": "467050",
       "Hour": "10:00",
@@ -818,6 +980,24 @@
       "Temp": 31.4,
       "WindSpeed": 4.4,
       "WindDir": 260.0
+    },
+    {
+      "StationName": "宜蘭",
+      "StationId": "467080",
+      "Hour": "10:00",
+      "Rain": 0.0,
+      "Temp": 30.8,
+      "WindSpeed": 2.6,
+      "WindDir": 60.0
+    },
+    {
+      "StationName": "新竹",
+      "StationId": "467571",
+      "Hour": "10:00",
+      "Rain": 0.0,
+      "Temp": 31.9,
+      "WindSpeed": 1.6,
+      "WindDir": 280.0
     },
     {
       "StationName": "桃改樹林分場",
@@ -836,6 +1016,15 @@
       "Temp": 32.2,
       "WindSpeed": 2.3,
       "WindDir": 270.0
+    },
+    {
+      "StationName": "桃改新埔分場",
+      "StationId": "72D680",
+      "Hour": "10:00",
+      "Rain": 0.0,
+      "Temp": 32.4,
+      "WindSpeed": 1.2,
+      "WindDir": 260.0
     },
     {
       "StationName": "茶改北部分場",
@@ -1007,6 +1196,33 @@
       "Temp": 32.9,
       "WindSpeed": 1.0,
       "WindDir": 340.0
+    },
+    {
+      "StationName": "打鐵坑",
+      "StationId": "C2D480",
+      "Hour": "10:00",
+      "Rain": 0.0,
+      "Temp": 31.9,
+      "WindSpeed": 1.2,
+      "WindDir": 230.0
+    },
+    {
+      "StationName": "關西工作站",
+      "StationId": "C2D720",
+      "Hour": "10:00",
+      "Rain": 0.0,
+      "Temp": 32.2,
+      "WindSpeed": 1.1,
+      "WindDir": 300.0
+    },
+    {
+      "StationName": "巨埔",
+      "StationId": "C2D770",
+      "Hour": "10:00",
+      "Rain": 0.0,
+      "Temp": 31.9,
+      "WindSpeed": 1.5,
+      "WindDir": 250.0
     },
     {
       "StationName": "國一N013K",
@@ -1225,15 +1441,6 @@
       "WindDir": 80.0
     },
     {
-      "StationName": "拉拉山",
-      "StationId": "CAC040",
-      "Hour": "10:00",
-      "Rain": 0.0,
-      "Temp": 22.5,
-      "WindSpeed": 0.9,
-      "WindDir": 190.0
-    },
-    {
       "StationName": "西濱S023K",
       "StationId": "CAC050",
       "Hour": "10:00",
@@ -1270,6 +1477,105 @@
       "WindDir": 40.0
     },
     {
+      "StationName": "國一N077K",
+      "StationId": "CAD020",
+      "Hour": "10:00",
+      "Rain": 0.0,
+      "Temp": 31.3,
+      "WindSpeed": 2.0,
+      "WindDir": 300.0
+    },
+    {
+      "StationName": "國一S082K",
+      "StationId": "CAD030",
+      "Hour": "10:00",
+      "Rain": 0.0,
+      "Temp": 32.2,
+      "WindSpeed": 1.3,
+      "WindDir": 230.0
+    },
+    {
+      "StationName": "國一S088K",
+      "StationId": "CAD040",
+      "Hour": "10:00",
+      "Rain": 0.0,
+      "Temp": 32.5,
+      "WindSpeed": 2.4,
+      "WindDir": 240.0
+    },
+    {
+      "StationName": "國一N094K",
+      "StationId": "CAD050",
+      "Hour": "10:00",
+      "Rain": 0.0,
+      "Temp": 32.9,
+      "WindSpeed": 1.5,
+      "WindDir": 270.0
+    },
+    {
+      "StationName": "國一S098K",
+      "StationId": "CAD060",
+      "Hour": "10:00",
+      "Rain": 0.0,
+      "Temp": 32.2,
+      "WindSpeed": 2.1,
+      "WindDir": 220.0
+    },
+    {
+      "StationName": "國三N085K",
+      "StationId": "CAD080",
+      "Hour": "10:00",
+      "Rain": 0.0,
+      "Temp": 32.4,
+      "WindSpeed": 0.8,
+      "WindDir": 180.0
+    },
+    {
+      "StationName": "國三S103K",
+      "StationId": "CAD090",
+      "Hour": "10:00",
+      "Rain": 0.0,
+      "Temp": 30.1,
+      "WindSpeed": 3.4,
+      "WindDir": 280.0
+    },
+    {
+      "StationName": "西濱N066K",
+      "StationId": "CAD100",
+      "Hour": "10:00",
+      "Rain": 0.0,
+      "Temp": 30.1,
+      "WindSpeed": 2.7,
+      "WindDir": 280.0
+    },
+    {
+      "StationName": "西濱S082K",
+      "StationId": "CAD110",
+      "Hour": "10:00",
+      "Rain": 0.0,
+      "Temp": 30.4,
+      "WindSpeed": 3.0,
+      "WindDir": 270.0
+    },
+    {
+      "StationName": "國三N077K",
+      "StationId": "CAD710",
+      "Hour": "10:00",
+      "Rain": 0.0,
+      "Temp": 31.1,
+      "WindSpeed": 1.1,
+      "WindDir": 350.0
+    },
+    {
+      "StationName": "國五S031K",
+      "StationId": "CAUB30",
+      "Hour": "10:00",
+      "Rain": 0.0,
+      "Temp": 28.7,
+      "WindSpeed": 2.6,
+      "WindDir": 60.0
+    },
+    {
       "StationName": "硬漢嶺",
       "StationId": "C0AK30",
       "Hour": "11:00",
@@ -1286,15 +1592,6 @@
       "Temp": 25.2,
       "WindSpeed": 1.0,
       "WindDir": 3.0
-    },
-    {
-      "StationName": "四稜",
-      "StationId": "C0C800",
-      "Hour": "11:00",
-      "Rain": 0.0,
-      "Temp": 27.5,
-      "WindSpeed": 0.8,
-      "WindDir": 280.0
     },
     {
       "StationName": "太平里",
@@ -1322,6 +1619,24 @@
       "Temp": 33.0,
       "WindSpeed": 4.4,
       "WindDir": 303.0
+    },
+    {
+      "StationName": "大溪漁港",
+      "StationId": "C0UA80",
+      "Hour": "11:00",
+      "Rain": 0.0,
+      "Temp": 26.9,
+      "WindSpeed": 2.5,
+      "WindDir": 56.0
+    },
+    {
+      "StationName": "石城",
+      "StationId": "C0UA90",
+      "Hour": "11:00",
+      "Rain": 0.0,
+      "Temp": 29.0,
+      "WindSpeed": 1.6,
+      "WindDir": 84.0
     },
     {
       "StationName": "大武崙",
@@ -1387,6 +1702,24 @@
       "WindDir": 262.0
     },
     {
+      "StationName": "海天一線",
+      "StationId": "C0D670",
+      "Hour": "11:00",
+      "Rain": 0.0,
+      "Temp": 30.6,
+      "WindSpeed": 5.4,
+      "WindDir": 257.0
+    },
+    {
+      "StationName": "香山濕地",
+      "StationId": "C0D680",
+      "Hour": "11:00",
+      "Rain": 0.0,
+      "Temp": 30.2,
+      "WindSpeed": 4.8,
+      "WindDir": 255.0
+    },
+    {
       "StationName": "水湳洞",
       "StationId": "C0AJ50",
       "Hour": "11:00",
@@ -1403,6 +1736,24 @@
       "Temp": 29.3,
       "WindSpeed": 0.7,
       "WindDir": 17.0
+    },
+    {
+      "StationName": "外湖",
+      "StationId": "C0D690",
+      "Hour": "11:00",
+      "Rain": 0.0,
+      "Temp": 28.7,
+      "WindSpeed": 5.8,
+      "WindDir": 260.0
+    },
+    {
+      "StationName": "淡江大學蘭陽校園",
+      "StationId": "C0UB00",
+      "Hour": "11:00",
+      "Rain": 0.0,
+      "Temp": 29.2,
+      "WindSpeed": 1.4,
+      "WindDir": 112.0
     },
     {
       "StationName": "六塊厝",
@@ -1430,6 +1781,15 @@
       "Temp": 29.8,
       "WindSpeed": 5.4,
       "WindDir": 240.0
+    },
+    {
+      "StationName": "北關",
+      "StationId": "C0U880",
+      "Hour": "11:00",
+      "Rain": 0.0,
+      "Temp": 28.9,
+      "WindSpeed": 2.1,
+      "WindDir": 80.0
     },
     {
       "StationName": "板橋",
@@ -1486,13 +1846,76 @@
       "WindDir": 311.0
     },
     {
-      "StationName": "三貂角",
-      "StationId": "C0A970",
+      "StationName": "雙連埤",
+      "StationId": "C0U520",
       "Hour": "11:00",
       "Rain": 0.0,
-      "Temp": 31.5,
-      "WindSpeed": 1.1,
-      "WindDir": 71.0
+      "Temp": 30.1,
+      "WindSpeed": 0.1,
+      "WindDir": 0.0
+    },
+    {
+      "StationName": "頭城",
+      "StationId": "C0U860",
+      "Hour": "11:00",
+      "Rain": 0.0,
+      "Temp": 31.0,
+      "WindSpeed": 1.3,
+      "WindDir": 85.0
+    },
+    {
+      "StationName": "大礁溪",
+      "StationId": "C0U870",
+      "Hour": "11:00",
+      "Rain": 0.0,
+      "Temp": 30.1,
+      "WindSpeed": 0.5,
+      "WindDir": 93.0
+    },
+    {
+      "StationName": "礁溪",
+      "StationId": "C0U600",
+      "Hour": "11:00",
+      "Rain": 0.0,
+      "Temp": 31.6,
+      "WindSpeed": 0.8,
+      "WindDir": 56.0
+    },
+    {
+      "StationName": "龜山島",
+      "StationId": "C0U750",
+      "Hour": "11:00",
+      "Rain": 0.0,
+      "Temp": 27.6,
+      "WindSpeed": 0.4,
+      "WindDir": 139.0
+    },
+    {
+      "StationName": "鶯子嶺",
+      "StationId": "C0U950",
+      "Hour": "11:00",
+      "Rain": 0.0,
+      "Temp": 26.2,
+      "WindSpeed": 0.3,
+      "WindDir": 307.0
+    },
+    {
+      "StationName": "大福",
+      "StationId": "C0U970",
+      "Hour": "11:00",
+      "Rain": 0.0,
+      "Temp": 30.3,
+      "WindSpeed": 1.8,
+      "WindDir": 91.0
+    },
+    {
+      "StationName": "坪林石牌",
+      "StationId": "C0U980",
+      "Hour": "11:00",
+      "Rain": 0.5,
+      "Temp": 28.8,
+      "WindSpeed": 0.2,
+      "WindDir": 0.0
     },
     {
       "StationName": "中壢",
@@ -1502,6 +1925,24 @@
       "Temp": 31.2,
       "WindSpeed": 0.9,
       "WindDir": 311.0
+    },
+    {
+      "StationName": "關西",
+      "StationId": "C0D700",
+      "Hour": "11:00",
+      "Rain": 0.0,
+      "Temp": 32.0,
+      "WindSpeed": 2.1,
+      "WindDir": 283.0
+    },
+    {
+      "StationName": "桃源谷",
+      "StationId": "C0UA70",
+      "Hour": "11:00",
+      "Rain": 0.5,
+      "Temp": 29.0,
+      "WindSpeed": 0.7,
+      "WindDir": 74.0
     },
     {
       "StationName": "福山植物園",
@@ -1520,6 +1961,24 @@
       "Temp": 32.0,
       "WindSpeed": 2.4,
       "WindDir": 306.0
+    },
+    {
+      "StationName": "新豐",
+      "StationId": "C0D590",
+      "Hour": "11:00",
+      "Rain": 0.0,
+      "Temp": 30.1,
+      "WindSpeed": 0.6,
+      "WindDir": 197.0
+    },
+    {
+      "StationName": "竹東",
+      "StationId": "C0D560",
+      "Hour": "11:00",
+      "Rain": 0.0,
+      "Temp": 32.0,
+      "WindSpeed": 2.6,
+      "WindDir": 254.0
     },
     {
       "StationName": "平鎮",
@@ -1549,6 +2008,15 @@
       "WindDir": 261.0
     },
     {
+      "StationName": "湖口",
+      "StationId": "C0D650",
+      "Hour": "11:00",
+      "Rain": 0.0,
+      "Temp": null,
+      "WindSpeed": -99.0,
+      "WindDir": -99.0
+    },
+    {
       "StationName": "龍潭",
       "StationId": "C0C670",
       "Hour": "11:00",
@@ -1556,6 +2024,15 @@
       "Temp": 31.1,
       "WindSpeed": 0.2,
       "WindDir": 0.0
+    },
+    {
+      "StationName": "新竹市東區",
+      "StationId": "C0D660",
+      "Hour": "11:00",
+      "Rain": 0.0,
+      "Temp": 31.3,
+      "WindSpeed": 3.4,
+      "WindDir": 255.0
     },
     {
       "StationName": "龜山",
@@ -1963,15 +2440,6 @@
       "WindDir": 50.0
     },
     {
-      "StationName": "彭佳嶼",
-      "StationId": "466950",
-      "Hour": "11:00",
-      "Rain": 0.0,
-      "Temp": 28.7,
-      "WindSpeed": 3.1,
-      "WindDir": 150.0
-    },
-    {
       "StationName": "新屋",
       "StationId": "467050",
       "Hour": "11:00",
@@ -1979,6 +2447,24 @@
       "Temp": 31.0,
       "WindSpeed": 5.2,
       "WindDir": 270.0
+    },
+    {
+      "StationName": "宜蘭",
+      "StationId": "467080",
+      "Hour": "11:00",
+      "Rain": 0.0,
+      "Temp": 30.9,
+      "WindSpeed": 2.0,
+      "WindDir": 90.0
+    },
+    {
+      "StationName": "新竹",
+      "StationId": "467571",
+      "Hour": "11:00",
+      "Rain": 0.0,
+      "Temp": 31.8,
+      "WindSpeed": 2.7,
+      "WindDir": 280.0
     },
     {
       "StationName": "桃改樹林分場",
@@ -1997,6 +2483,15 @@
       "Temp": 32.1,
       "WindSpeed": 2.7,
       "WindDir": 260.0
+    },
+    {
+      "StationName": "桃改新埔分場",
+      "StationId": "72D680",
+      "Hour": "11:00",
+      "Rain": 0.0,
+      "Temp": 31.4,
+      "WindSpeed": 3.0,
+      "WindDir": 270.0
     },
     {
       "StationName": "茶改北部分場",
@@ -2168,6 +2663,33 @@
       "Temp": 31.5,
       "WindSpeed": 2.7,
       "WindDir": 350.0
+    },
+    {
+      "StationName": "打鐵坑",
+      "StationId": "C2D480",
+      "Hour": "11:00",
+      "Rain": 0.0,
+      "Temp": 30.2,
+      "WindSpeed": 1.8,
+      "WindDir": 260.0
+    },
+    {
+      "StationName": "關西工作站",
+      "StationId": "C2D720",
+      "Hour": "11:00",
+      "Rain": 0.0,
+      "Temp": 31.0,
+      "WindSpeed": 0.4,
+      "WindDir": 40.0
+    },
+    {
+      "StationName": "巨埔",
+      "StationId": "C2D770",
+      "Hour": "11:00",
+      "Rain": 0.0,
+      "Temp": 31.0,
+      "WindSpeed": 2.7,
+      "WindDir": 290.0
     },
     {
       "StationName": "國一N013K",
@@ -2386,15 +2908,6 @@
       "WindDir": 100.0
     },
     {
-      "StationName": "拉拉山",
-      "StationId": "CAC040",
-      "Hour": "11:00",
-      "Rain": 0.0,
-      "Temp": 21.6,
-      "WindSpeed": 1.7,
-      "WindDir": 170.0
-    },
-    {
       "StationName": "西濱S023K",
       "StationId": "CAC050",
       "Hour": "11:00",
@@ -2431,6 +2944,105 @@
       "WindDir": 310.0
     },
     {
+      "StationName": "國一N077K",
+      "StationId": "CAD020",
+      "Hour": "11:00",
+      "Rain": 0.0,
+      "Temp": 30.3,
+      "WindSpeed": 5.3,
+      "WindDir": 290.0
+    },
+    {
+      "StationName": "國一S082K",
+      "StationId": "CAD030",
+      "Hour": "11:00",
+      "Rain": 0.0,
+      "Temp": 31.2,
+      "WindSpeed": 4.3,
+      "WindDir": 250.0
+    },
+    {
+      "StationName": "國一S088K",
+      "StationId": "CAD040",
+      "Hour": "11:00",
+      "Rain": 0.0,
+      "Temp": 31.5,
+      "WindSpeed": 3.2,
+      "WindDir": 270.0
+    },
+    {
+      "StationName": "國一N094K",
+      "StationId": "CAD050",
+      "Hour": "11:00",
+      "Rain": 0.0,
+      "Temp": 32.0,
+      "WindSpeed": 3.4,
+      "WindDir": 250.0
+    },
+    {
+      "StationName": "國一S098K",
+      "StationId": "CAD060",
+      "Hour": "11:00",
+      "Rain": 0.0,
+      "Temp": 30.8,
+      "WindSpeed": 4.2,
+      "WindDir": 270.0
+    },
+    {
+      "StationName": "國三N085K",
+      "StationId": "CAD080",
+      "Hour": "11:00",
+      "Rain": 0.0,
+      "Temp": 32.5,
+      "WindSpeed": 1.0,
+      "WindDir": 190.0
+    },
+    {
+      "StationName": "國三S103K",
+      "StationId": "CAD090",
+      "Hour": "11:00",
+      "Rain": 0.0,
+      "Temp": 30.3,
+      "WindSpeed": 4.3,
+      "WindDir": 260.0
+    },
+    {
+      "StationName": "西濱N066K",
+      "StationId": "CAD100",
+      "Hour": "11:00",
+      "Rain": 0.0,
+      "Temp": 30.6,
+      "WindSpeed": 2.2,
+      "WindDir": 270.0
+    },
+    {
+      "StationName": "西濱S082K",
+      "StationId": "CAD110",
+      "Hour": "11:00",
+      "Rain": 0.0,
+      "Temp": 29.8,
+      "WindSpeed": 4.6,
+      "WindDir": 270.0
+    },
+    {
+      "StationName": "國三N077K",
+      "StationId": "CAD710",
+      "Hour": "11:00",
+      "Rain": 0.0,
+      "Temp": 31.0,
+      "WindSpeed": 2.2,
+      "WindDir": 280.0
+    },
+    {
+      "StationName": "國五S031K",
+      "StationId": "CAUB30",
+      "Hour": "11:00",
+      "Rain": 0.0,
+      "Temp": 29.3,
+      "WindSpeed": 2.7,
+      "WindDir": 60.0
+    },
+    {
       "StationName": "硬漢嶺",
       "StationId": "C0AK30",
       "Hour": "12:00",
@@ -2447,15 +3059,6 @@
       "Temp": 25.5,
       "WindSpeed": 0.6,
       "WindDir": 343.0
-    },
-    {
-      "StationName": "四稜",
-      "StationId": "C0C800",
-      "Hour": "12:00",
-      "Rain": 0.0,
-      "Temp": 26.5,
-      "WindSpeed": 0.2,
-      "WindDir": 0.0
     },
     {
       "StationName": "太平里",
@@ -2483,6 +3086,24 @@
       "Temp": 32.4,
       "WindSpeed": 4.0,
       "WindDir": 321.0
+    },
+    {
+      "StationName": "大溪漁港",
+      "StationId": "C0UA80",
+      "Hour": "12:00",
+      "Rain": 0.0,
+      "Temp": 28.4,
+      "WindSpeed": 0.8,
+      "WindDir": 90.0
+    },
+    {
+      "StationName": "石城",
+      "StationId": "C0UA90",
+      "Hour": "12:00",
+      "Rain": 0.0,
+      "Temp": 28.5,
+      "WindSpeed": 0.9,
+      "WindDir": 103.0
     },
     {
       "StationName": "大武崙",
@@ -2548,6 +3169,24 @@
       "WindDir": 256.0
     },
     {
+      "StationName": "海天一線",
+      "StationId": "C0D670",
+      "Hour": "12:00",
+      "Rain": 0.0,
+      "Temp": 30.8,
+      "WindSpeed": 4.8,
+      "WindDir": 235.0
+    },
+    {
+      "StationName": "香山濕地",
+      "StationId": "C0D680",
+      "Hour": "12:00",
+      "Rain": 0.0,
+      "Temp": 29.7,
+      "WindSpeed": 4.4,
+      "WindDir": 240.0
+    },
+    {
       "StationName": "水湳洞",
       "StationId": "C0AJ50",
       "Hour": "12:00",
@@ -2564,6 +3203,24 @@
       "Temp": 29.5,
       "WindSpeed": 0.9,
       "WindDir": 15.0
+    },
+    {
+      "StationName": "外湖",
+      "StationId": "C0D690",
+      "Hour": "12:00",
+      "Rain": 0.0,
+      "Temp": 28.6,
+      "WindSpeed": 5.7,
+      "WindDir": 252.0
+    },
+    {
+      "StationName": "淡江大學蘭陽校園",
+      "StationId": "C0UB00",
+      "Hour": "12:00",
+      "Rain": 0.0,
+      "Temp": 30.3,
+      "WindSpeed": 1.6,
+      "WindDir": 118.0
     },
     {
       "StationName": "六塊厝",
@@ -2591,6 +3248,15 @@
       "Temp": 30.0,
       "WindSpeed": 4.9,
       "WindDir": 227.0
+    },
+    {
+      "StationName": "北關",
+      "StationId": "C0U880",
+      "Hour": "12:00",
+      "Rain": 0.0,
+      "Temp": 29.2,
+      "WindSpeed": 1.3,
+      "WindDir": 98.0
     },
     {
       "StationName": "板橋",
@@ -2647,13 +3313,76 @@
       "WindDir": 319.0
     },
     {
-      "StationName": "三貂角",
-      "StationId": "C0A970",
+      "StationName": "雙連埤",
+      "StationId": "C0U520",
       "Hour": "12:00",
       "Rain": 0.0,
-      "Temp": 30.1,
-      "WindSpeed": 1.6,
-      "WindDir": 337.0
+      "Temp": 31.2,
+      "WindSpeed": 0.2,
+      "WindDir": 0.0
+    },
+    {
+      "StationName": "頭城",
+      "StationId": "C0U860",
+      "Hour": "12:00",
+      "Rain": 0.0,
+      "Temp": 31.5,
+      "WindSpeed": 1.9,
+      "WindDir": 87.0
+    },
+    {
+      "StationName": "大礁溪",
+      "StationId": "C0U870",
+      "Hour": "12:00",
+      "Rain": 0.0,
+      "Temp": 30.0,
+      "WindSpeed": 0.5,
+      "WindDir": 94.0
+    },
+    {
+      "StationName": "礁溪",
+      "StationId": "C0U600",
+      "Hour": "12:00",
+      "Rain": 0.0,
+      "Temp": 31.7,
+      "WindSpeed": 1.3,
+      "WindDir": 77.0
+    },
+    {
+      "StationName": "龜山島",
+      "StationId": "C0U750",
+      "Hour": "12:00",
+      "Rain": 0.0,
+      "Temp": 27.4,
+      "WindSpeed": 0.8,
+      "WindDir": 148.0
+    },
+    {
+      "StationName": "鶯子嶺",
+      "StationId": "C0U950",
+      "Hour": "12:00",
+      "Rain": 0.0,
+      "Temp": 28.1,
+      "WindSpeed": 0.9,
+      "WindDir": 271.0
+    },
+    {
+      "StationName": "大福",
+      "StationId": "C0U970",
+      "Hour": "12:00",
+      "Rain": 0.0,
+      "Temp": 30.0,
+      "WindSpeed": 2.5,
+      "WindDir": 86.0
+    },
+    {
+      "StationName": "坪林石牌",
+      "StationId": "C0U980",
+      "Hour": "12:00",
+      "Rain": 0.5,
+      "Temp": 27.7,
+      "WindSpeed": 0.5,
+      "WindDir": 147.0
     },
     {
       "StationName": "中壢",
@@ -2663,6 +3392,24 @@
       "Temp": 31.7,
       "WindSpeed": 2.2,
       "WindDir": 283.0
+    },
+    {
+      "StationName": "關西",
+      "StationId": "C0D700",
+      "Hour": "12:00",
+      "Rain": 0.0,
+      "Temp": 31.0,
+      "WindSpeed": 3.6,
+      "WindDir": 280.0
+    },
+    {
+      "StationName": "桃源谷",
+      "StationId": "C0UA70",
+      "Hour": "12:00",
+      "Rain": 0.5,
+      "Temp": 26.5,
+      "WindSpeed": 2.4,
+      "WindDir": 94.0
     },
     {
       "StationName": "福山植物園",
@@ -2681,6 +3428,24 @@
       "Temp": 32.2,
       "WindSpeed": 2.6,
       "WindDir": 254.0
+    },
+    {
+      "StationName": "新豐",
+      "StationId": "C0D590",
+      "Hour": "12:00",
+      "Rain": 0.0,
+      "Temp": 30.7,
+      "WindSpeed": 0.6,
+      "WindDir": 224.0
+    },
+    {
+      "StationName": "竹東",
+      "StationId": "C0D560",
+      "Hour": "12:00",
+      "Rain": 0.0,
+      "Temp": 33.1,
+      "WindSpeed": 2.9,
+      "WindDir": 224.0
     },
     {
       "StationName": "平鎮",
@@ -2710,6 +3475,15 @@
       "WindDir": 252.0
     },
     {
+      "StationName": "湖口",
+      "StationId": "C0D650",
+      "Hour": "12:00",
+      "Rain": 0.0,
+      "Temp": 30.1,
+      "WindSpeed": 3.1,
+      "WindDir": 284.0
+    },
+    {
       "StationName": "龍潭",
       "StationId": "C0C670",
       "Hour": "12:00",
@@ -2717,6 +3491,15 @@
       "Temp": 29.9,
       "WindSpeed": 1.7,
       "WindDir": 262.0
+    },
+    {
+      "StationName": "新竹市東區",
+      "StationId": "C0D660",
+      "Hour": "12:00",
+      "Rain": 0.0,
+      "Temp": 29.6,
+      "WindSpeed": 3.1,
+      "WindDir": 256.0
     },
     {
       "StationName": "龜山",
@@ -3124,15 +3907,6 @@
       "WindDir": 40.0
     },
     {
-      "StationName": "彭佳嶼",
-      "StationId": "466950",
-      "Hour": "12:00",
-      "Rain": 0.0,
-      "Temp": 29.3,
-      "WindSpeed": 1.3,
-      "WindDir": 150.0
-    },
-    {
       "StationName": "新屋",
       "StationId": "467050",
       "Hour": "12:00",
@@ -3140,6 +3914,24 @@
       "Temp": 30.7,
       "WindSpeed": 6.2,
       "WindDir": 260.0
+    },
+    {
+      "StationName": "宜蘭",
+      "StationId": "467080",
+      "Hour": "12:00",
+      "Rain": 0.0,
+      "Temp": 31.1,
+      "WindSpeed": 2.7,
+      "WindDir": 100.0
+    },
+    {
+      "StationName": "新竹",
+      "StationId": "467571",
+      "Hour": "12:00",
+      "Rain": 0.0,
+      "Temp": 32.0,
+      "WindSpeed": 2.5,
+      "WindDir": 290.0
     },
     {
       "StationName": "桃改樹林分場",
@@ -3158,6 +3950,15 @@
       "Temp": 32.0,
       "WindSpeed": 3.0,
       "WindDir": 260.0
+    },
+    {
+      "StationName": "桃改新埔分場",
+      "StationId": "72D680",
+      "Hour": "12:00",
+      "Rain": 0.0,
+      "Temp": 31.8,
+      "WindSpeed": 3.3,
+      "WindDir": 250.0
     },
     {
       "StationName": "茶改北部分場",
@@ -3329,6 +4130,33 @@
       "Temp": 32.1,
       "WindSpeed": 3.8,
       "WindDir": 300.0
+    },
+    {
+      "StationName": "打鐵坑",
+      "StationId": "C2D480",
+      "Hour": "12:00",
+      "Rain": 0.0,
+      "Temp": 31.4,
+      "WindSpeed": 2.0,
+      "WindDir": 250.0
+    },
+    {
+      "StationName": "關西工作站",
+      "StationId": "C2D720",
+      "Hour": "12:00",
+      "Rain": 0.0,
+      "Temp": 30.8,
+      "WindSpeed": 0.6,
+      "WindDir": 10.0
+    },
+    {
+      "StationName": "巨埔",
+      "StationId": "C2D770",
+      "Hour": "12:00",
+      "Rain": 0.0,
+      "Temp": 31.7,
+      "WindSpeed": 3.0,
+      "WindDir": 260.0
     },
     {
       "StationName": "國一N013K",
@@ -3547,15 +4375,6 @@
       "WindDir": 280.0
     },
     {
-      "StationName": "拉拉山",
-      "StationId": "CAC040",
-      "Hour": "12:00",
-      "Rain": 0.0,
-      "Temp": 21.4,
-      "WindSpeed": 0.6,
-      "WindDir": 220.0
-    },
-    {
       "StationName": "西濱S023K",
       "StationId": "CAC050",
       "Hour": "12:00",
@@ -3592,6 +4411,105 @@
       "WindDir": 290.0
     },
     {
+      "StationName": "國一N077K",
+      "StationId": "CAD020",
+      "Hour": "12:00",
+      "Rain": 0.0,
+      "Temp": 29.8,
+      "WindSpeed": 6.0,
+      "WindDir": 290.0
+    },
+    {
+      "StationName": "國一S082K",
+      "StationId": "CAD030",
+      "Hour": "12:00",
+      "Rain": 0.0,
+      "Temp": 30.8,
+      "WindSpeed": 4.0,
+      "WindDir": 240.0
+    },
+    {
+      "StationName": "國一S088K",
+      "StationId": "CAD040",
+      "Hour": "12:00",
+      "Rain": 0.0,
+      "Temp": 31.1,
+      "WindSpeed": 3.6,
+      "WindDir": 250.0
+    },
+    {
+      "StationName": "國一N094K",
+      "StationId": "CAD050",
+      "Hour": "12:00",
+      "Rain": 0.0,
+      "Temp": 31.8,
+      "WindSpeed": 2.2,
+      "WindDir": 260.0
+    },
+    {
+      "StationName": "國一S098K",
+      "StationId": "CAD060",
+      "Hour": "12:00",
+      "Rain": 0.0,
+      "Temp": 31.3,
+      "WindSpeed": 4.0,
+      "WindDir": 250.0
+    },
+    {
+      "StationName": "國三N085K",
+      "StationId": "CAD080",
+      "Hour": "12:00",
+      "Rain": 0.0,
+      "Temp": 30.8,
+      "WindSpeed": 2.4,
+      "WindDir": 220.0
+    },
+    {
+      "StationName": "國三S103K",
+      "StationId": "CAD090",
+      "Hour": "12:00",
+      "Rain": 0.0,
+      "Temp": 29.8,
+      "WindSpeed": 4.4,
+      "WindDir": 270.0
+    },
+    {
+      "StationName": "西濱N066K",
+      "StationId": "CAD100",
+      "Hour": "12:00",
+      "Rain": 0.0,
+      "Temp": 30.3,
+      "WindSpeed": 2.3,
+      "WindDir": 260.0
+    },
+    {
+      "StationName": "西濱S082K",
+      "StationId": "CAD110",
+      "Hour": "12:00",
+      "Rain": 0.0,
+      "Temp": 29.6,
+      "WindSpeed": 3.5,
+      "WindDir": 260.0
+    },
+    {
+      "StationName": "國三N077K",
+      "StationId": "CAD710",
+      "Hour": "12:00",
+      "Rain": 0.0,
+      "Temp": 30.2,
+      "WindSpeed": 3.1,
+      "WindDir": 280.0
+    },
+    {
+      "StationName": "國五S031K",
+      "StationId": "CAUB30",
+      "Hour": "12:00",
+      "Rain": 0.0,
+      "Temp": 29.8,
+      "WindSpeed": 2.2,
+      "WindDir": 80.0
+    },
+    {
       "StationName": "硬漢嶺",
       "StationId": "C0AK30",
       "Hour": "13:00",
@@ -3608,15 +4526,6 @@
       "Temp": 24.8,
       "WindSpeed": 0.4,
       "WindDir": 333.0
-    },
-    {
-      "StationName": "四稜",
-      "StationId": "C0C800",
-      "Hour": "13:00",
-      "Rain": 0.0,
-      "Temp": 24.8,
-      "WindSpeed": 0.3,
-      "WindDir": 336.0
     },
     {
       "StationName": "太平里",
@@ -3644,6 +4553,24 @@
       "Temp": 31.5,
       "WindSpeed": 4.5,
       "WindDir": 321.0
+    },
+    {
+      "StationName": "大溪漁港",
+      "StationId": "C0UA80",
+      "Hour": "13:00",
+      "Rain": 0.0,
+      "Temp": 28.7,
+      "WindSpeed": 1.0,
+      "WindDir": 65.0
+    },
+    {
+      "StationName": "石城",
+      "StationId": "C0UA90",
+      "Hour": "13:00",
+      "Rain": 0.0,
+      "Temp": 30.1,
+      "WindSpeed": 0.6,
+      "WindDir": 159.0
     },
     {
       "StationName": "大武崙",
@@ -3709,6 +4636,24 @@
       "WindDir": 254.0
     },
     {
+      "StationName": "海天一線",
+      "StationId": "C0D670",
+      "Hour": "13:00",
+      "Rain": 0.0,
+      "Temp": 30.6,
+      "WindSpeed": 5.3,
+      "WindDir": 235.0
+    },
+    {
+      "StationName": "香山濕地",
+      "StationId": "C0D680",
+      "Hour": "13:00",
+      "Rain": 0.0,
+      "Temp": 29.9,
+      "WindSpeed": 4.7,
+      "WindDir": 243.0
+    },
+    {
       "StationName": "水湳洞",
       "StationId": "C0AJ50",
       "Hour": "13:00",
@@ -3725,6 +4670,24 @@
       "Temp": 28.2,
       "WindSpeed": 1.9,
       "WindDir": 26.0
+    },
+    {
+      "StationName": "外湖",
+      "StationId": "C0D690",
+      "Hour": "13:00",
+      "Rain": 0.0,
+      "Temp": 28.4,
+      "WindSpeed": 6.6,
+      "WindDir": 246.0
+    },
+    {
+      "StationName": "淡江大學蘭陽校園",
+      "StationId": "C0UB00",
+      "Hour": "13:00",
+      "Rain": 0.0,
+      "Temp": 30.0,
+      "WindSpeed": 1.6,
+      "WindDir": 117.0
     },
     {
       "StationName": "六塊厝",
@@ -3752,6 +4715,15 @@
       "Temp": 29.6,
       "WindSpeed": 5.6,
       "WindDir": 233.0
+    },
+    {
+      "StationName": "北關",
+      "StationId": "C0U880",
+      "Hour": "13:00",
+      "Rain": 0.0,
+      "Temp": 29.3,
+      "WindSpeed": 1.2,
+      "WindDir": 134.0
     },
     {
       "StationName": "板橋",
@@ -3808,13 +4780,76 @@
       "WindDir": 318.0
     },
     {
-      "StationName": "三貂角",
-      "StationId": "C0A970",
+      "StationName": "雙連埤",
+      "StationId": "C0U520",
       "Hour": "13:00",
       "Rain": 0.0,
-      "Temp": 29.7,
-      "WindSpeed": 0.5,
-      "WindDir": 279.0
+      "Temp": 30.9,
+      "WindSpeed": 0.1,
+      "WindDir": 0.0
+    },
+    {
+      "StationName": "頭城",
+      "StationId": "C0U860",
+      "Hour": "13:00",
+      "Rain": 0.0,
+      "Temp": 30.6,
+      "WindSpeed": 2.1,
+      "WindDir": 64.0
+    },
+    {
+      "StationName": "大礁溪",
+      "StationId": "C0U870",
+      "Hour": "13:00",
+      "Rain": 0.0,
+      "Temp": 28.7,
+      "WindSpeed": 0.2,
+      "WindDir": 0.0
+    },
+    {
+      "StationName": "礁溪",
+      "StationId": "C0U600",
+      "Hour": "13:00",
+      "Rain": 0.0,
+      "Temp": 32.1,
+      "WindSpeed": 1.2,
+      "WindDir": 86.0
+    },
+    {
+      "StationName": "龜山島",
+      "StationId": "C0U750",
+      "Hour": "13:00",
+      "Rain": 0.0,
+      "Temp": 26.6,
+      "WindSpeed": 2.2,
+      "WindDir": 131.0
+    },
+    {
+      "StationName": "鶯子嶺",
+      "StationId": "C0U950",
+      "Hour": "13:00",
+      "Rain": 0.0,
+      "Temp": 27.3,
+      "WindSpeed": 1.2,
+      "WindDir": 246.0
+    },
+    {
+      "StationName": "大福",
+      "StationId": "C0U970",
+      "Hour": "13:00",
+      "Rain": 0.0,
+      "Temp": 31.0,
+      "WindSpeed": 1.8,
+      "WindDir": 83.0
+    },
+    {
+      "StationName": "坪林石牌",
+      "StationId": "C0U980",
+      "Hour": "13:00",
+      "Rain": 0.5,
+      "Temp": 27.8,
+      "WindSpeed": 1.0,
+      "WindDir": 137.0
     },
     {
       "StationName": "中壢",
@@ -3824,6 +4859,24 @@
       "Temp": 32.3,
       "WindSpeed": 1.4,
       "WindDir": 298.0
+    },
+    {
+      "StationName": "關西",
+      "StationId": "C0D700",
+      "Hour": "13:00",
+      "Rain": 0.0,
+      "Temp": 31.4,
+      "WindSpeed": 3.1,
+      "WindDir": 280.0
+    },
+    {
+      "StationName": "桃源谷",
+      "StationId": "C0UA70",
+      "Hour": "13:00",
+      "Rain": 0.5,
+      "Temp": 26.9,
+      "WindSpeed": 1.6,
+      "WindDir": 104.0
     },
     {
       "StationName": "福山植物園",
@@ -3842,6 +4895,24 @@
       "Temp": 31.6,
       "WindSpeed": 2.8,
       "WindDir": 276.0
+    },
+    {
+      "StationName": "新豐",
+      "StationId": "C0D590",
+      "Hour": "13:00",
+      "Rain": 0.0,
+      "Temp": 30.6,
+      "WindSpeed": 0.7,
+      "WindDir": 222.0
+    },
+    {
+      "StationName": "竹東",
+      "StationId": "C0D560",
+      "Hour": "13:00",
+      "Rain": 0.0,
+      "Temp": 32.5,
+      "WindSpeed": 3.0,
+      "WindDir": 231.0
     },
     {
       "StationName": "平鎮",
@@ -3871,6 +4942,15 @@
       "WindDir": 259.0
     },
     {
+      "StationName": "湖口",
+      "StationId": "C0D650",
+      "Hour": "13:00",
+      "Rain": 0.0,
+      "Temp": 30.3,
+      "WindSpeed": 3.6,
+      "WindDir": 260.0
+    },
+    {
       "StationName": "龍潭",
       "StationId": "C0C670",
       "Hour": "13:00",
@@ -3878,6 +4958,15 @@
       "Temp": 30.5,
       "WindSpeed": 1.9,
       "WindDir": 265.0
+    },
+    {
+      "StationName": "新竹市東區",
+      "StationId": "C0D660",
+      "Hour": "13:00",
+      "Rain": 0.0,
+      "Temp": 30.0,
+      "WindSpeed": 4.6,
+      "WindDir": 263.0
     },
     {
       "StationName": "龜山",
@@ -4285,15 +5374,6 @@
       "WindDir": 50.0
     },
     {
-      "StationName": "彭佳嶼",
-      "StationId": "466950",
-      "Hour": "13:00",
-      "Rain": 0.0,
-      "Temp": 29.5,
-      "WindSpeed": 1.5,
-      "WindDir": 160.0
-    },
-    {
       "StationName": "新屋",
       "StationId": "467050",
       "Hour": "13:00",
@@ -4301,6 +5381,24 @@
       "Temp": 30.3,
       "WindSpeed": 7.1,
       "WindDir": 260.0
+    },
+    {
+      "StationName": "宜蘭",
+      "StationId": "467080",
+      "Hour": "13:00",
+      "Rain": 0.0,
+      "Temp": 31.6,
+      "WindSpeed": 3.3,
+      "WindDir": 90.0
+    },
+    {
+      "StationName": "新竹",
+      "StationId": "467571",
+      "Hour": "13:00",
+      "Rain": 0.0,
+      "Temp": 31.4,
+      "WindSpeed": 2.0,
+      "WindDir": 290.0
     },
     {
       "StationName": "桃改樹林分場",
@@ -4318,6 +5416,15 @@
       "Rain": 0.0,
       "Temp": 32.3,
       "WindSpeed": 2.6,
+      "WindDir": 260.0
+    },
+    {
+      "StationName": "桃改新埔分場",
+      "StationId": "72D680",
+      "Hour": "13:00",
+      "Rain": 0.0,
+      "Temp": 30.8,
+      "WindSpeed": 3.1,
       "WindDir": 260.0
     },
     {
@@ -4490,6 +5597,33 @@
       "Temp": 32.2,
       "WindSpeed": 3.4,
       "WindDir": 300.0
+    },
+    {
+      "StationName": "打鐵坑",
+      "StationId": "C2D480",
+      "Hour": "13:00",
+      "Rain": 0.0,
+      "Temp": 31.1,
+      "WindSpeed": 2.9,
+      "WindDir": 240.0
+    },
+    {
+      "StationName": "關西工作站",
+      "StationId": "C2D720",
+      "Hour": "13:00",
+      "Rain": 0.0,
+      "Temp": 31.4,
+      "WindSpeed": 1.3,
+      "WindDir": 340.0
+    },
+    {
+      "StationName": "巨埔",
+      "StationId": "C2D770",
+      "Hour": "13:00",
+      "Rain": 0.0,
+      "Temp": 32.0,
+      "WindSpeed": 2.6,
+      "WindDir": 270.0
     },
     {
       "StationName": "國一N013K",
@@ -4708,15 +5842,6 @@
       "WindDir": 280.0
     },
     {
-      "StationName": "拉拉山",
-      "StationId": "CAC040",
-      "Hour": "13:00",
-      "Rain": 0.0,
-      "Temp": 20.0,
-      "WindSpeed": 0.4,
-      "WindDir": 330.0
-    },
-    {
       "StationName": "西濱S023K",
       "StationId": "CAC050",
       "Hour": "13:00",
@@ -4753,6 +5878,105 @@
       "WindDir": 260.0
     },
     {
+      "StationName": "國一N077K",
+      "StationId": "CAD020",
+      "Hour": "13:00",
+      "Rain": 0.0,
+      "Temp": 30.2,
+      "WindSpeed": 4.8,
+      "WindDir": 280.0
+    },
+    {
+      "StationName": "國一S082K",
+      "StationId": "CAD030",
+      "Hour": "13:00",
+      "Rain": 0.0,
+      "Temp": 30.3,
+      "WindSpeed": 5.0,
+      "WindDir": 260.0
+    },
+    {
+      "StationName": "國一S088K",
+      "StationId": "CAD040",
+      "Hour": "13:00",
+      "Rain": 0.0,
+      "Temp": 31.2,
+      "WindSpeed": 2.7,
+      "WindDir": 260.0
+    },
+    {
+      "StationName": "國一N094K",
+      "StationId": "CAD050",
+      "Hour": "13:00",
+      "Rain": 0.0,
+      "Temp": 31.8,
+      "WindSpeed": 3.5,
+      "WindDir": 240.0
+    },
+    {
+      "StationName": "國一S098K",
+      "StationId": "CAD060",
+      "Hour": "13:00",
+      "Rain": 0.0,
+      "Temp": 31.1,
+      "WindSpeed": 3.7,
+      "WindDir": 260.0
+    },
+    {
+      "StationName": "國三N085K",
+      "StationId": "CAD080",
+      "Hour": "13:00",
+      "Rain": 0.0,
+      "Temp": 30.5,
+      "WindSpeed": 2.2,
+      "WindDir": 210.0
+    },
+    {
+      "StationName": "國三S103K",
+      "StationId": "CAD090",
+      "Hour": "13:00",
+      "Rain": 0.0,
+      "Temp": 30.1,
+      "WindSpeed": 4.4,
+      "WindDir": 260.0
+    },
+    {
+      "StationName": "西濱N066K",
+      "StationId": "CAD100",
+      "Hour": "13:00",
+      "Rain": 0.0,
+      "Temp": 29.6,
+      "WindSpeed": 2.6,
+      "WindDir": 260.0
+    },
+    {
+      "StationName": "西濱S082K",
+      "StationId": "CAD110",
+      "Hour": "13:00",
+      "Rain": 0.0,
+      "Temp": 29.7,
+      "WindSpeed": 3.9,
+      "WindDir": 260.0
+    },
+    {
+      "StationName": "國三N077K",
+      "StationId": "CAD710",
+      "Hour": "13:00",
+      "Rain": 0.0,
+      "Temp": 30.2,
+      "WindSpeed": 4.4,
+      "WindDir": 260.0
+    },
+    {
+      "StationName": "國五S031K",
+      "StationId": "CAUB30",
+      "Hour": "13:00",
+      "Rain": 0.0,
+      "Temp": 30.1,
+      "WindSpeed": 3.2,
+      "WindDir": 60.0
+    },
+    {
       "StationName": "硬漢嶺",
       "StationId": "C0AK30",
       "Hour": "14:00",
@@ -4769,15 +5993,6 @@
       "Temp": 22.3,
       "WindSpeed": 0.6,
       "WindDir": 38.0
-    },
-    {
-      "StationName": "四稜",
-      "StationId": "C0C800",
-      "Hour": "14:00",
-      "Rain": 0.5,
-      "Temp": 23.6,
-      "WindSpeed": 0.8,
-      "WindDir": 111.0
     },
     {
       "StationName": "太平里",
@@ -4805,6 +6020,24 @@
       "Temp": 31.1,
       "WindSpeed": 2.9,
       "WindDir": 353.0
+    },
+    {
+      "StationName": "大溪漁港",
+      "StationId": "C0UA80",
+      "Hour": "14:00",
+      "Rain": 0.0,
+      "Temp": 29.1,
+      "WindSpeed": 1.0,
+      "WindDir": 349.0
+    },
+    {
+      "StationName": "石城",
+      "StationId": "C0UA90",
+      "Hour": "14:00",
+      "Rain": 0.0,
+      "Temp": 29.4,
+      "WindSpeed": 0.4,
+      "WindDir": 94.0
     },
     {
       "StationName": "大武崙",
@@ -4870,6 +6103,24 @@
       "WindDir": 265.0
     },
     {
+      "StationName": "海天一線",
+      "StationId": "C0D670",
+      "Hour": "14:00",
+      "Rain": 0.0,
+      "Temp": 29.8,
+      "WindSpeed": 6.4,
+      "WindDir": 235.0
+    },
+    {
+      "StationName": "香山濕地",
+      "StationId": "C0D680",
+      "Hour": "14:00",
+      "Rain": 0.0,
+      "Temp": 29.6,
+      "WindSpeed": 5.5,
+      "WindDir": 246.0
+    },
+    {
       "StationName": "水湳洞",
       "StationId": "C0AJ50",
       "Hour": "14:00",
@@ -4886,6 +6137,24 @@
       "Temp": 29.2,
       "WindSpeed": 2.0,
       "WindDir": 37.0
+    },
+    {
+      "StationName": "外湖",
+      "StationId": "C0D690",
+      "Hour": "14:00",
+      "Rain": 0.0,
+      "Temp": 28.2,
+      "WindSpeed": 5.6,
+      "WindDir": 244.0
+    },
+    {
+      "StationName": "淡江大學蘭陽校園",
+      "StationId": "C0UB00",
+      "Hour": "14:00",
+      "Rain": 0.0,
+      "Temp": 27.6,
+      "WindSpeed": 0.9,
+      "WindDir": 85.0
     },
     {
       "StationName": "六塊厝",
@@ -4913,6 +6182,15 @@
       "Temp": 29.3,
       "WindSpeed": 5.2,
       "WindDir": 239.0
+    },
+    {
+      "StationName": "北關",
+      "StationId": "C0U880",
+      "Hour": "14:00",
+      "Rain": 0.0,
+      "Temp": 29.1,
+      "WindSpeed": 2.4,
+      "WindDir": 73.0
     },
     {
       "StationName": "板橋",
@@ -4969,13 +6247,76 @@
       "WindDir": 294.0
     },
     {
-      "StationName": "三貂角",
-      "StationId": "C0A970",
+      "StationName": "雙連埤",
+      "StationId": "C0U520",
       "Hour": "14:00",
       "Rain": 0.0,
-      "Temp": 29.9,
+      "Temp": 28.3,
+      "WindSpeed": 0.0,
+      "WindDir": 0.0
+    },
+    {
+      "StationName": "頭城",
+      "StationId": "C0U860",
+      "Hour": "14:00",
+      "Rain": 0.0,
+      "Temp": 30.2,
+      "WindSpeed": 2.6,
+      "WindDir": 71.0
+    },
+    {
+      "StationName": "大礁溪",
+      "StationId": "C0U870",
+      "Hour": "14:00",
+      "Rain": 0.0,
+      "Temp": 27.3,
       "WindSpeed": 0.5,
-      "WindDir": 266.0
+      "WindDir": 86.0
+    },
+    {
+      "StationName": "礁溪",
+      "StationId": "C0U600",
+      "Hour": "14:00",
+      "Rain": 0.0,
+      "Temp": 31.2,
+      "WindSpeed": 1.3,
+      "WindDir": 74.0
+    },
+    {
+      "StationName": "龜山島",
+      "StationId": "C0U750",
+      "Hour": "14:00",
+      "Rain": 0.0,
+      "Temp": 26.1,
+      "WindSpeed": 2.3,
+      "WindDir": 119.0
+    },
+    {
+      "StationName": "鶯子嶺",
+      "StationId": "C0U950",
+      "Hour": "14:00",
+      "Rain": 1.5,
+      "Temp": 21.8,
+      "WindSpeed": 1.0,
+      "WindDir": 66.0
+    },
+    {
+      "StationName": "大福",
+      "StationId": "C0U970",
+      "Hour": "14:00",
+      "Rain": 0.0,
+      "Temp": 31.7,
+      "WindSpeed": 2.0,
+      "WindDir": 46.0
+    },
+    {
+      "StationName": "坪林石牌",
+      "StationId": "C0U980",
+      "Hour": "14:00",
+      "Rain": 0.5,
+      "Temp": 26.9,
+      "WindSpeed": 0.0,
+      "WindDir": 0.0
     },
     {
       "StationName": "中壢",
@@ -4985,6 +6326,24 @@
       "Temp": 31.4,
       "WindSpeed": 1.8,
       "WindDir": 288.0
+    },
+    {
+      "StationName": "關西",
+      "StationId": "C0D700",
+      "Hour": "14:00",
+      "Rain": 3.5,
+      "Temp": 27.4,
+      "WindSpeed": 2.2,
+      "WindDir": 285.0
+    },
+    {
+      "StationName": "桃源谷",
+      "StationId": "C0UA70",
+      "Hour": "14:00",
+      "Rain": 0.5,
+      "Temp": 24.6,
+      "WindSpeed": 2.2,
+      "WindDir": 122.0
     },
     {
       "StationName": "福山植物園",
@@ -5003,6 +6362,24 @@
       "Temp": 31.9,
       "WindSpeed": 4.1,
       "WindDir": 240.0
+    },
+    {
+      "StationName": "新豐",
+      "StationId": "C0D590",
+      "Hour": "14:00",
+      "Rain": 0.0,
+      "Temp": 29.8,
+      "WindSpeed": 0.7,
+      "WindDir": 208.0
+    },
+    {
+      "StationName": "竹東",
+      "StationId": "C0D560",
+      "Hour": "14:00",
+      "Rain": 0.0,
+      "Temp": 31.8,
+      "WindSpeed": 2.6,
+      "WindDir": 242.0
     },
     {
       "StationName": "平鎮",
@@ -5032,6 +6409,15 @@
       "WindDir": 266.0
     },
     {
+      "StationName": "湖口",
+      "StationId": "C0D650",
+      "Hour": "14:00",
+      "Rain": 0.0,
+      "Temp": 30.1,
+      "WindSpeed": 2.9,
+      "WindDir": 256.0
+    },
+    {
       "StationName": "龍潭",
       "StationId": "C0C670",
       "Hour": "14:00",
@@ -5039,6 +6425,15 @@
       "Temp": 30.2,
       "WindSpeed": 1.9,
       "WindDir": 267.0
+    },
+    {
+      "StationName": "新竹市東區",
+      "StationId": "C0D660",
+      "Hour": "14:00",
+      "Rain": 0.0,
+      "Temp": 30.5,
+      "WindSpeed": 4.3,
+      "WindDir": 258.0
     },
     {
       "StationName": "龜山",
@@ -5446,15 +6841,6 @@
       "WindDir": 50.0
     },
     {
-      "StationName": "彭佳嶼",
-      "StationId": "466950",
-      "Hour": "14:00",
-      "Rain": 0.0,
-      "Temp": 29.7,
-      "WindSpeed": 0.7,
-      "WindDir": 320.0
-    },
-    {
       "StationName": "新屋",
       "StationId": "467050",
       "Hour": "14:00",
@@ -5462,6 +6848,24 @@
       "Temp": 30.2,
       "WindSpeed": 6.0,
       "WindDir": 260.0
+    },
+    {
+      "StationName": "宜蘭",
+      "StationId": "467080",
+      "Hour": "14:00",
+      "Rain": 0.0,
+      "Temp": 30.9,
+      "WindSpeed": 3.8,
+      "WindDir": 90.0
+    },
+    {
+      "StationName": "新竹",
+      "StationId": "467571",
+      "Hour": "14:00",
+      "Rain": 0.0,
+      "Temp": 30.8,
+      "WindSpeed": 2.4,
+      "WindDir": 270.0
     },
     {
       "StationName": "桃改樹林分場",
@@ -5480,6 +6884,15 @@
       "Temp": 31.5,
       "WindSpeed": 3.1,
       "WindDir": 250.0
+    },
+    {
+      "StationName": "桃改新埔分場",
+      "StationId": "72D680",
+      "Hour": "14:00",
+      "Rain": 0.0,
+      "Temp": 31.0,
+      "WindSpeed": 3.5,
+      "WindDir": 260.0
     },
     {
       "StationName": "茶改北部分場",
@@ -5650,6 +7063,33 @@
       "Rain": 0.0,
       "Temp": 31.7,
       "WindSpeed": 3.8,
+      "WindDir": 290.0
+    },
+    {
+      "StationName": "打鐵坑",
+      "StationId": "C2D480",
+      "Hour": "14:00",
+      "Rain": 0.0,
+      "Temp": 30.6,
+      "WindSpeed": 2.3,
+      "WindDir": 250.0
+    },
+    {
+      "StationName": "關西工作站",
+      "StationId": "C2D720",
+      "Hour": "14:00",
+      "Rain": 1.5,
+      "Temp": 27.4,
+      "WindSpeed": 1.1,
+      "WindDir": 350.0
+    },
+    {
+      "StationName": "巨埔",
+      "StationId": "C2D770",
+      "Hour": "14:00",
+      "Rain": 0.0,
+      "Temp": 30.2,
+      "WindSpeed": 2.4,
       "WindDir": 290.0
     },
     {
@@ -5869,15 +7309,6 @@
       "WindDir": 280.0
     },
     {
-      "StationName": "拉拉山",
-      "StationId": "CAC040",
-      "Hour": "14:00",
-      "Rain": 0.0,
-      "Temp": 19.9,
-      "WindSpeed": 1.1,
-      "WindDir": 180.0
-    },
-    {
       "StationName": "西濱S023K",
       "StationId": "CAC050",
       "Hour": "14:00",
@@ -5914,6 +7345,105 @@
       "WindDir": 240.0
     },
     {
+      "StationName": "國一N077K",
+      "StationId": "CAD020",
+      "Hour": "14:00",
+      "Rain": 0.0,
+      "Temp": 29.6,
+      "WindSpeed": 4.9,
+      "WindDir": 290.0
+    },
+    {
+      "StationName": "國一S082K",
+      "StationId": "CAD030",
+      "Hour": "14:00",
+      "Rain": 0.0,
+      "Temp": 30.8,
+      "WindSpeed": 3.0,
+      "WindDir": 250.0
+    },
+    {
+      "StationName": "國一S088K",
+      "StationId": "CAD040",
+      "Hour": "14:00",
+      "Rain": 0.0,
+      "Temp": 31.1,
+      "WindSpeed": 2.9,
+      "WindDir": 280.0
+    },
+    {
+      "StationName": "國一N094K",
+      "StationId": "CAD050",
+      "Hour": "14:00",
+      "Rain": 0.0,
+      "Temp": 31.8,
+      "WindSpeed": 2.7,
+      "WindDir": 260.0
+    },
+    {
+      "StationName": "國一S098K",
+      "StationId": "CAD060",
+      "Hour": "14:00",
+      "Rain": 0.0,
+      "Temp": 31.3,
+      "WindSpeed": 3.1,
+      "WindDir": 270.0
+    },
+    {
+      "StationName": "國三N085K",
+      "StationId": "CAD080",
+      "Hour": "14:00",
+      "Rain": 0.0,
+      "Temp": 29.3,
+      "WindSpeed": 0.6,
+      "WindDir": 130.0
+    },
+    {
+      "StationName": "國三S103K",
+      "StationId": "CAD090",
+      "Hour": "14:00",
+      "Rain": 0.0,
+      "Temp": 29.8,
+      "WindSpeed": 4.9,
+      "WindDir": 260.0
+    },
+    {
+      "StationName": "西濱N066K",
+      "StationId": "CAD100",
+      "Hour": "14:00",
+      "Rain": 0.0,
+      "Temp": 30.0,
+      "WindSpeed": 2.1,
+      "WindDir": 260.0
+    },
+    {
+      "StationName": "西濱S082K",
+      "StationId": "CAD110",
+      "Hour": "14:00",
+      "Rain": 0.0,
+      "Temp": 29.6,
+      "WindSpeed": 3.5,
+      "WindDir": 260.0
+    },
+    {
+      "StationName": "國三N077K",
+      "StationId": "CAD710",
+      "Hour": "14:00",
+      "Rain": 9.0,
+      "Temp": 25.8,
+      "WindSpeed": 1.3,
+      "WindDir": 220.0
+    },
+    {
+      "StationName": "國五S031K",
+      "StationId": "CAUB30",
+      "Hour": "14:00",
+      "Rain": 0.0,
+      "Temp": 30.1,
+      "WindSpeed": 2.2,
+      "WindDir": 90.0
+    },
+    {
       "StationName": "硬漢嶺",
       "StationId": "C0AK30",
       "Hour": "15:00",
@@ -5930,15 +7460,6 @@
       "Temp": 22.5,
       "WindSpeed": 1.3,
       "WindDir": 232.0
-    },
-    {
-      "StationName": "四稜",
-      "StationId": "C0C800",
-      "Hour": "15:00",
-      "Rain": 0.5,
-      "Temp": 24.6,
-      "WindSpeed": 0.5,
-      "WindDir": 138.0
     },
     {
       "StationName": "太平里",
@@ -5966,6 +7487,24 @@
       "Temp": 27.9,
       "WindSpeed": 2.1,
       "WindDir": 114.0
+    },
+    {
+      "StationName": "大溪漁港",
+      "StationId": "C0UA80",
+      "Hour": "15:00",
+      "Rain": 0.0,
+      "Temp": 28.1,
+      "WindSpeed": 1.4,
+      "WindDir": 60.0
+    },
+    {
+      "StationName": "石城",
+      "StationId": "C0UA90",
+      "Hour": "15:00",
+      "Rain": 0.0,
+      "Temp": 29.1,
+      "WindSpeed": 0.5,
+      "WindDir": 109.0
     },
     {
       "StationName": "大武崙",
@@ -6031,6 +7570,24 @@
       "WindDir": 257.0
     },
     {
+      "StationName": "海天一線",
+      "StationId": "C0D670",
+      "Hour": "15:00",
+      "Rain": 0.0,
+      "Temp": 30.0,
+      "WindSpeed": 8.3,
+      "WindDir": 237.0
+    },
+    {
+      "StationName": "香山濕地",
+      "StationId": "C0D680",
+      "Hour": "15:00",
+      "Rain": 0.0,
+      "Temp": 29.8,
+      "WindSpeed": 6.4,
+      "WindDir": 241.0
+    },
+    {
       "StationName": "水湳洞",
       "StationId": "C0AJ50",
       "Hour": "15:00",
@@ -6047,6 +7604,24 @@
       "Temp": 28.6,
       "WindSpeed": 2.3,
       "WindDir": 106.0
+    },
+    {
+      "StationName": "外湖",
+      "StationId": "C0D690",
+      "Hour": "15:00",
+      "Rain": 0.0,
+      "Temp": 28.4,
+      "WindSpeed": 6.6,
+      "WindDir": 240.0
+    },
+    {
+      "StationName": "淡江大學蘭陽校園",
+      "StationId": "C0UB00",
+      "Hour": "15:00",
+      "Rain": 0.0,
+      "Temp": 26.2,
+      "WindSpeed": 1.2,
+      "WindDir": 92.0
     },
     {
       "StationName": "六塊厝",
@@ -6074,6 +7649,15 @@
       "Temp": 29.8,
       "WindSpeed": 4.8,
       "WindDir": 231.0
+    },
+    {
+      "StationName": "北關",
+      "StationId": "C0U880",
+      "Hour": "15:00",
+      "Rain": 0.0,
+      "Temp": 28.8,
+      "WindSpeed": 2.0,
+      "WindDir": 72.0
     },
     {
       "StationName": "板橋",
@@ -6130,13 +7714,76 @@
       "WindDir": 219.0
     },
     {
-      "StationName": "三貂角",
-      "StationId": "C0A970",
+      "StationName": "雙連埤",
+      "StationId": "C0U520",
       "Hour": "15:00",
       "Rain": 0.0,
-      "Temp": 28.2,
-      "WindSpeed": 1.0,
-      "WindDir": 213.0
+      "Temp": 26.1,
+      "WindSpeed": 0.0,
+      "WindDir": 0.0
+    },
+    {
+      "StationName": "頭城",
+      "StationId": "C0U860",
+      "Hour": "15:00",
+      "Rain": 0.0,
+      "Temp": 28.4,
+      "WindSpeed": 2.3,
+      "WindDir": 59.0
+    },
+    {
+      "StationName": "大礁溪",
+      "StationId": "C0U870",
+      "Hour": "15:00",
+      "Rain": 0.0,
+      "Temp": 26.2,
+      "WindSpeed": 0.3,
+      "WindDir": 94.0
+    },
+    {
+      "StationName": "礁溪",
+      "StationId": "C0U600",
+      "Hour": "15:00",
+      "Rain": 0.0,
+      "Temp": 29.7,
+      "WindSpeed": 0.8,
+      "WindDir": 69.0
+    },
+    {
+      "StationName": "龜山島",
+      "StationId": "C0U750",
+      "Hour": "15:00",
+      "Rain": 0.0,
+      "Temp": 24.9,
+      "WindSpeed": 2.0,
+      "WindDir": 97.0
+    },
+    {
+      "StationName": "鶯子嶺",
+      "StationId": "C0U950",
+      "Hour": "15:00",
+      "Rain": 1.5,
+      "Temp": 21.4,
+      "WindSpeed": 3.0,
+      "WindDir": 109.0
+    },
+    {
+      "StationName": "大福",
+      "StationId": "C0U970",
+      "Hour": "15:00",
+      "Rain": 0.0,
+      "Temp": 29.2,
+      "WindSpeed": 2.2,
+      "WindDir": 46.0
+    },
+    {
+      "StationName": "坪林石牌",
+      "StationId": "C0U980",
+      "Hour": "15:00",
+      "Rain": 0.5,
+      "Temp": 24.8,
+      "WindSpeed": 0.0,
+      "WindDir": 0.0
     },
     {
       "StationName": "中壢",
@@ -6146,6 +7793,24 @@
       "Temp": 30.2,
       "WindSpeed": 3.5,
       "WindDir": 258.0
+    },
+    {
+      "StationName": "關西",
+      "StationId": "C0D700",
+      "Hour": "15:00",
+      "Rain": 6.0,
+      "Temp": 26.7,
+      "WindSpeed": 0.6,
+      "WindDir": 164.0
+    },
+    {
+      "StationName": "桃源谷",
+      "StationId": "C0UA70",
+      "Hour": "15:00",
+      "Rain": 0.5,
+      "Temp": 26.1,
+      "WindSpeed": 1.7,
+      "WindDir": 132.0
     },
     {
       "StationName": "福山植物園",
@@ -6164,6 +7829,24 @@
       "Temp": 31.2,
       "WindSpeed": 4.0,
       "WindDir": 245.0
+    },
+    {
+      "StationName": "新豐",
+      "StationId": "C0D590",
+      "Hour": "15:00",
+      "Rain": 0.0,
+      "Temp": 29.1,
+      "WindSpeed": 1.0,
+      "WindDir": 190.0
+    },
+    {
+      "StationName": "竹東",
+      "StationId": "C0D560",
+      "Hour": "15:00",
+      "Rain": 0.0,
+      "Temp": 31.8,
+      "WindSpeed": 3.0,
+      "WindDir": 262.0
     },
     {
       "StationName": "平鎮",
@@ -6193,6 +7876,15 @@
       "WindDir": 228.0
     },
     {
+      "StationName": "湖口",
+      "StationId": "C0D650",
+      "Hour": "15:00",
+      "Rain": 0.0,
+      "Temp": 30.3,
+      "WindSpeed": 3.1,
+      "WindDir": 285.0
+    },
+    {
       "StationName": "龍潭",
       "StationId": "C0C670",
       "Hour": "15:00",
@@ -6200,6 +7892,15 @@
       "Temp": 28.8,
       "WindSpeed": 1.8,
       "WindDir": 249.0
+    },
+    {
+      "StationName": "新竹市東區",
+      "StationId": "C0D660",
+      "Hour": "15:00",
+      "Rain": 0.0,
+      "Temp": 30.2,
+      "WindSpeed": 3.4,
+      "WindDir": 260.0
     },
     {
       "StationName": "龜山",
@@ -6607,15 +8308,6 @@
       "WindDir": 40.0
     },
     {
-      "StationName": "彭佳嶼",
-      "StationId": "466950",
-      "Hour": "15:00",
-      "Rain": 0.0,
-      "Temp": 30.1,
-      "WindSpeed": 2.1,
-      "WindDir": 260.0
-    },
-    {
       "StationName": "新屋",
       "StationId": "467050",
       "Hour": "15:00",
@@ -6623,6 +8315,24 @@
       "Temp": 30.2,
       "WindSpeed": 5.4,
       "WindDir": 240.0
+    },
+    {
+      "StationName": "宜蘭",
+      "StationId": "467080",
+      "Hour": "15:00",
+      "Rain": 0.0,
+      "Temp": 29.4,
+      "WindSpeed": 3.7,
+      "WindDir": 40.0
+    },
+    {
+      "StationName": "新竹",
+      "StationId": "467571",
+      "Hour": "15:00",
+      "Rain": 0.0,
+      "Temp": 31.2,
+      "WindSpeed": 1.9,
+      "WindDir": 280.0
     },
     {
       "StationName": "桃改樹林分場",
@@ -6640,6 +8350,15 @@
       "Rain": 0.0,
       "Temp": 31.3,
       "WindSpeed": 3.0,
+      "WindDir": 250.0
+    },
+    {
+      "StationName": "桃改新埔分場",
+      "StationId": "72D680",
+      "Hour": "15:00",
+      "Rain": 0.0,
+      "Temp": 30.8,
+      "WindSpeed": 2.4,
       "WindDir": 250.0
     },
     {
@@ -6812,6 +8531,33 @@
       "Temp": 30.7,
       "WindSpeed": 2.4,
       "WindDir": 280.0
+    },
+    {
+      "StationName": "打鐵坑",
+      "StationId": "C2D480",
+      "Hour": "15:00",
+      "Rain": 0.0,
+      "Temp": 28.1,
+      "WindSpeed": 1.9,
+      "WindDir": 260.0
+    },
+    {
+      "StationName": "關西工作站",
+      "StationId": "C2D720",
+      "Hour": "15:00",
+      "Rain": 22.0,
+      "Temp": 26.4,
+      "WindSpeed": 0.6,
+      "WindDir": 100.0
+    },
+    {
+      "StationName": "巨埔",
+      "StationId": "C2D770",
+      "Hour": "15:00",
+      "Rain": 0.0,
+      "Temp": 30.6,
+      "WindSpeed": 3.1,
+      "WindDir": 290.0
     },
     {
       "StationName": "國一N013K",
@@ -7030,15 +8776,6 @@
       "WindDir": 260.0
     },
     {
-      "StationName": "拉拉山",
-      "StationId": "CAC040",
-      "Hour": "15:00",
-      "Rain": 0.5,
-      "Temp": 19.9,
-      "WindSpeed": 1.0,
-      "WindDir": 150.0
-    },
-    {
       "StationName": "西濱S023K",
       "StationId": "CAC050",
       "Hour": "15:00",
@@ -7075,6 +8812,105 @@
       "WindDir": 180.0
     },
     {
+      "StationName": "國一N077K",
+      "StationId": "CAD020",
+      "Hour": "15:00",
+      "Rain": 0.0,
+      "Temp": 30.0,
+      "WindSpeed": 5.2,
+      "WindDir": 290.0
+    },
+    {
+      "StationName": "國一S082K",
+      "StationId": "CAD030",
+      "Hour": "15:00",
+      "Rain": 0.0,
+      "Temp": 30.5,
+      "WindSpeed": 3.9,
+      "WindDir": 260.0
+    },
+    {
+      "StationName": "國一S088K",
+      "StationId": "CAD040",
+      "Hour": "15:00",
+      "Rain": 0.0,
+      "Temp": 30.6,
+      "WindSpeed": 3.5,
+      "WindDir": 250.0
+    },
+    {
+      "StationName": "國一N094K",
+      "StationId": "CAD050",
+      "Hour": "15:00",
+      "Rain": 0.0,
+      "Temp": 31.6,
+      "WindSpeed": 3.1,
+      "WindDir": 250.0
+    },
+    {
+      "StationName": "國一S098K",
+      "StationId": "CAD060",
+      "Hour": "15:00",
+      "Rain": 0.0,
+      "Temp": 30.8,
+      "WindSpeed": 4.0,
+      "WindDir": 260.0
+    },
+    {
+      "StationName": "國三N085K",
+      "StationId": "CAD080",
+      "Hour": "15:00",
+      "Rain": 0.5,
+      "Temp": 28.3,
+      "WindSpeed": 0.9,
+      "WindDir": 230.0
+    },
+    {
+      "StationName": "國三S103K",
+      "StationId": "CAD090",
+      "Hour": "15:00",
+      "Rain": 0.0,
+      "Temp": 30.2,
+      "WindSpeed": 4.8,
+      "WindDir": 250.0
+    },
+    {
+      "StationName": "西濱N066K",
+      "StationId": "CAD100",
+      "Hour": "15:00",
+      "Rain": 0.0,
+      "Temp": 29.3,
+      "WindSpeed": 2.5,
+      "WindDir": 260.0
+    },
+    {
+      "StationName": "西濱S082K",
+      "StationId": "CAD110",
+      "Hour": "15:00",
+      "Rain": 0.0,
+      "Temp": 29.6,
+      "WindSpeed": 6.2,
+      "WindDir": 250.0
+    },
+    {
+      "StationName": "國三N077K",
+      "StationId": "CAD710",
+      "Hour": "15:00",
+      "Rain": 24.0,
+      "Temp": 25.1,
+      "WindSpeed": 0.8,
+      "WindDir": 120.0
+    },
+    {
+      "StationName": "國五S031K",
+      "StationId": "CAUB30",
+      "Hour": "15:00",
+      "Rain": 0.0,
+      "Temp": 28.8,
+      "WindSpeed": 3.1,
+      "WindDir": 50.0
+    },
+    {
       "StationName": "硬漢嶺",
       "StationId": "C0AK30",
       "Hour": "16:00",
@@ -7091,15 +8927,6 @@
       "Temp": 21.3,
       "WindSpeed": 0.7,
       "WindDir": 58.0
-    },
-    {
-      "StationName": "四稜",
-      "StationId": "C0C800",
-      "Hour": "16:00",
-      "Rain": 0.5,
-      "Temp": 24.6,
-      "WindSpeed": 0.3,
-      "WindDir": 119.0
     },
     {
       "StationName": "太平里",
@@ -7127,6 +8954,24 @@
       "Temp": 24.3,
       "WindSpeed": 3.3,
       "WindDir": 71.0
+    },
+    {
+      "StationName": "大溪漁港",
+      "StationId": "C0UA80",
+      "Hour": "16:00",
+      "Rain": 0.0,
+      "Temp": 27.9,
+      "WindSpeed": 1.0,
+      "WindDir": 31.0
+    },
+    {
+      "StationName": "石城",
+      "StationId": "C0UA90",
+      "Hour": "16:00",
+      "Rain": 0.0,
+      "Temp": 28.0,
+      "WindSpeed": 0.2,
+      "WindDir": 0.0
     },
     {
       "StationName": "大武崙",
@@ -7192,6 +9037,24 @@
       "WindDir": 242.0
     },
     {
+      "StationName": "海天一線",
+      "StationId": "C0D670",
+      "Hour": "16:00",
+      "Rain": 0.0,
+      "Temp": 29.9,
+      "WindSpeed": 7.0,
+      "WindDir": 226.0
+    },
+    {
+      "StationName": "香山濕地",
+      "StationId": "C0D680",
+      "Hour": "16:00",
+      "Rain": 0.0,
+      "Temp": 29.6,
+      "WindSpeed": 8.7,
+      "WindDir": 237.0
+    },
+    {
       "StationName": "水湳洞",
       "StationId": "C0AJ50",
       "Hour": "16:00",
@@ -7208,6 +9071,24 @@
       "Temp": 27.6,
       "WindSpeed": 2.5,
       "WindDir": 220.0
+    },
+    {
+      "StationName": "外湖",
+      "StationId": "C0D690",
+      "Hour": "16:00",
+      "Rain": 0.0,
+      "Temp": 28.4,
+      "WindSpeed": 7.9,
+      "WindDir": 231.0
+    },
+    {
+      "StationName": "淡江大學蘭陽校園",
+      "StationId": "C0UB00",
+      "Hour": "16:00",
+      "Rain": 0.0,
+      "Temp": 25.7,
+      "WindSpeed": 0.6,
+      "WindDir": 350.0
     },
     {
       "StationName": "六塊厝",
@@ -7235,6 +9116,15 @@
       "Temp": 29.3,
       "WindSpeed": 5.9,
       "WindDir": 228.0
+    },
+    {
+      "StationName": "北關",
+      "StationId": "C0U880",
+      "Hour": "16:00",
+      "Rain": 0.0,
+      "Temp": 28.4,
+      "WindSpeed": 1.5,
+      "WindDir": 355.0
     },
     {
       "StationName": "板橋",
@@ -7291,13 +9181,76 @@
       "WindDir": 80.0
     },
     {
-      "StationName": "三貂角",
-      "StationId": "C0A970",
+      "StationName": "雙連埤",
+      "StationId": "C0U520",
       "Hour": "16:00",
       "Rain": 0.0,
-      "Temp": 27.7,
+      "Temp": 24.7,
+      "WindSpeed": 0.0,
+      "WindDir": 0.0
+    },
+    {
+      "StationName": "頭城",
+      "StationId": "C0U860",
+      "Hour": "16:00",
+      "Rain": 0.0,
+      "Temp": 28.6,
       "WindSpeed": 1.9,
-      "WindDir": 205.0
+      "WindDir": 48.0
+    },
+    {
+      "StationName": "大礁溪",
+      "StationId": "C0U870",
+      "Hour": "16:00",
+      "Rain": 0.0,
+      "Temp": 25.0,
+      "WindSpeed": 0.2,
+      "WindDir": 0.0
+    },
+    {
+      "StationName": "礁溪",
+      "StationId": "C0U600",
+      "Hour": "16:00",
+      "Rain": 0.0,
+      "Temp": 29.2,
+      "WindSpeed": 1.3,
+      "WindDir": 48.0
+    },
+    {
+      "StationName": "龜山島",
+      "StationId": "C0U750",
+      "Hour": "16:00",
+      "Rain": 0.0,
+      "Temp": 24.0,
+      "WindSpeed": 2.5,
+      "WindDir": 21.0
+    },
+    {
+      "StationName": "鶯子嶺",
+      "StationId": "C0U950",
+      "Hour": "16:00",
+      "Rain": 1.5,
+      "Temp": 20.9,
+      "WindSpeed": 3.5,
+      "WindDir": 59.0
+    },
+    {
+      "StationName": "大福",
+      "StationId": "C0U970",
+      "Hour": "16:00",
+      "Rain": 0.0,
+      "Temp": 29.0,
+      "WindSpeed": 1.8,
+      "WindDir": 36.0
+    },
+    {
+      "StationName": "坪林石牌",
+      "StationId": "C0U980",
+      "Hour": "16:00",
+      "Rain": 0.5,
+      "Temp": 24.1,
+      "WindSpeed": 0.1,
+      "WindDir": 0.0
     },
     {
       "StationName": "中壢",
@@ -7307,6 +9260,24 @@
       "Temp": 30.6,
       "WindSpeed": 2.1,
       "WindDir": 263.0
+    },
+    {
+      "StationName": "關西",
+      "StationId": "C0D700",
+      "Hour": "16:00",
+      "Rain": 10.0,
+      "Temp": 27.0,
+      "WindSpeed": 1.2,
+      "WindDir": 77.0
+    },
+    {
+      "StationName": "桃源谷",
+      "StationId": "C0UA70",
+      "Hour": "16:00",
+      "Rain": 0.5,
+      "Temp": 24.6,
+      "WindSpeed": 0.8,
+      "WindDir": 128.0
     },
     {
       "StationName": "福山植物園",
@@ -7324,6 +9295,24 @@
       "Rain": 0.0,
       "Temp": 31.3,
       "WindSpeed": 2.8,
+      "WindDir": 238.0
+    },
+    {
+      "StationName": "新豐",
+      "StationId": "C0D590",
+      "Hour": "16:00",
+      "Rain": 0.0,
+      "Temp": 29.4,
+      "WindSpeed": 1.9,
+      "WindDir": 197.0
+    },
+    {
+      "StationName": "竹東",
+      "StationId": "C0D560",
+      "Hour": "16:00",
+      "Rain": 0.0,
+      "Temp": 31.9,
+      "WindSpeed": 2.7,
       "WindDir": 238.0
     },
     {
@@ -7354,6 +9343,15 @@
       "WindDir": 232.0
     },
     {
+      "StationName": "湖口",
+      "StationId": "C0D650",
+      "Hour": "16:00",
+      "Rain": 0.0,
+      "Temp": 30.0,
+      "WindSpeed": 3.1,
+      "WindDir": 261.0
+    },
+    {
       "StationName": "龍潭",
       "StationId": "C0C670",
       "Hour": "16:00",
@@ -7361,6 +9359,15 @@
       "Temp": 28.9,
       "WindSpeed": 2.5,
       "WindDir": 259.0
+    },
+    {
+      "StationName": "新竹市東區",
+      "StationId": "C0D660",
+      "Hour": "16:00",
+      "Rain": 0.0,
+      "Temp": 30.3,
+      "WindSpeed": 4.3,
+      "WindDir": 256.0
     },
     {
       "StationName": "龜山",
@@ -7768,15 +9775,6 @@
       "WindDir": 210.0
     },
     {
-      "StationName": "彭佳嶼",
-      "StationId": "466950",
-      "Hour": "16:00",
-      "Rain": 0.0,
-      "Temp": 29.2,
-      "WindSpeed": 2.9,
-      "WindDir": 240.0
-    },
-    {
       "StationName": "新屋",
       "StationId": "467050",
       "Hour": "16:00",
@@ -7784,6 +9782,24 @@
       "Temp": 29.4,
       "WindSpeed": 6.7,
       "WindDir": 240.0
+    },
+    {
+      "StationName": "宜蘭",
+      "StationId": "467080",
+      "Hour": "16:00",
+      "Rain": 0.0,
+      "Temp": 28.8,
+      "WindSpeed": 3.9,
+      "WindDir": 40.0
+    },
+    {
+      "StationName": "新竹",
+      "StationId": "467571",
+      "Hour": "16:00",
+      "Rain": 0.0,
+      "Temp": 31.0,
+      "WindSpeed": 2.5,
+      "WindDir": 270.0
     },
     {
       "StationName": "桃改樹林分場",
@@ -7802,6 +9818,15 @@
       "Temp": 30.1,
       "WindSpeed": 3.9,
       "WindDir": 250.0
+    },
+    {
+      "StationName": "桃改新埔分場",
+      "StationId": "72D680",
+      "Hour": "16:00",
+      "Rain": 0.0,
+      "Temp": 31.1,
+      "WindSpeed": 3.4,
+      "WindDir": 260.0
     },
     {
       "StationName": "茶改北部分場",
@@ -7973,6 +9998,33 @@
       "Temp": 28.4,
       "WindSpeed": 3.0,
       "WindDir": 110.0
+    },
+    {
+      "StationName": "打鐵坑",
+      "StationId": "C2D480",
+      "Hour": "16:00",
+      "Rain": 0.0,
+      "Temp": 29.2,
+      "WindSpeed": 2.5,
+      "WindDir": 260.0
+    },
+    {
+      "StationName": "關西工作站",
+      "StationId": "C2D720",
+      "Hour": "16:00",
+      "Rain": 22.5,
+      "Temp": 27.9,
+      "WindSpeed": 0.2,
+      "WindDir": 0.0
+    },
+    {
+      "StationName": "巨埔",
+      "StationId": "C2D770",
+      "Hour": "16:00",
+      "Rain": 0.0,
+      "Temp": 31.1,
+      "WindSpeed": 2.5,
+      "WindDir": 290.0
     },
     {
       "StationName": "國一N013K",
@@ -8191,15 +10243,6 @@
       "WindDir": 100.0
     },
     {
-      "StationName": "拉拉山",
-      "StationId": "CAC040",
-      "Hour": "16:00",
-      "Rain": 0.5,
-      "Temp": 20.0,
-      "WindSpeed": 0.2,
-      "WindDir": 0.0
-    },
-    {
       "StationName": "西濱S023K",
       "StationId": "CAC050",
       "Hour": "16:00",
@@ -8236,6 +10279,105 @@
       "WindDir": 170.0
     },
     {
+      "StationName": "國一N077K",
+      "StationId": "CAD020",
+      "Hour": "16:00",
+      "Rain": 0.0,
+      "Temp": 29.7,
+      "WindSpeed": 5.5,
+      "WindDir": 280.0
+    },
+    {
+      "StationName": "國一S082K",
+      "StationId": "CAD030",
+      "Hour": "16:00",
+      "Rain": 0.0,
+      "Temp": 30.3,
+      "WindSpeed": 5.3,
+      "WindDir": 250.0
+    },
+    {
+      "StationName": "國一S088K",
+      "StationId": "CAD040",
+      "Hour": "16:00",
+      "Rain": 0.0,
+      "Temp": 31.3,
+      "WindSpeed": 3.6,
+      "WindDir": 250.0
+    },
+    {
+      "StationName": "國一N094K",
+      "StationId": "CAD050",
+      "Hour": "16:00",
+      "Rain": 0.0,
+      "Temp": 31.8,
+      "WindSpeed": 3.5,
+      "WindDir": 240.0
+    },
+    {
+      "StationName": "國一S098K",
+      "StationId": "CAD060",
+      "Hour": "16:00",
+      "Rain": 0.0,
+      "Temp": 31.8,
+      "WindSpeed": 4.2,
+      "WindDir": 230.0
+    },
+    {
+      "StationName": "國三N085K",
+      "StationId": "CAD080",
+      "Hour": "16:00",
+      "Rain": 0.5,
+      "Temp": 28.8,
+      "WindSpeed": 1.6,
+      "WindDir": 200.0
+    },
+    {
+      "StationName": "國三S103K",
+      "StationId": "CAD090",
+      "Hour": "16:00",
+      "Rain": 0.0,
+      "Temp": 31.0,
+      "WindSpeed": 5.2,
+      "WindDir": 240.0
+    },
+    {
+      "StationName": "西濱N066K",
+      "StationId": "CAD100",
+      "Hour": "16:00",
+      "Rain": 0.0,
+      "Temp": 29.8,
+      "WindSpeed": 2.5,
+      "WindDir": 250.0
+    },
+    {
+      "StationName": "西濱S082K",
+      "StationId": "CAD110",
+      "Hour": "16:00",
+      "Rain": 0.0,
+      "Temp": 29.8,
+      "WindSpeed": 6.6,
+      "WindDir": 240.0
+    },
+    {
+      "StationName": "國三N077K",
+      "StationId": "CAD710",
+      "Hour": "16:00",
+      "Rain": 25.5,
+      "Temp": 26.0,
+      "WindSpeed": 0.6,
+      "WindDir": 150.0
+    },
+    {
+      "StationName": "國五S031K",
+      "StationId": "CAUB30",
+      "Hour": "16:00",
+      "Rain": 0.0,
+      "Temp": 28.8,
+      "WindSpeed": 3.2,
+      "WindDir": 30.0
+    },
+    {
       "StationName": "硬漢嶺",
       "StationId": "C0AK30",
       "Hour": "17:00",
@@ -8252,15 +10394,6 @@
       "Temp": 21.6,
       "WindSpeed": 0.9,
       "WindDir": 203.0
-    },
-    {
-      "StationName": "四稜",
-      "StationId": "C0C800",
-      "Hour": "17:00",
-      "Rain": 1.5,
-      "Temp": 21.1,
-      "WindSpeed": 1.2,
-      "WindDir": 114.0
     },
     {
       "StationName": "太平里",
@@ -8288,6 +10421,24 @@
       "Temp": 26.0,
       "WindSpeed": 0.3,
       "WindDir": 88.0
+    },
+    {
+      "StationName": "大溪漁港",
+      "StationId": "C0UA80",
+      "Hour": "17:00",
+      "Rain": 0.0,
+      "Temp": 28.8,
+      "WindSpeed": 0.4,
+      "WindDir": 269.0
+    },
+    {
+      "StationName": "石城",
+      "StationId": "C0UA90",
+      "Hour": "17:00",
+      "Rain": 0.0,
+      "Temp": 27.5,
+      "WindSpeed": 0.8,
+      "WindDir": 298.0
     },
     {
       "StationName": "大武崙",
@@ -8353,6 +10504,24 @@
       "WindDir": 237.0
     },
     {
+      "StationName": "海天一線",
+      "StationId": "C0D670",
+      "Hour": "17:00",
+      "Rain": 0.0,
+      "Temp": 28.8,
+      "WindSpeed": 8.3,
+      "WindDir": 236.0
+    },
+    {
+      "StationName": "香山濕地",
+      "StationId": "C0D680",
+      "Hour": "17:00",
+      "Rain": 0.0,
+      "Temp": 29.0,
+      "WindSpeed": 8.7,
+      "WindDir": 248.0
+    },
+    {
       "StationName": "水湳洞",
       "StationId": "C0AJ50",
       "Hour": "17:00",
@@ -8369,6 +10538,24 @@
       "Temp": 25.9,
       "WindSpeed": 3.1,
       "WindDir": 220.0
+    },
+    {
+      "StationName": "外湖",
+      "StationId": "C0D690",
+      "Hour": "17:00",
+      "Rain": 0.0,
+      "Temp": 28.4,
+      "WindSpeed": 6.6,
+      "WindDir": 227.0
+    },
+    {
+      "StationName": "淡江大學蘭陽校園",
+      "StationId": "C0UB00",
+      "Hour": "17:00",
+      "Rain": 0.0,
+      "Temp": 26.2,
+      "WindSpeed": 1.7,
+      "WindDir": 334.0
     },
     {
       "StationName": "六塊厝",
@@ -8396,6 +10583,15 @@
       "Temp": 29.1,
       "WindSpeed": 3.9,
       "WindDir": 221.0
+    },
+    {
+      "StationName": "北關",
+      "StationId": "C0U880",
+      "Hour": "17:00",
+      "Rain": 0.0,
+      "Temp": 27.8,
+      "WindSpeed": 1.3,
+      "WindDir": 347.0
     },
     {
       "StationName": "板橋",
@@ -8452,13 +10648,76 @@
       "WindDir": 326.0
     },
     {
-      "StationName": "三貂角",
-      "StationId": "C0A970",
+      "StationName": "雙連埤",
+      "StationId": "C0U520",
       "Hour": "17:00",
       "Rain": 0.0,
-      "Temp": 27.3,
-      "WindSpeed": 1.9,
-      "WindDir": 196.0
+      "Temp": 24.1,
+      "WindSpeed": 0.0,
+      "WindDir": 0.0
+    },
+    {
+      "StationName": "頭城",
+      "StationId": "C0U860",
+      "Hour": "17:00",
+      "Rain": 0.0,
+      "Temp": 28.0,
+      "WindSpeed": 0.9,
+      "WindDir": 29.0
+    },
+    {
+      "StationName": "大礁溪",
+      "StationId": "C0U870",
+      "Hour": "17:00",
+      "Rain": 0.0,
+      "Temp": 24.8,
+      "WindSpeed": 0.0,
+      "WindDir": 0.0
+    },
+    {
+      "StationName": "礁溪",
+      "StationId": "C0U600",
+      "Hour": "17:00",
+      "Rain": 0.0,
+      "Temp": 29.0,
+      "WindSpeed": 0.4,
+      "WindDir": 6.0
+    },
+    {
+      "StationName": "龜山島",
+      "StationId": "C0U750",
+      "Hour": "17:00",
+      "Rain": 0.0,
+      "Temp": 24.0,
+      "WindSpeed": 3.1,
+      "WindDir": 16.0
+    },
+    {
+      "StationName": "鶯子嶺",
+      "StationId": "C0U950",
+      "Hour": "17:00",
+      "Rain": 1.5,
+      "Temp": 20.9,
+      "WindSpeed": 2.8,
+      "WindDir": 8.0
+    },
+    {
+      "StationName": "大福",
+      "StationId": "C0U970",
+      "Hour": "17:00",
+      "Rain": 0.0,
+      "Temp": 28.6,
+      "WindSpeed": 1.1,
+      "WindDir": 27.0
+    },
+    {
+      "StationName": "坪林石牌",
+      "StationId": "C0U980",
+      "Hour": "17:00",
+      "Rain": 0.5,
+      "Temp": 23.6,
+      "WindSpeed": 2.6,
+      "WindDir": 323.0
     },
     {
       "StationName": "中壢",
@@ -8468,6 +10727,24 @@
       "Temp": 27.6,
       "WindSpeed": 1.9,
       "WindDir": 103.0
+    },
+    {
+      "StationName": "關西",
+      "StationId": "C0D700",
+      "Hour": "17:00",
+      "Rain": 10.0,
+      "Temp": 28.2,
+      "WindSpeed": 1.9,
+      "WindDir": 67.0
+    },
+    {
+      "StationName": "桃源谷",
+      "StationId": "C0UA70",
+      "Hour": "17:00",
+      "Rain": 0.5,
+      "Temp": 24.0,
+      "WindSpeed": 0.9,
+      "WindDir": 247.0
     },
     {
       "StationName": "福山植物園",
@@ -8486,6 +10763,24 @@
       "Temp": 30.7,
       "WindSpeed": 2.7,
       "WindDir": 98.0
+    },
+    {
+      "StationName": "新豐",
+      "StationId": "C0D590",
+      "Hour": "17:00",
+      "Rain": 0.0,
+      "Temp": 28.0,
+      "WindSpeed": 1.4,
+      "WindDir": 215.0
+    },
+    {
+      "StationName": "竹東",
+      "StationId": "C0D560",
+      "Hour": "17:00",
+      "Rain": 0.0,
+      "Temp": 31.5,
+      "WindSpeed": 1.8,
+      "WindDir": 240.0
     },
     {
       "StationName": "平鎮",
@@ -8515,6 +10810,15 @@
       "WindDir": 246.0
     },
     {
+      "StationName": "湖口",
+      "StationId": "C0D650",
+      "Hour": "17:00",
+      "Rain": 0.0,
+      "Temp": 29.2,
+      "WindSpeed": 3.5,
+      "WindDir": 262.0
+    },
+    {
       "StationName": "龍潭",
       "StationId": "C0C670",
       "Hour": "17:00",
@@ -8522,6 +10826,15 @@
       "Temp": 26.2,
       "WindSpeed": 2.2,
       "WindDir": 67.0
+    },
+    {
+      "StationName": "新竹市東區",
+      "StationId": "C0D660",
+      "Hour": "17:00",
+      "Rain": 0.0,
+      "Temp": 29.6,
+      "WindSpeed": 3.5,
+      "WindDir": 262.0
     },
     {
       "StationName": "龜山",
@@ -8929,15 +11242,6 @@
       "WindDir": 230.0
     },
     {
-      "StationName": "彭佳嶼",
-      "StationId": "466950",
-      "Hour": "17:00",
-      "Rain": 0.0,
-      "Temp": 28.1,
-      "WindSpeed": 3.6,
-      "WindDir": 200.0
-    },
-    {
       "StationName": "新屋",
       "StationId": "467050",
       "Hour": "17:00",
@@ -8945,6 +11249,24 @@
       "Temp": 29.1,
       "WindSpeed": 5.5,
       "WindDir": 230.0
+    },
+    {
+      "StationName": "宜蘭",
+      "StationId": "467080",
+      "Hour": "17:00",
+      "Rain": 0.0,
+      "Temp": 28.7,
+      "WindSpeed": 2.4,
+      "WindDir": 30.0
+    },
+    {
+      "StationName": "新竹",
+      "StationId": "467571",
+      "Hour": "17:00",
+      "Rain": 0.0,
+      "Temp": 30.3,
+      "WindSpeed": 2.0,
+      "WindDir": 290.0
     },
     {
       "StationName": "桃改樹林分場",
@@ -8963,6 +11285,15 @@
       "Temp": 29.1,
       "WindSpeed": 3.8,
       "WindDir": 240.0
+    },
+    {
+      "StationName": "桃改新埔分場",
+      "StationId": "72D680",
+      "Hour": "17:00",
+      "Rain": 0.0,
+      "Temp": 30.4,
+      "WindSpeed": 2.6,
+      "WindDir": 260.0
     },
     {
       "StationName": "茶改北部分場",
@@ -9134,6 +11465,33 @@
       "Temp": 27.6,
       "WindSpeed": 2.5,
       "WindDir": 90.0
+    },
+    {
+      "StationName": "打鐵坑",
+      "StationId": "C2D480",
+      "Hour": "17:00",
+      "Rain": 0.0,
+      "Temp": 30.2,
+      "WindSpeed": 0.6,
+      "WindDir": 260.0
+    },
+    {
+      "StationName": "關西工作站",
+      "StationId": "C2D720",
+      "Hour": "17:00",
+      "Rain": 22.5,
+      "Temp": 29.1,
+      "WindSpeed": 0.5,
+      "WindDir": 50.0
+    },
+    {
+      "StationName": "巨埔",
+      "StationId": "C2D770",
+      "Hour": "17:00",
+      "Rain": 0.0,
+      "Temp": 31.0,
+      "WindSpeed": 1.3,
+      "WindDir": 270.0
     },
     {
       "StationName": "國一N013K",
@@ -9352,15 +11710,6 @@
       "WindDir": 80.0
     },
     {
-      "StationName": "拉拉山",
-      "StationId": "CAC040",
-      "Hour": "17:00",
-      "Rain": 15.5,
-      "Temp": 18.5,
-      "WindSpeed": 1.5,
-      "WindDir": 20.0
-    },
-    {
       "StationName": "西濱S023K",
       "StationId": "CAC050",
       "Hour": "17:00",
@@ -9397,6 +11746,105 @@
       "WindDir": 70.0
     },
     {
+      "StationName": "國一N077K",
+      "StationId": "CAD020",
+      "Hour": "17:00",
+      "Rain": 0.0,
+      "Temp": 29.8,
+      "WindSpeed": 3.9,
+      "WindDir": 280.0
+    },
+    {
+      "StationName": "國一S082K",
+      "StationId": "CAD030",
+      "Hour": "17:00",
+      "Rain": 0.0,
+      "Temp": 29.8,
+      "WindSpeed": 4.5,
+      "WindDir": 250.0
+    },
+    {
+      "StationName": "國一S088K",
+      "StationId": "CAD040",
+      "Hour": "17:00",
+      "Rain": 0.0,
+      "Temp": 30.5,
+      "WindSpeed": 3.1,
+      "WindDir": 250.0
+    },
+    {
+      "StationName": "國一N094K",
+      "StationId": "CAD050",
+      "Hour": "17:00",
+      "Rain": 0.0,
+      "Temp": 30.8,
+      "WindSpeed": 2.4,
+      "WindDir": 240.0
+    },
+    {
+      "StationName": "國一S098K",
+      "StationId": "CAD060",
+      "Hour": "17:00",
+      "Rain": 0.0,
+      "Temp": 31.1,
+      "WindSpeed": 3.2,
+      "WindDir": 260.0
+    },
+    {
+      "StationName": "國三N085K",
+      "StationId": "CAD080",
+      "Hour": "17:00",
+      "Rain": 0.5,
+      "Temp": 30.3,
+      "WindSpeed": 1.2,
+      "WindDir": 340.0
+    },
+    {
+      "StationName": "國三S103K",
+      "StationId": "CAD090",
+      "Hour": "17:00",
+      "Rain": 0.0,
+      "Temp": 29.8,
+      "WindSpeed": 4.5,
+      "WindDir": 250.0
+    },
+    {
+      "StationName": "西濱N066K",
+      "StationId": "CAD100",
+      "Hour": "17:00",
+      "Rain": 0.0,
+      "Temp": 28.6,
+      "WindSpeed": 1.9,
+      "WindDir": 250.0
+    },
+    {
+      "StationName": "西濱S082K",
+      "StationId": "CAD110",
+      "Hour": "17:00",
+      "Rain": 0.0,
+      "Temp": 29.3,
+      "WindSpeed": 6.9,
+      "WindDir": 250.0
+    },
+    {
+      "StationName": "國三N077K",
+      "StationId": "CAD710",
+      "Hour": "17:00",
+      "Rain": 25.5,
+      "Temp": 27.7,
+      "WindSpeed": 1.3,
+      "WindDir": 40.0
+    },
+    {
+      "StationName": "國五S031K",
+      "StationId": "CAUB30",
+      "Hour": "17:00",
+      "Rain": 0.0,
+      "Temp": 28.8,
+      "WindSpeed": 2.2,
+      "WindDir": 10.0
+    },
+    {
       "StationName": "硬漢嶺",
       "StationId": "C0AK30",
       "Hour": "18:00",
@@ -9413,15 +11861,6 @@
       "Temp": 21.3,
       "WindSpeed": 0.7,
       "WindDir": 156.0
-    },
-    {
-      "StationName": "四稜",
-      "StationId": "C0C800",
-      "Hour": "18:00",
-      "Rain": 4.5,
-      "Temp": 20.6,
-      "WindSpeed": 0.5,
-      "WindDir": 116.0
     },
     {
       "StationName": "太平里",
@@ -9449,6 +11888,24 @@
       "Temp": 26.6,
       "WindSpeed": 0.0,
       "WindDir": 0.0
+    },
+    {
+      "StationName": "大溪漁港",
+      "StationId": "C0UA80",
+      "Hour": "18:00",
+      "Rain": 0.0,
+      "Temp": 28.4,
+      "WindSpeed": 1.0,
+      "WindDir": 340.0
+    },
+    {
+      "StationName": "石城",
+      "StationId": "C0UA90",
+      "Hour": "18:00",
+      "Rain": 0.0,
+      "Temp": 27.0,
+      "WindSpeed": 0.6,
+      "WindDir": 331.0
     },
     {
       "StationName": "大武崙",
@@ -9514,6 +11971,24 @@
       "WindDir": 236.0
     },
     {
+      "StationName": "海天一線",
+      "StationId": "C0D670",
+      "Hour": "18:00",
+      "Rain": 0.0,
+      "Temp": 28.6,
+      "WindSpeed": 7.0,
+      "WindDir": 228.0
+    },
+    {
+      "StationName": "香山濕地",
+      "StationId": "C0D680",
+      "Hour": "18:00",
+      "Rain": 0.0,
+      "Temp": 28.7,
+      "WindSpeed": 9.6,
+      "WindDir": 231.0
+    },
+    {
       "StationName": "水湳洞",
       "StationId": "C0AJ50",
       "Hour": "18:00",
@@ -9530,6 +12005,24 @@
       "Temp": 26.9,
       "WindSpeed": 1.7,
       "WindDir": 179.0
+    },
+    {
+      "StationName": "外湖",
+      "StationId": "C0D690",
+      "Hour": "18:00",
+      "Rain": 0.0,
+      "Temp": 28.2,
+      "WindSpeed": 8.6,
+      "WindDir": 235.0
+    },
+    {
+      "StationName": "淡江大學蘭陽校園",
+      "StationId": "C0UB00",
+      "Hour": "18:00",
+      "Rain": 0.0,
+      "Temp": 25.4,
+      "WindSpeed": 0.9,
+      "WindDir": 196.0
     },
     {
       "StationName": "六塊厝",
@@ -9557,6 +12050,15 @@
       "Temp": 28.4,
       "WindSpeed": 2.4,
       "WindDir": 212.0
+    },
+    {
+      "StationName": "北關",
+      "StationId": "C0U880",
+      "Hour": "18:00",
+      "Rain": 0.0,
+      "Temp": 27.4,
+      "WindSpeed": 0.8,
+      "WindDir": 38.0
     },
     {
       "StationName": "板橋",
@@ -9613,13 +12115,76 @@
       "WindDir": 0.0
     },
     {
-      "StationName": "三貂角",
-      "StationId": "C0A970",
+      "StationName": "雙連埤",
+      "StationId": "C0U520",
+      "Hour": "18:00",
+      "Rain": 1.0,
+      "Temp": 22.8,
+      "WindSpeed": 0.8,
+      "WindDir": 236.0
+    },
+    {
+      "StationName": "頭城",
+      "StationId": "C0U860",
       "Hour": "18:00",
       "Rain": 0.0,
-      "Temp": 27.2,
-      "WindSpeed": 0.3,
-      "WindDir": 274.0
+      "Temp": 27.6,
+      "WindSpeed": 0.7,
+      "WindDir": 61.0
+    },
+    {
+      "StationName": "大礁溪",
+      "StationId": "C0U870",
+      "Hour": "18:00",
+      "Rain": 0.5,
+      "Temp": 23.8,
+      "WindSpeed": 0.2,
+      "WindDir": 0.0
+    },
+    {
+      "StationName": "礁溪",
+      "StationId": "C0U600",
+      "Hour": "18:00",
+      "Rain": 0.0,
+      "Temp": 28.1,
+      "WindSpeed": 0.6,
+      "WindDir": 223.0
+    },
+    {
+      "StationName": "龜山島",
+      "StationId": "C0U750",
+      "Hour": "18:00",
+      "Rain": 0.0,
+      "Temp": 24.3,
+      "WindSpeed": 1.5,
+      "WindDir": 26.0
+    },
+    {
+      "StationName": "鶯子嶺",
+      "StationId": "C0U950",
+      "Hour": "18:00",
+      "Rain": 1.5,
+      "Temp": 21.2,
+      "WindSpeed": 2.6,
+      "WindDir": 356.0
+    },
+    {
+      "StationName": "大福",
+      "StationId": "C0U970",
+      "Hour": "18:00",
+      "Rain": 0.0,
+      "Temp": 28.3,
+      "WindSpeed": 1.2,
+      "WindDir": 30.0
+    },
+    {
+      "StationName": "坪林石牌",
+      "StationId": "C0U980",
+      "Hour": "18:00",
+      "Rain": 0.5,
+      "Temp": 23.2,
+      "WindSpeed": 2.5,
+      "WindDir": 325.0
     },
     {
       "StationName": "中壢",
@@ -9629,6 +12194,24 @@
       "Temp": 27.8,
       "WindSpeed": 0.7,
       "WindDir": 142.0
+    },
+    {
+      "StationName": "關西",
+      "StationId": "C0D700",
+      "Hour": "18:00",
+      "Rain": 10.0,
+      "Temp": 27.4,
+      "WindSpeed": 1.9,
+      "WindDir": 30.0
+    },
+    {
+      "StationName": "桃源谷",
+      "StationId": "C0UA70",
+      "Hour": "18:00",
+      "Rain": 0.5,
+      "Temp": 23.7,
+      "WindSpeed": 1.2,
+      "WindDir": 263.0
     },
     {
       "StationName": "福山植物園",
@@ -9647,6 +12230,24 @@
       "Temp": 29.7,
       "WindSpeed": 0.5,
       "WindDir": 116.0
+    },
+    {
+      "StationName": "新豐",
+      "StationId": "C0D590",
+      "Hour": "18:00",
+      "Rain": 0.0,
+      "Temp": 27.7,
+      "WindSpeed": 2.0,
+      "WindDir": 218.0
+    },
+    {
+      "StationName": "竹東",
+      "StationId": "C0D560",
+      "Hour": "18:00",
+      "Rain": 0.0,
+      "Temp": 30.4,
+      "WindSpeed": 0.9,
+      "WindDir": 253.0
     },
     {
       "StationName": "平鎮",
@@ -9676,6 +12277,15 @@
       "WindDir": 136.0
     },
     {
+      "StationName": "湖口",
+      "StationId": "C0D650",
+      "Hour": "18:00",
+      "Rain": 0.0,
+      "Temp": 28.8,
+      "WindSpeed": 2.8,
+      "WindDir": 250.0
+    },
+    {
       "StationName": "龍潭",
       "StationId": "C0C670",
       "Hour": "18:00",
@@ -9683,6 +12293,15 @@
       "Temp": 26.8,
       "WindSpeed": 0.4,
       "WindDir": 53.0
+    },
+    {
+      "StationName": "新竹市東區",
+      "StationId": "C0D660",
+      "Hour": "18:00",
+      "Rain": 0.0,
+      "Temp": 28.6,
+      "WindSpeed": 3.1,
+      "WindDir": 245.0
     },
     {
       "StationName": "龜山",
@@ -10090,15 +12709,6 @@
       "WindDir": 210.0
     },
     {
-      "StationName": "彭佳嶼",
-      "StationId": "466950",
-      "Hour": "18:00",
-      "Rain": 0.0,
-      "Temp": 26.8,
-      "WindSpeed": 5.0,
-      "WindDir": 190.0
-    },
-    {
       "StationName": "新屋",
       "StationId": "467050",
       "Hour": "18:00",
@@ -10106,6 +12716,24 @@
       "Temp": 28.5,
       "WindSpeed": 5.7,
       "WindDir": 240.0
+    },
+    {
+      "StationName": "宜蘭",
+      "StationId": "467080",
+      "Hour": "18:00",
+      "Rain": 0.0,
+      "Temp": 28.5,
+      "WindSpeed": 0.2,
+      "WindDir": 0.0
+    },
+    {
+      "StationName": "新竹",
+      "StationId": "467571",
+      "Hour": "18:00",
+      "Rain": 0.0,
+      "Temp": 29.6,
+      "WindSpeed": 1.0,
+      "WindDir": 280.0
     },
     {
       "StationName": "桃改樹林分場",
@@ -10123,6 +12751,15 @@
       "Rain": 0.0,
       "Temp": 28.7,
       "WindSpeed": 2.3,
+      "WindDir": 250.0
+    },
+    {
+      "StationName": "桃改新埔分場",
+      "StationId": "72D680",
+      "Hour": "18:00",
+      "Rain": 0.0,
+      "Temp": 29.0,
+      "WindSpeed": 1.9,
       "WindDir": 250.0
     },
     {
@@ -10295,6 +12932,33 @@
       "Temp": 27.6,
       "WindSpeed": 1.6,
       "WindDir": 100.0
+    },
+    {
+      "StationName": "打鐵坑",
+      "StationId": "C2D480",
+      "Hour": "18:00",
+      "Rain": 0.0,
+      "Temp": 26.9,
+      "WindSpeed": 0.5,
+      "WindDir": 110.0
+    },
+    {
+      "StationName": "關西工作站",
+      "StationId": "C2D720",
+      "Hour": "18:00",
+      "Rain": 22.5,
+      "Temp": 27.4,
+      "WindSpeed": 0.8,
+      "WindDir": 320.0
+    },
+    {
+      "StationName": "巨埔",
+      "StationId": "C2D770",
+      "Hour": "18:00",
+      "Rain": 0.0,
+      "Temp": 28.1,
+      "WindSpeed": 2.4,
+      "WindDir": 110.0
     },
     {
       "StationName": "國一N013K",
@@ -10513,15 +13177,6 @@
       "WindDir": 70.0
     },
     {
-      "StationName": "拉拉山",
-      "StationId": "CAC040",
-      "Hour": "18:00",
-      "Rain": 16.5,
-      "Temp": 18.0,
-      "WindSpeed": 0.6,
-      "WindDir": 50.0
-    },
-    {
       "StationName": "西濱S023K",
       "StationId": "CAC050",
       "Hour": "18:00",
@@ -10558,6 +13213,105 @@
       "WindDir": 80.0
     },
     {
+      "StationName": "國一N077K",
+      "StationId": "CAD020",
+      "Hour": "18:00",
+      "Rain": 0.0,
+      "Temp": 28.5,
+      "WindSpeed": 1.8,
+      "WindDir": 280.0
+    },
+    {
+      "StationName": "國一S082K",
+      "StationId": "CAD030",
+      "Hour": "18:00",
+      "Rain": 0.0,
+      "Temp": 29.1,
+      "WindSpeed": 2.6,
+      "WindDir": 240.0
+    },
+    {
+      "StationName": "國一S088K",
+      "StationId": "CAD040",
+      "Hour": "18:00",
+      "Rain": 0.0,
+      "Temp": 29.8,
+      "WindSpeed": 2.1,
+      "WindDir": 250.0
+    },
+    {
+      "StationName": "國一N094K",
+      "StationId": "CAD050",
+      "Hour": "18:00",
+      "Rain": 0.0,
+      "Temp": 30.0,
+      "WindSpeed": 1.7,
+      "WindDir": 250.0
+    },
+    {
+      "StationName": "國一S098K",
+      "StationId": "CAD060",
+      "Hour": "18:00",
+      "Rain": 0.0,
+      "Temp": 29.6,
+      "WindSpeed": 2.2,
+      "WindDir": 260.0
+    },
+    {
+      "StationName": "國三N085K",
+      "StationId": "CAD080",
+      "Hour": "18:00",
+      "Rain": 0.5,
+      "Temp": 28.1,
+      "WindSpeed": 0.6,
+      "WindDir": 150.0
+    },
+    {
+      "StationName": "國三S103K",
+      "StationId": "CAD090",
+      "Hour": "18:00",
+      "Rain": 0.0,
+      "Temp": 29.3,
+      "WindSpeed": 3.2,
+      "WindDir": 250.0
+    },
+    {
+      "StationName": "西濱N066K",
+      "StationId": "CAD100",
+      "Hour": "18:00",
+      "Rain": 0.0,
+      "Temp": 28.2,
+      "WindSpeed": 1.7,
+      "WindDir": 250.0
+    },
+    {
+      "StationName": "西濱S082K",
+      "StationId": "CAD110",
+      "Hour": "18:00",
+      "Rain": 0.0,
+      "Temp": 29.1,
+      "WindSpeed": 4.0,
+      "WindDir": 230.0
+    },
+    {
+      "StationName": "國三N077K",
+      "StationId": "CAD710",
+      "Hour": "18:00",
+      "Rain": 25.5,
+      "Temp": 26.6,
+      "WindSpeed": 1.8,
+      "WindDir": 10.0
+    },
+    {
+      "StationName": "國五S031K",
+      "StationId": "CAUB30",
+      "Hour": "18:00",
+      "Rain": 0.0,
+      "Temp": 28.5,
+      "WindSpeed": 2.2,
+      "WindDir": 70.0
+    },
+    {
       "StationName": "硬漢嶺",
       "StationId": "C0AK30",
       "Hour": "19:00",
@@ -10574,15 +13328,6 @@
       "Temp": 21.1,
       "WindSpeed": 0.6,
       "WindDir": 111.0
-    },
-    {
-      "StationName": "四稜",
-      "StationId": "C0C800",
-      "Hour": "19:00",
-      "Rain": 7.0,
-      "Temp": 20.4,
-      "WindSpeed": 0.7,
-      "WindDir": 108.0
     },
     {
       "StationName": "太平里",
@@ -10610,6 +13355,24 @@
       "Temp": 26.8,
       "WindSpeed": 0.0,
       "WindDir": 0.0
+    },
+    {
+      "StationName": "大溪漁港",
+      "StationId": "C0UA80",
+      "Hour": "19:00",
+      "Rain": 0.5,
+      "Temp": 27.7,
+      "WindSpeed": 0.7,
+      "WindDir": 30.0
+    },
+    {
+      "StationName": "石城",
+      "StationId": "C0UA90",
+      "Hour": "19:00",
+      "Rain": 0.0,
+      "Temp": 26.5,
+      "WindSpeed": 0.6,
+      "WindDir": 312.0
     },
     {
       "StationName": "大武崙",
@@ -10675,6 +13438,24 @@
       "WindDir": 245.0
     },
     {
+      "StationName": "海天一線",
+      "StationId": "C0D670",
+      "Hour": "19:00",
+      "Rain": 0.0,
+      "Temp": 28.1,
+      "WindSpeed": 9.2,
+      "WindDir": 237.0
+    },
+    {
+      "StationName": "香山濕地",
+      "StationId": "C0D680",
+      "Hour": "19:00",
+      "Rain": 0.0,
+      "Temp": 28.3,
+      "WindSpeed": 8.4,
+      "WindDir": 242.0
+    },
+    {
       "StationName": "水湳洞",
       "StationId": "C0AJ50",
       "Hour": "19:00",
@@ -10691,6 +13472,24 @@
       "Temp": 26.7,
       "WindSpeed": 0.6,
       "WindDir": 114.0
+    },
+    {
+      "StationName": "外湖",
+      "StationId": "C0D690",
+      "Hour": "19:00",
+      "Rain": 0.0,
+      "Temp": 28.1,
+      "WindSpeed": 9.8,
+      "WindDir": 245.0
+    },
+    {
+      "StationName": "淡江大學蘭陽校園",
+      "StationId": "C0UB00",
+      "Hour": "19:00",
+      "Rain": 1.0,
+      "Temp": 24.2,
+      "WindSpeed": 1.0,
+      "WindDir": 264.0
     },
     {
       "StationName": "六塊厝",
@@ -10718,6 +13517,15 @@
       "Temp": 27.6,
       "WindSpeed": 3.1,
       "WindDir": 225.0
+    },
+    {
+      "StationName": "北關",
+      "StationId": "C0U880",
+      "Hour": "19:00",
+      "Rain": 0.5,
+      "Temp": 26.5,
+      "WindSpeed": 1.5,
+      "WindDir": 327.0
     },
     {
       "StationName": "板橋",
@@ -10774,13 +13582,76 @@
       "WindDir": 0.0
     },
     {
-      "StationName": "三貂角",
-      "StationId": "C0A970",
+      "StationName": "雙連埤",
+      "StationId": "C0U520",
+      "Hour": "19:00",
+      "Rain": 2.0,
+      "Temp": 22.2,
+      "WindSpeed": 0.8,
+      "WindDir": 230.0
+    },
+    {
+      "StationName": "頭城",
+      "StationId": "C0U860",
+      "Hour": "19:00",
+      "Rain": 0.5,
+      "Temp": 26.0,
+      "WindSpeed": 0.6,
+      "WindDir": 276.0
+    },
+    {
+      "StationName": "大礁溪",
+      "StationId": "C0U870",
+      "Hour": "19:00",
+      "Rain": 1.5,
+      "Temp": 23.2,
+      "WindSpeed": 0.0,
+      "WindDir": 0.0
+    },
+    {
+      "StationName": "礁溪",
+      "StationId": "C0U600",
+      "Hour": "19:00",
+      "Rain": 1.5,
+      "Temp": 26.3,
+      "WindSpeed": 0.2,
+      "WindDir": 0.0
+    },
+    {
+      "StationName": "龜山島",
+      "StationId": "C0U750",
       "Hour": "19:00",
       "Rain": 0.0,
-      "Temp": 27.0,
-      "WindSpeed": 1.0,
-      "WindDir": 303.0
+      "Temp": 24.6,
+      "WindSpeed": 3.2,
+      "WindDir": 93.0
+    },
+    {
+      "StationName": "鶯子嶺",
+      "StationId": "C0U950",
+      "Hour": "19:00",
+      "Rain": 3.0,
+      "Temp": 21.4,
+      "WindSpeed": 1.5,
+      "WindDir": 310.0
+    },
+    {
+      "StationName": "大福",
+      "StationId": "C0U970",
+      "Hour": "19:00",
+      "Rain": 1.0,
+      "Temp": 27.2,
+      "WindSpeed": 0.2,
+      "WindDir": 0.0
+    },
+    {
+      "StationName": "坪林石牌",
+      "StationId": "C0U980",
+      "Hour": "19:00",
+      "Rain": 1.5,
+      "Temp": 22.8,
+      "WindSpeed": 0.2,
+      "WindDir": 0.0
     },
     {
       "StationName": "中壢",
@@ -10790,6 +13661,24 @@
       "Temp": 27.7,
       "WindSpeed": 0.7,
       "WindDir": 107.0
+    },
+    {
+      "StationName": "關西",
+      "StationId": "C0D700",
+      "Hour": "19:00",
+      "Rain": 10.0,
+      "Temp": 26.6,
+      "WindSpeed": 0.6,
+      "WindDir": 284.0
+    },
+    {
+      "StationName": "桃源谷",
+      "StationId": "C0UA70",
+      "Hour": "19:00",
+      "Rain": 0.5,
+      "Temp": 23.6,
+      "WindSpeed": 1.5,
+      "WindDir": 347.0
     },
     {
       "StationName": "福山植物園",
@@ -10808,6 +13697,24 @@
       "Temp": 28.9,
       "WindSpeed": 1.2,
       "WindDir": 76.0
+    },
+    {
+      "StationName": "新豐",
+      "StationId": "C0D590",
+      "Hour": "19:00",
+      "Rain": 0.0,
+      "Temp": 27.1,
+      "WindSpeed": 0.8,
+      "WindDir": 199.0
+    },
+    {
+      "StationName": "竹東",
+      "StationId": "C0D560",
+      "Hour": "19:00",
+      "Rain": 0.0,
+      "Temp": 29.4,
+      "WindSpeed": 0.3,
+      "WindDir": 127.0
     },
     {
       "StationName": "平鎮",
@@ -10837,6 +13744,15 @@
       "WindDir": 0.0
     },
     {
+      "StationName": "湖口",
+      "StationId": "C0D650",
+      "Hour": "19:00",
+      "Rain": 0.0,
+      "Temp": 28.1,
+      "WindSpeed": 1.3,
+      "WindDir": 271.0
+    },
+    {
       "StationName": "龍潭",
       "StationId": "C0C670",
       "Hour": "19:00",
@@ -10844,6 +13760,15 @@
       "Temp": 26.9,
       "WindSpeed": 0.0,
       "WindDir": 0.0
+    },
+    {
+      "StationName": "新竹市東區",
+      "StationId": "C0D660",
+      "Hour": "19:00",
+      "Rain": 0.0,
+      "Temp": 28.2,
+      "WindSpeed": 2.2,
+      "WindDir": 261.0
     },
     {
       "StationName": "龜山",
@@ -11251,15 +14176,6 @@
       "WindDir": 210.0
     },
     {
-      "StationName": "彭佳嶼",
-      "StationId": "466950",
-      "Hour": "19:00",
-      "Rain": 0.0,
-      "Temp": 25.4,
-      "WindSpeed": 3.9,
-      "WindDir": 220.0
-    },
-    {
       "StationName": "新屋",
       "StationId": "467050",
       "Hour": "19:00",
@@ -11267,6 +14183,24 @@
       "Temp": 28.0,
       "WindSpeed": 4.6,
       "WindDir": 250.0
+    },
+    {
+      "StationName": "宜蘭",
+      "StationId": "467080",
+      "Hour": "19:00",
+      "Rain": 2.5,
+      "Temp": 27.0,
+      "WindSpeed": 2.5,
+      "WindDir": 220.0
+    },
+    {
+      "StationName": "新竹",
+      "StationId": "467571",
+      "Hour": "19:00",
+      "Rain": 0.0,
+      "Temp": 29.2,
+      "WindSpeed": 1.7,
+      "WindDir": 280.0
     },
     {
       "StationName": "桃改樹林分場",
@@ -11284,6 +14218,15 @@
       "Rain": 0.0,
       "Temp": 27.7,
       "WindSpeed": 2.5,
+      "WindDir": 250.0
+    },
+    {
+      "StationName": "桃改新埔分場",
+      "StationId": "72D680",
+      "Hour": "19:00",
+      "Rain": 0.0,
+      "Temp": 27.8,
+      "WindSpeed": 1.0,
       "WindDir": 250.0
     },
     {
@@ -11456,6 +14399,33 @@
       "Temp": 27.2,
       "WindSpeed": 1.3,
       "WindDir": 140.0
+    },
+    {
+      "StationName": "打鐵坑",
+      "StationId": "C2D480",
+      "Hour": "19:00",
+      "Rain": 0.0,
+      "Temp": 25.6,
+      "WindSpeed": 0.2,
+      "WindDir": 30.0
+    },
+    {
+      "StationName": "關西工作站",
+      "StationId": "C2D720",
+      "Hour": "19:00",
+      "Rain": 22.5,
+      "Temp": 26.3,
+      "WindSpeed": 0.5,
+      "WindDir": 50.0
+    },
+    {
+      "StationName": "巨埔",
+      "StationId": "C2D770",
+      "Hour": "19:00",
+      "Rain": 0.0,
+      "Temp": 27.1,
+      "WindSpeed": 0.9,
+      "WindDir": 120.0
     },
     {
       "StationName": "國一N013K",
@@ -11674,15 +14644,6 @@
       "WindDir": 300.0
     },
     {
-      "StationName": "拉拉山",
-      "StationId": "CAC040",
-      "Hour": "19:00",
-      "Rain": 17.0,
-      "Temp": 17.6,
-      "WindSpeed": 0.3,
-      "WindDir": 50.0
-    },
-    {
       "StationName": "西濱S023K",
       "StationId": "CAC050",
       "Hour": "19:00",
@@ -11717,6 +14678,105 @@
       "Temp": 26.3,
       "WindSpeed": 0.6,
       "WindDir": 330.0
+    },
+    {
+      "StationName": "國一N077K",
+      "StationId": "CAD020",
+      "Hour": "19:00",
+      "Rain": 0.0,
+      "Temp": 27.6,
+      "WindSpeed": 2.7,
+      "WindDir": 270.0
+    },
+    {
+      "StationName": "國一S082K",
+      "StationId": "CAD030",
+      "Hour": "19:00",
+      "Rain": 0.0,
+      "Temp": 28.3,
+      "WindSpeed": 2.4,
+      "WindDir": 240.0
+    },
+    {
+      "StationName": "國一S088K",
+      "StationId": "CAD040",
+      "Hour": "19:00",
+      "Rain": 0.0,
+      "Temp": 29.0,
+      "WindSpeed": 2.9,
+      "WindDir": 250.0
+    },
+    {
+      "StationName": "國一N094K",
+      "StationId": "CAD050",
+      "Hour": "19:00",
+      "Rain": 0.0,
+      "Temp": 29.0,
+      "WindSpeed": 1.3,
+      "WindDir": 240.0
+    },
+    {
+      "StationName": "國一S098K",
+      "StationId": "CAD060",
+      "Hour": "19:00",
+      "Rain": 0.0,
+      "Temp": 28.5,
+      "WindSpeed": 0.9,
+      "WindDir": 270.0
+    },
+    {
+      "StationName": "國三N085K",
+      "StationId": "CAD080",
+      "Hour": "19:00",
+      "Rain": 0.5,
+      "Temp": 26.3,
+      "WindSpeed": 0.6,
+      "WindDir": 140.0
+    },
+    {
+      "StationName": "國三S103K",
+      "StationId": "CAD090",
+      "Hour": "19:00",
+      "Rain": 0.0,
+      "Temp": 27.8,
+      "WindSpeed": 2.7,
+      "WindDir": 260.0
+    },
+    {
+      "StationName": "西濱N066K",
+      "StationId": "CAD100",
+      "Hour": "19:00",
+      "Rain": 0.0,
+      "Temp": 27.8,
+      "WindSpeed": 2.0,
+      "WindDir": 240.0
+    },
+    {
+      "StationName": "西濱S082K",
+      "StationId": "CAD110",
+      "Hour": "19:00",
+      "Rain": 0.0,
+      "Temp": 28.5,
+      "WindSpeed": 5.1,
+      "WindDir": 240.0
+    },
+    {
+      "StationName": "國三N077K",
+      "StationId": "CAD710",
+      "Hour": "19:00",
+      "Rain": 25.5,
+      "Temp": 26.3,
+      "WindSpeed": 0.6,
+      "WindDir": 10.0
+    },
+    {
+      "StationName": "國五S031K",
+      "StationId": "CAUB30",
+      "Hour": "19:00",
+      "Rain": 1.0,
+      "Temp": 26.3,
+      "WindSpeed": 1.8,
+      "WindDir": 200.0
     }
   ]
 }
