@@ -8,7 +8,7 @@ import xml.etree.ElementTree as ET
 from datetime import datetime, timedelta
 
 # ==========================================
-# 🌟 核心修正：改為接收 8 碼單一參數 (例如: 20260614)
+# 接收 8 碼單一參數 (例如: 20260614)
 # ==========================================
 if len(sys.argv) > 1 and len(sys.argv[1]) == 8:
     date_input = sys.argv[1] # 接收 GitHub Actions 傳來的 8 碼字串
@@ -24,17 +24,17 @@ OUTPUT_DIR = f"stn_archives/{Y}{M}{D}"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 print("=" * 80)
-print(f"🚀 觀測站歷史觀測數據下載與 Pandas 洗淨工廠 ➔ 目標日期：{Y}-{M}-{D}")
-print(f"📂 輸出封存路徑: {OUTPUT_DIR}")
+print(f"觀測站歷史觀測數據下載 ➔ 目標日期：{Y}-{M}-{D}")
+print(f"輸出路徑: {OUTPUT_DIR}")
 print("=" * 80)
 
 raw_data_records = []
 
 # ==========================================
-# 逐時 10:00 - 18:00 氣象站 XML 下載與解析
+# 逐時 10:00 - 19:00 氣象站 XML 下載與解析
 # ==========================================
 dt_10_18 = datetime(int(Y), int(M), int(D), 10, 0, 0)
-end_10_18 = datetime(int(Y), int(M), int(D), 18, 0, 0)
+end_10_18 = datetime(int(Y), int(M), int(D), 19, 0, 0)
 
 NS = "{urn:cwa:gov:tw:cwacommon:0.1}"
 
@@ -55,7 +55,7 @@ while dt_10_18 <= end_10_18:
                 county = county_node.text if county_node is not None else ""
                 
                 # ➔ 進行雙北地理篩選
-                if county in ["臺北市", "新北市"]:
+                if county in ["臺北市", "新北市", "基隆市", "桃園市"]:
                     st_name_node = st.find(f"./{NS}StationName")
                     st_id_node = st.find(f"./{NS}StationId")
                     
@@ -93,7 +93,7 @@ while dt_10_18 <= end_10_18:
                         "WindSpeed": w_speed,
                         "WindDir": w_dir
                     })
-            print(f"  [✓] 成功解析並洗淨 {hh}:00 觀測站 XML")
+            print(f"  [✓] Success: {hh}:00 觀測站 XML")
         else:
             print(f"  [⚪] {hh}:00 氣象署未回應 (HTTP {response.status_code})")
     except Exception as e:
@@ -121,7 +121,7 @@ top10_temp = df_temp.sort_values(by="Temp", ascending=False).head(10).to_dict(or
 # 逐時風向風速矩陣
 hourly_wind_matrix = df.to_dict(orient="records")
 
-# 🌟 核心防禦：確保轉換成 dict 後，所有的 NaN/NaT 通通被安全過濾成 JSON 接受的 None (Null)
+# 確保轉換成 dict 後，所有的 NaN/NaT 通通被安全過濾成 JSON 接受的 None (Null)
 def sanitize_for_json(obj):
     if isinstance(obj, list):
         return [sanitize_for_json(item) for item in obj]
@@ -148,5 +148,5 @@ with open(json_output_path, "w", encoding="utf-8") as f:
     json.dump(final_summary_json, f, ensure_ascii=False, indent=2)
 
 print("-" * 80)
-print(f"🎉 觀測站排行清洗完成！大氣數據已封存 ➔ {json_output_path}")
+print(f"SAVE ➔ {json_output_path}")
 print("=" * 80)
