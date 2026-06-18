@@ -5,7 +5,7 @@ from PIL import Image
 from io import BytesIO
 
 # ==========================================
-# 🌟 核心修正：改為接收 8 碼單一參數 (例如: 20260614)
+# 接收 8 碼單一參數 (例如: 20260614)
 # ==========================================
 if len(sys.argv) > 1 and len(sys.argv[1]) == 8:
     date_input = sys.argv[1] # 接收 GitHub Actions 傳來的 8 碼字串
@@ -22,10 +22,11 @@ os.makedirs(OUTPUT_DIR, exist_ok=True)
 # 🌟 自動換算：各個官方氣象網址所需要的日期代碼
 YYMMDD = f"{Y[2:]}{M}{D}"   # 兩碼年份，例如 "260614"
 YYYYMMDD = f"{Y}{M}{D}"     # 四碼年份，例如 "20260614"
+YYYY_MM_DD = f"{Y}-{M}-{D}" # 帶有連字號的年份，例如 "2026-06-14"
 
 print("=" * 80)
-print(f"☁️  綜觀天氣牆與大氣熱力探空抓取工廠啟動 ➔ 目標日期：{Y}-{M}-{D} 00UTC (08:00 LST)")
-print(f"📂 輸出封存路徑: {OUTPUT_DIR}")
+print(f"目標日期：{Y}-{M}-{D} 00UTC (08:00 LST)")
+print(f"輸出路徑: {OUTPUT_DIR}")
 print("=" * 80)
 
 # ==========================================
@@ -69,7 +70,7 @@ def download_static_map(primary_url, fallback_url, output_name, label):
                 img = Image.open(BytesIO(content))
                 img.save(out_path, "PNG")
             else:
-                # 其他 gif 檔案直接二進位寫入
+                # 其他 gif/jpg 檔案直接二進位寫入
                 with open(out_path, "wb") as f:
                     f.write(content)
             print(f"      ➔ 檔案已安全寫入：{output_name}")
@@ -77,13 +78,18 @@ def download_static_map(primary_url, fallback_url, output_name, label):
             print(f"  [❌] {label} ➔ 磁碟寫入或格式轉換失敗: {e}")
 
 # ==========================================
-# 🚀 開始派發大氣環境場抓取任務
+# Start
 # ==========================================
+
+# ➔ g-0. 今日日累積雨量圖 (19:30 LST 收網存檔)
+url_rainfall_pri = f"https://www.cwa.gov.tw/Data/rainfall/{YYYY_MM_DD}_1930.QZJ8.jpg"
+url_rainfall_fal = f"http://140.137.32.27/www/rainda/{Y}/{M}/{D}/{YYYYMMDD}_1930.cwbrain.rainda2.jpg"
+download_static_map(url_rainfall_pri, url_rainfall_fal, "daily_rainfall_1930.jpg", "日累積雨量觀測圖(19:30)")
 
 # ➔ g-1. 台北 46692 探空圖
 url_skewt_46692_pri = f"https://npd1.cwa.gov.tw/NPD/irisme_data/Weather/SKEWT/SKW___000_{YYMMDD}00_46692.gif"
-url_skewt_46692_fal = f"http://140.137.32.27/www/skw2/{Y}/{M}/{D}/{YYYYMMDD}_0000.46692.skw.jpg"
-download_static_map(url_skewt_46692_pri, url_skewt_46692_fal, "skewt_taipei.gif", "台北站探空圖 (46692)")
+url_skewt_46695_fal = f"http://140.137.32.27/www/skw2/{Y}/{M}/{D}/{YYYYMMDD}_0000.46692.skw.jpg"
+download_static_map(url_skewt_46692_pri, url_skewt_46695_fal, "skewt_taipei.gif", "台北站探空圖 (46692)")
 
 # ➔ g-2. 彭佳嶼 46695 探空圖
 url_skewt_46695_pri = f"https://npd1.cwa.gov.tw/NPD/irisme_data/Weather/SKEWT/SKW___000_{YYMMDD}00_46695.gif"
@@ -106,5 +112,5 @@ url_500_fal = f"http://140.137.32.27/www/cwbmap/{Y}/{M}/{D}/{YYYYMMDD}_0000.cwbm
 download_static_map(url_500_pri, url_500_fal, "synoptic_500.gif", "500hPa高空綜觀環境")
 
 print("=" * 80)
-print(f"🎉 綜觀大氣牆環境圖資封存完畢！")
+print(f"Success！")
 print("=" * 80)
