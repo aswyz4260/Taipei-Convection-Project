@@ -50,17 +50,42 @@ while dt_10_18 <= end_10_18:
             stations = root.findall(f".//{NS}Station")
             
             for st in stations:
-                # 縣市名稱 (GeoInfo -> CountyName)
-                county_node = st.find(f"./{NS}GeoInfo/{NS}CountyName")
-                county = county_node.text if county_node is not None else ""
+                lat = None; lon = None  # WGS84
                 
-                # ➔ 進行雙北地理篩選
-                if county in ["臺北市", "新北市", "基隆市", "桃園市"]:
+                coordinates_list = st.findall(f"./{NS}GeoInfo/{NS}Coordinates")
+                for coord in coordinates_list:
+                    coord_name_node = coord.find(f"./{NS}CoordinateName")
+                    if coord_name_node is not None and coord_name_node.text == "WGS84":
+                        lat_node = coord.find(f"./{NS}StationLatitude")
+                        lon_node = coord.find(f"./{NS}StationLongitude")
+                        try:
+                            lat = float(lat_node.text) if lat_node is not None else None
+                            lon = float(lon_node.text) if lon_node is not None else None
+                        except:
+                            pass
+                        break  # 找到 WGS84 後直接跳出小迴圈
+                
+                # 萬一找不到標記 WGS84 的節點，預設抓第一個 Coordinates 作為備援
+                if (lat is None or lon is None) and len(coordinates_list) > 0:
+                    try:
+                        lat = float(coordinates_list[0].find(f"./{NS}StationLatitude").text)
+                        lon = float(coordinates_list[0].find(f"./{NS}StationLongitude").text)
+                    except:
+                        continue  # 徹底無經緯度資料，跳過該站
+                
+                if lat is None or lon is None:
+                    continue
+
+                LAT_NORTH = 25.30; LAT_SOUTH = 24.75
+                LON_WEST = 120.90; LON_EAST = 122.00
+
+                # 經緯度範圍篩選 (LAT_SOUTH <= lat <= LAT_NORTH)
+                if (LAT_SOUTH <= lat <= LAT_NORTH) and (LON_WEST <= lon <= LON_EAST):
                     st_name_node = st.find(f"./{NS}StationName")
                     st_id_node = st.find(f"./{NS}StationId")
                     
                     st_name = st_name_node.text if st_name_node is not None else "未知"
-                    st_id = st_id_node.text if st_id_node is not None else ""
+                    st_id = st_id_node.text if st_id_node is not None else ""         
                     
                     # 累積雨量
                     rain_node = st.find(f"./{NS}WeatherElement/{NS}Now/{NS}Precipitation")
