@@ -222,14 +222,14 @@
 
         <div class="side-chart-panel">
             <div class="chart-box">
-                <div class="chart-title" id="title-chart-rain">🌡️ ⛈️ 溫雨時序對照圖 (請先在右上角選擇日期)</div>
+                <div class="chart-title" id="title-chart-rain">🌡️ ⛈️ 溫度雨量時序圖 (請先在右上角選擇日期)</div>
                 <div class="chart-canvas-wrapper">
                     <canvas id="canvas-rain-temp"></canvas>
                 </div>
             </div>
             
             <div class="chart-box">
-                <div class="chart-title" id="title-chart-wind">🍃 🧭 風場時序對照圖 (請先在右上角選擇日期)</div>
+                <div class="chart-title" id="title-chart-wind">🍃 🧭 風場變化時序圖 (請先在右上角選擇日期)</div>
                 <div class="chart-canvas-wrapper">
                     <canvas id="canvas-wind"></canvas>
                 </div>
@@ -368,8 +368,8 @@
                     console.log(`✅ ${dateStr} 資料夾對接成功。`);
                     
                     if (!selectedStationId) {
-                        document.getElementById('title-chart-rain').innerText = `🌡️ ⛈️ 溫雨時序對照圖 (請點擊地圖測站)`;
-                        document.getElementById('title-chart-wind').innerText = `🍃 🧭 風場時序對照圖 (請點擊地圖測站)`;
+                        document.getElementById('title-chart-rain').innerText = `🌡️ ⛈️ 溫度雨量時序圖 (請點擊地圖測站)`;
+                        document.getElementById('title-chart-wind').innerText = `🍃 🧭 風場變化時序圖 (請點擊地圖測站)`;
                     } else {
                         updateCharts(selectedStationId, selectedStationName);
                     }
@@ -513,9 +513,9 @@
 
             const titleRain = document.getElementById('title-chart-rain');
             const titleWind = document.getElementById('title-chart-wind');
-            titleRain.innerText = `🌡️ ⛈️ 溫雨對照曲線 - ${stationName} (${stationId})`;
+            titleRain.innerText = `🌡️ ⛈️ 溫度雨量時序 - ${stationName} (${stationId})`;
             titleRain.style.color = "#0084ff";
-            titleWind.innerText = `🍃 🧭 風場時序對照 - ${stationName} (${stationId})`;
+            titleWind.innerText = `🍃 🧭 風場變化時序 - ${stationName} (${stationId})`;
             titleWind.style.color = "#0084ff";
 
             if (chartRainTempInstance) chartRainTempInstance.destroy();
