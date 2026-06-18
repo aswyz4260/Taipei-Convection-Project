@@ -31,10 +31,10 @@ print("=" * 80)
 raw_data_records = []
 
 # ==========================================
-# 逐時 10:00 - 19:00 氣象站 XML 下載與解析
+# 🌟 需求 1：資料範圍改為 09:00 - 19:00 逐時 XML 下載與解析
 # ==========================================
-dt_10_18 = datetime(int(Y), int(M), int(D), 10, 0, 0)
-end_10_18 = datetime(int(Y), int(M), int(D), 19, 0, 0)
+dt_10_18 = datetime(int(Y), int(M), int(D), 9, 0, 0)   # 起點改為 09:00
+end_10_18 = datetime(int(Y), int(M), int(D), 19, 0, 0) # 終點維持 19:00
 
 NS = "{urn:cwa:gov:tw:cwacommon:0.1}"
 
@@ -87,7 +87,7 @@ while dt_10_18 <= end_10_18:
                     st_name = st_name_node.text if st_name_node is not None else "未知"
                     st_id = st_id_node.text if st_id_node is not None else ""         
                     
-                    # 累積雨量
+                    # 累積雨量 (此時抓出來的是氣象局當日總累積)
                     rain_node = st.find(f"./{NS}WeatherElement/{NS}Now/{NS}Precipitation")
                     try:
                         rain = float(rain_node.text) if rain_node is not None else 0.0
@@ -135,18 +135,39 @@ if not raw_data_records:
 
 df = pd.DataFrame(raw_data_records)
 
-# 總累積雨量 Top 10
-df_rain = df.groupby(["StationName", "StationId"])["Rain"].sum().reset_index()
-top10_rain = df_rain.sort_values(by="Rain", ascending=False).head(10).to_dict(orient="records")
+# ------------------------------------------------------
+# 雨量排行榜直接過濾「19:00」的定格累積雨量來比較
+# ------------------------------------------------------
+df_19 = df[df["Hour"] == "19:00"].copy()
 
-# 當日最高氣溫 Top 10
+if not df_19.empty:
+    # 既然已經過濾出 19:00，這一列的 Rain 就是當天最終累積雨量，直接排序
+    top10_rain = df_19.sort_values(by="Rain", ascending=False).head(10)[["StationName", "StationId", "Rain"]].to_dict(orient="records")
+else:
+    # 萬一不幸 19:00 API 斷線沒抓到資料，自動啟動備援：取這段時間內的測站最大累積量
+    print("⚠️ 警告：未偵測到 19:00 資料，自動啟用備援最大值進行雨量排行。")
+    df_rain_fallback = df.groupby(["StationName", "StationId"])["Rain"].max().reset_index()
+    top10_rain = df_rain_fallback.sort_values(by="Rain", ascending=False).head(10).to_dict(orient="records")
+
+# 當日最高氣溫 Top 10 (維持全時段最高溫篩選)
 df_temp = df.groupby(["StationName", "StationId"])["Temp"].max().reset_index()
 top10_temp = df_temp.sort_values(by="Temp", ascending=False).head(10).to_dict(orient="records")
 
-# 逐時風向風速矩陣
-hourly_wind_matrix = df.to_dict(orient="records")
+# ------------------------------------------------------
+# 先依照測站 ID 分組，再讓累積雨量減去前一小時的累積雨量
+df['HourlyRain'] = df.groupby('StationId')['Rain'].diff()
 
-# 確保轉換成 dict 後，所有的 NaN/NaT 通通被安全過濾成 JSON 接受的 None (Null)
+# 防呆機制：萬一氣象署儀器中途 reset 導致算出來變負數，校正回 0
+df['HourlyRain'] = df['HourlyRain'].clip(lower=0)
+
+df_hourly = df.dropna(subset=['HourlyRain']).copy()
+
+# 把算好的淨時雨量覆蓋回原本的 'Rain' 欄位，無縫對齊前端網頁規格
+df_hourly['Rain'] = df_hourly['HourlyRain']
+
+hourly_matrix = df_hourly[["StationName", "StationId", "Hour", "Rain", "Temp", "WindSpeed", "WindDir"]].to_dict(orient="records")
+
+# 確保轉換成 dict 後，所有的 NaN 通通被安全過濾成 JSON 接受的 None (Null)
 def sanitize_for_json(obj):
     if isinstance(obj, list):
         return [sanitize_for_json(item) for item in obj]
@@ -157,7 +178,7 @@ def sanitize_for_json(obj):
     else:
         return obj
 
-# 打包成網頁前端（cases.html 與 index.html）指定要吃的規格
+# 打包成網頁前端指定吃的規格
 final_summary_json = {
     "meta": {
         "target_date": f"{Y}-{M}-{D}",
@@ -165,7 +186,7 @@ final_summary_json = {
     },
     "top10_precipitation": sanitize_for_json(top10_rain),
     "top10_max_temperature": sanitize_for_json(top10_temp),
-    "hourly_wind_data": sanitize_for_json(hourly_wind_matrix)
+    "hourly_wind_data": sanitize_for_json(hourly_matrix)
 }
 
 json_output_path = os.path.join(OUTPUT_DIR, "stations_summary.json")
