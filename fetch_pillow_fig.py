@@ -6,7 +6,7 @@ from io import BytesIO
 from datetime import datetime, timedelta
 
 # ==========================================
-# 🌟 核心修正：改為接收 8 碼單一參數 (例如: 20260614)
+# 接收 8 碼單一參數 (例如: 20260614)
 # ==========================================
 if len(sys.argv) > 1 and len(sys.argv[1]) == 8:
     date_input = sys.argv[1] # 接收 GitHub Actions 傳來的 8 碼字串
@@ -94,11 +94,11 @@ while dt_10_18 <= end_10_18:
 print("-" * 80)
 
 # ==========================================
-# 任務 C 迴圈：台灣時間 09:00 - 15:00 (🌟 修正：每半小時，儲存為 .png)
+# 任務 C 迴圈：台灣時間 08:00 - 18:00
 # ==========================================
 print("\n🌡️ 正在處理：[c-1.時雨量風場] 與 [c-2.溫度分布風場] (30分鐘步進)...")
-dt_09_15 = datetime(int(Y), int(M), int(D), 9, 0, 0)
-end_09_15 = datetime(int(Y), int(M), int(D), 15, 0, 0)
+dt_09_15 = datetime(int(Y), int(M), int(D), 8, 0, 0)
+end_09_15 = datetime(int(Y), int(M), int(D), 18, 0, 0)
 
 while dt_09_15 <= end_09_15:
     hhmm = dt_09_15.strftime("%H%M")
