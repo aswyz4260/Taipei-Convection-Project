@@ -22,14 +22,14 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: 執行大氣表單解析
+      - name: 執行回報表單解析
         env:
           ISSUE_TITLE: ${{ github.event.issue.title }}
           ISSUE_BODY: ${{ github.event.issue.body }}
         run: |
           python parse_review.py
 
-      - name: 自動將解析好的 JSON 報告推回倉庫
+      - name: 自動將解析好的 JSON 報告推回
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action Bot"
