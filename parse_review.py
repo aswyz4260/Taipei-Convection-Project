@@ -13,12 +13,12 @@ def parse_github_issue():
         date_match = re.search(r"\d{4}-\d{2}-\d{2}", issue_body)
     
     if not date_match:
-        print("❌ 錯誤：無法從 Issue 標題或內文中識別個案日期！")
+        print("錯誤：無法從 Issue 標題或內文中識別個案日期！")
         return
     
     case_date = date_match.group(0)
     date_str = case_date.replace("-", "")
-    print(f"📅 開始解析個案日期: {case_date}")
+    print(f"開始解析個案日期: {case_date}")
 
     # 初始化最終要匯入網頁的 JSON 結構
     result = {
@@ -64,21 +64,21 @@ def parse_github_issue():
         elif "選擇欲記錄/留存的雨量風向圖時間點" in header:
             # Dropdown 多選會輸出成像 "09:00, 09:30, 10:00" 這樣的字串
             times = [t.strip() for l in content_lines for t in l.split(",") if t.strip()]
-            result["rain_wind_evolution"]["times"] = times
+            result["rain_wind_evolution"]["times"] = sorted(times)
         elif "降雨與風場逐時變化總結描述" in header and content:
             result["rain_wind_evolution"]["summary"] = content
             
         # 4. 溫度逐時分布變化
         elif "選擇欲記錄/留存的溫度風向圖時間點" in header:
             times = [t.strip() for l in content_lines for t in l.split(",") if t.strip()]
-            result["temp_wind_evolution"]["times"] = times
+            result["temp_wind_evolution"]["times"] = sorted(times)
         elif "溫度逐時變化總結描述" in header and content:
             result["temp_wind_evolution"]["summary"] = content
             
         # 5. 雷達與降雨發展史
         elif "選擇欲記錄/留存的雷達與落雷關鍵時間點" in header:
             times = [t.strip() for l in content_lines for t in l.split(",") if t.strip()]
-            result["radar_lgt_evolution"]["times"] = times
+            result["radar_lgt_evolution"]["times"] = sorted(times)
         elif "雷達回波與閃電落雷演變總結描述" in header and content:
             result["radar_lgt_evolution"]["summary"] = content
 
@@ -88,7 +88,7 @@ def parse_github_issue():
     with open(f"{target_dir}/review_summary.json", "w", encoding="utf-8") as f:
         json.dump(result, f, ensure_ascii=False, indent=4)
         
-    print(f"報告已安全封存至 {target_dir}/review_summary.json")
+    print(f"報告已儲存至 {target_dir}/review_summary.json")
 
 if __name__ == "__main__":
     parse_github_issue()
