@@ -140,5 +140,5 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "CWA-Data-Bot"
           git add radar_archives/ sfc_archives/ stn_archives/ cwaFig_archives/
-          git commit -m "自動化封存個案圖資成果 [Date: ${{ env.RUN_DATE }}] [Mode: ${{ env.RUN_MODE }}]" || exit 0
+          git commit -m "Download Complete! [Date: ${{ env.RUN_DATE }}] [Mode: ${{ env.RUN_MODE }}]" || exit 0
           git push
