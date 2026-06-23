@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>北台灣午後對流監測系統 - 觀測站首頁</title>
+    <title>北台灣午後對流監測系統 - 觀測站地圖</title>
     
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -210,8 +210,8 @@
             <div class="dropdown">
                 <span class="nav-link">🌐 網站資源 ▾</span>
                 <div class="dropdown-content">
-                    <a href="https://codis.cwa.gov.tw/StationData" target="_blank">🏛️ 氣象署 CODIS</a>
-                    <a href="http://140.137.32.27/www/catalog/" target="_blank">🎓 大氣水文資料庫</a>
+                    <a href="https://codis.cwa.gov.tw/StationData" target="_blank">🏛️ 中央氣象署 CODIS</a>
+                    <a href="http://140.137.32.27/www/catalog/" target="_blank">☔ 大氣水文資料庫</a>
                 </div>
             </div>
         </div>
@@ -295,7 +295,7 @@
             defaultOpt.hidden = true;
             select.appendChild(defaultOpt);
             
-            // 🌟 啟動非同步動態讀取 stn_archives 資料夾
+            // 啟動非同步動態讀取 stn_archives 資料夾
             fetchGitHubArchives(select, defaultOpt);
             
             select.onchange = (e) => loadTargetDateData(e.target.value);
@@ -303,7 +303,7 @@
         };
         dateControl.addTo(map);
 
-        // 🌟 新增：透過 GitHub API 自動抓取有實體資料的日期
+        // 透過 GitHub API 自動抓取有實體資料的日期
         async function fetchGitHubArchives(selectElement, defaultOptionElement) {
             const repoOwner = "aswyz4260";
             const repoName = "Taipei-Convection-Project";
@@ -340,11 +340,11 @@
                     selectElement.appendChild(opt);
                 });
                 
-                console.log("✅ 右上角日期選單動態同步成功！總計上架個案數：", folders.length);
+                console.log("右上角日期選單動態同步成功！總計上架個案數：", folders.length);
                 
             } catch (error) {
                 console.error("無法動態讀取 stn_archives 目錄:", error);
-                defaultOptionElement.text = "❌ 自動上架引擎故障";
+                defaultOptionElement.text = "❌ 自動上架異常";
             }
         }
 
@@ -356,7 +356,7 @@
         // ========================================================
         function loadTargetDateData(dateStr) {
             currentSelectedDate = dateStr;
-            console.log(`📡 使用者手動點選，開始連線倉庫: stn_archives/${dateStr}/`);
+            console.log(`使用者手動點選，開始連線倉庫: stn_archives/${dateStr}/`);
             
             fetch(`./stn_archives/${dateStr}/stations_summary.json`)
                 .then(res => {
@@ -365,7 +365,7 @@
                 })
                 .then(payload => {
                     rawHourlyData = payload.hourly_wind_data || [];
-                    console.log(`✅ ${dateStr} 資料夾對接成功。`);
+                    console.log(` ${dateStr} 資料夾對接成功。`);
                     
                     if (!selectedStationId) {
                         document.getElementById('title-chart-rain').innerText = `🌡️ ⛈️ 溫度雨量時序圖 (請點擊地圖測站)`;
@@ -375,7 +375,7 @@
                     }
                 })
                 .catch(err => {
-                    console.warn(`⚠️ 讀取數據失敗: ${err.message}`);
+                    console.warn(`讀取數據失敗: ${err.message}`);
                     rawHourlyData = [];
                     if (selectedStationId) updateCharts(selectedStationId, selectedStationName);
                 });
@@ -496,7 +496,7 @@
         }
 
         // ========================================================
-        // 7. 🧠 數據刷新驅動器
+        // 7. 數據刷新驅動
         // ========================================================
         function updateCharts(stationId, stationName) {
             selectedStationId = stationId;
