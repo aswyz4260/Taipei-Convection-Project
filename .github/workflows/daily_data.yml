@@ -1,15 +1,15 @@
-name: ⛈️ 午後對流個案圖資自動抓取與儲存
+name: Auto-Fetch Afternoon Convection Data
 
 on:
   # ------------------------------------------------------
-  # ⚙️ 1. 定時執行排程 (台灣時間 = UTC + 8 小時)
+  # 1. 定時執行排程 (台灣時間 = UTC + 8 小時)
   # ------------------------------------------------------
   schedule:
-    - cron: '37 11 * * *'  # 📌 常規排程：每天台灣時間 19:37 (UTC 11:37) -> 處理「當日」個案
-    - cron: '21 16 * * *'  # 📌 修正：每天台灣時間 00:21 (UTC 16:21) -> 處理「昨日」補圖
+    - cron: '37 11 * * *'  # 每天台灣時間 19:37 (UTC 11:37) -> 處理「當日」個案
+    - cron: '21 16 * * *'  # 每天台灣時間 00:21 (UTC 16:21) -> 處理「昨日」補圖
 
   # ------------------------------------------------------
-  # 🕹️ 2. 手動觸發分流控制器 (支援判定模式與強行打包模式)
+  # 2. 手動觸發 (判定模式與強行打包模式)
   # ------------------------------------------------------
   workflow_dispatch:
     inputs:
@@ -26,10 +26,10 @@ on:
           - 'run_triggered'
           - 'force_download'
 
-# 🔒 需求 3：並發限制鎖（同時間只能跑一個任務，後來的會自動排隊，避免並行衝突）
+# 3. 並發限制（同時間只能跑一個任務，後來的會自動排隊，避免並行衝突）
 concurrency:
   group: cwa-data-pipeline
-  cancel-in-progress: false  # 設定為 false，代表後來的任務會「排隊」，不會把前面的任務踢掉
+  cancel-in-progress: false  # 設定為 false，代表後來的任務不會把前面的任務踢掉
 
 jobs:
   build-and-run:
@@ -58,31 +58,31 @@ jobs:
           echo "SKIP_RUN=false" >> $GITHUB_ENV
           
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            # 🕹️ A. 手動模式：直接吃輸入的日期
+            # A. 手動模式：直接吃輸入的日期
             echo "RUN_DATE=${{ github.event.inputs.target_date }}" >> $GITHUB_ENV
             echo "RUN_MODE=${{ github.event.inputs.run_mode }}" >> $GITHUB_ENV
             
           else
-            # ⏰ B. 定時器模式：改用精準的觸發事件時間判斷
+            # B. 定時器模式：改用精準的觸發事件時間判斷
             TRIGGER_CRON="${{ github.event.schedule }}"
             echo "目前定時器觸發源：$TRIGGER_CRON"
             
             if [ "$TRIGGER_CRON" = "21 16 * * *" ]; then
-              # 🌙 凌晨 00:21 補圖任務 (精準抓取「昨天」的日期)
+              # 凌晨 00:21 補圖 (抓取昨天的日期)
               TW_YESTERDAY=$(date -d "+8 hours -1 day" +"%Y%m%d")
               echo "跨日定時器啟動，目標為昨日個案：$TW_YESTERDAY"
               
               if [ -d "stn_archives/$TW_YESTERDAY" ]; then
-                echo "✅ 昨日下午判定成功！資料夾存在，啟動深夜強制補圖。"
+                echo "昨日下午資料夾存在，啟動強制補圖。"
                 echo "RUN_DATE=$TW_YESTERDAY" >> $GITHUB_ENV
                 echo "RUN_MODE=force_download" >> $GITHUB_ENV
               else
-                echo "🛑 昨日下午未達指標，不執行補圖。"
+                echo "昨日下午未達指標，不執行補圖。"
                 echo "SKIP_RUN=true" >> $GITHUB_ENV
               fi
               
             else
-              # ☀️ 19:37 常規檢測：
+              # 19:37 常規檢測：
               RAW_HOUR=$(date -d "+8 hours" +%H)
               CURRENT_HOUR=$(echo "$RAW_HOUR" | sed 's/^0//')
               # 萬一剛好是 00 點，經 sed 去零後會變成空字串，補回 0
@@ -92,7 +92,7 @@ jobs:
               
               if [ $CURRENT_HOUR -lt 19 ]; then
                 TW_TODAY=$(date -d "+8 hours -1 day" +"%Y%m%d")
-                echo "⚠️ 警告：偵測到當前小時為 $CURRENT_HOUR，小於 19 點！19:37 檢測發生跨日延遲，自動回退日期至：$TW_TODAY"
+                echo "警告：偵測到當前小時為 $CURRENT_HOUR，檢測發生跨日延遲，自動回退日期至：$TW_TODAY"
               else
                 TW_TODAY=$(date -d "+8 hours" +"%Y%m%d")
                 echo "常規檢測順利在當日執行（當前小時：$CURRENT_HOUR），鎖定今日日期：$TW_TODAY"
@@ -104,17 +104,17 @@ jobs:
           fi
 
       # ------------------------------------------------------
-      # 🎯 模式 A：雷達指標判定
+      # 模式 A：雷達指標判定
       # ------------------------------------------------------
-      - name: ⛈️ [模式 A] 啟動雷達指標判定
+      - name: 📡 [模式 A] 啟動雷達指標判定
         if: ${{ env.SKIP_RUN != 'true' && env.RUN_MODE == 'run_triggered' }}
         run: |
           python triggered.py ${{ env.RUN_DATE }}
 
       # ------------------------------------------------------
-      # 🏭 三大工廠生產線
+      # 圖片下載
       # ------------------------------------------------------
-      - name: 🏭 [模式 B-1] 雷達/閃電/地面中尺度
+      - name: ⚡️ [模式 B-1] 雷達/閃電/地面
         if: ${{ env.SKIP_RUN != 'true' && success() }}
         run: |
           python fetch_pillow_fig.py ${{ env.RUN_DATE }}
@@ -130,10 +130,8 @@ jobs:
         run: |
           python fetch_cwa_fig.py ${{ env.RUN_DATE }}
 
-      # ------------------------------------------------------
-      # 💾 終點站：圖資與數據自動 Commit 封存回倉庫
-      # ------------------------------------------------------
-      - name: 🚀 將收割之圖資與數據自動 Commit 封存回倉庫
+      # -------------------------------------------------------
+      - name: 自動 Commit 封存
         if: ${{ env.SKIP_RUN != 'true' && success() }}
         run: |
           # 先行拉取防衝突（以 GitHub 雲端為主）
