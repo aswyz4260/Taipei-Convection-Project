@@ -207,8 +207,10 @@ body:
       label: 個案天氣型態分類
       description: 請根據當日綜觀天氣場與對流觸發機制，選擇最符合的科學分類。
       options:
-        - "1. 弱綜觀午後對流"
-        - "2. 其他天氣系統影響+午後對流"
-        - "3. 非午後對流(鋒面或其他天氣系統導致之降雨事件)"
+        - "弱綜觀/局地熱力主導型 (Pure Synoptic-Scale Weak Forcing)"
+        - "鋒面系統影響型 - 滯留/梅雨鋒 (Frontal System - Stationary/Meiyu Front)"
+        - "鋒面系統影響型 - 冷鋒 (Frontal System - Cold Front)"
+        - "熱帶低壓系統影響型 (Tropical System Influenced)"
+        - "非午後熱力對流型 (Non-Diurnal / Synoptic Forcing)"
     validations:
       required: true
