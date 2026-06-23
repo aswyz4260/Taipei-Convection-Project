@@ -15,7 +15,7 @@
             background-color: #f8fafc;
         }
 
-        /* 🌐 現代化極簡導覽列 */
+        /* 導覽列 */
         .navbar {
             background-color: #ffffff;
             display: flex;
@@ -246,7 +246,7 @@
             margin-bottom: 12px;
         }
 
-        /* ⏳ 新增：計時器文字樣式 */
+        /* 計時器文字樣式 */
         .timer-text {
             font-size: 13px;
             color: #64748b;
@@ -280,8 +280,8 @@
             <div class="dropdown">
                 <span class="nav-link">🌐 外部資源 ▾</span>
                 <div class="dropdown-content">
-                    <a href="https://codis.cwa.gov.tw/StationData" target="_blank">🏛️ 氣象署 CODIS</a>
-                    <a href="http://140.137.32.27/www/catalog/" target="_blank">🎓 大氣水文資料庫</a>
+                    <a href="https://codis.cwa.gov.tw/StationData" target="_blank">🏛️ 中央氣象署 CODIS</a>
+                    <a href="http://140.137.32.27/www/catalog/" target="_blank">☔ 大氣水文資料庫</a>
                 </div>
             </div>
         </div>
@@ -343,8 +343,8 @@
         const WORKFLOW_ID = "daily_data.yml"; 
 
         let pollingInterval = null; 
-        let timerInterval = null; // 🌟 計時器專用計時變數
-        let secondsElapsed = 0;   // 🌟 累計秒數
+        let timerInterval = null; // 計時器專用計時變數
+        let secondsElapsed = 0;   // 累計秒數
 
         window.onload = function() {
             const savedToken = localStorage.getItem("gh_token");
@@ -363,7 +363,7 @@
             localStorage.setItem("gh_token", token);
         }
 
-        // 🌟 格式化秒數為 分:秒
+        // 格式化秒數為 分:秒
         function formatTime(totalSeconds) {
             const mins = String(Math.floor(totalSeconds / 60)).padStart(2, '0');
             const secs = String(totalSeconds % 60).padStart(2, '0');
@@ -429,7 +429,7 @@
                     timerContainer.innerText = formatTime(0);
                     monitor.style.display = "block";
 
-                    // 🌟 啟動計時器（每秒跑一次）
+                    // 啟動計時器（每秒跑一次）
                     timerInterval = setInterval(() => {
                         secondsElapsed++;
                         timerContainer.innerText = formatTime(secondsElapsed);
@@ -481,7 +481,7 @@
                         badge.className = "status-badge badge-in-progress";
                     } 
                     else if (status === "completed") {
-                        // 🌟 任務完成，立刻按死計時器與輪詢
+                        // 任務完成，停止計時器與輪詢
                         clearInterval(pollingInterval); 
                         clearInterval(timerInterval);
                         btn.disabled = false; 
