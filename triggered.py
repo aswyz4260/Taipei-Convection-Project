@@ -118,17 +118,17 @@ for result in time_series_results:
 # ==========================================
 print("-" * 70)
 if is_triggered:
-    print(f"\n🔥 [判定成功] {Y}-{M}-{D}")
+    print(f"\n🟢 [判定成功] {Y}-{M}-{D}")
     print("通知 GitHub Actions 繼續進行後續打包！")
     print("=" * 80)
-    sys.exit(0) # 🟢 達標：保持 SKIP_RUN=false，產線繼續開工
+    sys.exit(0)
 else:
-    print(f"\n🟢 [未達標準] {Y}-{M}-{D} ")
-    print("透過環境變數安全SKIP。通知 GitHub Actions 跳過今日自動打包步驟。")
+    print(f"\n🟡 [未達標準] {Y}-{M}-{D} ")
+    print("SKIP。通知 GitHub Actions 跳過今日自動打包步驟。")
     print("=" * 80)
     
     if "GITHUB_ENV" in os.environ:
         with open(os.environ["GITHUB_ENV"], "a") as f:
             f.write("SKIP_RUN=true\n")
             
-    sys.exit(0) # 🔴 但不是ERROR
+    sys.exit(0) # 不是Error!!!
