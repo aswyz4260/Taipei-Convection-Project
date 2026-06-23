@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>北台灣午後對流監測系統 - 歷史個案庫</title>
+    <title>北台灣午後對流監測系統 - 個案資料庫</title>
     <style>
         body, html {
             margin: 0;
@@ -252,7 +252,7 @@
             border: 1px solid #333;
         }
         
-        /* 🌟 新增：單張雨量圖寬度優化展示牆 */
+        /* 單張雨量圖寬度優化展示牆 */
         .single-rainfall-wall {
             display: flex;
             justify-content: center;
@@ -472,7 +472,7 @@
                 </div>
                 
                 <div class="panel-box">
-                    <h3>a. 10-18 LST 雷達回波與閃電落雷 (左右同步對照)</h3>
+                    <h3>a. 10-18 LST 雷達回波與閃電落雷 (左右同步顯示)</h3>
                     <div class="player-dashboard">
                         <div class="dashboard-row-1">
                             <button id="play-btn" style="padding: 6px 16px; cursor:pointer; font-weight:bold;">▶ 播放</button>
@@ -497,11 +497,11 @@
                 </div>
 
                 <div class="panel-box">
-                    <h3>b. 08-18 LST 地面場 analysis演變</h3>
+                    <h3>b. 08-18 LST 地面場</h3>
                     
                     <div class="player-dashboard" style="background: #1e2530; padding: 12px 15px;">
                         <div class="dashboard-row-1">
-                            <span class="mini-label" style="font-size:13px; color:#ffeb3b;">🕙 整點滑桿：</span>
+                            <span class="mini-label" style="font-size:13px; color:#ffeb3b;"> 整點 </span>
                             <input type="range" id="time-range-sfc-hour" class="time-slider" min="0" max="10" value="7"> <span id="time-val-sfc-hour" class="time-display" style="color:#ffeb3b; min-width:80px;">14:00</span>
                         </div>
                     </div>
@@ -512,7 +512,7 @@
                             <img id="sfc-rain-viewer" class="radar-screen" src="" alt="雨量風向圖載入中..." onclick="openLightbox(this.src)">
                             
                             <div class="mini-control-box">
-                                <span class="mini-label">🕙 30-min滑桿:</span>
+                                <span class="mini-label"> 30-min </span>
                                 <input type="range" id="time-range-sfc-rain" class="mini-slider" min="0" max="21" value="14"> <span id="time-val-sfc-rain" class="mini-label" style="color:#fff; min-width:45px;">14:00</span>
                             </div>
                         </div>
@@ -525,7 +525,7 @@
                 </div>
 
                 <div class="panel-box">
-                    <h3>c. 北北基桃竹(北端)氣象觀測數據排行</h3>
+                    <h3>c. 北北基桃竹(北端) 天氣排行榜 </h3>
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
                         <div>
                             <h4 style="color:#ff4d4d;">🌧️ 當日總累積雨量 Top 5</h4>
@@ -609,7 +609,7 @@
         const sfcRainViewer = document.getElementById('sfc-rain-viewer');
         const sfcTempViewer = document.getElementById('sfc-temp-viewer');
         
-        // 🌟 JavaScript 綁定累積雨量元素
+        // JavaScript 綁定累積雨量元素
         const dailyRainfallViewer = document.getElementById('daily-rainfall-viewer');
 
         const lightboxOverlay = document.getElementById('lightbox-overlay');
@@ -699,7 +699,7 @@
 
             } catch (error) {
                 console.error(error);
-                sidebarList.innerHTML = `<div style='color:#ff4d4d; padding:15px;'>❌ 自動上架引擎故障<br><small style='color:#888;'>請確認網路或 GitHub 倉庫路徑</small></div>`;
+                sidebarList.innerHTML = `<div style='color:#ff4d4d; padding:15px;'>❌ 自動上架異常<br><small style='color:#888;'>請確認網路或 GitHub 倉庫路徑</small></div>`;
             }
         }
 
@@ -737,7 +737,7 @@
                     typeTextSpan.style.color = "#ff4d4d"; 
                 });
 
-            // 🌟 核心動態渲染：切換個案日期時，自動餵入對應檔案路徑
+            // 切換個案日期時，自動餵入對應檔案路徑
             dailyRainfallViewer.src = `./cwaFig_archives/${dateStr}/daily_rainfall_1930.jpg`;
 
             document.getElementById('img-skewt-taipei').src = `./cwaFig_archives/${dateStr}/skewt_taipei.gif`;
@@ -861,7 +861,7 @@
             
             fetch(`./stn_archives/${dateStr}/review_summary.json`)
                 .then(res => {
-                    if (!res.ok) throw new Error("無真報告 JSON");
+                    if (!res.ok) throw new Error("無此報告 JSON");
                     return res.json();
                 })
                 .then(r => {
@@ -939,7 +939,7 @@
 
                     if(r.temp_wind_evolution.times && r.temp_wind_evolution.times.length > 0) {
                         html += `<div class="review-desc-box"><div class="review-section-title">🌡️ 當日溫度逐時分布變化</div>`;
-                        html += `<p style="color:#aaa; font-weight:bold;">熱島與冷池描述：</p><div class="review-text-field">${r.temp_wind_evolution.summary}</div>`;
+                        html += `<p style="color:#aaa; font-weight:bold;">溫度變化描述：</p><div class="review-text-field">${r.temp_wind_evolution.summary}</div>`;
                         html += `<p style="color:#ffa500; font-size:13px; font-weight:bold;">關鍵時間點：</p><div class="grid-6-col">`;
                         r.temp_wind_evolution.times.forEach(t => {
                             let timeStr = t.replace(":", "");
