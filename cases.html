@@ -252,24 +252,38 @@
             border: 1px solid #333;
         }
         
-        /* 單張雨量圖寬度優化展示牆 */
-        .single-rainfall-wall {
-            display: flex;
-            justify-content: center;
+        /* 💡 核心優化：雨量與預報展示牆升級為 3 欄並排 */
+        .triple-rainfall-wall {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
             background: #000;
             border-radius: 6px;
             padding: 15px;
             border: 1px solid #333;
         }
-        .single-rainfall-wall .rainfall-img {
-            max-width: 600px; /* 限制累積雨量圖寬度，防止高度過長 */
+        .rainfall-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .rainfall-title {
+            font-size: 14px;
+            color: #aaa;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        .rainfall-img {
             width: 100%;
             height: auto;
+            max-height: 500px;
+            object-fit: contain;
             border-radius: 4px;
+            border: 1px solid #222;
             cursor: zoom-in;
             transition: transform 0.12s ease;
         }
-        .single-rainfall-wall .rainfall-img:hover {
+        .rainfall-img:hover {
             transform: scale(1.01);
         }
 
@@ -465,9 +479,22 @@
             <div id="view-auto" class="view-section">
                 
                 <div class="panel-box" style="border-left: 4px solid #2ecc71;">
-                    <h3 style="color: #2ecc71; margin-top: 0;">📍 當日 00:00 - 19:30 全台日累積雨量觀測圖</h3>
-                    <div class="single-rainfall-wall">
-                        <img id="daily-rainfall-viewer" class="rainfall-img" src="" alt="累積雨量圖載入中..." onclick="openLightbox(this.src)">
+                    <h3 style="color: #2ecc71; margin-top: 0;">📍 當日降水觀測與中午(11:30)定量降水預報</h3>
+                    <div class="triple-rainfall-wall">
+                        <div class="rainfall-box">
+                            <div class="rainfall-title">📊 00:00 - 19:30 觀測累積雨量</div>
+                            <img id="daily-rainfall-viewer" class="rainfall-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="累積雨量圖載入中..." onclick="openLightbox(this.src)">
+                        </div>
+                        <div class="rainfall-box" style="position: relative;">
+                            <div class="rainfall-title">🔮 11:30 預報 - 12小時定量降水</div>
+                            <div id="qpf-12h-notice" style="color: #666; font-size: 14px; margin-top: 40px; display: none;">今日無預報存檔</div>
+                            <img id="qpf-12h-viewer" class="rainfall-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" onclick="openLightbox(this.src)">
+                        </div>
+                        <div class="rainfall-box" style="position: relative;">
+                            <div class="rainfall-title">🔮 11:30 預報 - 6小時定量降水</div>
+                            <div id="qpf-6h-notice" style="color: #666; font-size: 14px; margin-top: 40px; display: none;">今日無預報存檔</div>
+                            <img id="qpf-6h-viewer" class="rainfall-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" onclick="openLightbox(this.src)">
+                        </div>
                     </div>
                 </div>
                 
@@ -609,8 +636,10 @@
         const sfcRainViewer = document.getElementById('sfc-rain-viewer');
         const sfcTempViewer = document.getElementById('sfc-temp-viewer');
         
-        // JavaScript 綁定累積雨量元素
+        // 💡 JavaScript 綁定：取得新增的三個雨量與預報圖區塊
         const dailyRainfallViewer = document.getElementById('daily-rainfall-viewer');
+        const qpf12hViewer = document.getElementById('qpf-12h-viewer');
+        const qpf6hViewer = document.getElementById('qpf-6h-viewer');
 
         const lightboxOverlay = document.getElementById('lightbox-overlay');
         const lightboxTargetImg = document.getElementById('lightbox-target-img');
@@ -642,7 +671,7 @@
                 const repoName = "Taipei-Convection-Project";
                 const response = await fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contents/radar_archives`);
                 
-                if (!response.ok) throw new Error("無法讀取 GitHub 目目錄");
+                if (!response.ok) throw new Error("無法讀取 GitHub 目錄");
                 const files = await response.json();
 
                 let folders = files
@@ -737,8 +766,23 @@
                     typeTextSpan.style.color = "#ff4d4d"; 
                 });
 
-            // 切換個案日期時，自動餵入對應檔案路徑
+            // 切換個案日期時，自動餵入對應的 3 張雨量觀測與預報圖路徑
             dailyRainfallViewer.src = `./cwaFig_archives/${dateStr}/daily_rainfall_1930.jpg`;
+            qpf12hViewer.src = `./qpf_images/${c.date}/QPF_12h_${dateStr}_1130.png`;
+            qpf6hViewer.src = `./qpf_images/${c.date}/QPF_6h_{dateStr}_1130.png`;
+
+            // 處理極少數可能沒有 QPF 資料夾的容錯防噴錯機制
+            qpf12hViewer.onerror = () => { qpf12hViewer.src = './V8/assets/img/none.png'; };
+            qpf6hViewer.onerror = () => { qpf6hViewer.src = './V8/assets/img/none.png'; };
+            
+            qpf12hViewer.onerror = () => { 
+                qpf12hViewer.style.display = 'none'; 
+                document.getElementById('qpf-12h-notice').style.display = 'block';
+            };
+            qpf6hViewer.onerror = () => { 
+                qpf6hViewer.style.display = 'none'; 
+                document.getElementById('qpf-6h-notice').style.display = 'block';
+            };
 
             document.getElementById('img-skewt-taipei').src = `./cwaFig_archives/${dateStr}/skewt_taipei.gif`;
             document.getElementById('img-skewt-pengjia').src = `./cwaFig_archives/${dateStr}/skewt_pengjia.gif`;

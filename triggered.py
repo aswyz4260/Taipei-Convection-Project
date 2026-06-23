@@ -3,6 +3,7 @@ import os
 import requests
 import xml.etree.ElementTree as ET
 import numpy as np
+import shutil
 from datetime import datetime, timedelta
 
 # ==========================================
@@ -65,7 +66,7 @@ while current_dt <= end_dt:
                 flat_data = np.fromstring(raw_text, sep=',')[:(nx * ny)]
                 full_matrix = flat_data.reshape((ny, nx))
                 
-                # 台北盆地切片與物理統計
+                # 台北盆地切片與格點統計
                 taipei_basin = full_matrix[TAIPEI_Y_START:TAIPEI_Y_END, TAIPEI_X_START:TAIPEI_X_END]
                 valid_taipei = taipei_basin[taipei_basin >= 0]
                 
@@ -114,7 +115,7 @@ for result in time_series_results:
         consecutive_counter = 0
 
 # ==========================================
-# 用環境變數指揮 GitHub Actions 進行優雅分流
+# 用環境變數指揮 GitHub Actions 進行分流
 # ==========================================
 print("-" * 70)
 if is_triggered:
@@ -125,6 +126,19 @@ if is_triggered:
 else:
     print(f"\n🟡 [未達標準] {Y}-{M}-{D} ")
     print("SKIP。通知 GitHub Actions 跳過今日自動打包步驟。")
+
+
+    # 轉換日期格式為 YYYY-MM-DD
+    qpf_date_str = f"{Y}-{M}-{D}"
+    qpf_dir = f"./qpf_images/{qpf_date_str}"
+    
+    if os.path.exists(qpf_dir):
+        # 實體強制刪除整個 QPF 當日資料夾（連同裡面的圖片）
+        shutil.rmtree(qpf_dir)
+        print(f"Cleaned up: 已成功刪除未達標之當日 QPF 資料夾 -> {qpf_dir}")
+    else:
+        print("Info: 今日未產生 QPF 資料夾，無需清理。")
+
     print("=" * 80)
     
     if "GITHUB_ENV" in os.environ:
