@@ -3,8 +3,8 @@ import os
 import requests
 import xml.etree.ElementTree as ET
 import numpy as np
-# import shutil
 from datetime import datetime, timedelta
+# import shutil
 
 # ==========================================
 if len(sys.argv) > 1 and len(sys.argv[1]) == 8:
