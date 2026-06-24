@@ -3,7 +3,7 @@ import os
 import requests
 import xml.etree.ElementTree as ET
 import numpy as np
-import shutil
+# import shutil
 from datetime import datetime, timedelta
 
 # ==========================================
@@ -127,7 +127,7 @@ else:
     print(f"\n🟡 [未達標準] {Y}-{M}-{D} ")
     print("SKIP。通知 GitHub Actions 跳過今日自動打包步驟。")
 
-
+    '''
     # 轉換日期格式為 YYYY-MM-DD
     qpf_date_str = f"{Y}{M}{D}"
     qpf_dir = f"./qpf_images/{qpf_date_str}"
@@ -138,7 +138,7 @@ else:
         print(f"Cleaned up: 已成功刪除未達標之當日 QPF 資料夾 -> {qpf_dir}")
     else:
         print("Info: 今日未產生 QPF 資料夾，無需清理。")
-
+    '''
     print("=" * 80)
     
     if "GITHUB_ENV" in os.environ:
