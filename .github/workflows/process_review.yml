@@ -1,4 +1,4 @@
-name: 自動整理個案報告表單回應
+name: ​Automate Case Report Form Responses
 
 on:
   issues:
