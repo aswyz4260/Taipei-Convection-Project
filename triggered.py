@@ -129,7 +129,7 @@ else:
 
 
     # 轉換日期格式為 YYYY-MM-DD
-    qpf_date_str = f"{Y}-{M}-{D}"
+    qpf_date_str = f"{Y}{M}{D}"
     qpf_dir = f"./qpf_images/{qpf_date_str}"
     
     if os.path.exists(qpf_dir):
