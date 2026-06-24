@@ -4,7 +4,7 @@ import requests
 import re
 from datetime import datetime
 
-IMG_DIR = f"./qpf_images/{datetime.now().strftime('%Y-%m-%d')}"  
+IMG_DIR = f"./qpf_images/{datetime.now().strftime('%Y%m%d')}"  
 os.makedirs(IMG_DIR, exist_ok=True)
 
 API_TOKEN = "CWB-B1034BF8-0855-45E6-8F10-7C7D4DB194AA"
