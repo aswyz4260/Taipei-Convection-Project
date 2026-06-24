@@ -768,8 +768,8 @@
 
             // 切換個案日期時，自動餵入對應的 3 張雨量觀測與預報圖路徑
             dailyRainfallViewer.src = `./cwaFig_archives/${dateStr}/daily_rainfall_1930.jpg`;
-            qpf12hViewer.src = `./qpf_images/${c.date}/QPF_12h_${dateStr}_1130.png`;
-            qpf6hViewer.src = `./qpf_images/${c.date}/QPF_6h_{dateStr}_1130.png`;
+            qpf12hViewer.src = `./qpf_images/${dateStr}/QPF_12h_${dateStr}_1130.png`;
+            qpf6hViewer.src = `./qpf_images/${dateStr}/QPF_6h_{dateStr}_1130.png`;
 
             // 處理極少數可能沒有 QPF 資料夾的容錯防噴錯機制
             qpf12hViewer.onerror = () => { qpf12hViewer.src = './V8/assets/img/none.png'; };
