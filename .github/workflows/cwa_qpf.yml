@@ -3,7 +3,7 @@ name: Daily CWA QPF Images Scraper
 on:
   schedule:
     # 提前進場排隊
-    - cron: '49 2 * * *'  # 10:49 AM (UTC+8)
+    - cron: '52 1 * * *'  # 09:52 AM (UTC+8)
   
   workflow_dispatch:
 
