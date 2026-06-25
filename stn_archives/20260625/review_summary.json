@@ -1,0 +1,18 @@
+{
+    "date": "2026-06-25",
+    "case_type": "非午後熱力對流型 (Non-Diurnal / Synoptic Forcing)",
+    "synoptic_fields": {},
+    "thermodynamics": {},
+    "rain_wind_evolution": {
+        "times": [],
+        "summary": "嘩啦啦"
+    },
+    "temp_wind_evolution": {
+        "times": [],
+        "summary": "好悶"
+    },
+    "radar_lgt_evolution": {
+        "times": [],
+        "summary": "咕嚕咕嚕"
+    }
+}
