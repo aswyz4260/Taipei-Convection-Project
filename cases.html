@@ -487,13 +487,11 @@
                         </div>
                         <div class="rainfall-box" style="position: relative;">
                             <div class="rainfall-title">🔮 11:30 預報 - 12小時定量降水</div>
-                            <div id="qpf-12h-notice" style="color: #666; font-size: 14px; margin-top: 40px; display: none;">今日無預報存檔</div>
-                            <img id="qpf-12h-viewer" class="rainfall-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" onclick="openLightbox(this.src)">
+                            <img id="qpf-12h-viewer" class="rainfall-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="今日無預報存檔" onclick="openLightbox(this.src)">
                         </div>
                         <div class="rainfall-box" style="position: relative;">
                             <div class="rainfall-title">🔮 11:30 預報 - 6小時定量降水</div>
-                            <div id="qpf-6h-notice" style="color: #666; font-size: 14px; margin-top: 40px; display: none;">今日無預報存檔</div>
-                            <img id="qpf-6h-viewer" class="rainfall-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" onclick="openLightbox(this.src)">
+                            <img id="qpf-6h-viewer" class="rainfall-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="今日無預報存檔" onclick="openLightbox(this.src)">
                         </div>
                     </div>
                 </div>
@@ -612,7 +610,7 @@
     <div id="lightbox-overlay" class="lightbox-overlay" onclick="closeLightbox()">
         <div class="lightbox-content" onclick="event.stopPropagation()">
             <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
-            <img id="lightbox-target-img" class="lightbox-img" src="" alt="大圖加載中...">
+            <img id="lightbox-target-img" class="lightbox-img" src="" alt="loading...">
         </div>
     </div>
 
@@ -636,7 +634,6 @@
         const sfcRainViewer = document.getElementById('sfc-rain-viewer');
         const sfcTempViewer = document.getElementById('sfc-temp-viewer');
         
-        // 💡 JavaScript 綁定：取得新增的三個雨量與預報圖區塊
         const dailyRainfallViewer = document.getElementById('daily-rainfall-viewer');
         const qpf12hViewer = document.getElementById('qpf-12h-viewer');
         const qpf6hViewer = document.getElementById('qpf-6h-viewer');
