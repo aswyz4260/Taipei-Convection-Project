@@ -763,10 +763,9 @@
                     typeTextSpan.style.color = "#ff4d4d"; 
                 });
 
-            // 切換個案日期時，自動餵入對應的 3 張雨量觀測與預報圖路徑
             dailyRainfallViewer.src = `./cwaFig_archives/${dateStr}/daily_rainfall_1930.jpg`;
             qpf12hViewer.src = `./qpf_images/${dateStr}/QPF_12h_${dateStr}_1130.png`;
-            qpf6hViewer.src = `./qpf_images/${dateStr}/QPF_6h_{dateStr}_1130.png`;
+            qpf6hViewer.src = `./qpf_images/${dateStr}/QPF_6h_${dateStr}_1130.png`;
 
             document.getElementById('img-skewt-taipei').src = `./cwaFig_archives/${dateStr}/skewt_taipei.gif`;
             document.getElementById('img-skewt-pengjia').src = `./cwaFig_archives/${dateStr}/skewt_pengjia.gif`;
