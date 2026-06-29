@@ -104,8 +104,6 @@ body:
     attributes:
       label: 📝 降雨與風場逐時變化總結描述
       placeholder: 請描述 09-15 時段降雨核心如何擴展、海風如何與局地環流輻合...
-    validations:
-      required: true
 
   - type: markdown
     attributes:
@@ -130,8 +128,6 @@ body:
     attributes:
       label: 📝 溫度逐時變化總結描述
       placeholder: 請盡量描述都市熱島、盆地高溫累積，以及降雨發生後的局地冷池（Cold Pool）降溫...
-    validations:
-      required: true
 
   - type: markdown
     attributes:
@@ -198,8 +194,6 @@ body:
     attributes:
       label: 📝 雷達回波與閃電落雷演變總結描述
       placeholder: 請描述對流胞最初在哪裡觸發、閃電頻率爆發階段，以及隨後的發展、移動...
-    validations:
-      required: true
 
   - type: dropdown
     id: case_type
