@@ -52,7 +52,6 @@ def download_and_crop(url, crop_box, output_path, label, save_format="JPEG"):
                     cropped_img = cropped_img.convert('RGB')
                 cropped_img.save(output_path, "JPEG", quality=90)
             else:
-                # 🌟 為了對齊網頁前端的 Fetch 機制，任務 C 儲存為 PNG
                 cropped_img.save(output_path, "PNG")
             return True
         else:
@@ -127,5 +126,5 @@ while dt_09_15 <= end_09_15:
     dt_09_15 += timedelta(minutes=30)
 
 print("=" * 80)
-print(f"🎉 圖片工廠任務全數執行完畢！目標日期：{Y}-{M}-{D} 封存完成。")
+print(f"目標日期：{Y}-{M}-{D} 封存完成。")
 print("=" * 80)
