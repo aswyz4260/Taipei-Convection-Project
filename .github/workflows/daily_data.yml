@@ -37,6 +37,7 @@ jobs:
     
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+      CWA_API_TOKEN: ${{ secrets.CWA_API_TOKEN }}
 
     steps:
       - name: 1. 複製雲端專案程式碼
