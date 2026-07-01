@@ -19,7 +19,7 @@ else:
     # 手動在本地端測試時的預設值
     Y, M, D = "2026", "06", "14"
 
-API_TOKEN = "CWB-B1034BF8-0855-45E6-8F10-7C7D4DB194AA"
+API_TOKEN = os.environ.get("CWA_API_TOKEN")
 OUTPUT_DIR = f"stn_archives/{Y}{M}{D}"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
