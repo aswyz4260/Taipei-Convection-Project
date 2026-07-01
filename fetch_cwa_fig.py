@@ -19,7 +19,6 @@ else:
 OUTPUT_DIR = f"cwaFig_archives/{Y}{M}{D}"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-# 🌟 自動換算：各個官方氣象網址所需要的日期代碼
 YYMMDD = f"{Y[2:]}{M}{D}"   # 兩碼年份，例如 "260614"
 YYYYMMDD = f"{Y}{M}{D}"     # 四碼年份，例如 "20260614"
 YYYY_MM_DD = f"{Y}-{M}-{D}" # 帶有連字號的年份，例如 "2026-06-14"
@@ -29,8 +28,6 @@ print(f"目標日期：{Y}-{M}-{D} 00UTC (08:00 LST)")
 print(f"輸出路徑: {OUTPUT_DIR}")
 print("=" * 80)
 
-# ==========================================
-# 雙網址自動切換下載核心引擎 (外加智慧 PNG 轉檔)
 # ==========================================
 def download_static_map(primary_url, fallback_url, output_name, label):
     out_path = os.path.join(OUTPUT_DIR, output_name)
@@ -96,7 +93,7 @@ url_skewt_46695_pri = f"https://npd1.cwa.gov.tw/NPD/irisme_data/Weather/SKEWT/SK
 url_skewt_46695_fal = f"http://140.137.32.27/www/skw2/{Y}/{M}/{D}/{YYYYMMDD}_0000.46695.skw.jpg"
 download_static_map(url_skewt_46695_pri, url_skewt_46695_fal, "skewt_pengjia.gif", "彭佳嶼站探空圖 (46695)")
 
-# ➔ h-1. 地面天氣圖 (🌟 會自動轉存為真正的 .png 格式以防網頁破圖)
+# ➔ h-1. 地面天氣圖
 url_sfc_pri = f"http://140.137.32.27/www/cwbmap/{Y}/{M}/{D}/{YYYYMMDD}_0000.cwbmap.sfcmap.gif"
 url_sfc_fal = f"https://npd1.cwa.gov.tw/NPD/irisme_data/Weather/ANALYSIS/GRA___000_{YYMMDD}00_103.gif"
 download_static_map(url_sfc_pri, url_sfc_fal, "synoptic_sfc.png", "天氣綜觀地面圖")
