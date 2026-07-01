@@ -18,7 +18,7 @@ else:
     Y, M, D = "2026", "06", "14"  
     print(f"未指定參數，採用預設本地測試日期：{Y}-{M}-{D}")
 
-API_TOKEN = "CWB-B1034BF8-0855-45E6-8F10-7C7D4DB194AA"
+API_TOKEN = os.environ.get("CWA_API_TOKEN")
 
 # 台北盆地雷達格點切片範圍
 TAIPEI_Y_START, TAIPEI_Y_END = 540, 584
