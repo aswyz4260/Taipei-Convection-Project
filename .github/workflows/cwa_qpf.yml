@@ -31,6 +31,7 @@ jobs:
     - name: 4. 執行 Python 智能守門與抓取腳本
       env:
         TZ: 'Asia/Taipei'
+        CWA_API_TOKEN: ${{ secrets.CWA_API_TOKEN }}
       run: python fetch_qpf_fig.py
 
     - name: 5. 自動將新下載的預報圖 Commit 並 Push 回倉庫
