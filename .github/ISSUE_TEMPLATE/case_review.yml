@@ -201,10 +201,10 @@ body:
       label: 個案天氣型態分類
       description: 請根據當日綜觀天氣場與對流觸發機制，選擇最符合的科學分類。
       options:
-        - "弱綜觀/局地熱力主導型 (Pure Synoptic-Scale Weak Forcing)"
-        - "鋒面系統影響型 - 滯留/梅雨鋒 (Frontal System - Stationary/Meiyu Front)"
-        - "鋒面系統影響型 - 冷鋒 (Frontal System - Cold Front)"
-        - "熱帶低壓系統影響型 (Tropical System Influenced)"
-        - "非午後熱力對流型 (Non-Diurnal / Synoptic Forcing)"
+        - "弱綜觀/局地熱力主導之午後對流 (Pure Synoptic-Scale Weak Forcing)"
+        - "午後+鋒面系統影響 - 滯留/梅雨鋒 (ATs + Stationary/Meiyu Front Influenced)"
+        - "午後+鋒面系統影響 - 冷鋒 (ATs + Cold Front Influenced)"
+        - "午後+熱帶低壓系統影響 (ATs + Tropical System Influenced)"
+        - "非午後對流個案 (Non-Diurnal / Synoptic Forcing)"
     validations:
       required: true
